@@ -47,14 +47,15 @@ dev@dev-PC:~$ docker ps [OPTIONS]
 ```
 
 **Options**
-Shorthand              | Description                                            |
----------------------- | ------------------------------------------------------ |
-`--all`, `-a`          | Show all containers                                    |
-`--filter`, `-f`       | Filter output based on conditions provided             |
-`--last`, `-n`, `-1`   | Show n last created containers (includes all states)   |
-`--latest`, `-l`       | Show the latest created container (includes all states)|
-`--quiet`, `-q`        | Only display container IDs                             |
-`--size`, `-s`         | Display total file sizes                               |
+
+Shorthand   |       |       | Description                                            |
+----------- | ----- | ----- | ------------------------------------------------------ |
+`--all`     | `-a`  |       | Show all containers                                    |
+`--filter`  | `-f`  |       | Filter output based on conditions provided             |
+`--last`    | `-n`  | `-1`  | Show n last created containers (includes all states)   |
+`--latest`  | `-l`  |       | Show the latest created container (includes all states)|
+`--quiet`   | `-q`  |       | Only display container IDs                             |
+`--size`    | `-s`  |       | Display total file sizes                               |
 
 <br />
 
@@ -67,11 +68,12 @@ dev@dev-PC:~$ docker start my_container
 ```
 
 **Options**
-Shorthand             | Description                                         |
---------------------- | --------------------------------------------------- |
-`--attach`, `-a`      | Attach STDOUT/STDERR and forward signals            |
-`--detach-keys`       | Override the key sequence for detaching a container |
-`--interactive`, `-i` | Attach container's STDIN                            |
+
+Shorthand           |       | Description                                         |
+------------------- | ----- | --------------------------------------------------- |
+`--attach`          | `-a`  | Attach STDOUT/STDERR and forward signals            |
+`--detach-keys`     |       | Override the key sequence for detaching a container |
+`--interactive`     | `-i`  | Attach container's STDIN                            |
 
 <br />
 
@@ -93,12 +95,13 @@ Deleted Containers:
 ```
 
 **Options**
-Shorthand        | Description                                            |
----------------- | ------------------------------------------------------ |
-`--all`, `-a`    | Remove all unused images not just dangling ones        |
-`--filter`       | Provide filter values (e.g. `label=<key>=<value>`)     |
-`--force`, `-f`  | Do not prompt for confirmation                         |
-`--volumes`      | Prune volumes                                          |
+
+Shorthand   |       | Description                                            |
+----------- | ----- | ------------------------------------------------------ |
+`--all`     | `-a`  | Remove all unused images not just dangling ones        |
+`--filter`  |       | Provide filter values (e.g. `label=<key>=<value>`)     |
+`--force`   | `-f`  | Do not prompt for confirmation                         |
+`--volumes` |       | Prune volumes                                          |
 
 <br />
 
@@ -111,13 +114,14 @@ dev@dev-PC:~$ docker logs my_container
 ```
 
 **Options**
-Shorthand              | Description                                                                                 |
----------------------- | ------------------------------------------------------------------------------------------- |
-`--details`            | Show extra details provided to logs                                                         |
-`--follow`, `-f`       | Follow log output                                                                           |
-`--since`              | Show logs since timestamp (e.g. 2013-01-02T13:23:37Z) or relative (e.g. 42m for 42 minutes) |
-`--tail`, `-n` , `all` | Number of lines to show from the end of the logs                                            |
-`--timestamps`, `-t`   | Show timestamps                                                                             |
+
+Shorthand      |       |       | Description                                                                                 |
+-------------- | ----- | ----- | ------------------------------------------------------------------------------------------- |
+`--details`    |       |       | Show extra details provided to logs                                                         |
+`--follow`     | `-f`  |       | Follow log output                                                                           |
+`--since`      |       |       | Show logs since timestamp (e.g. 2013-01-02T13:23:37Z) or relative (e.g. 42m for 42 minutes) |
+`--tail`       | `-n`  | `all` | Number of lines to show from the end of the logs                                            |
+`--timestamps` | `-t`  |       | Show timestamps                                                                             |
 
 <br />
 
@@ -134,9 +138,10 @@ dev@dev-PC:~$ docker stop my_container
 ```
 
 **Options**
-Shorthand      | Description                                                 |
--------------- | ----------------------------------------------------------- |
-`--time`, `-t`  | Seconds to wait for stop before killing it. Default is `10` |
+
+Shorthand    |       | Description                                                 |
+------------ | ----- | ----------------------------------------------------------- |
+`--time`     | `-t`  | Seconds to wait for stop before killing it. Default is `10` |
 
 <br />
 
@@ -151,9 +156,10 @@ dev@dev-PC:~$ docker kill my_container
 ```
 
 **Options**
-Shorthand        | Description                                         |
----------------- | --------------------------------------------------- |
-`--signal`,`-s`  | Signal to send to the container. Default is `KILL`  |
+
+Shorthand      |       | Description                                         |
+-------------- | ----- | --------------------------------------------------- |
+`--signal`     | `-s`  | Signal to send to the container. Default is `KILL`  |
 
 <br />
 
@@ -167,17 +173,18 @@ dev@dev-PC:~$ docker exec -it my_container <command>
 `-it` allows us to type input directly into the container. We provide the `my_container` and `command` that we want to execute inside of the container.
 
 **Options**
-Shorthand            | Description                                                  |
--------------------- | ------------------------------------------------------------ |
-`--detach `, `-d`    | Detached mode: run command in the background                 |
-`--detach-keys`      | Override the key sequence for detaching a container          |
-`--env`, `-e`        | Set environment variables                                    |
-`--env-file`         | Read in a file of environment variables                      |
-`--interactive`,`-i` | Keep STDIN open even if not attached                         |
-`--privileged`       | Give extended privileges to the command                      |
-`--tty`, `-t`        | Allocate a pseudo-TTY                                        |
-`--user`, `-u`       | Username or UID (format: `<name|uid>[:<group|gid>]`)         |
-`--workdir`, `-w`    | Working directory inside the container                       |
+
+Shorthand        |       | Description                                                  |
+---------------- | ----- | ------------------------------------------------------------ |
+`--detach `      | `-d`  | Detached mode: run command in the background                 |
+`--detach-keys`  |       | Override the key sequence for detaching a container          |
+`--env`          | `-e`  | Set environment variables                                    |
+`--env-file`     |       | Read in a file of environment variables                      |
+`--interactive`  | `-i`  | Keep STDIN open even if not attached                         |
+`--privileged`   |       | Give extended privileges to the command                      |
+`--tty`          | `-t`  | Allocate a pseudo-TTY                                        |
+`--user`         | `-u`  | Username or UID (format: `<name|uid>[:<group|gid>]`)         |
+`--workdir`      | `-w`  | Working directory inside the container                       |
 
 **The Purpose of IT Flag**
 
@@ -194,14 +201,15 @@ dev@dev-PC:~$ docker images
 ```
 
 **Options**
-Shorthand          | Description                                              |
------------------- | -------------------------------------------------------- |
-`--all `, `-a`     | Show all images (default hides intermediate images)      |
-`--digests`        | Show digests                                             |
-`--filter`, `-f`   | Filter output based on conditions provided               |
-`--format`         | Pretty-print images using a Go template                  |
-`--no-trunc`       | Don't truncate output                                    |
-`--quiet`, `-q`    | Only show image IDs                                      |
+
+Shorthand        |       | Description                                              |
+---------------- | ----- | -------------------------------------------------------- |
+`--all `         | `-a`  | Show all images (default hides intermediate images)      |
+`--digests`      |       | Show digests                                             |
+`--filter`       | `-f`  | Filter output based on conditions provided               |
+`--format`       |       | Pretty-print images using a Go template                  |
+`--no-trunc`     |       | Don't truncate output                                    |
+`--quiet`        | `-q`  | Only show image IDs                                      |
 
 
 <br />
@@ -215,10 +223,11 @@ dev@dev-PC:~$ docker rmi --force $(docker images -a -q)
 ```
 
 **Options**
-Shorthand         | Description                                |
------------------ | ------------------------------------------ |
-`--force `, `-f`  | Force removal of the image                 |
-`--no-prune`      | Do not delete untagged parents             |
+
+Shorthand        |       | Description                                |
+---------------- | ----- | ------------------------------------------ |
+`--force `       | `-f`  | Force removal of the image                 |
+`--no-prune`     |       | Do not delete untagged parents             |
 
 <br />
 
@@ -231,11 +240,12 @@ dev@dev-PC:~$ docker volume ls
 ```
 
 **Options**
-Shorthand         | Description                                   |
------------------ | --------------------------------------------- |
-`--filter `, `-f` | Provide filter values (e.g. `dangling=true`)  |
-`--format`        | Pretty-print volumes using a Go template      |
-`--quiet`, `-q`   | Only display volume names                     |
+
+Shorthand        |       | Description                                   |
+---------------- | ----- | --------------------------------------------- |
+`--filter `      | `-f`  | Provide filter values (e.g. `dangling=true`)  |
+`--format`       |       | Pretty-print volumes using a Go template      |
+`--quiet`        | `-q`  | Only display volume names                     |
 
 
 <br />
@@ -249,7 +259,8 @@ dev@dev-PC:~$ docker volume prune
 ```
 
 **Options**
-Shorthand         | Description                                  |
------------------ | -------------------------------------------- |
-`--force `, `-f`  | Do not prompt for confirmation               |
-`--filter`        | Provide filter values (e.g. `label=<label>`) |
+
+Shorthand        |       | Description                                  |
+---------------- | ----- | -------------------------------------------- |
+`--force `       | `-f`  | Do not prompt for confirmation               |
+`--filter`       |       | Provide filter values (e.g. `label=<label>`) |
