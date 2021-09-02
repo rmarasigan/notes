@@ -37,6 +37,8 @@ dev@dev:~$ sudo apt install docker-ce docker-ce-cli containerd.io
 dev@dev-PC:~$ sudo docker run hello-world
 ```
 
+5. Create [Dockerhub](https://hub.docker.com/signup) account
+
 Reference:
 * [Install Docker on Ubuntu Documenation](https://docs.docker.com/engine/install/ubuntu/)
 
@@ -59,6 +61,7 @@ Reference:
 * [Docker can not connect to docker daemon and permission denied](https://jhooq.com/permission-denied-docker-daemon/)
 * [Fixing - permission denied trying to connect to Docker daemon socket at unix:///var/run/docker.sock
 ](https://www.youtube.com/watch?v=FcZ1Dh3X5JQ)
+* [Run without Sudo](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user)
 
 
 ### **Docker Compose on Ubuntu**
@@ -80,3 +83,14 @@ dev@dev:~$ docker-compose --version
 
 Reference:
 * [Install Docker Compose on Ubuntu Documenation](https://docs.docker.com/compose/install/)
+
+### **Docker on MAC**
+
+**Installation Guide**
+1. Sign up for a [Docker Hub Account](https://www.docker.com/) and click on `Get Started` and find `Download for Mac`.
+2. Download / Install Docker for Mac
+3. Log-in to Docker
+4. Verify Docker installation
+```
+dev@dev:~$ docker version
+```
