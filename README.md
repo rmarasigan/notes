@@ -4,6 +4,7 @@
 * [Installation](docker/Installation.md)
 * [Getting Started](docker/GettingStarted.md)
 * [Dockerfile](docker/Docker-file.md)
+* [Dockerfile Reference](docker/DockerfileReference.md)
 * [Docker CLI](docker/CLI.md)
 
 <br />

@@ -103,3 +103,24 @@ On step number three where we execute `CMD` so that you can imagine what happens
 So the container is told “This is supposed to be your intermediate or something”. This is supposed to be your primary command (`Removing intermediate container 38ec9aea7e10`) and then it shuts down that container (`---> fc60771ae08`) and it takes a snapshot (`Successfully build fc60771ae08`) of its file system and its primary command. So the end result is `Successfully build fc60771ae08`. This is the final image (`fc60771ae08`) that was created out of this entire series of steps. So in step number three, at the very end we remove the intermediate container. We take a snapshot of its file system and its primary command, and then we save it as an output, as an image with an idea of `fc60771ae08`.
 
 ![docker-dockerfile-build-recap](assets/img/docker-build-recap.png)
+
+<br />
+
+## Rebuilds with Cache
+```Dockerfile
+# Use an existing docker image as base
+FROM alpine
+
+# Download and install a dependency
+RUN apk add --update redis
+RUN apk add --update gcc
+
+# Tell the image what to do when it starts as a container
+CMD ["redis-server"]
+```
+
+Running `docker build .` for the second time, we still see step one of four where we do `FROM alpine`, you'll notice that we do not see any of that like fetching image stuff that we saw the first time because we have already fetched the alpine image. We've already downloaded it from the **Docker Hub** and so we don't have to go and download it a second time. During step number two, we do not see any of fetch. We don't see any installation of dependencies. Instead, we see a single message that says `using cache`.
+
+So what this means is that Docker has realized that from the previous step to step number two, nothing has changed from the last time that we ran `docker build`. In other words, it knows without a doubt that it's going to get the same image from the previous step because it's the exact same instruction that it was before.
+
+On step number three, Docker correctly sees that there is a new command and so from this point on, it decides, “Well, you know what, something has changed during the build process. We probably can't use our cache anymore.” And from here on out, we have to go through that process of generating a container and running a command inside the container and taking the snapshot and going through all that stuff again. Any time that we make a change to our **Dockerfile**, we're going to have to only rerun the series of steps from the changed line on down.
