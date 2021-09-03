@@ -3,12 +3,12 @@
 ## `docker run`
 Run a command in a new container. The `docker run` command first creates a writeable container layer over the specified image, and then starts it using the specified command.
 ```
-dev@dev-PC:~$ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
+dev@dev:~$ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
 ```
 
 **Example**
 ```
-dev@dev-PC:~$ docker run hello-world
+dev@dev:~$ docker run hello-world
 Unable to find image ‘hello-world:latest’ locally
 latest: Pulling from library/hello-world
 b8dfe127a29: Pull complete
@@ -23,9 +23,9 @@ This message shows that your installation appears to be working correctly.
 The `docker create` command is used to create a container out of an image. `docker start` is used to actually start an image.
 
 ```
-dev@dev-PC:~$ docker create hello-world
+dev@dev:~$ docker create hello-world
 71830b72c406c28acc2908549d42fe10b8c558ce08b28a2ba642129249383481
-dev@dev-PC:~$ docker start -a 71830b72c406c28acc2908549d42fe10b8c558ce08b28a2ba642129249383481
+dev@dev:~$ docker start -a 71830b72c406c28acc2908549d42fe10b8c558ce08b28a2ba642129249383481
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
@@ -43,7 +43,7 @@ The `-a` specifically means, watch for output coming from it and print it out. `
 ## `docker ps`
 List containers.
 ```
-dev@dev-PC:~$ docker ps [OPTIONS]
+dev@dev:~$ docker ps [OPTIONS]
 ```
 
 **Options**
@@ -62,9 +62,9 @@ Shorthand   |       |       | Description                                       
 ## `docker start`
 Start one or more stopped containers
 ```
-dev@dev-PC:~$ docker start [OPTIONS] CONTAINER [CONTAINER...]
+dev@dev:~$ docker start [OPTIONS] CONTAINER [CONTAINER...]
 
-dev@dev-PC:~$ docker start my_container
+dev@dev:~$ docker start my_container
 ```
 
 **Options**
@@ -80,9 +80,9 @@ Shorthand           |       | Description                                       
 ## `docker system prune`
 Remove unused data. Removed all unused containers, networks, images (both dangling and unreferenced) and optionally volumes. This is not only going to delete stopped containers, it's going to delete a couple of either items as well. Most notable, your `build cache`. The `build cache` is any image that you have fetch from **Docker Hub**. So after running the `docker system prune`, you'll have to re-download images from Docker.
 ```
-dev@dev-PC:~$ docker system prune [OPTIONS]
+dev@dev:~$ docker system prune [OPTIONS]
 
-dev@dev-PC:~$ docker system prune
+dev@dev:~$ docker system prune
 WARNING! This will remove:
 	- all stopped containers
 	- all networks not used by at least one container
@@ -108,9 +108,9 @@ Shorthand   |       | Description                                            |
 ## `docker logs`
 Fetch the logs of a container. The `docker logs` command batch-retrieves logs present at the time of execution.
 ```
-dev@dev-PC:~$ docker logs [OPTIONS] CONTAINER
+dev@dev:~$ docker logs [OPTIONS] CONTAINER
 
-dev@dev-PC:~$ docker logs my_container
+dev@dev:~$ docker logs my_container
 ```
 
 **Options**
@@ -132,9 +132,9 @@ When you issue `docker stop` commands, a hardware signal is sent to the process,
 
 `SIGTERM` is used any time that you want to stop a process inside of your container and shut the container down and you want to give that process inside there a little bit of time to shut itself down and do a little cleanup. And as soon as you get that signal, you could attempt to do a little bit of cleanup or maybe save some file or emit some message or something like that. When you issued `docker stop` to a container, if the container does not automatically stop in 10 seconds, then docker is going to automatically fall back to issuing the `docker kill` command.
 ```
-dev@dev-PC:~$ docker stop [OPTIONS] CONTAINER [CONTAINER...]
+dev@dev:~$ docker stop [OPTIONS] CONTAINER [CONTAINER...]
 
-dev@dev-PC:~$ docker stop my_container
+dev@dev:~$ docker stop my_container
 ```
 
 **Options**
@@ -150,9 +150,9 @@ Kill one or more running containers. The `docker kill` subcommand kills one or m
 
 The `docker kill` command issues a `SIGKILL` or a `kill signal` to the primary running process inside the container. `SIGKILL` essentially means you have to shut down right now and you do not get to do any additional work. So ideally, we always stop a container with the `docker stop` command in order to give the running process inside of it a little bit more time to shut itself down. Otherwise, if it feels like the container has locked up and it's not responding to the `docker stop`, then we could issue `docker kill` instead.
 ```
-dev@dev-PC:~$ docker kill [OPTIONS] CONTAINER [CONTAINER...]
+dev@dev:~$ docker kill [OPTIONS] CONTAINER [CONTAINER...]
 
-dev@dev-PC:~$ docker kill my_container
+dev@dev:~$ docker kill my_container
 ```
 
 **Options**
@@ -166,9 +166,9 @@ Shorthand      |       | Description                                         |
 ## `docker exec`
 Run a command in a running container. The `docker exec` command runs a new command in a running container. The command started using `docker exec` only runs while the container's primary process (`PID 1`) is running and it is not restarted if the container is restarted.
 ```
-dev@dev-PC:~$ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+dev@dev:~$ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 
-dev@dev-PC:~$ docker exec -it my_container <command>
+dev@dev:~$ docker exec -it my_container <command>
 ```
 `-it` allows us to type input directly into the container. We provide the `my_container` and `command` that we want to execute inside of the container.
 
@@ -195,9 +195,9 @@ When you are running docker on your machine, every single container that you are
 ## `docker images`
 List images. The default `docker images` will show all top level images, their repository and tags, and their size. Docker images have intermediate layers that increase reusability, decrease disk usage, and speed up `docker build` by allowing each step to be cached. These intermediate layers are not shown by default. The `SIZE` is the cumulative space taken up by the image and all its parent images. This is also the disk space used by the contents of the Tar file created when you docker save an image.
 ```
-dev@dev-PC:~$ docker images [OPTIONS] [REPOSITORY[:TAG]]
+dev@dev:~$ docker images [OPTIONS] [REPOSITORY[:TAG]]
 
-dev@dev-PC:~$ docker images
+dev@dev:~$ docker images
 ```
 
 **Options**
@@ -217,9 +217,9 @@ Shorthand        |       | Description                                          
 ## `docker rmi`
 Remove one or more images. Removes (and un-tags) one or more images from the host node. If an image has multiple tags, using this command with the tag as a parameter only removes the tag. If the tag is the only one for the image, both the image and the tag are removed.
 ```
-dev@dev-PC:~$ docker rmi [OPTIONS] IMAGE [IMAGE...]
+dev@dev:~$ docker rmi [OPTIONS] IMAGE [IMAGE...]
 
-dev@dev-PC:~$ docker rmi --force $(docker images -a -q)
+dev@dev:~$ docker rmi --force $(docker images -a -q)
 ```
 
 **Options**
@@ -234,9 +234,9 @@ Shorthand        |       | Description                                |
 ## `docker volume ls`
 List volumes. List all the volumes known to Docker. You can filter using the `-f` or `--filter` flag.
 ```
-dev@dev-PC:~$ docker volume ls [OPTIONS]
+dev@dev:~$ docker volume ls [OPTIONS]
 
-dev@dev-PC:~$ docker volume ls
+dev@dev:~$ docker volume ls
 ```
 
 **Options**
@@ -247,15 +247,14 @@ Shorthand        |       | Description                                   |
 `--format`       |       | Pretty-print volumes using a Go template      |
 `--quiet`        | `-q`  | Only display volume names                     |
 
-
 <br />
 
 ## `docker volume prune`
 Remove all unused local volumes. Unused local volumes are those which are not referenced by any containers.
 ```
-dev@dev-PC:~$ docker volume prune [OPTIONS]
+dev@dev:~$ docker volume prune [OPTIONS]
 
-dev@dev-PC:~$ docker volume prune
+dev@dev:~$ docker volume prune
 ```
 
 **Options**
@@ -264,3 +263,35 @@ Shorthand        |       | Description                                  |
 ---------------- | ----- | -------------------------------------------- |
 `--force `       | `-f`  | Do not prompt for confirmation               |
 `--filter`       |       | Provide filter values (e.g. `label=<label>`) |
+
+<br />
+
+## `docker build`
+Build an image from a Dockerfile. The docker build command builds Docker images from a Dockerfile and a “context”. A build’s context is the set of files located in the specified `PATH` or `URL`. The build process can refer to any of the files in the context. For example, your build can use a `COPY` instruction to reference a file in the context. The `URL` parameter can refer to three kinds of resources: Git repositories, pre-packaged tarball contexts and plain text files.
+```
+dev@dev:~$ docker build [OPTIONS] PATH | URL | -
+
+dev@dev:~$ docker build .
+```
+
+**Options**
+
+Shorthand        |       | Description                                                                                                                  |
+---------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------- |
+`--add-host`     |       | Add a custom host-to-IP mapping (host:ip)                                                                                    |
+`--build-arg`    |       | Set build-time variables                                                                                                     |
+`--file `        | `-f`  | Name of the Dockerfile (Default is 'PATH/Dockerfile')                                                                        |
+`--force-rm `    |       | Always remove intermediate containers                                                                                        |
+`--label`        |       | Set metadata for an image                                                                                                    |
+`--memory`       | `-m`  | Memory limit                                                                                                                 |
+`--memory-swap`  |       | Swap limit equal to memory plus swap: '-1' to enable unlimited swap                                                          |
+`--network`      |       | Set the networking mode for the RUN instructions during build                                                                |
+`--no-cache`     |       | Do not use cache when building the image                                                                                     |
+`--output`       | `-o`  | Output destination (format: `type=local,dest=path`)                                                                          |
+`--no-cache`     |       | Do not use cache when building the image                                                                                     |
+`--pull`         |       | Always attempt to pull a newer version of the image                                                                          |
+`--secret`       |       | Secret file to expose to the build (only if BuildKit enabled): `id=mysecret,src=/local/secret`                               |
+`--ssh`          |       | SSH agent socket or keys to expose to the build (only if BuildKit enabled) (format: `default|<id>[=<socket>|<key>[,<key>]`]) |
+`--tag`          | `-t`  | Name and optionally a tag in the `name:tag` format                                                                           |
+`--target`       |       | Set the target build stage to build.                                                                                         |
+`--ulimit`       |       | Ulimit options                                                                                                               |
