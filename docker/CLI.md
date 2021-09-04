@@ -2,12 +2,14 @@
 
 ## `docker run`
 Run a command in a new container. The `docker run` command first creates a writeable container layer over the specified image, and then starts it using the specified command.
-```
+
+```Bash
 dev@dev:~$ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
 ```
 
 **Example**
-```
+
+```Bash
 dev@dev:~$ docker run hello-world
 Unable to find image ‘hello-world:latest’ locally
 latest: Pulling from library/hello-world
@@ -22,7 +24,7 @@ This message shows that your installation appears to be working correctly.
 ### `docker run` = `docker create` + `docker start`
 The `docker create` command is used to create a container out of an image. `docker start` is used to actually start an image.
 
-```
+```Bash
 dev@dev:~$ docker create hello-world
 71830b72c406c28acc2908549d42fe10b8c558ce08b28a2ba642129249383481
 dev@dev:~$ docker start -a 71830b72c406c28acc2908549d42fe10b8c558ce08b28a2ba642129249383481
@@ -42,7 +44,8 @@ The `-a` specifically means, watch for output coming from it and print it out. `
 
 ## `docker ps`
 List containers.
-```
+
+```Bash
 dev@dev:~$ docker ps [OPTIONS]
 ```
 
@@ -61,7 +64,8 @@ Shorthand   |       |       | Description                                       
 
 ## `docker start`
 Start one or more stopped containers
-```
+
+```Bash
 dev@dev:~$ docker start [OPTIONS] CONTAINER [CONTAINER...]
 
 dev@dev:~$ docker start my_container
@@ -79,7 +83,8 @@ Shorthand           |       | Description                                       
 
 ## `docker system prune`
 Remove unused data. Removed all unused containers, networks, images (both dangling and unreferenced) and optionally volumes. This is not only going to delete stopped containers, it's going to delete a couple of either items as well. Most notable, your `build cache`. The `build cache` is any image that you have fetch from **Docker Hub**. So after running the `docker system prune`, you'll have to re-download images from Docker.
-```
+
+```Bash
 dev@dev:~$ docker system prune [OPTIONS]
 
 dev@dev:~$ docker system prune
@@ -107,7 +112,8 @@ Shorthand   |       | Description                                            |
 
 ## `docker logs`
 Fetch the logs of a container. The `docker logs` command batch-retrieves logs present at the time of execution.
-```
+
+```Bash
 dev@dev:~$ docker logs [OPTIONS] CONTAINER
 
 dev@dev:~$ docker logs my_container
@@ -131,7 +137,8 @@ Stop one or more running containers. The main process inside the container will 
 When you issue `docker stop` commands, a hardware signal is sent to the process, the primary process inside that container. In the case of `docker stop`, we send a `SIGTERM` message which is short for `terminate signal`. It's the message that's going to be received by the process, telling it essentially to shutdown on its own time.
 
 `SIGTERM` is used any time that you want to stop a process inside of your container and shut the container down and you want to give that process inside there a little bit of time to shut itself down and do a little cleanup. And as soon as you get that signal, you could attempt to do a little bit of cleanup or maybe save some file or emit some message or something like that. When you issued `docker stop` to a container, if the container does not automatically stop in 10 seconds, then docker is going to automatically fall back to issuing the `docker kill` command.
-```
+
+```Bash
 dev@dev:~$ docker stop [OPTIONS] CONTAINER [CONTAINER...]
 
 dev@dev:~$ docker stop my_container
@@ -149,7 +156,8 @@ Shorthand    |       | Description                                              
 Kill one or more running containers. The `docker kill` subcommand kills one or more containers. The main process inside the container is sent `SIGKILL` signal (default), or the signal that is specified with the `--signal` option. You can kill a container using the container’s ID, ID-prefix, or name.
 
 The `docker kill` command issues a `SIGKILL` or a `kill signal` to the primary running process inside the container. `SIGKILL` essentially means you have to shut down right now and you do not get to do any additional work. So ideally, we always stop a container with the `docker stop` command in order to give the running process inside of it a little bit more time to shut itself down. Otherwise, if it feels like the container has locked up and it's not responding to the `docker stop`, then we could issue `docker kill` instead.
-```
+
+```Bash
 dev@dev:~$ docker kill [OPTIONS] CONTAINER [CONTAINER...]
 
 dev@dev:~$ docker kill my_container
@@ -165,7 +173,8 @@ Shorthand      |       | Description                                         |
 
 ## `docker exec`
 Run a command in a running container. The `docker exec` command runs a new command in a running container. The command started using `docker exec` only runs while the container's primary process (`PID 1`) is running and it is not restarted if the container is restarted.
-```
+
+```Bash
 dev@dev:~$ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 
 dev@dev:~$ docker exec -it my_container <command>
@@ -194,7 +203,8 @@ When you are running docker on your machine, every single container that you are
 
 ## `docker images`
 List images. The default `docker images` will show all top level images, their repository and tags, and their size. Docker images have intermediate layers that increase reusability, decrease disk usage, and speed up `docker build` by allowing each step to be cached. These intermediate layers are not shown by default. The `SIZE` is the cumulative space taken up by the image and all its parent images. This is also the disk space used by the contents of the Tar file created when you docker save an image.
-```
+
+```Bash
 dev@dev:~$ docker images [OPTIONS] [REPOSITORY[:TAG]]
 
 dev@dev:~$ docker images
@@ -216,7 +226,8 @@ Shorthand        |       | Description                                          
 
 ## `docker rmi`
 Remove one or more images. Removes (and un-tags) one or more images from the host node. If an image has multiple tags, using this command with the tag as a parameter only removes the tag. If the tag is the only one for the image, both the image and the tag are removed.
-```
+
+```Bash
 dev@dev:~$ docker rmi [OPTIONS] IMAGE [IMAGE...]
 
 dev@dev:~$ docker rmi --force $(docker images -a -q)
@@ -231,9 +242,34 @@ Shorthand        |       | Description                                |
 
 <br />
 
+## `docker volume create`
+Creates a new volume that containers can consume and store data in. If a name is not specified, Docker generates a random name.
+
+```Bash
+dev@dev:~$ docker volume create [OPTIONS] [VOLUME]
+
+dev@dev:~$ docker volume create --driver local \
+    --opt type=tmpfs \
+    --opt device=tmpfs \
+    --opt o=size=100m,uid=1000 \
+    foo
+```
+
+**Options**
+
+Shorthand        |       | Description                                   |
+---------------- | ----- | --------------------------------------------- |
+`--driver `      | `-d`  | Specify volume driver name                    |
+`--label`        |       | Set metadata for a volume                     |
+`--name`         |       | Specify volume name                           |
+`--opt `         | `-o`  | Set driver specific options                   |
+
+<br />
+
 ## `docker volume ls`
 List volumes. List all the volumes known to Docker. You can filter using the `-f` or `--filter` flag.
-```
+
+```Bash
 dev@dev:~$ docker volume ls [OPTIONS]
 
 dev@dev:~$ docker volume ls
@@ -251,7 +287,8 @@ Shorthand        |       | Description                                   |
 
 ## `docker volume prune`
 Remove all unused local volumes. Unused local volumes are those which are not referenced by any containers.
-```
+
+```Bash
 dev@dev:~$ docker volume prune [OPTIONS]
 
 dev@dev:~$ docker volume prune
@@ -268,7 +305,8 @@ Shorthand        |       | Description                                  |
 
 ## `docker build`
 Build an image from a Dockerfile. The docker build command builds Docker images from a Dockerfile and a “context”. A build’s context is the set of files located in the specified `PATH` or `URL`. The build process can refer to any of the files in the context. For example, your build can use a `COPY` instruction to reference a file in the context. The `URL` parameter can refer to three kinds of resources: Git repositories, pre-packaged tarball contexts and plain text files.
-```
+
+```Bash
 dev@dev:~$ docker build [OPTIONS] PATH | URL | -
 
 dev@dev:~$ docker build .
