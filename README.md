@@ -5,6 +5,7 @@
 * [Getting Started](docker/GettingStarted.md)
 * [Dockerfile](docker/Docker-file.md)
 * [Dockerfile Reference](docker/DockerfileReference.md)
+* [Docker Volumes](docker/Volumes.md)
 * [Docker CLI](docker/CLI.md)
 
 <br />
