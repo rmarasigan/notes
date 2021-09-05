@@ -35,3 +35,8 @@ Lag actually refers to the delay or decreased speed that’s sometimes caused by
    * Disabling firewalls that directly monitor web traffic, in particular, will lower your ping
 5. Geographical location
    * Distance between your system and the server can mean the difference between experiencing low latency or high latency
+
+<br /><br />
+<!-- blank line -->
+
+**[Next](Subnetting.md)**
