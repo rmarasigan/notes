@@ -12,6 +12,18 @@
 
 <br />
 
+## Kubernetes
+* [Installation](kubernetes/Installation.md)
+* [Terminologies](kubernetes/Terms.md)
+
+<br />
+
+## Email
+* [SMTP](email/SMTP.md)
+* [Postfix](email/Postfix.md)
+
+<br />
+
 ## Networks
 * [Network](networks/Network.md)
 * [Ping](networks/Ping.md)
