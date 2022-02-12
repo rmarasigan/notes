@@ -14,7 +14,7 @@
 
 ## Kubernetes
 * [Installation](kubernetes/Installation.md)
-* [Introduction](kubernetes/Introduction.md
+* [Introduction](kubernetes/Introduction.md)
 * [Imperative VS Declarative](kubernetes/ImperativeVSDeclarative.md)
 * [Terminologies](kubernetes/Terms.md)
 
