@@ -38,4 +38,4 @@
 ## Go
 * [Introduction](go-lang/Introduction.md)
 * [Installation](go-lang/Installation.md)
-* [Freecodecamp — Golang Tutorial for Beginners](https://github.com/rmarasigan/freecodecamp/tree/master/golang-beginners)
+* [Freecodecamp — Golang Tutorial for Beginners](https://github.com/rmarasigan/freecodecamp#golang-tutorial-for-beginners)
