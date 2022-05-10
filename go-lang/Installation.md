@@ -20,7 +20,7 @@ dev@dev:~$ sudo vim .profile
 
 NOTE: Please remember to change the xx.xx to your desired version of go.
 
-## File Hierarchy
+##### File Hierarchy
 ```
 go
 │
