@@ -94,3 +94,20 @@ Reference:
 ```
 dev@dev:~$ docker version
 ```
+
+### Minikube Installation
+1. Update the packages and make sure to install (or check whether you already have) `curl` before running the second command.
+```bash
+dev@dev:~$ sudo apt-get update -y
+dev@dev:~$ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+```
+
+2. Install minikube
+```bash
+dev@dev:~$ sudo install minikube-linux-amd64 /usr/local/bin/minikube
+```
+
+3. Check minikube status
+```bash
+dev@dev:~$ minikube status
+```
