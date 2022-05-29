@@ -39,3 +39,8 @@
 * [Introduction](go-lang/Introduction.md)
 * [Installation](go-lang/Installation.md)
 * [Freecodecamp — Golang Tutorial for Beginners](https://github.com/rmarasigan/freecodecamp#golang-tutorial-for-beginners)
+
+## roadmap.sh
+* [Developer Roadmaps](https://roadmap.sh/)
+* [Graphical Videos](https://roadmap.sh/watch)
+* [Visual Guides](https://roadmap.sh/guides)
