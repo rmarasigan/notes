@@ -181,7 +181,7 @@ go name()
 ### `WaitGroup`
 To wait for the function to finish, you can use a [WaitGroup](https://pkg.go.dev/sync#WaitGroup). The WaitGroup primitive works by counting how many things it needs to wait for using the `Add`, `Done` and `Wait` functions.
 * `Add`: increases the count by the number provided to the function (`wg.Add(1)`)
-* `Done`: decreases the count by one (`wg.Done())
+* `Done`: decreases the count by one (`wg.Done()`)
 * `Wait`: can then be used to wait until the count reaches zero, meaning that `Done` has been called enough times to offset the calls to `Add`.
 
 ### `os.Exit`

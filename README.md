@@ -8,12 +8,17 @@
 
 <br />
 
+
+## Command lines
+* [Linux](linux/CMD.md)
+
 ## Programming
 
 ### Go
 * [Introduction](go-lang/Introduction.md)
 * [Installation](go-lang/Installation.md)
 * [Freecodecamp — Golang Tutorial for Beginners](https://github.com/rmarasigan/freecodecamp#golang-tutorial-for-beginners)
+* [Simple Client and Server TCP connection](go-lang/client-server-tcp.md)
 
 <br />
 
@@ -43,6 +48,8 @@
 
 ### Networks
 * [Network](networks/Network.md)
+* [Internet Protocol (IP)](networks/IP.md)
+* [Transmission Control Protocol (TCP)](networks/TCP.md)
 * [Ping](networks/Ping.md)
 * [Subnetting](networks/Subnetting.md)
 
