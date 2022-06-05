@@ -146,4 +146,4 @@ Graphical representation of all the PDUs in the OSI model:
 
 <!-- blank line -->
 
-**[Next](Ping.md)**
+**[Table of Contents](https://github.com/rmarasigan/notes#table-of-contents) | [Next](Ping.md)**

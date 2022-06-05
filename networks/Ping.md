@@ -39,4 +39,4 @@ Lag actually refers to the delay or decreased speed that’s sometimes caused by
 <br /><br />
 <!-- blank line -->
 
-**[Next](Subnetting.md)**
+**[Table of Contents](https://github.com/rmarasigan/notes#table-of-contents) | [Next](Subnetting.md)**

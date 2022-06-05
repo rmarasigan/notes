@@ -33,3 +33,8 @@ A **private IP address** is assigned by networks and routers to devices that are
 * [Public vs Private IP Address](https://www.avg.com/en/signal/public-vs-private-ip-address)
 * [What is an IP address and what is your IP address](https://www.networkworld.com/article/3588315/what-is-an-ip-address-and-what-is-your-ip-address.html)
 * [What is a Transmission Control Protocol TCP/IP Model?](https://www.fortinet.com/resources/cyberglossary/tcp-ip)
+
+<br /><br />
+<!-- blank line -->
+
+**[Table of Contents](https://github.com/rmarasigan/notes#table-of-contents) | [Next](TCP.md)**

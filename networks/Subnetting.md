@@ -60,4 +60,4 @@ CIDR         | SUBNET MASK     | # OF NETWORK(S) | # OF IP ADD.          | # OF 
 <br /><br />
 <!-- blank line -->
 
-**[Previous](Ping.md)**
+**[Table of Contents](https://github.com/rmarasigan/notes#table-of-contents) | [Previous](Ping.md)**
