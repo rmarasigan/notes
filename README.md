@@ -21,6 +21,7 @@
 * [Introduction](go-lang/Introduction.md)
 * [Installation](go-lang/Installation.md)
 * [Freecodecamp — Golang Tutorial for Beginners](https://github.com/rmarasigan/freecodecamp#golang-tutorial-for-beginners)
+* [Palindrome](go-lang/Palindrome.md)
 * [Simple Client and Server TCP connection](go-lang/client-server-tcp.md)
 
 <br />
