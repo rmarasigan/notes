@@ -120,7 +120,7 @@ exclude_patterns = [
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
 ```
-### Project Information
+#### Project Information
 ```python
 project = 'Project Name'
 copyright = 'year, username'
