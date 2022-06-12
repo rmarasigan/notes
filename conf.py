@@ -179,9 +179,7 @@ latex_documents = [(master_doc, 'Notes.tex', 'Notes', 'Shanelle Marasigan', 'man
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, 'notes', 'Notes', [author], 1)
-]
+man_pages = [(master_doc, 'notes', 'Reference (Network, Programming, etc.)', [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------------
