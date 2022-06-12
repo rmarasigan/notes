@@ -1,0 +1,601 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="263238">
+  <script src="../../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Producing Documentation with Sphinx &#8212; Aide Memoire 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Introduction" href="../go-lang/Introduction.html" />
+    <link rel="prev" title="Linux Command Lines" href="../linux/CMD.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue data-md-color-accent=light-blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#notes/github/DocumentationSphinx" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../index.html" title="Aide Memoire 1.0.0 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Aide Memoire 👩🏻‍💻</span>
+          <span class="md-header-nav__topic"> Producing Documentation with Sphinx </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/rmarasigan/notes" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Notes
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../../"versions.json"",
+        target_loc = "../../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">Aide Memoire 1.0.0 documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../index.html" title="Aide Memoire 1.0.0 documentation" class="md-nav__button md-logo">
+      
+        <img src="../../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../../index.html"
+       title="Aide Memoire 1.0.0 documentation">Aide Memoire 👩🏻‍💻</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/rmarasigan/notes" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Notes
+  </div>
+</a>
+    </div>
+  
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#notes-github-documentationsphinx--page-root" class="md-nav__link">Producing Documentation with Sphinx</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#file-hierarchy" class="md-nav__link">File Hierarchy</a>
+        </li>
+        <li class="md-nav__item"><a href="#set-up" class="md-nav__link">Set-up</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#requirements-txt" class="md-nav__link">requirements.txt</a>
+        </li>
+        <li class="md-nav__item"><a href="#gh-pages-yml" class="md-nav__link">gh-pages.yml</a>
+        </li>
+        <li class="md-nav__item"><a href="#conf-py" class="md-nav__link">conf.py</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#general-configuration" class="md-nav__link">General configuration</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#project-information" class="md-nav__link">Project Information</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#options-for-html-output" class="md-nav__link">Options for HTML output</a>
+        </li>
+        <li class="md-nav__item"><a href="#options-for-htmlhelp-output" class="md-nav__link">Options for HTMLHelp output</a>
+        </li>
+        <li class="md-nav__item"><a href="#options-for-manual-page-output" class="md-nav__link">Options for manual page output</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#index-rst" class="md-nav__link">index.rst</a>
+        </li>
+        <li class="md-nav__item"><a href="#makefile" class="md-nav__link">Makefile</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#enable-github-pages" class="md-nav__link">Enable Github Pages</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#steps" class="md-nav__link">Steps</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#reference" class="md-nav__link">Reference</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/github/DocumentationSphinx.md.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<h1 id="notes-github-documentationsphinx--page-root">Producing Documentation with Sphinx<a class="headerlink" href="#notes-github-documentationsphinx--page-root" title="Permalink to this heading">¶</a></h1>
+
+<h2 id="file-hierarchy">File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>repo-name
+│
+└───.github
+│   │
+│   └───workflows
+│     │
+│     └───gh-pages.yml
+|
+└───repo-name
+│   │
+│   └───repo-module
+│     │
+│     └───repo-doc.md
+│   
+└───conf.py
+│   
+└───index.rst
+│   
+└───Makefile
+│   
+└───requirements.txt
+</pre></div>
+</div>
+
+
+<h2 id="set-up">Set-up<a class="headerlink" href="#set-up" title="Permalink to this heading">¶</a></h2>
+
+<h3 id="requirements-txt">requirements.txt<a class="headerlink" href="#requirements-txt" title="Permalink to this heading">¶</a></h3>
+<p>Add the requirements of your project</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">myst</span><span class="o">-</span><span class="n">parser</span>
+</pre></div>
+</div>
+
+
+<h3 id="gh-pages-yml">gh-pages.yml<a class="headerlink" href="#gh-pages-yml" title="Permalink to this heading">¶</a></h3>
+<p>This is to automate the deployment of your documentation</p>
+<div class="highlight-yml notranslate"><div class="highlight"><pre><span></span>name: Automate Sphinx Deployment
+
+on:
+  push:
+    branches:
+      - master # Set a branch name to trigger deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout 🛎️
+      uses: actions/checkout@v1
+    - name: Build 🔧
+      run: |
+        sudo apt install python3-sphinx python3-pip
+        pip3 install sphinx-material
+        pip3 install -r requirements.txt
+        make html
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages    # The branch the action should deploy to.
+        folder: _build/html # The folder the action should deploy.
+</pre></div>
+</div>
+
+
+<h3 id="conf-py">conf.py<a class="headerlink" href="#conf-py" title="Permalink to this heading">¶</a></h3>
+<p>This is your configuration for your Sphinx Documentation</p>
+
+<h4 id="general-configuration">General configuration<a class="headerlink" href="#general-configuration" title="Permalink to this heading">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># If your documentation needs a minimal Sphinx version, state it here.</span>
+<span class="c1">#</span>
+<span class="c1"># needs_sphinx = '1.0'</span>
+
+<span class="c1"># Add any Sphinx extension module names here, as strings. They can be</span>
+<span class="c1"># extensions coming with Sphinx (named 'sphinx.ext.*') or your custom</span>
+<span class="c1"># ones.</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'sphinx.ext.githubpages'</span><span class="p">,</span>
+    <span class="s1">'myst_parser'</span>
+<span class="p">]</span>
+
+<span class="c1"># Enable myst extenstion</span>
+<span class="c1"># https://myst-parser.readthedocs.io/en/latest/syntax/optional.html</span>
+<span class="n">myst_enable_extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"html_image"</span><span class="p">,</span>
+    <span class="s2">"replacements"</span>
+<span class="p">]</span>
+
+<span class="c1"># Add any paths that contain templates here, relative to this directory.</span>
+<span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'_templates'</span><span class="p">]</span>
+
+<span class="c1"># The suffix(es) of source filenames.</span>
+<span class="c1"># You can specify multiple suffix as a list of string:</span>
+<span class="c1">#</span>
+<span class="c1"># source_suffix = ['.rst', '.md']</span>
+<span class="n">source_suffix</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'.rst'</span><span class="p">,</span> <span class="s1">'.md'</span><span class="p">]</span>
+
+<span class="c1"># The master toctree document.</span>
+<span class="n">master_doc</span> <span class="o">=</span> <span class="s1">'index'</span>
+
+<span class="c1"># The language for content autogenerated by Sphinx. Refer to documentation</span>
+<span class="c1"># for a list of supported languages.</span>
+<span class="c1">#</span>
+<span class="c1"># This is also used if you do content translation via gettext catalogs.</span>
+<span class="c1"># Usually you set "language" from the command line for these cases.</span>
+<span class="n">language</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="c1"># List of patterns, relative to source directory, that match files and</span>
+<span class="c1"># directories to ignore when looking for source files.</span>
+<span class="c1"># This pattern also affects html_static_path and html_extra_path.</span>
+<span class="n">exclude_patterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'_build'</span><span class="p">,</span>
+    <span class="s1">'Thumbs.db'</span><span class="p">,</span>
+    <span class="s1">'.DS_Store'</span><span class="p">,</span>
+    <span class="s1">'.gitignore'</span><span class="p">,</span>
+    <span class="s1">'venv'</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># The name of the Pygments (syntax highlighting) style to use.</span>
+<span class="n">pygments_style</span> <span class="o">=</span> <span class="bp">None</span>
+</pre></div>
+</div>
+
+
+
+<h3 id="project-information">Project Information<a class="headerlink" href="#project-information" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">project</span> <span class="o">=</span> <span class="s1">'Project Name'</span>
+<span class="n">copyright</span> <span class="o">=</span> <span class="s1">'year, username'</span>
+<span class="n">author</span> <span class="o">=</span> <span class="s1">'Your Name'</span>
+
+<span class="c1"># The short X.Y version</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s1">'1'</span>
+<span class="c1"># The full version, including alpha/beta/rc tags</span>
+<span class="n">release</span> <span class="o">=</span> <span class="s1">'1.0.0'</span>
+</pre></div>
+</div>
+
+<h4 id="options-for-html-output">Options for HTML output<a class="headerlink" href="#options-for-html-output" title="Permalink to this heading">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The theme to use for HTML and HTML Help pages.  See the documentation for</span>
+<span class="c1"># a list of builtin themes.</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">'sphinx_material'</span>
+
+<span class="c1"># Theme options are theme-specific and customize the look and feel of a theme</span>
+<span class="c1"># further.  For a list of options available for each theme, see the</span>
+<span class="c1"># documentation.</span>
+<span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># Set the name of the project to appear in the navigation.</span>
+    <span class="s1">'nav_title'</span><span class="p">:</span> <span class="s1">'Project Name'</span><span class="p">,</span>
+
+    <span class="c1"># Set the repo location to get a badge with stats</span>
+    <span class="s1">'repo_url'</span><span class="p">:</span> <span class="s1">'https://github.com/username/repo-name'</span><span class="p">,</span>
+    <span class="s1">'repo_name'</span><span class="p">:</span> <span class="s1">'repo-name'</span><span class="p">,</span>
+
+    <span class="c1"># Specify a base_url used to generate sitemap.xml. If not</span>
+    <span class="c1"># specified, then no sitemap will be built.</span>
+    <span class="c1"># 'base_url': 'https://username.github.io/repo-name',</span>
+
+    <span class="c1"># The theme color for mobile browsers</span>
+    <span class="s1">'theme_color'</span><span class="p">:</span> <span class="s1">'263238'</span><span class="p">,</span>
+
+    <span class="c1"># Set the color and the accent color</span>
+    <span class="s1">'color_primary'</span><span class="p">:</span> <span class="s1">'blue'</span><span class="p">,</span>
+    <span class="s1">'color_accent'</span><span class="p">:</span> <span class="s1">'light-blue'</span><span class="p">,</span>
+
+    <span class="c1"># Visible levels of the global TOC; -1 means unlimited</span>
+    <span class="c1"># 'globaltoc_depth': 2,</span>
+
+    <span class="c1"># If False, expand all TOC entries</span>
+    <span class="c1"># 'globaltoc_collapse': True,</span>
+<span class="p">}</span>
+
+<span class="c1"># Add any paths that contain custom static files (such as style sheets) here,</span>
+<span class="c1"># relative to this directory. They are copied after the builtin static files,</span>
+<span class="c1"># so a file named "default.css" will overwrite the builtin "default.css".</span>
+<span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'_static'</span><span class="p">]</span>
+
+<span class="c1"># Custom sidebar templates, must be a dictionary that maps document names</span>
+<span class="c1"># to template names.</span>
+<span class="c1">#</span>
+<span class="c1"># The default sidebars (for documents that don't match any pattern) are</span>
+<span class="c1"># defined by theme itself.  Builtin themes are using these templates by</span>
+<span class="c1"># default: ``['localtoc.html', 'relations.html', 'sourcelink.html',</span>
+<span class="c1"># 'searchbox.html']``.</span>
+<span class="c1">#</span>
+<span class="n">html_sidebars</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"**"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"logo-text.html"</span><span class="p">,</span> <span class="s2">"localtoc.html"</span><span class="p">,</span> <span class="s2">"searchbox.html"</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+<h4 id="options-for-htmlhelp-output">Options for HTMLHelp output<a class="headerlink" href="#options-for-htmlhelp-output" title="Permalink to this heading">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output file base name for HTML help builder.</span>
+<span class="n">htmlhelp_basename</span> <span class="o">=</span> <span class="s1">'Notesdoc'</span>
+</pre></div>
+</div>
+
+
+<h4 id="options-for-manual-page-output">Options for manual page output<a class="headerlink" href="#options-for-manual-page-output" title="Permalink to this heading">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># One entry per manual page. List of tuples</span>
+<span class="c1"># (source start file, name, description, authors, manual section).</span>
+<span class="n">man_pages</span> <span class="o">=</span> <span class="p">[(</span><span class="n">master_doc</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">,</span> <span class="s1">'description'</span><span class="p">,</span> <span class="p">[</span><span class="n">author</span><span class="p">],</span> <span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+
+
+
+<h3 id="index-rst">index.rst<a class="headerlink" href="#index-rst" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Heading</span>
+<span class="gh">===============</span>
+<span class="gh">Subheading</span>
+<span class="gh">---------</span>
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> <span class="nf">1</span>
+   <span class="nc">:glob:</span>
+
+   Title &lt;internal-link-to-md-file&gt;
+   Title2 &lt;https://external-link.com&gt;
+</pre></div>
+</div>
+
+
+<h3 id="makefile">Makefile<a class="headerlink" href="#makefile" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># You can set these variables from the command line.</span>
+<span class="nv">SPHINXOPTS</span>    <span class="o">=</span>
+<span class="nv">SPHINXBUILD</span>   <span class="o">=</span> sphinx-build
+<span class="nv">SOURCEDIR</span>     <span class="o">=</span> .
+<span class="nv">BUILDDIR</span>      <span class="o">=</span> _build
+
+<span class="c"># Put it first so that "make" without argument is like "make help".</span>
+<span class="nf">help</span><span class="o">:</span>
+	@<span class="k">$(</span>SPHINXBUILD<span class="k">)</span> -M <span class="nb">help</span> <span class="s2">"</span><span class="k">$(</span>SOURCEDIR<span class="k">)</span><span class="s2">"</span> <span class="s2">"</span><span class="k">$(</span>BUILDDIR<span class="k">)</span><span class="s2">"</span> <span class="k">$(</span>SPHINXOPTS<span class="k">)</span> <span class="k">$(</span>O<span class="k">)</span>
+
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">help</span> <span class="n">Makefile</span>
+
+<span class="c"># Catch-all target: route all unknown targets to Sphinx using the new</span>
+<span class="c"># "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).</span>
+<span class="nf">%</span><span class="o">:</span> <span class="n">Makefile</span>
+	@<span class="k">$(</span>SPHINXBUILD<span class="k">)</span> -M <span class="nv">$@</span> <span class="s2">"</span><span class="k">$(</span>SOURCEDIR<span class="k">)</span><span class="s2">"</span> <span class="s2">"</span><span class="k">$(</span>BUILDDIR<span class="k">)</span><span class="s2">"</span> <span class="k">$(</span>SPHINXOPTS<span class="k">)</span> <span class="k">$(</span>O<span class="k">)</span>
+</pre></div>
+</div>
+
+
+
+<h2 id="enable-github-pages">Enable Github Pages<a class="headerlink" href="#enable-github-pages" title="Permalink to this heading">¶</a></h2>
+
+<h3 id="steps">Steps<a class="headerlink" href="#steps" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Go to Github Pages &lt;<a class="reference external" href="https://github.com/username/repo-name/settings/pages">https://github.com/username/repo-name/settings/pages</a>&gt;</p></li>
+<li><p>In the <strong>Source</strong> section, please choose <em>gh-pages</em> as your branch and the selected folder would be <em>/(root)</em></p></li>
+<li><p>Click on <strong>Save</strong></p></li>
+</ol>
+
+
+
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sphinx-themes.org/">Sphinx Themes</a></p></li>
+<li><p><a class="reference external" href="https://sphinx-themes.org/sample-sites/sphinx-material/">Material Sample</a></p></li>
+<li><p><a class="reference external" href="https://bashtage.github.io/sphinx-material/">Material for Sphinx</a></p></li>
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/theming.html#using-a-theme">Sphinx HTML Theming</a></p></li>
+<li><p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/optional.html">MyST Syntax Extenstions</a></p></li>
+</ul>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="../linux/CMD.html" title="Linux Command Lines"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Linux Command Lines </span>
+              </div>
+            </a>
+          
+          
+            <a href="../go-lang/Introduction.html" title="Introduction"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Introduction </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2022, rmarasigan.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

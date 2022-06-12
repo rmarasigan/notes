@@ -22,6 +22,14 @@ Linux
 
 Programming
 =============
+Github
+-----------
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   Produce Documentation with Sphinx <notes/github/DocumentationSphinx.md>
+
 Go
 -----------
 .. toctree::
@@ -39,7 +47,6 @@ Go
 
    Palindrome <notes/go-lang/Palindrome.md>
    Simple Client and Server TCP connection <notes/go-lang/client-server-tcp.md>
-
 
 DevOps
 ===========
@@ -77,7 +84,6 @@ Heroku
 
    Deploy Static Site <notes/heroku/Deploy-Static-Site.md>
 
-
 Amazon Web Services
 ===================
 Cloud Practitioner
@@ -97,7 +103,6 @@ Cloud Practitioner
    Deployment and Automation <https://aws-cloud-practitioner.herokuapp.com/deployment-automation/index.html>
    Databases and Analytics <https://aws-cloud-practitioner.herokuapp.com/databases-analytics/index.html>
    Management and Governance <https://aws-cloud-practitioner.herokuapp.com/mngmt-governance/index.html>
-
 
 Network
 ===========
