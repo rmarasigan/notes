@@ -35,7 +35,7 @@ func main() {
 
 	// Joining character of strings and compare the formed word to the input.
 	if strings.Join(palindrome, "") == input {
-      fmt.Println("---------------------------------")
+     		fmt.Println("---------------------------------")
 		fmt.Printf("Word: %s\nInput: %s\nUser entered a palindrome word\n", strings.Join(palindrome, ""), input)
 	} else {
 		fmt.Println("Not a palindrome word")
