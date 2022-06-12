@@ -46,7 +46,7 @@
   
   
   
-    <title>What is Container Orchestration? &#8212; Aide Memoire 1.0.0 documentation</title>
+    <title>Introduction &#8212; Aide Memoire 1.0.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
@@ -94,7 +94,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">Aide Memoire 👩🏻‍💻</span>
-          <span class="md-header-nav__topic"> What is Container Orchestration? </span>
+          <span class="md-header-nav__topic"> Introduction </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -215,13 +215,17 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#notes-kubernetes-introduction--page-root" class="md-nav__link">What is Container Orchestration?</a>
+        <li class="md-nav__item"><a href="#notes-kubernetes-introduction--page-root" class="md-nav__link">Introduction</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#what-is-container-orchestration" class="md-nav__link">What is Container Orchestration?</a>
         </li>
         <li class="md-nav__item"><a href="#kubernetes" class="md-nav__link">Kubernetes</a>
         </li>
         <li class="md-nav__item"><a href="#kubernetes-benefits" class="md-nav__link">Kubernetes benefits</a>
         </li>
         <li class="md-nav__item"><a href="#kubernetes-considerations" class="md-nav__link">Kubernetes considerations</a>
+        </li></ul>
+            </nav>
         </li>
     
 <li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/kubernetes/Introduction.md.txt">Show Source</a> </li>
@@ -238,17 +242,19 @@
           <article class="md-content__inner md-typeset" role="main">
             
   
-<h1 id="notes-kubernetes-introduction--page-root">What is Container Orchestration?<a class="headerlink" href="#notes-kubernetes-introduction--page-root" title="Permalink to this heading">¶</a></h1>
+<h1 id="notes-kubernetes-introduction--page-root">Introduction<a class="headerlink" href="#notes-kubernetes-introduction--page-root" title="Permalink to this heading">¶</a></h1>
+
+<h2 id="what-is-container-orchestration">What is Container Orchestration?<a class="headerlink" href="#what-is-container-orchestration" title="Permalink to this heading">¶</a></h2>
 <p>A container orchestrator is a system that automatically deploys and manages containerized apps. For example, the orchestrator can dynamically respond to changes in the environment to increase or decrease the deployed instances of the managed app. Or, it can ensure all deployed container instances get updated if a new version of a service is released.</p>
 <p><img alt="https://docs.microsoft.com/en-us/learn/modules/intro-to-kubernetes/media/2-tasks-of-orchestrator.svg" src="https://docs.microsoft.com/en-us/learn/modules/intro-to-kubernetes/media/2-tasks-of-orchestrator.svg"/><br/></p>
 
 
-<h1 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permalink to this heading">¶</a></h1>
+<h2 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permalink to this heading">¶</a></h2>
 <p>Kubernetes is a portable, extensible open-source platform for managing and orchestrating containerized workloads. Kubernetes abstracts away complex container management tasks, and provides you with declarative configuration to orchestrate containers in different computing environments. This orchestration platform gives you the same ease of use and flexibility you may already know from platform as a service (PaaS) or infrastructure as a service (IaaS) offerings.</p>
 <p><img alt="https://docs.microsoft.com/en-us/learn/modules/intro-to-kubernetes/media/2-deploy-multiple-containers-k8s.png" src="https://docs.microsoft.com/en-us/learn/modules/intro-to-kubernetes/media/2-deploy-multiple-containers-k8s.png"/><br/></p>
 
 
-<h1 id="kubernetes-benefits">Kubernetes benefits<a class="headerlink" href="#kubernetes-benefits" title="Permalink to this heading">¶</a></h1>
+<h2 id="kubernetes-benefits">Kubernetes benefits<a class="headerlink" href="#kubernetes-benefits" title="Permalink to this heading">¶</a></h2>
 <p>The benefits of using Kubernetes are based on the abstraction of tasks.</p>
 <p><img alt="https://docs.microsoft.com/en-us/learn/modules/intro-to-kubernetes/media/2-kubernetes-benefits.svg" src="https://docs.microsoft.com/en-us/learn/modules/intro-to-kubernetes/media/2-kubernetes-benefits.svg"/><br/></p>
 <p>These tasks include:</p>
@@ -263,7 +269,7 @@
 <br/>
 
 
-<h1 id="kubernetes-considerations">Kubernetes considerations<a class="headerlink" href="#kubernetes-considerations" title="Permalink to this heading">¶</a></h1>
+<h2 id="kubernetes-considerations">Kubernetes considerations<a class="headerlink" href="#kubernetes-considerations" title="Permalink to this heading">¶</a></h2>
 <p>With Kubernetes, you can view your datacenter as one large compute resource. You don’t worry about how and where you deploy your containers, only about deploying and scaling your apps, as needed.</p>
 <p><img alt="https://docs.microsoft.com/en-us/learn/modules/intro-to-kubernetes/media/2-kubernetes-considerations.svg" src="https://docs.microsoft.com/en-us/learn/modules/intro-to-kubernetes/media/2-kubernetes-considerations.svg"/><br/></p>
 <p>However, it’s important to understand that Kubernetes isn’t a single installed app that comes with all possible components needed to manage and orchestrate a containerized solution:</p>
@@ -274,6 +280,7 @@
 <li><p>For Kubernetes to run containers, it needs a container runtime, like Docker. The container runtime is the object that’s responsible for managing containers. For example, the container runtime starts, stops, and reports on the container’s status.</p></li>
 <li><p>You’re responsible for maintaining your Kubernetes environment. For example, you need to manage OS upgrades and the Kubernetes installation and upgrades. You also manage the hardware configuration of the host machines, such as networking, memory, and storage.</p></li>
 </ul>
+
 
 
 

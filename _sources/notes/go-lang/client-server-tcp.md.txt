@@ -192,7 +192,7 @@ A `defer` statement defers the execution of a function until the surrounding fun
 
 The deferred call's arguments are evaluated immediately, but the function call is not executed until the surrounding function returns.
 
-# Reference
+## Reference
 * [When to use os.Exit and panic](https://stackoverflow.com/questions/28472922/when-to-use-os-exit-and-panic)
 * [How to build websockets in Go](https://yalantis.com/blog/how-to-build-websockets-in-go/)
 * [Intro to Socket Programming in Go](https://www.developer.com/languages/intro-socket-programming-go/)
