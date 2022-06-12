@@ -36,8 +36,7 @@ Stateful firewalls are capable of monitoring all aspects of network traffic, inc
 
 A **stateless firewall** make use of a data packet's source, destination, and other parameters to figure out whether the data presents a threat. On detecting a possible threat, the firewall blocks it. There are certain preset rules that firewalls enforce while deciding whether traffic must be permitted or not. These parameters have to be entered by either an administrator or the manufacturer via rules they set beforehand.
 
-
-# Reference
+## Reference
 * [Firewall](https://www.techtarget.com/searchsecurity/definition/firewall)
 * [Introduction to Firewalls](https://networklessons.com/cisco/asa-firewall/introduction-to-firewalls)
 * [Stateful & Stateless Firewall Differences](https://www.fortinet.com/resources/cyberglossary/stateful-vs-stateless-firewall)

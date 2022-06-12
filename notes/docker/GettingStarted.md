@@ -50,7 +50,7 @@ The **Docker Hub** is a repository of free public images so you can freely downl
 
 <br />
 
-# Namespacing and Control Groups
+## Namespacing and Control Groups
 Namespacing and Control Groups belong to **Linux**. Not to Windows. Not to MAC OS.
 
 ![docker-namespace-cgroups](assets/img/docker-namespace-cgroups.png)
@@ -63,7 +63,7 @@ A `container` is really a process or set of processes that have a grouping of re
 
 <br />
 
-# How's Docker Running on your computer?
+## How's Docker Running on your computer?
 When you installed **Docker for Windows** or **Docker for Mac**, you installed a Linux virtual machine. So as  long as Docker app is running, you technically have a Linux virtual machine running on your computer. Inside of the virtual machine is where all these containers are going to be created. So inside the virtual machine, we have a Linux kernel and that Linux kernel is going to be hosting running processes inside of containers and it's that Linux kernel that's going to be in charge of limiting access or kind of constraining access or isolating access to different hardware resources on your computer.
 
 ![docker-running-on-your-computer](assets/img/docker-running-on-your-computer.png)
