@@ -38,7 +38,14 @@ release = '1.0.0'
 # ones.
 extensions = [
     'sphinx.ext.githubpages',
-    'myst_parser',
+    'myst_parser'
+]
+
+# Enable myst extenstion
+# https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
+myst_enable_extensions = [
+    "html_image",
+    "replacements"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
