@@ -4,8 +4,6 @@ It is an application that is used to send, receive, and relay outgoing emails be
 
 If the SMTP server is used to send emails, then we can define SMTP relay as a process of transferring an email from one server to another. *It is mainly used to deliver emails from one domain to another domain, which is different from the user’s domain.* The **SMTP relay service** can be used to resolve a lot of issues such as email deliverability, IP blacklisting, and so on.
 
-<br />
-
 ## Overview of SMTP Commands
 The SMTP server understands simple text commands. The most common commands are as follows:
 
@@ -34,8 +32,6 @@ The SMTP server understands simple text commands. The most common commands are a
 * **VRFY/EXPN**
   - “Verify”/“Expand”– the client checks whether a mailbox is available for message transmission
 
-<br />
-
 ## Overview of server status codes
 
 Informative Status Code
@@ -44,8 +40,6 @@ STATUS CODE        | PLAIN TEXT MESSAGE                                         
 ------------------ | ------------------------------------------------------------------------- |
 101                | Unable to connect to server                                               |
 111                | Connection refused                                                        |
-
-<br />
 
 Success Status Code : whenever a positive delivery code is returned from DSN
 
@@ -61,15 +55,11 @@ STATUS CODE        | PLAIN TEXT MESSAGE                                         
 252                | Cannot verify (VRFY) user, but will accept message and attempt delivery   |
 253                | Pending messages for node started                                         |
 
-<br />
-
 Redirection Status Code
 
 STATUS CODE        | PLAIN TEXT MESSAGE                                                   |
 ------------------ | -------------------------------------------------------------------- |
 354                | Server starts mail input                                             |
-
-<br />
 
 Persistent transient failure Status Code
 
@@ -89,8 +79,6 @@ STATUS CODE        | PLAIN TEXT MESSAGE                                         
 451                | Requested action aborted: local error in processing                                                   |
 452                | Requested action not taken: insufficient system storage; Too many emails sent or too many recipients  |
 471                | RAn error of your mail server                                                                         |
-
-<br />
 
 Server Permanent Error Codes
 
@@ -113,8 +101,6 @@ STATUS CODE        | PLAIN TEXT MESSAGE                                         
 552                | Requested mail action aborted: exceeded storage allocation          |
 553                | Requested action not taken: mailbox name not allowed                |
 554                | Transaction failed                                                  |
-
-<br />
 
 ## Reference
 

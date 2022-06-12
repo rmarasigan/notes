@@ -1,8 +1,6 @@
-## [Network](https://study-ccna.com/what-is-a-network/)
+# [Network](https://study-ccna.com/what-is-a-network/)
 
 A computer network can be described as a system of interconnected devices that can communicate using some common standards (called protocols). These devices communicate to exchange resources (e.g. files and printers) and services.
-
-<br />
 
 Network of two computers only
 
@@ -16,8 +14,6 @@ A network with a hub
 
 **Local Area Network (LAN)** is commonly used to describe a network of devices in a limited area (a house, office, building…). This type of network is usually capable of achieving high data transfer rate (up to 10 Gbps!) at low cost. A typical **SOHO** (small office/home office) LAN consist of PCs, printers, switches, routers, and cabling that connects all these devices together.
 
-<br />
-
 Typical LAN
 
 <img src = "https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/01/typical_lan1-368x317.avif" alt = "typical-lan" width = "300"/>
@@ -25,8 +21,6 @@ Typical LAN
 Some of the most popular LAN technologies are Ethernet, Token Ring and FDDI. Most LAN networks use TCP/IP to communicate. Twisted-pair cabling is usually used in a LAN. Ethernet is by far the most popular wired LAN technology. It defines wiring, signaling, connectors, frame formats, protocol rules, etc. Most modern LANs also support the wireless LAN (WLAN) technology, defined by the IEEE 802.11 standards. WLANs use radio waves instead of wires or cables for links between devices.
 
 The term **metropolitan area network** is used to describe a network in a single metropolitan area, hence the name. This type of network is usually bigger than a LAN and smaller than a WAN. An example of this type of network would be a network that connects two company offices inside the same city.
-
-<br />
 
 ## [OSI & TCP / IP models](https://study-ccna.com/osi-tcp-ip-models/)
 
@@ -76,13 +70,9 @@ Here is a brief description of each layer:
 
 * **Application** – defines protocols for node-to-node application communication and provide services to the application software running on a computer.
 
-<br />
-
 **Differences between OSI and TCP/IP model**
 
 OSI model prescribes the steps needed to transfer data over a network and it is very specific in it, defining which protocol is used at each layer and how. The TCP/IP model is not that specific. It can be said that the OSI model prescribes and TCP/IP model describes.
-
-<br />
 
 ## [TCP (Transmission Control Protocol ) / IP  (Internet Protocol) suite of protocols](https://study-ccna.com/tcpip-suite-of-protocols/)
 
@@ -120,8 +110,6 @@ The term encapsulation is used to describe a process of adding headers and trail
 3. The Internet layer encapsulates the received data and adds its own header, usually with information about the source and destination IP addresses. The Internet layer than passes the data to the Network Access layer
 4. The Network Access layer is the only layer that adds both a header and a trailer. The data is then sent through a physical network link.
 
-<br />
-
 Graphical representation of how each layer add its own information
 
 <img src = "https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/images/encapsulation.jpg" alt = "encapsulation"/><br />
@@ -137,8 +125,6 @@ Each packet (header + encapsulated data) defined by a particular layer has a spe
 **Data encapsulation in the OSI model**
 
 Just like with the TCP/IP layers, each OSI layer asks for services from the next lower layer. The lower layer encapsulates the higher layer’s data between a header (Data Link protocols also add a trailer). While the TCP/IP model uses terms like segment, packet and frame to refer to a data packet defined by a particular layer, the OSI model uses a different term: **protocol data unit (PDU)**. A PDU represent a unit of data with headers and trailers for the particular layer, as well as the encapsulated data. Since the OSI model has 7 layers, PDUs are numbered from 1 to 7, with the Physical layer being the first one.
-
-<br />
 
 Graphical representation of all the PDUs in the OSI model:
 

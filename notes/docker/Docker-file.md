@@ -9,8 +9,6 @@ Inside of every **Dockerfile**, we're always going to specify a base image. Afte
 
 ![docker-creating-dockerfile](assets/img/docker-creating-dockerfile.png)
 
-<br />
-
 ## Building Dockerfile
 Create a new file called **Dockerfile** and notice how it has a capital `D` and it has no extension.
 
@@ -36,8 +34,6 @@ Successfully built fc60771ecq08
 :redis-image$ docker run fc60771ecq08
 ```
 
-<br />
-
 ## Dockerfile Teardown
 Every line started off with a single word that we refer to as an instruction. This instruction is telling the Docker Server to do some very specific preparation step on the image that we are trying to create.
 
@@ -47,8 +43,6 @@ The instruction `FROM` is used to specify the image that we want to use as a bas
 
 After each instruction, we then provided an argument to the instruction that kind of customized how that instruction was executed. So as you might guess, by putting `FROM alpine`, we are saying we want to use a base image of  `alpine` when preparing our image.
 
-<br />
-
 ## What's Base Image?
 Writing a **Dockerfile** is a little bit just like being given a computer. So a brand new computer with no operating system on it and being told to install Google Chrome on there.
 
@@ -57,8 +51,6 @@ Writing a **Dockerfile** is a little bit just like being given a computer. So a 
 So the purpose of a specifying a `base image` is to kind of give us an initial starting point or an initial set of programs that we can use to further customize our image. So that is the purpose of that first line, the `FROM alpine`. We said that we wanted to use the alpine docker image as kind of an initial operating system or a starting point for the image that we are creating.
 
 We are trying to install and run `redis` and the `alpine` base image has a set of programs inside of it that are very useful for installing and running redis. The command that was or the program that was most useful for you and I for installing and running redis was found on the second line of the Dockerfile, `RUN apk add --update redis`. `APK` is a program called Alpine Package something I think. It is a package manager that comes preinstalled on the alpine image and we can use that package manager that is built into alpine to automatically download and install redis for us.
-
-<br />
 
 ## Build Process
 ```
@@ -103,8 +95,6 @@ On step number three where we execute `CMD` so that you can imagine what happens
 So the container is told “This is supposed to be your intermediate or something”. This is supposed to be your primary command (`Removing intermediate container 38ec9aea7e10`) and then it shuts down that container (`---> fc60771ae08`) and it takes a snapshot (`Successfully build fc60771ae08`) of its file system and its primary command. So the end result is `Successfully build fc60771ae08`. This is the final image (`fc60771ae08`) that was created out of this entire series of steps. So in step number three, at the very end we remove the intermediate container. We take a snapshot of its file system and its primary command, and then we save it as an output, as an image with an idea of `fc60771ae08`.
 
 ![docker-dockerfile-build-recap](assets/img/docker-build-recap.png)
-
-<br />
 
 ## Rebuilds with Cache
 ```Dockerfile

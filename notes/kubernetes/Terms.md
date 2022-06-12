@@ -34,33 +34,23 @@
 
 - Securely stores a piece of information in the cluster, such as a database password
 
-<br />
-
 ## Path to Production
 * Create config files for each service and deployment
 * Test locally on minikube
 * Create a Github/Travis flow to build images and deploy
 * Deploy app to a cloud provider
 
-<br />
-
 ### Controller
 
 Any type of object that constantly works to make some desired state a reality of our cluster.
-
-<br />
 
 ### Ingress Config
 
 An object that has a set of configuration rules describing how traffic should be routed.
 
-<br />
-
 ### Ingress Controller
 
 Watches for changes to the ingress and updates the ‘thing’ that handles traffic.
-
-<br />
 
 ## Volume
 
@@ -74,16 +64,12 @@ Some type of mechanism that allows a container to access filesystem outside itse
 
 An **object** that allows a container to store data at the pod level
 
-<br />
-
 ## Why Google Cloud?
 
 * Google created Kubernetes
 * AWS only “recently” got Kubernetes support
 * Far, far easier to poke around Kubernetes on Google Cloud
 * Excellent documentation for beginners
-
-<br />
 
 ## Role Based Access Control (RBAC)
 

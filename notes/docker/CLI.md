@@ -40,8 +40,6 @@ The `-a` specifically means, watch for output coming from it and print it out. `
 **Additional detailed information**
 * [Docker run reference](https://docs.docker.com/engine/reference/run/)
 
-<br />
-
 ## `docker ps`
 List containers.
 
@@ -60,8 +58,6 @@ Shorthand   |       |       | Description                                       
 `--quiet`   | `-q`  |       | Only display container IDs                             |
 `--size`    | `-s`  |       | Display total file sizes                               |
 
-<br />
-
 ## `docker start`
 Start one or more stopped containers
 
@@ -78,8 +74,6 @@ Shorthand           |       | Description                                       
 `--attach`          | `-a`  | Attach STDOUT/STDERR and forward signals            |
 `--detach-keys`     |       | Override the key sequence for detaching a container |
 `--interactive`     | `-i`  | Attach container's STDIN                            |
-
-<br />
 
 ## `docker system prune`
 Remove unused data. Removed all unused containers, networks, images (both dangling and unreferenced) and optionally volumes. This is not only going to delete stopped containers, it's going to delete a couple of either items as well. Most notable, your `build cache`. The `build cache` is any image that you have fetch from **Docker Hub**. So after running the `docker system prune`, you'll have to re-download images from Docker.
@@ -108,8 +102,6 @@ Shorthand   |       | Description                                            |
 `--force`   | `-f`  | Do not prompt for confirmation                         |
 `--volumes` |       | Prune volumes                                          |
 
-<br />
-
 ## `docker logs`
 Fetch the logs of a container. The `docker logs` command batch-retrieves logs present at the time of execution.
 
@@ -128,8 +120,6 @@ Shorthand      |       |       | Description                                    
 `--since`      |       |       | Show logs since timestamp (e.g. 2013-01-02T13:23:37Z) or relative (e.g. 42m for 42 minutes) |
 `--tail`       | `-n`  | `all` | Number of lines to show from the end of the logs                                            |
 `--timestamps` | `-t`  |       | Show timestamps                                                                             |
-
-<br />
 
 ## `docker stop`
 Stop one or more running containers. The main process inside the container will receive `SIGTERM`, and after a grace period, `SIGKILL`. The first signal can be changed with the `STOPSIGNAL` instruction in the container’s Dockerfile, or the `--stop-signal` option to `docker run`.
@@ -150,8 +140,6 @@ Shorthand    |       | Description                                              
 ------------ | ----- | ----------------------------------------------------------- |
 `--time`     | `-t`  | Seconds to wait for stop before killing it. Default is `10` |
 
-<br />
-
 ## `docker kill`
 Kill one or more running containers. The `docker kill` subcommand kills one or more containers. The main process inside the container is sent `SIGKILL` signal (default), or the signal that is specified with the `--signal` option. You can kill a container using the container’s ID, ID-prefix, or name.
 
@@ -168,8 +156,6 @@ dev@dev:~$ docker kill my_container
 Shorthand      |       | Description                                         |
 -------------- | ----- | --------------------------------------------------- |
 `--signal`     | `-s`  | Signal to send to the container. Default is `KILL`  |
-
-<br />
 
 ## `docker exec`
 Run a command in a running container. The `docker exec` command runs a new command in a running container. The command started using `docker exec` only runs while the container's primary process (`PID 1`) is running and it is not restarted if the container is restarted.
@@ -199,8 +185,6 @@ Shorthand        |       | Description                                          
 
 When you are running docker on your machine, every single container that you are running is running inside of a virtual machine running Linux. So these processes are really being executed inside of a Linux world even if you're on Mac or Windows. The `-it` is actually two separate flags but by convention we usually just kind of shorten it down to be simply `-it` which is 100% equivalent to the two separate flags. The `-i` on here means when we execute this new command inside the container, we want to attach our terminal to the standard input channel of that new running process. The `-t` flag is to make sure that all the text that you are entering in and that is coming out shows up in a nicely formatted manner on your screen.
 
-<br />
-
 ## `docker images`
 List images. The default `docker images` will show all top level images, their repository and tags, and their size. Docker images have intermediate layers that increase reusability, decrease disk usage, and speed up `docker build` by allowing each step to be cached. These intermediate layers are not shown by default. The `SIZE` is the cumulative space taken up by the image and all its parent images. This is also the disk space used by the contents of the Tar file created when you docker save an image.
 
@@ -221,9 +205,6 @@ Shorthand        |       | Description                                          
 `--no-trunc`     |       | Don't truncate output                                    |
 `--quiet`        | `-q`  | Only show image IDs                                      |
 
-
-<br />
-
 ## `docker rmi`
 Remove one or more images. Removes (and un-tags) one or more images from the host node. If an image has multiple tags, using this command with the tag as a parameter only removes the tag. If the tag is the only one for the image, both the image and the tag are removed.
 
@@ -239,8 +220,6 @@ Shorthand        |       | Description                                |
 ---------------- | ----- | ------------------------------------------ |
 `--force `       | `-f`  | Force removal of the image                 |
 `--no-prune`     |       | Do not delete untagged parents             |
-
-<br />
 
 ## `docker volume create`
 Creates a new volume that containers can consume and store data in. If a name is not specified, Docker generates a random name.
@@ -264,8 +243,6 @@ Shorthand        |       | Description                                   |
 `--name`         |       | Specify volume name                           |
 `--opt `         | `-o`  | Set driver specific options                   |
 
-<br />
-
 ## `docker volume ls`
 List volumes. List all the volumes known to Docker. You can filter using the `-f` or `--filter` flag.
 
@@ -283,8 +260,6 @@ Shorthand        |       | Description                                   |
 `--format`       |       | Pretty-print volumes using a Go template      |
 `--quiet`        | `-q`  | Only display volume names                     |
 
-<br />
-
 ## `docker volume prune`
 Remove all unused local volumes. Unused local volumes are those which are not referenced by any containers.
 
@@ -300,8 +275,6 @@ Shorthand        |       | Description                                  |
 ---------------- | ----- | -------------------------------------------- |
 `--force `       | `-f`  | Do not prompt for confirmation               |
 `--filter`       |       | Provide filter values (e.g. `label=<label>`) |
-
-<br />
 
 ## `docker build`
 Build an image from a Dockerfile. The docker build command builds Docker images from a Dockerfile and a “context”. A build’s context is the set of files located in the specified `PATH` or `URL`. The build process can refer to any of the files in the context. For example, your build can use a `COPY` instruction to reference a file in the context. The `URL` parameter can refer to three kinds of resources: Git repositories, pre-packaged tarball contexts and plain text files.
