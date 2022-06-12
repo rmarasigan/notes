@@ -243,11 +243,11 @@
 <h2 id="what-is-a-tcp">What is a TCP?<a class="headerlink" href="#what-is-a-tcp" title="Permalink to this heading">¶</a></h2>
 <p>It is a connection-based, which means that, before data is sent, a connection between two hosts must be established. The process used to establish a TCP connection is known a <em>three-way handshake</em>. After the data is transmitted, the connection is terminated.</p>
 <p>TCP uses sequence numbers to identify the order of the bytes sent from each computer so that the data can be reconstructed in order. If any data is lost during the transmission, the sender can retransmit the data. The TCP header is up to 24 bytes long and consists of the following fields:</p>
-<img alt="tcp_header" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/03/tcp_header.webp" width="450"/>
+<a class="reference internal image-reference" href="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/03/tcp_header.webp"><img alt="tcp_header" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/03/tcp_header.webp" style="width: 450px;"/></a>
 
 
 <h2 id="tcp-three-way-handshake"><a class="reference external" href="https://study-ccna.com/tcp-three-way-handshake/">TCP three-way handshake</a><a class="headerlink" href="#tcp-three-way-handshake" title="Permalink to this heading">¶</a></h2>
-<img alt="tcp_three_way_handshake" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/09/tcp_three_way_handshake_numbers-360x130.avif" width="450"/>
+<a class="reference internal image-reference" href="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/09/tcp_three_way_handshake_numbers-360x130.avif"><img alt="tcp_three_way_handshake" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/09/tcp_three_way_handshake_numbers-360x130.avif" style="width: 450px;"/></a>
 <p>Three-way handshake process consists of three steps:</p>
 <ol class="arabic simple">
 <li><p>Host A initiates the connection by sending the TCP SYN packet to the destination host. The packet containts the random sequence number (e.g. 5432) which marks the beginning of the sequence numebrs for data that the Host A will transmit.</p></li>
@@ -255,7 +255,7 @@
 <li><p>Host A acknowledges the response of the Server by sending the acknowledgement number, which is the Server’s sequence number incremented by 1.</p></li>
 </ol>
 <p>After the data transmission process is finished, TCP will terminate the conenction between two endpoints.</p>
-<img alt="tcp_three_way_handshake_termination" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/09/tcp_connection_termination-360x130.avif" width="450"/>
+<a class="reference internal image-reference" href="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/09/tcp_connection_termination-360x130.avif"><img alt="tcp_three_way_handshake_termination" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/09/tcp_connection_termination-360x130.avif" style="width: 450px;"/></a>
 <ol class="arabic simple">
 <li><p>The client application that wants to close the connection sends a TCP segment with the FIN (Finished) flag set to 1.</p></li>
 <li><p>The server receives the TCP segment and acknolwedges it with the ACK segment.</p></li>
