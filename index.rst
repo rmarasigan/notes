@@ -3,9 +3,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Aide Memoire
-=================================
-
 roadmap.sh
 ===========
 .. toctree::
@@ -13,10 +10,8 @@ roadmap.sh
    Graphical Videos <https://roadmap.sh/watch>
    Visual Guides <https://roadmap.sh/guides>
 
-
 Command lines
 ===============
-
 Linux
 ---------
 .. toctree::
@@ -27,8 +22,6 @@ Linux
 
 Programming
 =============
-
-
 Go
 -----------
 .. toctree::
@@ -50,7 +43,6 @@ Go
 
 DevOps
 ===========
-
 Docker
 -----------
 .. toctree::
@@ -66,7 +58,6 @@ Docker
    Docker Cheatsheet <notes/docker/Docker-Cheatsheet.md>
    Docker Compose Cheatsheet <notes/docker/Docker-Compose-Cheatsheet.md>
 
-
 Kubernetes
 -----------
 .. toctree::
@@ -77,7 +68,6 @@ Kubernetes
    Introduction <notes/kubernetes/Introduction.md>
    Imperative vs Declarative <notes/kubernetes/ImperativeVSDeclarative.md>
    Terminologies <notes/kubernetes/Terms.md>
-
 
 Heroku
 -----------
@@ -90,10 +80,8 @@ Heroku
 
 Amazon Web Services
 ===================
-
 Cloud Practitioner
 ----------------------
-
 .. toctree::
 
    Create AWS Free Tier Account <https://aws-cloud-practitioner.herokuapp.com/create-account/index.html>
@@ -113,7 +101,6 @@ Cloud Practitioner
 
 Network
 ===========
-
 Networks
 -----------
 .. toctree::
