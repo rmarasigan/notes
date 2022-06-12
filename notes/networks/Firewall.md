@@ -43,8 +43,3 @@ A **stateless firewall** make use of a data packet's source, destination, and ot
 * [Stateful & Stateless Firewall Differences](https://www.fortinet.com/resources/cyberglossary/stateful-vs-stateless-firewall)
 * [What are Stateful and Stateless Firewalls?](https://geekflare.com/stateful-vs-stateless-firewalls/)
 * [What Is Firewall: Types, How Does It Work, Advantages & Its Importance](https://www.simplilearn.com/tutorials/cyber-security-tutorial/what-is-firewall)
-
-<br /><br />
-<!-- blank line -->
-
-**[Table of Contents](https://github.com/rmarasigan/notes#table-of-contents) | [Next](Ping.md)**

@@ -1,0 +1,24 @@
+name: Automate Sphinx Deployment
+
+on:
+  push:
+    branches:
+      - master # Set a branch name to trigger deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout 🛎️
+      uses: actions/checkout@v1
+    - name: Build 🔧
+      run: |
+        sudo apt install python3-sphinx python3-pip
+        pip3 install sphinx-material
+        pip3 install -r requirements.txt
+        make html
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: _build/html # The folder the action should deploy.

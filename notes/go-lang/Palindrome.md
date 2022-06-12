@@ -5,7 +5,7 @@ A **palindrome** is a string of characters that read the same forwards as they d
 
 <br />
 
-### [palindrome.go](code/palindrome-checker/main.go)
+### palindrome.go
 This checks the string if it's a palindrome using a reverse string comparison approach and the comparison should be a case sensitive.
 
 ```go

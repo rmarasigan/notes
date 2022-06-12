@@ -26,8 +26,3 @@ After the data transmission process is finished, TCP will terminate the conencti
 2. The server receives the TCP segment and acknolwedges it with the ACK segment.
 3. Server sends its own TCP segment with the FIN flag set to 1 to the client in order to terminate the connection.
 4. The client acknowledges the server's FIN segment and closes the connection.
-
-<br /><br />
-<!-- blank line -->
-
-**[Table of Contents](https://github.com/rmarasigan/notes#table-of-contents) | [Next](Firewall.md)**

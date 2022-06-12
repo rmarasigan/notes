@@ -142,8 +142,4 @@ Just like with the TCP/IP layers, each OSI layer asks for services from the next
 
 Graphical representation of all the PDUs in the OSI model:
 
-<img src = "https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/08/encapsulation_pdus.jpg" alt = "encapsulation_pdus"/><br /><br />
-
-<!-- blank line -->
-
-**[Table of Contents](https://github.com/rmarasigan/notes#table-of-contents) | [Next](Ping.md)**
+<img src = "https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/08/encapsulation_pdus.jpg" alt = "encapsulation_pdus"/>

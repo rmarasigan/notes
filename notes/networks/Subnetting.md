@@ -56,8 +56,3 @@ CIDR         | SUBNET MASK     | # OF NETWORK(S) | # OF IP ADD.          | # OF 
 /30          | 255.255.255.252 | 4194304         | 4                     | 2            |
 /31          | 255.255.255.254 | 8388608         | 2                     | 0            |
 /32          | 255.255.255.255 | 16777216        | 1                     | 0            |
-
-<br /><br />
-<!-- blank line -->
-
-**[Table of Contents](https://github.com/rmarasigan/notes#table-of-contents) | [Previous](Ping.md)**
