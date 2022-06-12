@@ -6,8 +6,6 @@ Kubernetes is a declarative system. Instead of a single controller, however, it 
 
 In an imperative system, the user is responsible for knowing how to drive the system to the desired state, whereas in a declarative system, the system is responsible for knowing how to drive itself to the desired state.
 
-<br />
-
 ## Imperative
 
 The user knows the desired state, determines the sequence of commands to transition to the system to the desired state and supplies a representation of the commands to the system. The component of the system that applies the command to transition the state is called a processor.
@@ -15,8 +13,6 @@ The user knows the desired state, determines the sequence of commands to transit
 <img src = "https://miro.medium.com/max/2400/1*TmGqScQkRz7Qn70j0AD7aQ.png" style = "background: #ffffff"><br />
 
 Using an imperative paradigm, the user is responsible for defining exact steps which are necessary to achieve the end goal, such as instructions for software installation, configuration, database creation, etc. Those steps are later executed in a fully automated way. The ultimate state of the environment is a result of particular operations defined by the user. While keeping full control over the automation framework, users have to carefully plan every step and the sequence in which they are executed. Although suitable for small deployments, imperative DevOps does not scale and fails while deploying big software environments, such as OpenStack.
-
-<br />
 
 ## Declarative
 
@@ -32,9 +28,7 @@ A declarative API makes the system more robust to component failures. With an im
 
 In an **edge triggered** system, if the system misses “*an event*” (“*an edge*”), the event must be replayed in order for the system to recover. In a **level-triggered** system, even if the system misses the “event” (maybe because it is down), when it recovers it can look at the current state of the signal and respond accordingly.
 
-<br />
-
-### Reference
+## Reference
 
 * [Kubernetes](https://www.jeremyjordan.me/kubernetes/)
 * [Imperative vs Declarative](https://dominik-tornow.medium.com/imperative-vs-declarative-8abc7dcae82e)

@@ -250,7 +250,6 @@
 <p><img alt="docker-file-images" src="../../_images/docker-file-images.png"/></p>
 <p>Inside of every <strong>Dockerfile</strong>, we’re always going to specify a base image. After that, we’ll add in some additional configuration to run commands, to add in some dependencies or some more software, some more programs that we need to successfully create and execute our container. And then finally, we will specify a startup command for the image.</p>
 <p><img alt="docker-creating-dockerfile" src="../../_images/docker-creating-dockerfile.png"/></p>
-<br/>
 
 <h2 id="building-dockerfile">Building Dockerfile<a class="headerlink" href="#building-dockerfile" title="Permalink to this heading">¶</a></h2>
 <p>Create a new file called <strong>Dockerfile</strong> and notice how it has a capital <code class="docutils literal notranslate"><span class="pre">D</span></code> and it has no extension.</p>
@@ -274,7 +273,6 @@ Successfully built fc60771ecq08
 :redis-image$ docker run fc60771ecq08
 </pre></div>
 </div>
-<br/>
 
 
 <h2 id="dockerfile-teardown">Dockerfile Teardown<a class="headerlink" href="#dockerfile-teardown" title="Permalink to this heading">¶</a></h2>
@@ -282,7 +280,6 @@ Successfully built fc60771ecq08
 <p><img alt="docker-dockerfile-teardown" src="../../_images/docker-dockerfile-teardown.png"/></p>
 <p>The instruction <code class="docutils literal notranslate"><span class="pre">FROM</span></code> is used to specify the image that we want to use as a base. The <code class="docutils literal notranslate"><span class="pre">RUN</span></code> instruction is used to execute some command while we are preparing our custom image. And then the <code class="docutils literal notranslate"><span class="pre">CMD</span></code> or command instruction specifies what should be executed when our image is used to start up a brand new container. Every line of configuration that you are ever going to add to a <strong>Dockerfile</strong> is always going to start off with an instruction.</p>
 <p>After each instruction, we then provided an argument to the instruction that kind of customized how that instruction was executed. So as you might guess, by putting <code class="docutils literal notranslate"><span class="pre">FROM</span> <span class="pre">alpine</span></code>, we are saying we want to use a base image of  <code class="docutils literal notranslate"><span class="pre">alpine</span></code> when preparing our image.</p>
-<br/>
 
 
 <h2 id="what-s-base-image">What’s Base Image?<a class="headerlink" href="#what-s-base-image" title="Permalink to this heading">¶</a></h2>
@@ -290,7 +287,6 @@ Successfully built fc60771ecq08
 <p><img alt="docker-dockerfile-base-image" src="../../_images/docker-dockerfile-base-image.png"/></p>
 <p>So the purpose of a specifying a <code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">image</span></code> is to kind of give us an initial starting point or an initial set of programs that we can use to further customize our image. So that is the purpose of that first line, the <code class="docutils literal notranslate"><span class="pre">FROM</span> <span class="pre">alpine</span></code>. We said that we wanted to use the alpine docker image as kind of an initial operating system or a starting point for the image that we are creating.</p>
 <p>We are trying to install and run <code class="docutils literal notranslate"><span class="pre">redis</span></code> and the <code class="docutils literal notranslate"><span class="pre">alpine</span></code> base image has a set of programs inside of it that are very useful for installing and running redis. The command that was or the program that was most useful for you and I for installing and running redis was found on the second line of the Dockerfile, <code class="docutils literal notranslate"><span class="pre">RUN</span> <span class="pre">apk</span> <span class="pre">add</span> <span class="pre">--update</span> <span class="pre">redis</span></code>. <code class="docutils literal notranslate"><span class="pre">APK</span></code> is a program called Alpine Package something I think. It is a package manager that comes preinstalled on the alpine image and we can use that package manager that is built into alpine to automatically download and install redis for us.</p>
-<br/>
 
 
 <h2 id="build-process">Build Process<a class="headerlink" href="#build-process" title="Permalink to this heading">¶</a></h2>
@@ -325,7 +321,6 @@ Successfully build fc60771ae08
 <p>On step number three where we execute <code class="docutils literal notranslate"><span class="pre">CMD</span></code> so that you can imagine what happens here. With <code class="docutils literal notranslate"><span class="pre">CMD</span></code> we’re going to look at the image that was generated during the previous step. We create a new very temporary container out of it and when we make that container, we take the images file system snapshot and stuff it into this container. And then with the <code class="docutils literal notranslate"><span class="pre">CMD</span></code>, this is setting the primary command or the primary process of the container. So the container does not actually execute <code class="docutils literal notranslate"><span class="pre">redis-server</span></code>. It doesn’t execute this command. It just tells the container, “Hey, like just you know, if you were to ever run for real, you should be running a server as your primary command”.</p>
 <p>So the container is told “This is supposed to be your intermediate or something”. This is supposed to be your primary command (<code class="docutils literal notranslate"><span class="pre">Removing</span> <span class="pre">intermediate</span> <span class="pre">container</span> <span class="pre">38ec9aea7e10</span></code>) and then it shuts down that container (<code class="docutils literal notranslate"><span class="pre">---&gt;</span> <span class="pre">fc60771ae08</span></code>) and it takes a snapshot (<code class="docutils literal notranslate"><span class="pre">Successfully</span> <span class="pre">build</span> <span class="pre">fc60771ae08</span></code>) of its file system and its primary command. So the end result is <code class="docutils literal notranslate"><span class="pre">Successfully</span> <span class="pre">build</span> <span class="pre">fc60771ae08</span></code>. This is the final image (<code class="docutils literal notranslate"><span class="pre">fc60771ae08</span></code>) that was created out of this entire series of steps. So in step number three, at the very end we remove the intermediate container. We take a snapshot of its file system and its primary command, and then we save it as an output, as an image with an idea of <code class="docutils literal notranslate"><span class="pre">fc60771ae08</span></code>.</p>
 <p><img alt="docker-dockerfile-build-recap" src="../../_images/docker-build-recap.png"/></p>
-<br/>
 
 
 <h2 id="rebuilds-with-cache">Rebuilds with Cache<a class="headerlink" href="#rebuilds-with-cache" title="Permalink to this heading">¶</a></h2>

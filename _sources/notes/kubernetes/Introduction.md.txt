@@ -27,8 +27,6 @@ These tasks include:
 * Managing network traffic.
 * Storing and managing sensitive information, such as usernames and passwords.
 
-<br />
-
 ## Kubernetes considerations
 
 With Kubernetes, you can view your datacenter as one large compute resource. You don't worry about how and where you deploy your containers, only about deploying and scaling your apps, as needed.

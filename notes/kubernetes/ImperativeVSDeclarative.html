@@ -221,11 +221,9 @@
         </li>
         <li class="md-nav__item"><a href="#declarative" class="md-nav__link">Declarative</a>
         </li>
-        <li class="md-nav__item"><a href="#why-declarative-over-imperative" class="md-nav__link">Why “declarative over imperative”?</a><nav class="md-nav">
-              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#why-declarative-over-imperative" class="md-nav__link">Why “declarative over imperative”?</a>
+        </li>
         <li class="md-nav__item"><a href="#reference" class="md-nav__link">Reference</a>
-        </li></ul>
-            </nav>
         </li></ul>
             </nav>
         </li>
@@ -248,13 +246,11 @@
 <p>Kubernetes is a declarative system. Instead of a single controller, however, it has several controllers that are each responsible for a different Kubernetes object type, such as ReplicaSet or Deployment, for example. The API Server acts as the processor, applying the commands given by the controllers to the system state, which is stored in the Kubernetes Object Store.</p>
 <p><img alt="https://miro.medium.com/max/2400/1*OoPeNDU1WwsiP8OLhRgnAw.png" src="https://miro.medium.com/max/2400/1*OoPeNDU1WwsiP8OLhRgnAw.png"/><br/></p>
 <p>In an imperative system, the user is responsible for knowing how to drive the system to the desired state, whereas in a declarative system, the system is responsible for knowing how to drive itself to the desired state.</p>
-<br/>
 
 <h2 id="imperative">Imperative<a class="headerlink" href="#imperative" title="Permalink to this heading">¶</a></h2>
 <p>The user knows the desired state, determines the sequence of commands to transition to the system to the desired state and supplies a representation of the commands to the system. The component of the system that applies the command to transition the state is called a processor.</p>
 <p><img alt="https://miro.medium.com/max/2400/1*TmGqScQkRz7Qn70j0AD7aQ.png" src="https://miro.medium.com/max/2400/1*TmGqScQkRz7Qn70j0AD7aQ.png"/><br/></p>
 <p>Using an imperative paradigm, the user is responsible for defining exact steps which are necessary to achieve the end goal, such as instructions for software installation, configuration, database creation, etc. Those steps are later executed in a fully automated way. The ultimate state of the environment is a result of particular operations defined by the user. While keeping full control over the automation framework, users have to carefully plan every step and the sequence in which they are executed. Although suitable for small deployments, imperative DevOps does not scale and fails while deploying big software environments, such as OpenStack.</p>
-<br/>
 
 
 <h2 id="declarative">Declarative<a class="headerlink" href="#declarative" title="Permalink to this heading">¶</a></h2>
@@ -266,15 +262,14 @@
 <h2 id="why-declarative-over-imperative">Why “declarative over imperative”?<a class="headerlink" href="#why-declarative-over-imperative" title="Permalink to this heading">¶</a></h2>
 <p>A declarative API makes the system more robust to component failures. With an imperative API, the crashed component may have missed a call while it was down and requires some external component to “catch it up” when it comes back up. But with a declarative API, the components simply look at the current state of the API server when it comes back up to determine what it needs to be doing (“ah, I need to ensure this container is running”).</p>
 <p>In an <strong>edge triggered</strong> system, if the system misses “<em>an event</em>” (“<em>an edge</em>”), the event must be replayed in order for the system to recover. In a <strong>level-triggered</strong> system, even if the system misses the “event” (maybe because it is down), when it recovers it can look at the current state of the signal and respond accordingly.</p>
-<br/>
 
-<h3 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h3>
+
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.jeremyjordan.me/kubernetes/">Kubernetes</a></p></li>
 <li><p><a class="reference external" href="https://dominik-tornow.medium.com/imperative-vs-declarative-8abc7dcae82e">Imperative vs Declarative</a></p></li>
 <li><p><a class="reference external" href="https://thenewstack.io/kubernetes-design-and-development-explained/">Design &amp; Development Explained</a></p></li>
 </ul>
-
 
 
 

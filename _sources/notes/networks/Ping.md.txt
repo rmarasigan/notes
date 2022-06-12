@@ -1,4 +1,6 @@
-# Low Ping and High Ping
+# Ping
+
+## Low Ping and High Ping
 * Below a ping of 20ms are considered exceptional and “low ping”
 * Between 50ms and 100ms range from very good to average
 * 150ms or more is less desirable and deemed “high ping”
@@ -7,18 +9,15 @@
 
 **“High ping”** will most likely experience delays (or lags).
 
-
-# Latency
+## Latency
 It is the time (in milliseconds) that it takes for the ping to return. So latency is a measurement of the entire round trip of that signal while ping is just one way. Latency refers to the quality but not the speed of your network connection.
 
 Network connection speed consists of 2 elements.
 * Bandwidth or amount of data that can be transferred within a specific period of time
 * Latency which is the time for that given amount of data to travel
 
-
-# Lag
+## Lag
 Lag actually refers to the delay or decreased speed that’s sometimes caused by high ping (or high latency).
-
 
 ## Reasons that your ping is so high
 1. Internet service provider quality

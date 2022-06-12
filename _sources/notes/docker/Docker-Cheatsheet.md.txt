@@ -18,8 +18,6 @@ Command                                | Description                            
 
 **`-f`** allows removing running containers (`docker kill` + `docker rm`)
 
-<br />
-
 ### Inspecting the Container
 
 Command                                | Description                                           |
@@ -30,8 +28,6 @@ Command                                | Description                            
 `docker top [container`                | List the process running inside the containers        |
 `docker diff [container]`              | Show the differences with the image (modified files)  |
 `docker inspect [container]`           | Show low-level infos (in json format)                 |
-
-<br />
 
 ### Interacting with the Container
 
@@ -45,8 +41,6 @@ Command                                  | Description                          
 `docker wait container`                  | Wait until the container terminates and return the exit code   |
 `docker commit container image`          | Commit a new docker image (snapshot of the container)          |
 
-<br />
-
 ### Image Management Commands
 
 Command                                  | Description                                                    |
@@ -57,8 +51,6 @@ Command                                  | Description                          
 `docker tag image tag`                   | Tag an image                                                   |
 `docker commit container image`          | Create an image (from a container)                             |
 `docker rmi image`                       | Delete images                                                  |
-
-<br />
 
 ### Build & Run
 
@@ -387,9 +379,7 @@ dev@dev:~$ docker stack rm stack_name      # remove swarm ( deletes all volume d
 dev@dev:~$ docker kill $(docker ps -q)     # kill all running containers
 ```
 
-<br />
-
-### **Reference**
+## **Reference**
 
 * [Docker Cheatsheet](https://dockerlabs.collabnix.com/docker/cheatsheet/)
 * [wsargent/docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet)

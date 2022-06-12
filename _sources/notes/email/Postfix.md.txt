@@ -53,8 +53,6 @@ dev@dev: find /var/spool/postfix/bounce -type f | wc -l
 dev@dev: find /var/spool/postfix/incoming -type f | wc -l
 ```
 
-<br />
-
 ## Reference
 
 * [Flush Postfix Mail Queue](https://tecadmin.net/flush-postfix-mail-queue/)

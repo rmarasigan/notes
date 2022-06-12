@@ -9,8 +9,6 @@ dev@dev: curl -LO https://storage.googleapis.com/minikube/releases/latest/miniku
 dev@dev: sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
 
-<br />
-
 ## Starting Minikube and Testing Installation
 
 1. Add your user to the docker group

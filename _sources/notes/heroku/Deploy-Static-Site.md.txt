@@ -1,6 +1,5 @@
 # Deploying HTML on Heruko using Heroku CLI
 
-
 ## Steps
 1. Register a free account on [Github](https://github.com/signup)
 2. Create a new (**private**) repository on Github

@@ -303,7 +303,6 @@ To generate this message, Docker took the following steps:
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.docker.com/engine/reference/run/">Docker run reference</a></p></li>
 </ul>
-<br/>
 
 
 
@@ -354,7 +353,6 @@ To generate this message, Docker took the following steps:
 </tr>
 </tbody>
 </table>
-<br/>
 
 
 <h2 id="docker-start"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">start</span></code><a class="headerlink" href="#docker-start" title="Permalink to this heading">¶</a></h2>
@@ -387,7 +385,6 @@ dev@dev:~$ docker start my_container
 </tr>
 </tbody>
 </table>
-<br/>
 
 
 <h2 id="docker-system-prune"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">system</span> <span class="pre">prune</span></code><a class="headerlink" href="#docker-system-prune" title="Permalink to this heading">¶</a></h2>
@@ -433,7 +430,6 @@ Deleted Containers:
 </tr>
 </tbody>
 </table>
-<br/>
 
 
 <h2 id="docker-logs"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">logs</span></code><a class="headerlink" href="#docker-logs" title="Permalink to this heading">¶</a></h2>
@@ -480,7 +476,6 @@ dev@dev:~$ docker logs my_container
 </tr>
 </tbody>
 </table>
-<br/>
 
 
 <h2 id="docker-stop"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span></code><a class="headerlink" href="#docker-stop" title="Permalink to this heading">¶</a></h2>
@@ -507,7 +502,6 @@ dev@dev:~$ docker stop my_container
 </tr>
 </tbody>
 </table>
-<br/>
 
 
 <h2 id="docker-kill"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">kill</span></code><a class="headerlink" href="#docker-kill" title="Permalink to this heading">¶</a></h2>
@@ -533,7 +527,6 @@ dev@dev:~$ docker <span class="nb">kill</span> my_container
 </tr>
 </tbody>
 </table>
-<br/>
 
 
 <h2 id="docker-exec"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span></code><a class="headerlink" href="#docker-exec" title="Permalink to this heading">¶</a></h2>
@@ -593,7 +586,6 @@ dev@dev:~$ docker <span class="nb">exec</span> -it my_container &lt;command&gt;
 </table>
 <p><strong>The Purpose of IT Flag</strong></p>
 <p>When you are running docker on your machine, every single container that you are running is running inside of a virtual machine running Linux. So these processes are really being executed inside of a Linux world even if you’re on Mac or Windows. The <code class="docutils literal notranslate"><span class="pre">-it</span></code> is actually two separate flags but by convention we usually just kind of shorten it down to be simply <code class="docutils literal notranslate"><span class="pre">-it</span></code> which is 100% equivalent to the two separate flags. The <code class="docutils literal notranslate"><span class="pre">-i</span></code> on here means when we execute this new command inside the container, we want to attach our terminal to the standard input channel of that new running process. The <code class="docutils literal notranslate"><span class="pre">-t</span></code> flag is to make sure that all the text that you are entering in and that is coming out shows up in a nicely formatted manner on your screen.</p>
-<br/>
 
 
 <h2 id="docker-images"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code><a class="headerlink" href="#docker-images" title="Permalink to this heading">¶</a></h2>
@@ -638,7 +630,6 @@ dev@dev:~$ docker images
 </tr>
 </tbody>
 </table>
-<br/>
 
 
 <h2 id="docker-rmi"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rmi</span></code><a class="headerlink" href="#docker-rmi" title="Permalink to this heading">¶</a></h2>
@@ -667,7 +658,6 @@ dev@dev:~$ docker rmi --force <span class="k">$(</span>docker images -a -q<span 
 </tr>
 </tbody>
 </table>
-<br/>
 
 
 <h2 id="docker-volume-create"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">create</span></code><a class="headerlink" href="#docker-volume-create" title="Permalink to this heading">¶</a></h2>
@@ -708,7 +698,6 @@ dev@dev:~$ docker volume create --driver <span class="nb">local</span> <span cla
 </tr>
 </tbody>
 </table>
-<br/>
 
 
 <h2 id="docker-volume-ls"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">ls</span></code><a class="headerlink" href="#docker-volume-ls" title="Permalink to this heading">¶</a></h2>
@@ -741,7 +730,6 @@ dev@dev:~$ docker volume ls
 </tr>
 </tbody>
 </table>
-<br/>
 
 
 <h2 id="docker-volume-prune"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">prune</span></code><a class="headerlink" href="#docker-volume-prune" title="Permalink to this heading">¶</a></h2>
@@ -770,7 +758,6 @@ dev@dev:~$ docker volume prune
 </tr>
 </tbody>
 </table>
-<br/>
 
 
 <h2 id="docker-build"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code><a class="headerlink" href="#docker-build" title="Permalink to this heading">¶</a></h2>
