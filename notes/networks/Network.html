@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="263238">
+  <script src="../../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Network &#8212; Aide Memoire 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Internet Protocol (IP)" href="IP.html" />
+    <link rel="prev" title="Deploying HTML on Heruko using Heroku CLI" href="../heroku/Deploy-Static-Site.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue data-md-color-accent=light-blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#notes/networks/Network" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../index.html" title="Aide Memoire 1.0.0 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Aide Memoire 👩🏻‍💻</span>
+          <span class="md-header-nav__topic"> Network </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/rmarasigan/notes" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Notes
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../../"versions.json"",
+        target_loc = "../../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">Aide Memoire 1.0.0 documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../index.html" title="Aide Memoire 1.0.0 documentation" class="md-nav__button md-logo">
+      
+        <img src="../../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../../index.html"
+       title="Aide Memoire 1.0.0 documentation">Aide Memoire 👩🏻‍💻</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/rmarasigan/notes" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Notes
+  </div>
+</a>
+    </div>
+  
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#notes-networks-network--page-root" class="md-nav__link">Network</a>
+        </li>
+        <li class="md-nav__item"><a href="#lan" class="md-nav__link">LAN</a>
+        </li>
+        <li class="md-nav__item"><a href="#osi-tcp-ip-models" class="md-nav__link">OSI & TCP / IP models</a>
+        </li>
+        <li class="md-nav__item"><a href="#tcp-transmission-control-protocol-ip-internet-protocol-suite-of-protocols" class="md-nav__link">TCP (Transmission Control Protocol ) / IP  (Internet Protocol) suite of protocols</a>
+        </li>
+        <li class="md-nav__item"><a href="#encapsulation" class="md-nav__link">Encapsulation</a>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/networks/Network.md.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<h1 id="notes-networks-network--page-root"><a class="reference external" href="#notes-networks-network--page-root">Network</a><a class="headerlink" href="#notes-networks-network--page-root" title="Permalink to this heading">¶</a></h1>
+<p>A computer network can be described as a system of interconnected devices that can communicate using some common standards (called protocols). These devices communicate to exchange resources (e.g. files and printers) and services.</p>
+<br/>
+<p>Network of two computers only</p>
+<p><img alt="network-2-computers" src="https://study-ccna.com/wp-content/images/network_of_two_computers_only.jpg"/><br/></p>
+<p>A network with a hub</p>
+<p><img alt="network-with-hub" src="https://study-ccna.com/wp-content/images/network_with_hub.jpg" width="300"/><br/></p>
+
+
+<h1 id="lan"><a class="reference external" href="https://study-ccna.com/local-area-network-metropolitan-area-network/">LAN</a><a class="headerlink" href="#lan" title="Permalink to this heading">¶</a></h1>
+<p><strong>Local Area Network (LAN)</strong> is commonly used to describe a network of devices in a limited area (a house, office, building…). This type of network is usually capable of achieving high data transfer rate (up to 10 Gbps!) at low cost. A typical <strong>SOHO</strong> (small office/home office) LAN consist of PCs, printers, switches, routers, and cabling that connects all these devices together.</p>
+<br/>
+<p>Typical LAN</p>
+<img alt="typical-lan" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/01/typical_lan1-368x317.avif" width="300"/>
+<p>Some of the most popular LAN technologies are Ethernet, Token Ring and FDDI. Most LAN networks use TCP/IP to communicate. Twisted-pair cabling is usually used in a LAN. Ethernet is by far the most popular wired LAN technology. It defines wiring, signaling, connectors, frame formats, protocol rules, etc. Most modern LANs also support the wireless LAN (WLAN) technology, defined by the IEEE 802.11 standards. WLANs use radio waves instead of wires or cables for links between devices.</p>
+<p>The term <strong>metropolitan area network</strong> is used to describe a network in a single metropolitan area, hence the name. This type of network is usually bigger than a LAN and smaller than a WAN. An example of this type of network would be a network that connects two company offices inside the same city.</p>
+<br/>
+
+
+<h1 id="osi-tcp-ip-models"><a class="reference external" href="https://study-ccna.com/osi-tcp-ip-models/">OSI &amp; TCP / IP models</a><a class="headerlink" href="#osi-tcp-ip-models" title="Permalink to this heading">¶</a></h1>
+<p><strong>OSI (Open Systems Interconnection) Model</strong></p>
+<p>It was designed to be a reference model for describing the functions of a communication system. The OSI model provides a framework for creating and implementing networking standards and devices and describes how network applications on different computers can communicate through the network media.</p>
+<p><img alt="osi-model" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/images/OSI_model.jpg"/><br/></p>
+<p>The layers are usually numbered from the last one, meaning that the Physical layer is considered to be the first layer. Most people learn the mnemonic “<strong>Please Do Not Throw Sausage Pizza Away</strong>“.</p>
+<p><img alt="osi-model" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/images/OSI_mnemonic.jpg"/><br/></p>
+<p>Brief description of each of the layers of the OSI model.</p>
+<ul class="simple">
+<li><p><strong>Physical</strong> – defines how to move bits from one device to another. It details how cables, connectors and network interface cards are supposed to work and how to send and receive bits.</p></li>
+<li><p><strong>Data Link</strong> – encapsulates a packet in a frame. A frame contains a header and a trailer that enable devices to communicate. A header (most commonly) contains a source and destination MAC address. A trailer contains the Frame Check Sequence field, which is used to detect transmission errors. The data link layer has two sublayers:</p>
+<ol class="arabic simple">
+<li><p><strong>Logical Link Control</strong> – used for flow control and error detection.</p></li>
+<li><p><strong>Media Access Control</strong> – used for hardware addressing and for controlling the access method.</p></li>
+</ol>
+</li>
+<li><p><strong>Network</strong> – defines device addressing, routing, and path determination. Device (logical) addressing is used to identify a host on a network (e.g. by its IP address).</p></li>
+<li><p><strong>Transport</strong> – segments big chunks of data received from the upper layer protocols. Establishes and terminates connections between two computers. Used for flow control and data recovery.</p></li>
+<li><p><strong>Session</strong> – defines how to establish and terminate a session between the two systems.</p></li>
+<li><p><strong>Presentation</strong> – defines data formats. Compression and encryption are defined at this layer.</p></li>
+<li><p><strong>Application</strong> – this layer is the closest to the user. It enables network applications to communicate with other network applications.</p></li>
+</ul>
+<p><img alt="osi-protocols" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/images/OSI_protocols.jpg"/><br/></p>
+<p><strong>TCP/IP model</strong></p>
+<p>It describes general guidelines for designing and implementing computer protocols. It consists of four layers: Network Access, Internet, Transport, and Application.</p>
+<p><img alt="TCP_IP_and_OSI_model_comparison" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/images/TCP_IP_and_OSI_model_comparison.jpg"/><br/></p>
+<p>Here is a brief description of each layer:</p>
+<ul class="simple">
+<li><p><strong>Link</strong> – defines the protocols and hardware required to deliver data across a physical network.</p></li>
+<li><p><strong>Internet</strong> – defines the protocols for the logical transmission of packets over the network.</p></li>
+<li><p><strong>Transport</strong> – defines protocols for setting up the level of transmission service for applications. This layer is responsible for reliable transmission of data and the the error-free delivery of packets.</p></li>
+<li><p><strong>Application</strong> – defines protocols for node-to-node application communication and provide services to the application software running on a computer.</p></li>
+</ul>
+<br/>
+<p><strong>Differences between OSI and TCP/IP model</strong></p>
+<p>OSI model prescribes the steps needed to transfer data over a network and it is very specific in it, defining which protocol is used at each layer and how. The TCP/IP model is not that specific. It can be said that the OSI model prescribes and TCP/IP model describes.</p>
+<br/>
+
+
+<h1 id="tcp-transmission-control-protocol-ip-internet-protocol-suite-of-protocols"><a class="reference external" href="https://study-ccna.com/tcpip-suite-of-protocols/">TCP (Transmission Control Protocol ) / IP  (Internet Protocol) suite of protocols</a><a class="headerlink" href="#tcp-transmission-control-protocol-ip-internet-protocol-suite-of-protocols" title="Permalink to this heading">¶</a></h1>
+<p>It provides an end-to-end connectivity by specifying how data should be packetized, addressed, transmitted, routed and received on a TCP/IP network. This functionality is organized into four abstraction layers and each protocol in the suite resides in a particular layer. Some of the protocols included in the TCP/IP suite are:</p>
+<ul class="simple">
+<li><p><strong>ARP (Address Resolution Protocol)</strong> – used to associate an IP address with a MAC address.</p></li>
+<li><p><strong>IP (Internet Protocol)</strong> – used to deliver packets from the source host to the destination host based on the IP addresses.</p></li>
+<li><p><strong>ICMP (Internet Control Message Protocol)</strong> – used to detects and reports network error conditions. Used in ping.</p></li>
+<li><p><strong>TCP (Transmission Control Protocol)</strong> – a connection-oriented protocol that enables reliable data transfer between two computers.</p></li>
+<li><p><strong>UDP (User Datagram Protocol)</strong> – a connectionless protocol for data transfer. Since a session is not created before the data transfer, there is no guarantee of data delivery.</p></li>
+<li><p><strong>FTP (File Transfer Protocol)</strong> – used for file transfers from one host to another.</p></li>
+<li><p><strong>Telnet (Telecommunications Network)</strong> – used to connect and issue commands on a remote computer.</p></li>
+<li><p><strong>DNS (Domain Name System)</strong> – used for host names to the IP address resolution.</p></li>
+<li><p><strong>HTTP (Hypertext Transfer Protocol)</strong> – used to transfer files (text, graphic images, sound, video, and other multimedia files) on the World Wide Web.</p></li>
+</ul>
+<p>The following table shows which protocols reside on which layer of the TCP/IP model:</p>
+<p><img alt="tcp_ip_protocol_layers" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/02/tcp_ip_protocol_layers.jpg"/><br/></p>
+
+
+<h1 id="encapsulation"><a class="reference external" href="https://study-ccna.com/encapsulation/">Encapsulation</a><a class="headerlink" href="#encapsulation" title="Permalink to this heading">¶</a></h1>
+<p>The term encapsulation is used to describe a process of adding headers and trailers around some data. This process can be explained with the four-layer TCP/IP model, with each step describing the role of the layer.</p>
+<p><strong>Example</strong></p>
+<ol class="arabic simple">
+<li><p>The email is sent from the Application layer to the Transport layer.</p></li>
+<li><p>The Transport layer encapsulates the data and adds its own header with its own information, such as which port will be used and passes the data to the Internet layer</p></li>
+<li><p>The Internet layer encapsulates the received data and adds its own header, usually with information about the source and destination IP addresses. The Internet layer than passes the data to the Network Access layer</p></li>
+<li><p>The Network Access layer is the only layer that adds both a header and a trailer. The data is then sent through a physical network link.</p></li>
+</ol>
+<br/>
+<p>Graphical representation of how each layer add its own information</p>
+<p><img alt="encapsulation" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/images/encapsulation.jpg"/><br/></p>
+<p>Each packet (header + encapsulated data) defined by a particular layer has a specific name:</p>
+<ul class="simple">
+<li><p><strong>Frame</strong> – encapsulated data defined by the Network Access layer. A frame can have both a header and a trailer.</p></li>
+<li><p><strong>Packet</strong> – encapsulated data defined by the Network layer. A header contains the source and destination IP addresses.</p></li>
+<li><p><strong>Segment</strong> – encapsulated data as defined by the Transport layer. Information such as the source and destination ports or sequence and acknowledgment numbers are included in the header.</p></li>
+</ul>
+<p><strong>Data encapsulation in the OSI model</strong></p>
+<p>Just like with the TCP/IP layers, each OSI layer asks for services from the next lower layer. The lower layer encapsulates the higher layer’s data between a header (Data Link protocols also add a trailer). While the TCP/IP model uses terms like segment, packet and frame to refer to a data packet defined by a particular layer, the OSI model uses a different term: <strong>protocol data unit (PDU)</strong>. A PDU represent a unit of data with headers and trailers for the particular layer, as well as the encapsulated data. Since the OSI model has 7 layers, PDUs are numbered from 1 to 7, with the Physical layer being the first one.</p>
+<br/>
+<p>Graphical representation of all the PDUs in the OSI model:</p>
+<img alt="encapsulation_pdus" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/08/encapsulation_pdus.jpg"/>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="../heroku/Deploy-Static-Site.html" title="Deploying HTML on Heruko using Heroku CLI"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Deploying HTML on Heruko using Heroku CLI </span>
+              </div>
+            </a>
+          
+          
+            <a href="IP.html" title="Internet Protocol (IP)"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Internet Protocol (IP) </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2022, rmarasigan.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

@@ -1,0 +1,714 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="263238">
+  <script src="../../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Docker CLI CheatSheet &#8212; Aide Memoire 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="docker-compose" href="Docker-Compose-Cheatsheet.html" />
+    <link rel="prev" title="Command Line Reference" href="CLI.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue data-md-color-accent=light-blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#notes/docker/Docker-Cheatsheet" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../index.html" title="Aide Memoire 1.0.0 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Aide Memoire 👩🏻‍💻</span>
+          <span class="md-header-nav__topic"> Docker CLI CheatSheet </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/rmarasigan/notes" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Notes
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../../"versions.json"",
+        target_loc = "../../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">Aide Memoire 1.0.0 documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../index.html" title="Aide Memoire 1.0.0 documentation" class="md-nav__button md-logo">
+      
+        <img src="../../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../../index.html"
+       title="Aide Memoire 1.0.0 documentation">Aide Memoire 👩🏻‍💻</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/rmarasigan/notes" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Notes
+  </div>
+</a>
+    </div>
+  
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#notes-docker-docker-cheatsheet--page-root" class="md-nav__link">Docker CLI CheatSheet</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#container-management-commands" class="md-nav__link">Container Management Commands</a>
+        </li>
+        <li class="md-nav__item"><a href="#inspecting-the-container" class="md-nav__link">Inspecting the Container</a>
+        </li>
+        <li class="md-nav__item"><a href="#interacting-with-the-container" class="md-nav__link">Interacting with the Container</a>
+        </li>
+        <li class="md-nav__item"><a href="#image-management-commands" class="md-nav__link">Image Management Commands</a>
+        </li>
+        <li class="md-nav__item"><a href="#build-run" class="md-nav__link">Build & Run</a>
+        </li>
+        <li class="md-nav__item"><a href="#lifecycle-commands" class="md-nav__link">Lifecycle Commands</a>
+        </li>
+        <li class="md-nav__item"><a href="#starting-and-stopping-containers" class="md-nav__link">Starting and Stopping Containers</a>
+        </li>
+        <li class="md-nav__item"><a href="#docker-image-commands" class="md-nav__link">Docker Image Commands</a>
+        </li>
+        <li class="md-nav__item"><a href="#docker-container-and-image-information" class="md-nav__link">Docker Container And Image Information</a>
+        </li>
+        <li class="md-nav__item"><a href="#network-commands" class="md-nav__link">Network Commands</a>
+        </li>
+        <li class="md-nav__item"><a href="#services" class="md-nav__link">Services</a>
+        </li>
+        <li class="md-nav__item"><a href="#clean-up" class="md-nav__link">Clean up</a>
+        </li>
+        <li class="md-nav__item"><a href="#reference" class="md-nav__link"><strong>Reference</strong></a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/docker/Docker-Cheatsheet.md.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<h1 id="notes-docker-docker-cheatsheet--page-root">Docker CLI CheatSheet<a class="headerlink" href="#notes-docker-docker-cheatsheet--page-root" title="Permalink to this heading">¶</a></h1>
+
+<h2 id="container-management-commands">Container Management Commands<a class="headerlink" href="#container-management-commands" title="Permalink to this heading">¶</a></h2>
+<table>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">create</span> <span class="pre">image</span> <span class="pre">[command]</span></code></p></td>
+<td><p>Create container</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">image</span> <span class="pre">[command]</span></code></p></td>
+<td><p>= <code class="docutils literal notranslate"><span class="pre">create</span></code> + <code class="docutils literal notranslate"><span class="pre">start</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">start</span> <span class="pre">[container]</span></code></p></td>
+<td><p>Start the container</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span> <span class="pre">[container</span></code></p></td>
+<td><p>Graceful stop</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">kill</span> <span class="pre">[container]</span></code></p></td>
+<td><p>Kill (<code class="docutils literal notranslate"><span class="pre">SIGKILL</span></code>) the container</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">restart</span> <span class="pre">[container]</span></code></p></td>
+<td><p>= <code class="docutils literal notranslate"><span class="pre">stop</span></code> + <code class="docutils literal notranslate"><span class="pre">start</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pause</span> <span class="pre">[container]</span></code></p></td>
+<td><p>Suspend the container</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">unpause</span> <span class="pre">[container]</span></code></p></td>
+<td><p>Resume the container</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span> <span class="pre">[-f]</span> <span class="pre">[container]</span></code></p></td>
+<td><p>Destroy the container</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTE:</strong></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">-f</span></code></strong> allows removing running containers (<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">kill</span></code> + <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span></code>)</p>
+<br/>
+
+
+<h2 id="inspecting-the-container">Inspecting the Container<a class="headerlink" href="#inspecting-the-container" title="Permalink to this heading">¶</a></h2>
+<table>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code></p></td>
+<td><p>List running containers</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">-a</span></code></p></td>
+<td><p>List all containers</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">logs</span> <span class="pre">[-f]</span> <span class="pre">[container]</span></code></p></td>
+<td><p>Show the container output (<code class="docutils literal notranslate"><span class="pre">stdout</span></code> + <code class="docutils literal notranslate"><span class="pre">stderr</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">top</span> <span class="pre">[container</span></code></p></td>
+<td><p>List the process running inside the containers</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">diff</span> <span class="pre">[container]</span></code></p></td>
+<td><p>Show the differences with the image (modified files)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">inspect</span> <span class="pre">[container]</span></code></p></td>
+<td><p>Show low-level infos (in json format)</p></td>
+</tr>
+</tbody>
+</table>
+<br/>
+
+
+<h2 id="interacting-with-the-container">Interacting with the Container<a class="headerlink" href="#interacting-with-the-container" title="Permalink to this heading">¶</a></h2>
+<table>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">attach</span> <span class="pre">container</span></code></p></td>
+<td><p>Attach to a running container (<code class="docutils literal notranslate"><span class="pre">stdin</span></code> / <code class="docutils literal notranslate"><span class="pre">stdout</span></code> / <code class="docutils literal notranslate"><span class="pre">stderr</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">container:path</span> <span class="pre">hostpath</span></code></p></td>
+<td><p>Copy files from the container</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">cp</span> <span class="pre">hostpath</span> <span class="pre">container:path</span></code></p></td>
+<td><p>Copy files into container</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">export</span> <span class="pre">container</span></code></p></td>
+<td><p>Export the content of the container (tar archive)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">container</span> <span class="pre">args...</span></code></p></td>
+<td><p>Run a command in an existing container (useful for debugging)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">wait</span> <span class="pre">container</span></code></p></td>
+<td><p>Wait until the container terminates and return the exit code</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">commit</span> <span class="pre">container</span> <span class="pre">image</span></code></p></td>
+<td><p>Commit a new docker image (snapshot of the container)</p></td>
+</tr>
+</tbody>
+</table>
+<br/>
+
+
+<h2 id="image-management-commands">Image Management Commands<a class="headerlink" href="#image-management-commands" title="Permalink to this heading">¶</a></h2>
+<table>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code></p></td>
+<td><p>List all local images</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">history</span> <span class="pre">image</span></code></p></td>
+<td><p>Show the image history</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">inspect</span> <span class="pre">image</span></code></p></td>
+<td><p>Show low-level infos (json format)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">tag</span> <span class="pre">image</span> <span class="pre">tag</span></code></p></td>
+<td><p>Tag an image</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">commit</span> <span class="pre">container</span> <span class="pre">image</span></code></p></td>
+<td><p>Create an image (from a container)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rmi</span> <span class="pre">image</span></code></p></td>
+<td><p>Delete images</p></td>
+</tr>
+</tbody>
+</table>
+<br/>
+
+
+<h2 id="build-run">Build &amp; Run<a class="headerlink" href="#build-run" title="Permalink to this heading">¶</a></h2>
+<p><strong>Create an image from a Dockerfile</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker build -t <span class="s2">"app/container_name"</span> .
+</pre></div>
+</div>
+<p><strong>Run a command in an image</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run <span class="s2">"app/container_name"</span> .
+</pre></div>
+</div>
+
+
+<h2 id="lifecycle-commands">Lifecycle Commands<a class="headerlink" href="#lifecycle-commands" title="Permalink to this heading">¶</a></h2>
+<p><strong>Create a container (without starting it)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker create <span class="o">[</span>options<span class="o">]</span> IMAGE
+  -a, --attach               <span class="c1"># attach stdout/err</span>
+  -i, --interactive          <span class="c1"># attach stdin (interactive)</span>
+  -t, --tty                  <span class="c1"># pseudo-tty</span>
+      --name NAME            <span class="c1"># name your image</span>
+  -p, --publish <span class="m">5000</span>:5000    <span class="c1"># port map</span>
+      --expose <span class="m">5432</span>          <span class="c1"># expose a port to linked containers</span>
+  -P, --publish-all          <span class="c1"># publish all ports</span>
+      --link container:alias <span class="c1"># linking</span>
+  -v, --volume <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>:/app    <span class="c1"># mount (absolute paths needed)</span>
+  -e, --env <span class="nv">NAME</span><span class="o">=</span>hello       <span class="c1"># env vars</span>
+
+dev@dev:~$ docker create --name app_redis_1 <span class="se">\</span>
+          --expose <span class="m">6379</span> <span class="se">\</span>
+          redis:3.0.2
+</pre></div>
+</div>
+<p><strong>Rename an existing container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker rename <span class="o">[</span>CONTAINER_NAME<span class="o">]</span> <span class="o">[</span>NEW_CONTAINER_NAME<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Run a command in a new container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run <span class="o">[</span>IMAGE<span class="o">]</span> <span class="o">[</span>COMMAND<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Remove container after it exits</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run --rm <span class="o">[</span>IMAGE<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Start a container and keep it running</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run -td <span class="o">[</span>IMAGE<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Start a container and creates an interactive bash shell in the container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run -it <span class="o">[</span>IMAGE<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Create, Start, and run a command inside the container and remove the container after executing command.</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run -it-rm <span class="o">[</span>IMAGE<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Execute command inside already running container.</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker <span class="nb">exec</span> <span class="o">[</span>options<span class="o">]</span> CONTAINER COMMAND
+  -d, --detach        <span class="c1"># run in background</span>
+  -i, --interactive   <span class="c1"># stdin</span>
+  -t, --tty           <span class="c1"># interactive</span>
+
+dev@dev:~$ docker <span class="nb">exec</span> -it <span class="o">[</span>CONTAINER<span class="o">]</span>
+dev@dev:~$ docker <span class="nb">exec</span> <span class="o">[</span>CONTAINER<span class="o">]</span> tail logs/development.log
+</pre></div>
+</div>
+<p><strong>Delete a container (if it is not running)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker rm <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Update the configuration of the container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker update <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+
+
+<h2 id="starting-and-stopping-containers">Starting and Stopping Containers<a class="headerlink" href="#starting-and-stopping-containers" title="Permalink to this heading">¶</a></h2>
+<p><strong>Start Container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker start <span class="o">[</span>options<span class="o">]</span> CONTAINER
+  -a, --attach        <span class="c1"># attach stdout/err</span>
+  -i, --interactive   <span class="c1"># attach stdin</span>
+
+dev@dev:~$ docker start <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Stop running Container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker stop <span class="o">[</span>options<span class="o">]</span> CONTAINER
+</pre></div>
+</div>
+<p><strong>Stop running Container and start it again</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker restart <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Pause processes in a running container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker pause <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Unpause processes in a running container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker unpause <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Block a container until others stop</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker <span class="nb">wait</span> <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Kill a container by sending a SIGKILL to a running container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker <span class="nb">kill</span> <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Attach local standard input, output, and error streams to a running container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker attach <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+
+
+<h2 id="docker-image-commands">Docker Image Commands<a class="headerlink" href="#docker-image-commands" title="Permalink to this heading">¶</a></h2>
+<p><strong>Create an image from a Dockerfile</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker build <span class="o">[</span>URL/FILE<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Create an image from a Dockerfile with Tags</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker build -t &lt;tag&gt; <span class="o">[</span>URL/FILE<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Pull an image from a registry</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker pull <span class="o">[</span>IMAGE<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Push an image to a registry</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker push <span class="o">[</span>IMAGE<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Create an image from a tarball</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker import <span class="o">[</span>URL/FILE<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Create an image from a container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker commit <span class="o">[</span>CONTAINER<span class="o">]</span> <span class="o">[</span>NEW_IMAGE_NAME<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Remove an image</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker rmi <span class="o">[</span>IMAGE<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Save an image to a tar archive</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker load <span class="o">[</span>TAR_FILE/STDIN_FILE<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Load an image from a tar archive or stdin</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker save <span class="o">[</span>IMAGE<span class="o">]</span> &gt; <span class="o">[</span>TAR_FILE<span class="o">]</span>
+</pre></div>
+</div>
+
+
+<h2 id="docker-container-and-image-information">Docker Container And Image Information<a class="headerlink" href="#docker-container-and-image-information" title="Permalink to this heading">¶</a></h2>
+<p><strong>List running containers</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker ps
+</pre></div>
+</div>
+<p><strong>Lists both running containers and ones that have stopped</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker ps -a
+</pre></div>
+</div>
+<p><strong>List the logs from a running container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker logs <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>List low-level information on Docker objects</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker inspect <span class="o">[</span>OBJECT_NAME/ID<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>List real-time events from a container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker events <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Show port mapping for a container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker port <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Show running processes in a container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker top <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Show live resource usage statistics of container</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker stats <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Show changes to files (or directories) on a filesystem</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker diff <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>List all images that are locally stored with the docker engine</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker <span class="o">[</span>image<span class="o">]</span> ls
+dev@dev:~$ docker images -a           <span class="c1"># also show intermediate</span>
+</pre></div>
+</div>
+<p><strong>Show the history of an image</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker <span class="nb">history</span> <span class="o">[</span>IMAGE<span class="o">]</span>
+</pre></div>
+</div>
+
+
+<h2 id="network-commands">Network Commands<a class="headerlink" href="#network-commands" title="Permalink to this heading">¶</a></h2>
+<p><strong>List networks</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker network ls
+</pre></div>
+</div>
+<p><strong>Remove one or more networks</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker network rm <span class="o">[</span>NETWORK<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Show information on one or more networks</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker network inspect <span class="o">[</span>NETWORK<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Connects a container to a network</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker network connect <span class="o">[</span>NETWORK<span class="o">]</span> <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>Disconnect a container from a network</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker network disconnect <span class="o">[</span>NETWORK<span class="o">]</span> <span class="o">[</span>CONTAINER<span class="o">]</span>
+</pre></div>
+</div>
+
+
+<h2 id="services">Services<a class="headerlink" href="#services" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker service ls                                      <span class="c1"># view list of all the services runnning in swarm</span>
+dev@dev:~$ docker stack services stack_name                       <span class="c1"># see all running services</span>
+dev@dev:~$ docker service logs stack_name service_name            <span class="c1"># see all services logs</span>
+dev@dev:~$ docker service scale <span class="nv">stack_name_service_name</span><span class="o">=</span>replicas  <span class="c1"># scale services quickly across qualified node</span>
+</pre></div>
+</div>
+
+
+<h2 id="clean-up">Clean up<a class="headerlink" href="#clean-up" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker image prune              <span class="c1"># clean or prune unused (dangling) images</span>
+dev@dev:~$ docker image prune -a           <span class="c1"># remove all images which are not in use containers , add - a</span>
+dev@dev:~$ docker system prune             <span class="c1"># prune your entire system</span>
+dev@dev:~$ docker swarm leave              <span class="c1"># leave swarm</span>
+dev@dev:~$ docker stack rm stack_name      <span class="c1"># remove swarm ( deletes all volume data and database info)</span>
+dev@dev:~$ docker <span class="nb">kill</span> <span class="k">$(</span>docker ps -q<span class="k">)</span>     <span class="c1"># kill all running containers</span>
+</pre></div>
+</div>
+<br/>
+
+
+<h2 id="reference"><strong>Reference</strong><a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://dockerlabs.collabnix.com/docker/cheatsheet/">Docker Cheatsheet</a></p></li>
+<li><p><a class="reference external" href="https://github.com/wsargent/docker-cheat-sheet">wsargent/docker-cheat-sheet</a></p></li>
+<li><p><a class="reference external" href="https://vishnuch.tech/docker-cheatsheet">Docker commands that you should know</a></p></li>
+</ul>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="CLI.html" title="Command Line Reference"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Command Line Reference </span>
+              </div>
+            </a>
+          
+          
+            <a href="Docker-Compose-Cheatsheet.html" title="docker-compose"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> docker-compose </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2022, rmarasigan.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

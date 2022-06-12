@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="263238">
+  <script src="../../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Docker Volumes &#8212; Aide Memoire 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Command Line Reference" href="CLI.html" />
+    <link rel="prev" title="Dockerfile Reference" href="DockerfileReference.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue data-md-color-accent=light-blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#notes/docker/Volumes" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../index.html" title="Aide Memoire 1.0.0 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Aide Memoire 👩🏻‍💻</span>
+          <span class="md-header-nav__topic"> Docker Volumes </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/rmarasigan/notes" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Notes
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../../"versions.json"",
+        target_loc = "../../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">Aide Memoire 1.0.0 documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../index.html" title="Aide Memoire 1.0.0 documentation" class="md-nav__button md-logo">
+      
+        <img src="../../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../../index.html"
+       title="Aide Memoire 1.0.0 documentation">Aide Memoire 👩🏻‍💻</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/rmarasigan/notes" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Notes
+  </div>
+</a>
+    </div>
+  
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#notes-docker-volumes--page-root" class="md-nav__link">Docker Volumes</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#types-of-volumes" class="md-nav__link">3 Types of Volumes</a>
+        </li>
+        <li class="md-nav__item"><a href="#options-for-containers-to-store-files" class="md-nav__link">2 options for containers to store files</a>
+        </li>
+        <li class="md-nav__item"><a href="#types-of-mounts" class="md-nav__link">Types of Mounts</a>
+        </li>
+        <li class="md-nav__item"><a href="#v-or-mount-flag" class="md-nav__link">-v or –mount flag</a>
+        </li>
+        <li class="md-nav__item"><a href="#create-a-docker-volume" class="md-nav__link">Create a Docker Volume</a>
+        </li>
+        <li class="md-nav__item"><a href="#list-docker-volumes" class="md-nav__link">List Docker Volumes</a>
+        </li>
+        <li class="md-nav__item"><a href="#inspecting-docker-volumes" class="md-nav__link">Inspecting Docker Volumes</a>
+        </li>
+        <li class="md-nav__item"><a href="#mounting-a-data-volume" class="md-nav__link">Mounting a Data Volume</a>
+        </li>
+        <li class="md-nav__item"><a href="#mounting-a-host-directory-as-a-data-volume" class="md-nav__link">Mounting a Host Directory as a Data volume</a>
+        </li>
+        <li class="md-nav__item"><a href="#volume-permission-and-ownership" class="md-nav__link">Volume Permission and Ownership</a>
+        </li>
+        <li class="md-nav__item"><a href="#remove-docker-volumes" class="md-nav__link">Remove Docker Volumes</a>
+        </li>
+        <li class="md-nav__item"><a href="#delete-docker-volumes" class="md-nav__link">Delete Docker Volumes</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#reference" class="md-nav__link">Reference:</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/docker/Volumes.md.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<h1 id="notes-docker-volumes--page-root"><a class="reference external" href="#notes-docker-volumes--page-root">Docker Volumes</a><a class="headerlink" href="#notes-docker-volumes--page-root" title="Permalink to this heading">¶</a></h1>
+<p><strong>Docker images</strong> are stored as series of read-only layers. When we start a container, Docker takes the read-only image and adds a read-write layer on top. If the running container modifies an existing file, the file is copied out of the underlying read-only layer and into the top-most read-write layer where the changes are applied. The version in the read-write layer hides the underlying file, but does not destroy it – it still exists in the underlying layer. When a Docker container is deleted, relaunching the image will start a fresh container without any of the changes made in the previously running container – those changes are lost. Docker calls this combination of read-only layers with a read-write layer on top a <strong>Union File System</strong>.</p>
+<p><strong>Docker volumes</strong> are file systems mounted on Docker containers to preserve data generated by the running container. The volumes are stored on the host, independent of the container life cycle. This allows users to back up data and share file systems between containers easily.</p>
+<br/>
+
+<h2 id="types-of-volumes">3 Types of Volumes<a class="headerlink" href="#types-of-volumes" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>A <strong>host volume</strong> lives on the Docker host’s filesystem and can be accessed from within the container.</p></li>
+<li><p>A <strong>named volume</strong> is a volume which Docker manages where on disk the volume is created, but it is given a name.</p></li>
+<li><p>An <strong>anonymous volume</strong> is similar to a named volume, however, it can be difficult, to refer to the same volume over time when it is an anonymous volumes. Docker handle where the files are stored.</p></li>
+</ul>
+<br/>
+
+
+<h2 id="options-for-containers-to-store-files">2 options for containers to store files<a class="headerlink" href="#options-for-containers-to-store-files" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Volumes</strong> are stored in a part of the host filesystem.</p></li>
+<li><p><strong>Bind mounts</strong> may be stored anywhere on the host system.</p></li>
+</ul>
+<br/>
+
+
+<h2 id="types-of-mounts">Types of Mounts<a class="headerlink" href="#types-of-mounts" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Volumes</strong></p></li>
+</ul>
+<blockquote>
+<div><p>Stored in a part of the host filesystem, <em>managed by Docker</em> (/var/lib/docker/volumes/ on Linux). Non-Docker processes should not modify this part of the filesystem. Volumes are the best way to persist data in Docker. When we create a volume, it is stored within a directory on the Docker host. Volumes are managed by Docker and are isolated from the core functionality of the host machine. When we mount a volume, it may be <strong>named</strong> or <strong>anonymous</strong>. Anonymous volumes are not given an explicit name when they are first mounted into a container, so Docker gives them a random name guaranteed to be unique within a given Docker host. Besides the name, named and anonymous volumes behave in the same ways.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Bind mounts</strong></p></li>
+</ul>
+<blockquote>
+<div><p>May be <em>stored anywhere on the host</em> system. They may be important system files or directories. Non-Docker processes on the Docker host or a Docker container can modify them at any time. Bind mounts have limited functionality compared to volumes. When we use a bind mount, a file or directory on the host machine is mounted into a container. The file or directory is referenced by its full path on the host machine. The file or directory does not need to exist on the Docker host already. It is created on-demand if it does not yet exist. If we want to develop new Docker applications, then <em>consider using named volumes instead of bind mounts</em>. We can’t use Docker CLI commands to directly manage bind mounts.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>tmpfsmounts</strong></p></li>
+</ul>
+<blockquote>
+<div><p>Stored in the host system’s memory only and are never written to the host system’s filesystem. It is not persisted on disk, either on the Docker host or within a container. <strong>tmpfs</strong> mount can be used during the container’s lifetime to store non-persistent state or sensitive information.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>named pipes</strong></p></li>
+</ul>
+<blockquote>
+<div><p>Can be used for communication between the Docker host and a container. The common use case is to run a third-party tool inside a container and connect to the Docker Engine API using a named pipe.</p>
+</div></blockquote>
+<br/>
+
+
+<h2 id="v-or-mount-flag">-v or –mount flag<a class="headerlink" href="#v-or-mount-flag" title="Permalink to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">-v</span></code> or <code class="docutils literal notranslate"><span class="pre">--volume</span></code> flag was used for standalone containers and the <code class="docutils literal notranslate"><span class="pre">--mount</span></code> flag was used for swarm services. In general, <code class="docutils literal notranslate"><span class="pre">--mount</span></code> is more explicit and verbose. The biggest difference is that the <code class="docutils literal notranslate"><span class="pre">-v</span></code> syntax combines all the options in one field, while the <code class="docutils literal notranslate"><span class="pre">--mount</span></code> syntax separates them.</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-v</span></code> or <code class="docutils literal notranslate"><span class="pre">--volume</span></code></p></li>
+</ol>
+<blockquote>
+<div><p>Consists of three fields, separated by colon characters (:).</p>
+<ul class="simple">
+<li><p>In the case of <strong>named volumes</strong>, the first field is the name of the volume, and it is unique on a given host machine. For <strong>anonymous volumes</strong>, the first field is omitted.</p></li>
+<li><p>The second field is the path where the file or directory is mounted in the container.</p></li>
+<li><p>The third field is an optional and comma-separated list of options.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p><code class="docutils literal notranslate"><span class="pre">--mount</span></code></p></li>
+</ol>
+<blockquote>
+<div><p>Consists of multiple key-value pairs, separated by commas and each consisting of a <code class="docutils literal notranslate"><span class="pre">&lt;key&gt;=&lt;value&gt;</span></code>. The <code class="docutils literal notranslate"><span class="pre">--mount</span></code> syntax is more verbose than <code class="docutils literal notranslate"><span class="pre">-v</span></code> or <code class="docutils literal notranslate"><span class="pre">--volume</span></code>. The order of the keys is not significant, but the flag’s value is easier to understand.</p>
+<ul class="simple">
+<li><p>The typeof the mount, which can be <code class="docutils literal notranslate"><span class="pre">volume</span></code>, <code class="docutils literal notranslate"><span class="pre">bind</span></code>, or <code class="docutils literal notranslate"><span class="pre">tmpfs</span></code>.</p></li>
+<li><p>The destination takes as its value the path where the file or directory is mounted in the container. It may be specified as the <code class="docutils literal notranslate"><span class="pre">destination</span></code>, <code class="docutils literal notranslate"><span class="pre">dst</span></code>, or <code class="docutils literal notranslate"><span class="pre">target</span></code>.</p></li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">read-only</span></code> option present causes the bind mount to be mounted into the container as read-only.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">volume-opt</span></code> option, which can be specified more than once, takes a key-value pair consisting of the option name and its value.</p></li>
+</ul>
+</div></blockquote>
+<br/>
+
+
+<h2 id="create-a-docker-volume">Create a Docker Volume<a class="headerlink" href="#create-a-docker-volume" title="Permalink to this heading">¶</a></h2>
+<p>Docker automatically creates a directory for the volume on the host under the <strong>/var/lib/docker/volume/</strong> path. You can now mount this volume on a container, ensuring data persistence and <a class="reference external" href="https://phoenixnap.com/kb/how-to-share-data-between-docker-containers">data sharing among multiple containers</a>.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker volume create <span class="o">[</span>volume_name<span class="o">]</span>
+dev@dev:~$ docker volume create data
+</pre></div>
+</div>
+<br/>
+
+
+<h2 id="list-docker-volumes">List Docker Volumes<a class="headerlink" href="#list-docker-volumes" title="Permalink to this heading">¶</a></h2>
+<p>The output displays a list of volumes, specifying their <strong>location (DRIVER)</strong> and their <strong>VOLUME NAME</strong>.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker volume ls
+DRIVER    VOLUME NAME
+<span class="nb">local</span>     data
+</pre></div>
+</div>
+<br/>
+
+
+<h2 id="inspecting-docker-volumes">Inspecting Docker Volumes<a class="headerlink" href="#inspecting-docker-volumes" title="Permalink to this heading">¶</a></h2>
+<p>It lists details of a volume, including its location on the host file (<strong>Mountpoint</strong>). Everything stored within the data volume can also be found in the directory listed under the mountpoint path.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker volume inspect <span class="o">[</span>volume_name<span class="o">]</span>
+
+dev@dev:~$ docker volume inspect data
+<span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"CreatedAt"</span>: <span class="s2">"2021-09-04T12:42:29+08:00"</span>,
+    <span class="s2">"Driver"</span>: <span class="s2">"local"</span>,
+    <span class="s2">"Mountpoint"</span>: <span class="s2">"/var/lib/docker/volumes/data/_data"</span>,
+    <span class="s2">"Name"</span>: <span class="s2">"data"</span>,
+    <span class="s2">"Options"</span>: <span class="o">{}</span>,
+    <span class="s2">"Scope"</span>: <span class="s2">"local"</span>
+  <span class="o">}</span>
+<span class="o">]</span>
+</pre></div>
+</div>
+<br/>
+
+
+<h2 id="mounting-a-data-volume">Mounting a Data Volume<a class="headerlink" href="#mounting-a-data-volume" title="Permalink to this heading">¶</a></h2>
+<p>To mount a data volume to a container add the <code class="docutils literal notranslate"><span class="pre">--mount</span></code> flag to the docker run command. It adds the volume to the specified container, where it stores the data produced inside the virtual environment.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run --mount <span class="nv">source</span><span class="o">=[</span>volume_name<span class="o">]</span>,destination<span class="o">=[</span>path_in_container<span class="o">]</span> <span class="o">[</span>docker_image<span class="o">]</span>
+
+dev@dev:~$ docker run -it --name<span class="o">=</span>example1 --mount <span class="nv">source</span><span class="o">=</span>data,destination<span class="o">=</span>/data ubuntu
+</pre></div>
+</div>
+<p>The command instructs Docker to run a container in interactive mode (<code class="docutils literal notranslate"><span class="pre">-it</span></code>) from the Ubuntu image, under the name <code class="docutils literal notranslate"><span class="pre">example1</span></code>, while mounting the volume data in the <code class="docutils literal notranslate"><span class="pre">/data</span></code> directory inside the container.</p>
+<br/>
+
+
+<h2 id="mounting-a-host-directory-as-a-data-volume">Mounting a Host Directory as a Data volume<a class="headerlink" href="#mounting-a-host-directory-as-a-data-volume" title="Permalink to this heading">¶</a></h2>
+<p>You can also mount an existing directory from the host machine to a container. This type of volume is called <strong>Host Volumes</strong>. You can mount host volumes by using the <code class="docutils literal notranslate"><span class="pre">-v</span></code> flag and specifying the name of the host directory. Everything within the host directory is then available in the container. What’s more, all the data generated inside the container and placed in the data volume is safely stored on the host directory.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run -v <span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">"</span>:<span class="o">[</span>volume_name<span class="o">]</span> <span class="o">[</span>docker_image<span class="o">]</span>
+</pre></div>
+</div>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">$(pwd)</span></code></strong> attribute instructs Docker to mount the directory the user is currently in.</p>
+<br/>
+
+
+<h2 id="volume-permission-and-ownership">Volume Permission and Ownership<a class="headerlink" href="#volume-permission-and-ownership" title="Permalink to this heading">¶</a></h2>
+<p>Volume permissions can be changed by configuring the ownership within the Dockerfile. Use the <code class="docutils literal notranslate"><span class="pre">RUN</span></code> instruction and the <code class="docutils literal notranslate"><span class="pre">chown</span></code> command to set the Docker volume permission. Make sure this instruction precedes the line defining the <code class="docutils literal notranslate"><span class="pre">VOLUME</span></code>. Alternatively, you can change the ownership of the directory used as the host volume.</p>
+<br/>
+
+
+<h2 id="remove-docker-volumes">Remove Docker Volumes<a class="headerlink" href="#remove-docker-volumes" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete specific volume</span>
+dev@dev:~$ docker volume rm <span class="o">[</span>volume_name<span class="o">]</span>
+</pre></div>
+</div>
+<br/>
+
+
+<h2 id="delete-docker-volumes">Delete Docker Volumes<a class="headerlink" href="#delete-docker-volumes" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete all unused Docker volumes</span>
+dev@dev:~$ docker volume prune
+</pre></div>
+</div>
+<br/>
+
+<h3 id="reference">Reference:<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.docker.com/glossary/#union-file-system">Union File System</a></p></li>
+<li><p><a class="reference external" href="https://www.javatpoint.com/what-is-docker-volume">What is Docker Volume?</a></p></li>
+<li><p><a class="reference external" href="https://blog.container-solutions.com/understanding-volumes-docker">Understanding Volumes in Docker</a></p></li>
+<li><p><a class="reference external" href="https://phoenixnap.com/kb/docker-volumes">Docker Volumes: How to Create &amp; Get Started</a></p></li>
+</ul>
+
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="DockerfileReference.html" title="Dockerfile Reference"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Dockerfile Reference </span>
+              </div>
+            </a>
+          
+          
+            <a href="CLI.html" title="Command Line Reference"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Command Line Reference </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2022, rmarasigan.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>
