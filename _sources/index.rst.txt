@@ -19,6 +19,7 @@ Linux
    :glob:
 
    Command Lines <notes/linux/CMD.md>
+   Server Security <notes/linux/server-security.md>
 
 Programming
 =============
