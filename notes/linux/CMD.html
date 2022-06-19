@@ -242,6 +242,8 @@
             </nav>
         </li></ul>
             </nav>
+        </li>
+        <li class="md-nav__item"><a href="#clear-or-flush-dns-cache" class="md-nav__link">Clear or flush DNS cache</a>
         </li></ul>
             </nav>
         </li>
@@ -360,6 +362,35 @@ dev@dev:~$ curl ftp://ftp-domain/file.tar.gz
 </div>
 
 
+
+
+<h2 id="clear-or-flush-dns-cache">Clear or flush DNS cache<a class="headerlink" href="#clear-or-flush-dns-cache" title="Permalink to this heading">¶</a></h2>
+<p>Find out whether the service is running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo systemctl is-active systemd-resolved.service
+</pre></div>
+</div>
+<p>Clear the systemd resolved DNS cache:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo systemd-resolve --flush-caches
+</pre></div>
+</div>
+<p>Check statistics for the DNS cache:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo systemd-resolve --statistics
+Transactions
+Current Transactions: <span class="m">0</span>
+   Total Transactions: <span class="m">988</span>
+Cache
+   Current Cache Size: <span class="m">59</span>
+      Cache Hits: <span class="m">419</span>
+         Cache Misses: <span class="m">335</span>
+
+DNSSEC Verdicts
+   Secure: <span class="m">0</span>
+   Insecure: <span class="m">0</span>
+      Bogus: <span class="m">0</span>
+   Indeterminate: <span class="m">0</span>
+</pre></div>
+</div>
+<p>The important here is the <strong>Current Cache Size</strong>, we’re going to <strong>reset that to 0</strong> by flushing the cache.</p>
 
 
 

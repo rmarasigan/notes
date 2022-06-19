@@ -94,3 +94,33 @@ dev@dev:~$ curl -d "key1=value1&key2=value2" -X POST https://example.com/login
 ```bash
 dev@dev:~$ curl -d '{"key1": "value1", "key2": "value2"}' -H 'Content-Type: application/json' https://example.com/login
 ```
+
+## Clear or flush DNS cache
+Find out whether the service is running:
+```bash
+dev@dev:~$ sudo systemctl is-active systemd-resolved.service
+```
+
+Clear the systemd resolved DNS cache:
+```bash
+dev@dev:~$ sudo systemd-resolve --flush-caches
+```
+
+Check statistics for the DNS cache:
+```bash
+dev@dev:~$ sudo systemd-resolve --statistics
+Transactions
+Current Transactions: 0
+   Total Transactions: 988
+Cache
+   Current Cache Size: 59
+      Cache Hits: 419
+         Cache Misses: 335
+
+DNSSEC Verdicts
+   Secure: 0
+   Insecure: 0
+      Bogus: 0
+   Indeterminate: 0
+```
+The important here is the **Current Cache Size**, we’re going to **reset that to 0** by flushing the cache.
