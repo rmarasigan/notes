@@ -3,6 +3,7 @@
 If something is wrong with your Server:
 
 1. If there is someone downloading, uploading, putting some scripts or installing Trojan horse, disconnect it from the network.
+
    ✓ Restart your system.
 
    ✓ Keep pressing SHIFT after the reboot to go to the GRUB menu.
