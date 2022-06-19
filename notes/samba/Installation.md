@@ -47,7 +47,7 @@ Rules updated (v6)
 
 Set the persmission to the directory. It means that the new files or directories created under it will inherit the group ownership of the parent directory.
 ```bash
-dev@dev:~$ sudo chmod 2770 /home/shanelle/sambashare/
+dev@dev:~$ sudo chmod 2770 /home/username/sambashare/
 ```
 
 ### Setup a Samba password for the user account
