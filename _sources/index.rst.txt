@@ -20,6 +20,7 @@ Linux
 
    Command Lines <notes/linux/CMD.md>
    Server Security <notes/linux/server-security.md>
+   Setup Centralized SSH Client and Server Rsyslog <notes/linux/Setup-SSH-Client-Server-Rsyslog.md>
 
 Programming
 =============
