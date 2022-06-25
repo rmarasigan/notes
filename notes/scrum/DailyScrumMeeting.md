@@ -18,6 +18,7 @@ Two people who share one workstation, typically taking turns typing while the ot
 
 #### Question
 Eddie is always late. Other than Eddie, who is responsible for the integrity of Eddie's agreements with his team?
+
 The Team, and the Scrum Master must help create the circumstances for the team to take this responsibility. This may include techniques such as nudging people and modeling behavior.
 
 ## Reference
