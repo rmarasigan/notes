@@ -19,6 +19,8 @@ Scrum
    :glob:
 
    Introduction <notes/scrum/Introduction.md>
+   Backlog Refinement Meeting <notes/scrum/BacklogRefinementMeeting.md>
+   Sprint Planning Meeting <notes/scrum/SprintPlanningMeeting.md>
 
 
 Command lines
