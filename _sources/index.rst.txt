@@ -23,6 +23,7 @@ Scrum
    Sprint Planning Meeting <notes/scrum/SprintPlanningMeeting.md>
    Daily Scrum Meeting <notes/scrum/DailyScrumMeeting.md>
    Sprint Review Meeting <notes/scrum/SprintReviewMeeting.md>
+   Sprint Retrospective Meeting <notes/scrum/SprintRetrospectiveMeeting.md>
 
 
 Command lines
