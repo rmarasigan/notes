@@ -1,4 +1,5 @@
 # Introduction
+Agile refers to a set of “methods and practices based on the values and principles expressed in Agile Manifesto”, which includes things like collaboration, self-organization, and cross functionality of teams.
 
 ### What is Scrum?
 * Framework for new product development
