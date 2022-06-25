@@ -46,7 +46,7 @@
   
   
   
-    <title>Linux Command Lines &#8212; Aide Memoire 1.0.0 documentation</title>
+    <title>Introduction &#8212; Aide Memoire 1.0.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
@@ -56,8 +56,8 @@
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Basic Server Security Checking" href="server-security.html" />
-    <link rel="prev" title="Introduction" href="../scrum/Introduction.html" />
+    <link rel="next" title="Linux Command Lines" href="../linux/CMD.html" />
+    <link rel="prev" title="roadmap.sh" href="../../index.html" />
   
    
 
@@ -76,7 +76,7 @@
   <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
   <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
   <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#notes/linux/CMD" tabindex="1" class="md-skip"> Skip to content </a>
+  <a href="#notes/scrum/Introduction" tabindex="1" class="md-skip"> Skip to content </a>
   <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
@@ -94,7 +94,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">Aide Memoire 👩🏻‍💻</span>
-          <span class="md-header-nav__topic"> Linux Command Lines </span>
+          <span class="md-header-nav__topic"> Introduction </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -215,40 +215,48 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#notes-linux-cmd--page-root" class="md-nav__link">Linux Command Lines</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#notes-scrum-introduction--page-root" class="md-nav__link">Introduction</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#kill-specific-port" class="md-nav__link">Kill specific port</a>
+        <li class="md-nav__item"><a href="#what-is-scrum" class="md-nav__link">What is Scrum?</a>
         </li>
-        <li class="md-nav__item"><a href="#curl" class="md-nav__link">cURL</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#scrum-elements-roles" class="md-nav__link">Scrum Elements – Roles</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#download-file-with-curl-command" class="md-nav__link">Download file with cURL command</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#download-file-with-output-name" class="md-nav__link">Download file with output name</a>
+        <li class="md-nav__item"><a href="#product-owner" class="md-nav__link">Product Owner</a>
         </li>
-        <li class="md-nav__item"><a href="#download-multiple-files-using-curl" class="md-nav__link">Download multiple files using cURL</a>
+        <li class="md-nav__item"><a href="#scrum-dev-team" class="md-nav__link">Scrum Dev Team</a>
+        </li>
+        <li class="md-nav__item"><a href="#scrum-master" class="md-nav__link">Scrum Master</a>
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#getting-http-headers-information" class="md-nav__link">Getting HTTP headers information</a>
-        </li>
-        <li class="md-nav__item"><a href="#http-get-and-post-request" class="md-nav__link">HTTP GET and POST Request</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#scrum-elements-artifacts" class="md-nav__link">Scrum Elements – Artifacts</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#get-the-body-of-the-response" class="md-nav__link">Get the body of the response</a>
+        <li class="md-nav__item"><a href="#product-backlog" class="md-nav__link">Product Backlog</a>
         </li>
-        <li class="md-nav__item"><a href="#sending-additional-fields-with-a-post-request" class="md-nav__link">Sending additional fields with a POST request</a>
-        </li>
-        <li class="md-nav__item"><a href="#specifying-content-type-in-post-request" class="md-nav__link">Specifying <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> in POST request</a>
-        </li></ul>
-            </nav>
+        <li class="md-nav__item"><a href="#sprint-backlog" class="md-nav__link">Sprint Backlog</a>
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#clear-or-flush-dns-cache" class="md-nav__link">Clear or flush DNS cache</a>
+        <li class="md-nav__item"><a href="#scrum-elements-meetings" class="md-nav__link">Scrum Elements – Meetings</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#sprint-planning-meeting" class="md-nav__link">Sprint Planning Meeting</a>
+        </li>
+        <li class="md-nav__item"><a href="#daily-scrum" class="md-nav__link">Daily Scrum</a>
+        </li>
+        <li class="md-nav__item"><a href="#sprint-review-meeting" class="md-nav__link">Sprint Review Meeting</a>
+        </li>
+        <li class="md-nav__item"><a href="#sprint-retrospective-meeting" class="md-nav__link">Sprint Retrospective Meeting</a>
+        </li>
+        <li class="md-nav__item"><a href="#backlog-refinement-meeting" class="md-nav__link">Backlog Refinement Meeting</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#reference" class="md-nav__link">Reference</a>
         </li></ul>
             </nav>
         </li>
     
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/linux/CMD.md.txt">Show Source</a> </li>
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/scrum/Introduction.md.txt">Show Source</a> </li>
 
 <li id="searchbox" class="md-nav__item"></li>
 
@@ -262,135 +270,118 @@
           <article class="md-content__inner md-typeset" role="main">
             
   
-<h1 id="notes-linux-cmd--page-root">Linux Command Lines<a class="headerlink" href="#notes-linux-cmd--page-root" title="Permalink to this heading">¶</a></h1>
+<h1 id="notes-scrum-introduction--page-root">Introduction<a class="headerlink" href="#notes-scrum-introduction--page-root" title="Permalink to this heading">¶</a></h1>
 
-<h2 id="kill-specific-port">Kill specific port<a class="headerlink" href="#kill-specific-port" title="Permalink to this heading">¶</a></h2>
-<p>List any process listening to the port 8080:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ lsof -i:8080
-</pre></div>
-</div>
-<p>Kill any process listening to the port 8080:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i:8080<span class="k">)</span>
-</pre></div>
-</div>
-<p>Kill more violently any process listening to the port 8080:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ <span class="nb">kill</span> -9 <span class="k">$(</span>lsof -t -i:8080<span class="k">)</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">-9</span></code> implies the process will be killed forcefully.</p>
-
-
-<h2 id="curl">cURL<a class="headerlink" href="#curl" title="Permalink to this heading">¶</a></h2>
-<p>It is a command line tool that helps transfer the data from the server to the client and vice-versa using many different protocols such as HTTP, HTTPS, FTP, SFTP and more.</p>
-<p>Installing cURL</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt install curl
-</pre></div>
-</div>
-<p>To see the installed version</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl --version
-</pre></div>
-</div>
-
-<h3 id="download-file-with-curl-command">Download file with cURL command<a class="headerlink" href="#download-file-with-curl-command" title="Permalink to this heading">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># HTTPS</span>
-dev@dev:~$ curl https://example.com/file.extension
-
-<span class="c1"># FTP</span>
-dev@dev:~$ curl ftp://ftp-domain/file.tar.gz
-</pre></div>
-</div>
-
-<h4 id="download-file-with-output-name">Download file with output name<a class="headerlink" href="#download-file-with-output-name" title="Permalink to this heading">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl https://example.com/file.extension -o file_name.extension
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">o</span></code> or <code class="docutils literal notranslate"><span class="pre">--output</span></code> options allows you to give the downloaded file a different name.</p>
-
-
-<h4 id="download-multiple-files-using-curl">Download multiple files using cURL<a class="headerlink" href="#download-multiple-files-using-curl" title="Permalink to this heading">¶</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">-O</span></code> will save the file with the name of the default website</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl -O https://example.com/file1.extenstion <span class="se">\</span>
-   -O https://example.com/file2.extenstion
-</pre></div>
-</div>
-<p>You can use the bash for loop too:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">## Define bash shell variable</span>
-<span class="nv">files</span> <span class="o">=</span> <span class="s2">"https://example.com/file1.extension https://example.com/file2.extenstion"</span>
-
-<span class="k">for</span> file in <span class="nv">$files</span>
-<span class="k">do</span>
-   curl -O <span class="s2">"</span><span class="nv">$u</span><span class="s2">"</span>
-<span class="k">done</span>
-</pre></div>
-</div>
-
-
-
-<h3 id="getting-http-headers-information">Getting HTTP headers information<a class="headerlink" href="#getting-http-headers-information" title="Permalink to this heading">¶</a></h3>
-<p>Fetch HTTP headers without downloading the data or actual files.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl -I https://example.com/file.extension
-</pre></div>
-</div>
-
-
-<h3 id="http-get-and-post-request">HTTP GET and POST Request<a class="headerlink" href="#http-get-and-post-request" title="Permalink to this heading">¶</a></h3>
-
-<h4 id="get-the-body-of-the-response">Get the body of the response<a class="headerlink" href="#get-the-body-of-the-response" title="Permalink to this heading">¶</a></h4>
-<p>By default, <code class="docutils literal notranslate"><span class="pre">GET</span></code> is used.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl https://example.com/
-</pre></div>
-</div>
-
-
-<h4 id="sending-additional-fields-with-a-post-request">Sending additional fields with a POST request<a class="headerlink" href="#sending-additional-fields-with-a-post-request" title="Permalink to this heading">¶</a></h4>
+<h2 id="what-is-scrum">What is Scrum?<a class="headerlink" href="#what-is-scrum" title="Permalink to this heading">¶</a></h2>
+<ul>
+<li><p>Framework for new product development</p></li>
+<li><p>Manifesto for Agile Software Development</p>
+<p>We are uncovering better ways of developing software by oding it and helping others do it. Through this work we have come to value:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-d</span></code> send data with the POST request</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-X</span></code> specifies a custom request method to use</p></li>
+<li><p><strong>Individuals and interactions</strong> over processes and tools</p></li>
+<li><p><strong>Working software</strong> over comprehensive documentation</p></li>
+<li><p><strong>Customer collaboration</strong> over contract negotiation</p></li>
+<li><p><strong>Responding to change</strong> over following plan</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl -d <span class="s2">"key1=value1&amp;key2=value2"</span> -X POST https://example.com/login
-</pre></div>
-</div>
+<p>That is, while there is value in the items on the right, we value the items on the left more.</p>
+</li>
+<li><p><strong>Sprint</strong></p>
+<p>Every sprint contains every some combination of analysis, design, actual implementation, testing, planning for the future, maybe will be actually shipping or deploying more frequently.</p>
+</li>
+<li><p>Scrum is hard to practice. It takes couragement and commitment</p></li>
+</ul>
 
 
-<h4 id="specifying-content-type-in-post-request">Specifying <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> in POST request<a class="headerlink" href="#specifying-content-type-in-post-request" title="Permalink to this heading">¶</a></h4>
+<h2 id="scrum-elements-roles">Scrum Elements – Roles<a class="headerlink" href="#scrum-elements-roles" title="Permalink to this heading">¶</a></h2>
+
+<h3 id="product-owner">Product Owner<a class="headerlink" href="#product-owner" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-d</span></code> sending data as a JSON object</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-H</span></code> is used to send a specific data type or header</p></li>
+<li><p>Responsible for Return On Investment(ROI)</p></li>
+<li><p>Final arbiter of requirements questions</p></li>
+<li><p>Focused more on the <em>what</em> than on the <em>how</em></p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl -d <span class="s1">'{"key1": "value1", "key2": "value2"}'</span> -H <span class="s1">'Content-Type: application/json'</span> https://example.com/login
-</pre></div>
-</div>
+
+
+<h3 id="scrum-dev-team">Scrum Dev Team<a class="headerlink" href="#scrum-dev-team" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Cross-functional group</p></li>
+<li><p>Attempts to build a “potentially shippable product increment” every sprint</p></li>
+<li><p>Collaborates</p></li>
+<li><p>Self-organizing</p></li>
+</ul>
+
+
+<h3 id="scrum-master">Scrum Master<a class="headerlink" href="#scrum-master" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Has no management authority</p></li>
+<li><p>Doesn’t have a project manager role</p></li>
+<li><p>Facilitator</p></li>
+</ul>
 
 
 
+<h2 id="scrum-elements-artifacts">Scrum Elements – Artifacts<a class="headerlink" href="#scrum-elements-artifacts" title="Permalink to this heading">¶</a></h2>
 
-<h2 id="clear-or-flush-dns-cache">Clear or flush DNS cache<a class="headerlink" href="#clear-or-flush-dns-cache" title="Permalink to this heading">¶</a></h2>
-<p>Find out whether the service is running:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo systemctl is-active systemd-resolved.service
-</pre></div>
-</div>
-<p>Clear the systemd resolved DNS cache:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo systemd-resolve --flush-caches
-</pre></div>
-</div>
-<p>Check statistics for the DNS cache:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo systemd-resolve --statistics
-Transactions
-Current Transactions: <span class="m">0</span>
-   Total Transactions: <span class="m">988</span>
-Cache
-   Current Cache Size: <span class="m">59</span>
-      Cache Hits: <span class="m">419</span>
-         Cache Misses: <span class="m">335</span>
+<h3 id="product-backlog">Product Backlog<a class="headerlink" href="#product-backlog" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Everything we might ever do</p></li>
+</ul>
 
-DNSSEC Verdicts
-   Secure: <span class="m">0</span>
-   Insecure: <span class="m">0</span>
-      Bogus: <span class="m">0</span>
-   Indeterminate: <span class="m">0</span>
-</pre></div>
-</div>
-<p>The important here is the <strong>Current Cache Size</strong>, we’re going to <strong>reset that to 0</strong> by flushing the cache.</p>
+
+<h3 id="sprint-backlog">Sprint Backlog<a class="headerlink" href="#sprint-backlog" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>What we have agreed to do during the current Sprint</p>
+<ul>
+<li><p>Committed Backlog Items (representing <em>What</em>)</p></li>
+<li><p>Sprint Tasks (Not Started, In Progress, Completed | representing <em>How</em>)</p></li>
+</ul>
+</li>
+</ul>
+
+
+
+<h2 id="scrum-elements-meetings">Scrum Elements – Meetings<a class="headerlink" href="#scrum-elements-meetings" title="Permalink to this heading">¶</a></h2>
+
+<h3 id="sprint-planning-meeting">Sprint Planning Meeting<a class="headerlink" href="#sprint-planning-meeting" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Product Increment selected during the Sprint Planning Meeting</p></li>
+</ul>
+
+
+<h3 id="daily-scrum">Daily Scrum<a class="headerlink" href="#daily-scrum" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>What I did yesterday</p></li>
+<li><p>What I will do today</p></li>
+<li><p>Issues encountered</p></li>
+</ul>
+
+
+<h3 id="sprint-review-meeting">Sprint Review Meeting<a class="headerlink" href="#sprint-review-meeting" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Provides a feedback loop</p></li>
+</ul>
+
+
+<h3 id="sprint-retrospective-meeting">Sprint Retrospective Meeting<a class="headerlink" href="#sprint-retrospective-meeting" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>What went well</p></li>
+<li><p>What could be improved</p></li>
+<li><p>What we learned</p></li>
+<li><p>Feedback to each other</p></li>
+</ul>
+
+
+<h3 id="backlog-refinement-meeting">Backlog Refinement Meeting<a class="headerlink" href="#backlog-refinement-meeting" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Backlog Grooming</p></li>
+</ul>
+
+
+
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://agilemanifesto.org/">Manifesto for Agile Software Development</a></p></li>
+</ul>
 
 
 
@@ -404,7 +395,7 @@ DNSSEC Verdicts
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="../scrum/Introduction.html" title="Introduction"
+            <a href="../../index.html" title="roadmap.sh"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -413,17 +404,17 @@ DNSSEC Verdicts
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> Introduction </span>
+                      class="md-footer-nav__direction"> Previous </span> roadmap.sh </span>
               </div>
             </a>
           
           
-            <a href="server-security.html" title="Basic Server Security Checking"
+            <a href="../linux/CMD.html" title="Linux Command Lines"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> Basic Server Security Checking </span>
+                class="md-footer-nav__direction"> Next </span> Linux Command Lines </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
