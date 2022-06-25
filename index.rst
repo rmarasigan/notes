@@ -10,6 +10,19 @@ roadmap.sh
    Graphical Videos <https://roadmap.sh/watch>
    Visual Guides <https://roadmap.sh/guides>
 
+Scrum Methodology
+===============
+Agile refers to a set of “methods and practices based on the values and principles expressed in Agile Manifesto”, which includes things like collaboration, self-organization, and cross functionality of teams.
+
+Scrum
+---------
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   Introduction <notes/scrum/Introduction.md>
+
+
 Command lines
 ===============
 Linux
