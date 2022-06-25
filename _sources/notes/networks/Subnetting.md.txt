@@ -6,12 +6,12 @@ Storage = Bytes     Speed   = Bits
 1’s     = Network   0’s     = Host
 ```
 
-# Private IP Addresses
+## Private IP Addresses
 * 10.0.0.0 – 10.255.255.255
 * 172.16.0.0 – 172.31.255.255
 * 192.168.0.0 – 192.168.255.255
 
-# IP Address Class
+## IP Address Class
 CLASS        | IP RANGE      | SUBNET        |      NETWORK          | HOST         |
 ------------ | ------------- | ------------- | --------------------- |------------- |
 A            | 0 - 127       | /8            | First Octet / 8 bits  | 24 bits      |

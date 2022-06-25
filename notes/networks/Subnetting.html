@@ -215,13 +215,15 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#notes-networks-subnetting--page-root" class="md-nav__link">Subnetting</a>
-        </li>
+        <li class="md-nav__item"><a href="#notes-networks-subnetting--page-root" class="md-nav__link">Subnetting</a><nav class="md-nav">
+              <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#private-ip-addresses" class="md-nav__link">Private IP Addresses</a>
         </li>
         <li class="md-nav__item"><a href="#ip-address-class" class="md-nav__link">IP Address Class</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#cannot-be-use" class="md-nav__link">Cannot be use:</a>
+        </li></ul>
+            </nav>
         </li></ul>
             </nav>
         </li>
@@ -247,8 +249,7 @@
 </pre></div>
 </div>
 
-
-<h1 id="private-ip-addresses">Private IP Addresses<a class="headerlink" href="#private-ip-addresses" title="Permalink to this heading">¶</a></h1>
+<h2 id="private-ip-addresses">Private IP Addresses<a class="headerlink" href="#private-ip-addresses" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>10.0.0.0 – 10.255.255.255</p></li>
 <li><p>172.16.0.0 – 172.31.255.255</p></li>
@@ -256,7 +257,7 @@
 </ul>
 
 
-<h1 id="ip-address-class">IP Address Class<a class="headerlink" href="#ip-address-class" title="Permalink to this heading">¶</a></h1>
+<h2 id="ip-address-class">IP Address Class<a class="headerlink" href="#ip-address-class" title="Permalink to this heading">¶</a></h2>
 <table>
 <thead>
 <tr class="row-odd"><th class="head"><p>CLASS</p></th>
@@ -305,7 +306,7 @@
 </pre></div>
 </div>
 
-<h2 id="cannot-be-use">Cannot be use:<a class="headerlink" href="#cannot-be-use" title="Permalink to this heading">¶</a></h2>
+<h3 id="cannot-be-use">Cannot be use:<a class="headerlink" href="#cannot-be-use" title="Permalink to this heading">¶</a></h3>
 <p>First IP Address = Network ID</p>
 <p>Last IP Address = Broadcast ID</p>
 <table>
@@ -470,6 +471,7 @@
 </tr>
 </tbody>
 </table>
+
 
 
 
