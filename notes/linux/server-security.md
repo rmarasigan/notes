@@ -44,7 +44,7 @@ If something is wrong with your Server:
    ```bash
    dev@dev:~$ shutdown -r
    ```
-   Your system should restart. Don't press any keys, let the system boot up to the login screen and test to make sure the new passowrd works.
+   Your system should restart. Don't press any keys, let the system boot up to the login screen and test to make sure the new password works.
 
 6. Remove every tor or debian-tor package in the server.
 
