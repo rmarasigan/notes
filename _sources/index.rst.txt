@@ -21,6 +21,7 @@ Scrum
    Introduction <notes/scrum/Introduction.md>
    Backlog Refinement Meeting <notes/scrum/BacklogRefinementMeeting.md>
    Sprint Planning Meeting <notes/scrum/SprintPlanningMeeting.md>
+   Daily Scrum Meeting <notes/scrum/DailyScrumMeeting.md>
 
 
 Command lines
