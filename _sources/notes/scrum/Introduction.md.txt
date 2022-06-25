@@ -70,4 +70,5 @@ Agile refers to a set of “methods and practices based on the values and princi
 * Backlog Grooming
 
 ## Reference
+* [Introduction to Scrum](https://www.collab.net/services/training/agile_e-learning#b1)
 * [Manifesto for Agile Software Development](http://agilemanifesto.org/)
