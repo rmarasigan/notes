@@ -27,6 +27,7 @@ Scrum
    Scrum Guides <notes/scrum/ScrumGuides.md>
    Scrum Values <notes/scrum/ScrumValues.md>
    The Three Pillars of Empiricism <notes/scrum/ThreePillarsOfEmpiricism.md>
+   Scrum Team <notes/scrum/ScrumTeam.md>
 
 
 Command lines
