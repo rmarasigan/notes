@@ -17,7 +17,7 @@ Scrum relies on cross-functional teams to deliver products and services in short
 
 It is a framework for new product development. "A lightweight framework that helps people, teams and organizations generate value through adaptive solutions for complex problems". Scrum is hard to practice. It takes couragement and commitment. It is **simple to understand**, but **difficult to master**.
 
-#### Manifesto for Agile Software Development
+### Manifesto for Agile Software Development
    We are uncovering better ways of developing software by oding it and helping others do it. Through this work we have come to value:
    * **Individuals and interactions** over processes and tools
    * **Working software** over comprehensive documentation
@@ -26,9 +26,8 @@ It is a framework for new product development. "A lightweight framework that hel
 
    That is, while there is value in the items on the right, we value the items on the left more.
 
-* **Sprint**
-
-   Every sprint contains every some combination of analysis, design, actual implementation, testing, planning for the future, maybe will be actually shipping or deploying more frequently.
+### Sprint
+Every sprint contains every some combination of analysis, design, actual implementation, testing, planning for the future, maybe will be actually shipping or deploying more frequently.
 
 ## Scrum Elements – Roles
 
