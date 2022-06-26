@@ -4,9 +4,7 @@
    <center>Commitment, Focus, Openness, Respect, and Courage</center>
 </h3>
 
-<center>
-   <img src = "assets/img/scrum_values.png" alt = "inspection" width = "500"/>
-</center>
+<img src = "assets/img/scrum_values.png" alt = "inspection" width = "500"/>
 
 The Scrum Team commits to achieving its goals and to supporting each other. Their primary focus is on the work of the Sprint to make the best possible progress toward these goals. The Scrum Team and its stakeholders are open about the work and the challenges. Scrum Team members respect each other to be capable, independent people, and are respected as such by the people with whom they work. The Scrum Team members have the courage to do the right thing, to work on tough problems.
 
