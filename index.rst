@@ -25,6 +25,7 @@ Scrum
    Sprint Review Meeting <notes/scrum/SprintReviewMeeting.md>
    Sprint Retrospective Meeting <notes/scrum/SprintRetrospectiveMeeting.md>
    Scrum Guides <notes/scrum/ScrumGuides.md>
+   Scrum Values <notes/scrum/ScrumValues.md>
 
 
 Command lines
