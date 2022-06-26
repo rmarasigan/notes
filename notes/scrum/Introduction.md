@@ -11,9 +11,7 @@ Scrum relies on cross-functional teams to deliver products and services in short
 
 ## What is Scrum?
 
-<center>
-   <img src = "assets/img/scrum_framework.png" alt = "scrum_framework"/>
-</center>
+<img src = "assets/img/scrum_framework.png" alt = "scrum_framework"/>
 
 It is a framework for new product development. "A lightweight framework that helps people, teams and organizations generate value through adaptive solutions for complex problems". Scrum is hard to practice. It takes couragement and commitment. It is **simple to understand**, but **difficult to master**.
 
