@@ -46,7 +46,7 @@
   
   
   
-    <title>Installation &#8212; Aide Memoire 1.0.0 documentation</title>
+    <title>Introduction &#8212; Aide Memoire 1.0.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
@@ -56,8 +56,8 @@
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Getting Started" href="GettingStarted.html" />
-    <link rel="prev" title="ECMA 6 – Template Strings" href="../typescript/template_strings.html" />
+    <link rel="next" title="How to compile a TypeScript file?" href="compile_ts_file.html" />
+    <link rel="prev" title="Simple Client and Server TCP connection" href="../go-lang/client-server-tcp.html" />
   
    
 
@@ -76,7 +76,7 @@
   <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
   <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
   <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#notes/docker/Installation" tabindex="1" class="md-skip"> Skip to content </a>
+  <a href="#notes/typescript/introduction" tabindex="1" class="md-skip"> Skip to content </a>
   <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
@@ -94,7 +94,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">Aide Memoire 👩🏻‍💻</span>
-          <span class="md-header-nav__topic"> Installation </span>
+          <span class="md-header-nav__topic"> Introduction </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -215,22 +215,40 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#notes-docker-installation--page-root" class="md-nav__link">Installation</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#notes-typescript-introduction--page-root" class="md-nav__link">Introduction</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#docker-on-ubuntu" class="md-nav__link"><strong>Docker on Ubuntu</strong></a>
+        <li class="md-nav__item"><a href="#what-is-typescript" class="md-nav__link">What is TypeScript?</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#dynamic-vs-static" class="md-nav__link">Dynamic vs. Static</a>
         </li>
-        <li class="md-nav__item"><a href="#run-as-rootless" class="md-nav__link"><strong>Run as ROOTLESS</strong></a>
+        <li class="md-nav__item"><a href="#example" class="md-nav__link">Example</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#duck-typing" class="md-nav__link">Duck Typing</a>
         </li>
-        <li class="md-nav__item"><a href="#docker-compose-on-ubuntu" class="md-nav__link"><strong>Docker Compose on Ubuntu</strong></a>
+        <li class="md-nav__item"><a href="#static-typing" class="md-nav__link">Static Typing</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
         </li>
-        <li class="md-nav__item"><a href="#docker-on-mac" class="md-nav__link"><strong>Docker on MAC</strong></a>
+        <li class="md-nav__item"><a href="#linux-installation" class="md-nav__link">Linux Installation</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#install-the-latest-version" class="md-nav__link">Install the latest version</a>
         </li>
-        <li class="md-nav__item"><a href="#minikube-installation" class="md-nav__link">Minikube Installation</a>
+        <li class="md-nav__item"><a href="#install-specific-version" class="md-nav__link">Install specific version</a>
+        </li>
+        <li class="md-nav__item"><a href="#remove-node-js-and-npm" class="md-nav__link">Remove Node.js and NPM</a>
+        </li>
+        <li class="md-nav__item"><a href="#install-npm" class="md-nav__link">Install NPM</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#reference" class="md-nav__link">Reference</a>
         </li></ul>
             </nav>
         </li>
     
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/docker/Installation.md.txt">Show Source</a> </li>
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/typescript/introduction.md.txt">Show Source</a> </li>
 
 <li id="searchbox" class="md-nav__item"></li>
 
@@ -244,138 +262,127 @@
           <article class="md-content__inner md-typeset" role="main">
             
   
-<h1 id="notes-docker-installation--page-root">Installation<a class="headerlink" href="#notes-docker-installation--page-root" title="Permalink to this heading">¶</a></h1>
+<h1 id="notes-typescript-introduction--page-root">Introduction<a class="headerlink" href="#notes-typescript-introduction--page-root" title="Permalink to this heading">¶</a></h1>
 
-<h2 id="docker-on-ubuntu"><strong>Docker on Ubuntu</strong><a class="headerlink" href="#docker-on-ubuntu" title="Permalink to this heading">¶</a></h2>
-<p><strong>OS requirements</strong></p>
-<p>You need the 64-bit version of one of these Ubuntu versions and minimum of 8GB RAM</p>
+<h2 id="what-is-typescript">What is TypeScript?<a class="headerlink" href="#what-is-typescript" title="Permalink to this heading">¶</a></h2>
+<p>It is a superset of JavaScript programming language that has the concept of static typing to the core feature of JavaScript. This is a big deal because JavaScript is and always has been a dynamic language. TypeScript does not run directly on the browser as JavaScript run, we have to compile the TypeScript file to the JavaScript then it will work as usual.</p>
+
+<h3 id="dynamic-vs-static">Dynamic vs. Static<a class="headerlink" href="#dynamic-vs-static" title="Permalink to this heading">¶</a></h3>
+<table>
+<thead>
+<tr class="row-odd"><th class="head"><p>DYNAMIC</p></th>
+<th class="head"><p>STATIC</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Types</p></td>
+<td><p>Types</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="xref myst">Duck Typing</span></p></td>
+<td><p><span class="xref myst">Static Typing</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Forgiving</p></td>
+<td><p>Rigid</p></td>
+</tr>
+<tr class="row-odd"><td><p>Great for web browser object modal</p></td>
+<td><p>Promotes stability and maintainability</p></td>
+</tr>
+</tbody>
+</table>
+
+
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
+
+<h4 id="duck-typing">Duck Typing<a class="headerlink" href="#duck-typing" title="Permalink to this heading">¶</a></h4>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nx">name</span><span class="o">:</span> <span class="s2">"duck"</span><span class="p">,</span>
+   <span class="nx">quack</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{}</span>
+
+   <span class="kd">function</span> <span class="nx">sayQuack</span><span class="p">(</span><span class="nx">target</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="nx">target</span><span class="p">.</span><span class="nx">quack</span><span class="p">();</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+<h4 id="static-typing">Static Typing<a class="headerlink" href="#static-typing" title="Permalink to this heading">¶</a></h4>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Duck</span>
+<span class="p">{</span>
+   <span class="kr">public</span> <span class="kt">string</span> <span class="nx">name</span><span class="p">;</span>
+   <span class="kr">public</span> <span class="k">void</span> <span class="nx">quack</span><span class="p">(){}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+
+
+<h2 id="linux-installation">Linux Installation<a class="headerlink" href="#linux-installation" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Install Node.js</p>
+<p>If you install Node.js, NPM will be automatically installed.</p>
+</li>
+<li><p>Install TypeScript</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo npm install -g typescript
+dev@dev:~$ tsc
+Version <span class="m">4</span>.6.3
+tsc: The TypeScript Compiler - Version <span class="m">4</span>.6.3
+</pre></div>
+</div>
+</li>
+</ol>
+
+<h3 id="install-the-latest-version">Install the latest version<a class="headerlink" href="#install-the-latest-version" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
+dev@dev:~$ sudo apt install nodejs
+dev@dev:~$ node -v
+v10.19.0
+</pre></div>
+</div>
+
+
+<h3 id="install-specific-version">Install specific version<a class="headerlink" href="#install-specific-version" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
+dev@dev:~$ curl -fsSL https://deb.nodesource.com/setup_16.x <span class="p">|</span> sudo -E bash -
+dev@dev:~$ sudo apt-get install -y nodejs
+v10.19.0
+</pre></div>
+</div>
+
+
+<h3 id="remove-node-js-and-npm">Remove Node.js and NPM<a class="headerlink" href="#remove-node-js-and-npm" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo npm cache clean -f
+dev@dev:~$ sudo apt-get remove nodejs
+dev@dev:~$ sudo apt-get remove npm
+</pre></div>
+</div>
+<p>Go to <code class="docutils literal notranslate"><span class="pre">/etc/apt/sources.list.d</span></code> and remove any node list if you have. Then do an update</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt-get update
+</pre></div>
+</div>
+<p>Check for any .npm or .node folder in your home folder and delete those. This will give you the location</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ which node
+/usr/bin/node
+</pre></div>
+</div>
+
+
+<h3 id="install-npm">Install NPM<a class="headerlink" href="#install-npm" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt install npm
+</pre></div>
+</div>
+
+
+
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>Ubuntu Hirsute 21.04</p></li>
-<li><p>Ubuntu Groovy 20.10</p></li>
-<li><p>Ubuntu Focal 20.04 (LTS)</p></li>
-<li><p>Ubuntu Bionic 18.04 (LTS)</p></li>
+<li><p><a class="reference external" href="https://nodejs.org/en/">Node.js</a></p></li>
+<li><p><a class="reference external" href="https://www.typescriptlang.org/">TypeScript</a></p></li>
+<li><p><a class="reference external" href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">What is tsconfig.json</a></p></li>
+<li><p><a class="reference external" href="https://www.typescriptlang.org/docs/">TypeScript Documentation</a></p></li>
 </ul>
-<p><strong>Installation Guide</strong></p>
-<ol class="arabic simple">
-<li><p>Update the apt package index and install packages to allow apt to use a repository over HTTPS</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
-
-dev@dev-PC:~$ sudo apt install \
-  apt-transport-https \
-  ca-certificates \
-  curl \
-  gnupg \
-  lsb-release
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>Add Docker’s official GPG key</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>Install Docker Engine</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt install docker-ce docker-ce-cli containerd.io
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>Verify that Docker Engine is installed correctly by running the hello-world image</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev-PC:~$ sudo docker run hello-world
-</pre></div>
-</div>
-<ol class="arabic simple" start="5">
-<li><p>Create <a class="reference external" href="https://hub.docker.com/signup">Dockerhub</a> account</p></li>
-</ol>
-<p>Reference:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Install Docker on Ubuntu Documenation</a></p></li>
-</ul>
-
-
-<h2 id="run-as-rootless"><strong>Run as ROOTLESS</strong><a class="headerlink" href="#run-as-rootless" title="Permalink to this heading">¶</a></h2>
-<p><strong>Check if the group exist</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ grep "docker" /etc/group
-</pre></div>
-</div>
-<p><strong>Steps</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo groupadd docker
-dev@dev:~$ sudo usermod -aG docker $USER
-dev@dev:~$ newgrp docker
-</pre></div>
-</div>
-<p>After that, restart your PC.</p>
-<p>Reference:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://jhooq.com/permission-denied-docker-daemon/">Docker can not connect to docker daemon and permission denied</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=FcZ1Dh3X5JQ">Fixing - permission denied trying to connect to Docker daemon socket at unix:///var/run/docker.sock
-</a></p></li>
-<li><p><a class="reference external" href="https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user">Run without Sudo</a></p></li>
-</ul>
-
-
-<h2 id="docker-compose-on-ubuntu"><strong>Docker Compose on Ubuntu</strong><a class="headerlink" href="#docker-compose-on-ubuntu" title="Permalink to this heading">¶</a></h2>
-<ol class="arabic simple">
-<li><p>Run this command to download the current stable release of Docker Compose</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-</pre></div>
-</div>
-<p>To install a different version of Compose, substitute <code class="docutils literal notranslate"><span class="pre">1.29.2</span></code> with the version of Compose you want to use.</p>
-<ol class="arabic simple" start="2">
-<li><p>Apply executable permissions to the binary</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo chmod +x /usr/local/bin/docker-compose
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>Test the installation.</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker-compose --version
-</pre></div>
-</div>
-<p>Reference:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.docker.com/compose/install/">Install Docker Compose on Ubuntu Documenation</a></p></li>
-</ul>
-
-
-<h2 id="docker-on-mac"><strong>Docker on MAC</strong><a class="headerlink" href="#docker-on-mac" title="Permalink to this heading">¶</a></h2>
-<p><strong>Installation Guide</strong></p>
-<ol class="arabic simple">
-<li><p>Sign up for a <a class="reference external" href="https://www.docker.com/">Docker Hub Account</a> and click on <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">Started</span></code> and find <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">for</span> <span class="pre">Mac</span></code>.</p></li>
-<li><p>Download / Install Docker for Mac</p></li>
-<li><p>Log-in to Docker</p></li>
-<li><p>Verify Docker installation</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker version
-</pre></div>
-</div>
-
-
-<h2 id="minikube-installation">Minikube Installation<a class="headerlink" href="#minikube-installation" title="Permalink to this heading">¶</a></h2>
-<ol class="arabic simple">
-<li><p>Update the packages and make sure to install (or check whether you already have) <code class="docutils literal notranslate"><span class="pre">curl</span></code> before running the second command.</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt-get update -y
-dev@dev:~$ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>Install minikube</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo install minikube-linux-amd64 /usr/local/bin/minikube
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>Check minikube status</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ minikube status
-</pre></div>
-</div>
 
 
 
@@ -389,7 +396,7 @@ dev@dev:~$ curl -LO https://storage.googleapis.com/minikube/releases/latest/mini
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="../typescript/template_strings.html" title="ECMA 6 – Template Strings"
+            <a href="../go-lang/client-server-tcp.html" title="Simple Client and Server TCP connection"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -398,17 +405,17 @@ dev@dev:~$ curl -LO https://storage.googleapis.com/minikube/releases/latest/mini
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> ECMA 6 – Template Strings </span>
+                      class="md-footer-nav__direction"> Previous </span> Simple Client and Server TCP connection </span>
               </div>
             </a>
           
           
-            <a href="GettingStarted.html" title="Getting Started"
+            <a href="compile_ts_file.html" title="How to compile a TypeScript file?"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> Getting Started </span>
+                class="md-footer-nav__direction"> Next </span> How to compile a TypeScript file? </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
