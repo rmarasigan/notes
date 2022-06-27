@@ -39,14 +39,14 @@ class Duck
 1. Install Node.js
 
    If you install Node.js, NPM will be automatically installed.
-
-   #### Install the latest version
-   ```bash
-   dev@dev:~$ sudo apt update
-   dev@dev:~$ sudo apt install nodejs
-   dev@dev:~$ node -v
-   v10.19.0
-   ```
+   
+##### Install the latest version
+```bash
+dev@dev:~$ sudo apt update
+dev@dev:~$ sudo apt install nodejs
+dev@dev:~$ node -v
+v10.19.0
+```
 
    #### Install specific version
    ```bash
