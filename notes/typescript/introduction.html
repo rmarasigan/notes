@@ -231,17 +231,7 @@
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#linux-installation" class="md-nav__link">Linux Installation</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#install-the-latest-version" class="md-nav__link">Install the latest version</a>
-        </li>
-        <li class="md-nav__item"><a href="#install-specific-version" class="md-nav__link">Install specific version</a>
-        </li>
-        <li class="md-nav__item"><a href="#remove-node-js-and-npm" class="md-nav__link">Remove Node.js and NPM</a>
-        </li>
-        <li class="md-nav__item"><a href="#install-npm" class="md-nav__link">Install NPM</a>
-        </li></ul>
-            </nav>
+        <li class="md-nav__item"><a href="#linux-installation" class="md-nav__link">Linux Installation</a>
         </li>
         <li class="md-nav__item"><a href="#reference" class="md-nav__link">Reference</a>
         </li></ul>
@@ -323,28 +313,21 @@
 <ol class="arabic">
 <li><p>Install Node.js</p>
 <p>If you install Node.js, NPM will be automatically installed.</p>
-</li>
-</ol>
-
-<h3 id="install-the-latest-version">Install the latest version<a class="headerlink" href="#install-the-latest-version" title="Permalink to this heading">¶</a></h3>
+<p><strong>Install the latest version</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
 dev@dev:~$ sudo apt install nodejs
 dev@dev:~$ node -v
 v10.19.0
 </pre></div>
 </div>
-
-
-<h3 id="install-specific-version">Install specific version<a class="headerlink" href="#install-specific-version" title="Permalink to this heading">¶</a></h3>
+<p><strong>Install specific version</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
 dev@dev:~$ curl -fsSL https://deb.nodesource.com/setup_16.x <span class="p">|</span> sudo -E bash -
 dev@dev:~$ sudo apt-get install -y nodejs
 v10.19.0
 </pre></div>
 </div>
-
-
-<h3 id="remove-node-js-and-npm">Remove Node.js and NPM<a class="headerlink" href="#remove-node-js-and-npm" title="Permalink to this heading">¶</a></h3>
+<p><strong>Remove Node.js and NPM</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo npm cache clean -f
 dev@dev:~$ sudo apt-get remove nodejs
 dev@dev:~$ sudo apt-get remove npm
@@ -359,13 +342,11 @@ dev@dev:~$ sudo apt-get remove npm
 /usr/bin/node
 </pre></div>
 </div>
-
-
-<h3 id="install-npm">Install NPM<a class="headerlink" href="#install-npm" title="Permalink to this heading">¶</a></h3>
+<p><strong>Install NPM</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt install npm
 </pre></div>
 </div>
-<ol class="arabic" start="2">
+</li>
 <li><p>Install TypeScript</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo npm install -g typescript
 dev@dev:~$ tsc
@@ -375,7 +356,6 @@ tsc: The TypeScript Compiler - Version <span class="m">4</span>.6.3
 </div>
 </li>
 </ol>
-
 
 
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
