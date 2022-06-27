@@ -71,6 +71,17 @@ Go
    Palindrome <notes/go-lang/Palindrome.md>
    Simple Client and Server TCP connection <notes/go-lang/client-server-tcp.md>
 
+TypeScript
+-----------
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   Introduction <notes/typescript/introduction.md>
+   Compile a TS file <notes/typescript/compile_ts_file.md>
+   ECMA 6 <notes/typescript/ecma6.md>
+   ECMA 6 – Template Strings <notes/typescript/template_strings.md>
+
 DevOps
 ===========
 Docker
