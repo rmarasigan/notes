@@ -15,8 +15,7 @@ var programming = ['javascript', 'go', 'c++', 'python'];
 console.log(programming[0]);
 ```
 
-Output:
-```javascript
+```{instructor-note} Output
 javascript
 ```
 
@@ -70,10 +69,10 @@ let guest = "John";
 let admin = "Manson";
 
 // Swapping the values. Make guest = Manson, admin = John
- [guest, admin] = [admin, guest];
+[guest, admin] = [admin, guest];
 
- console.log(guest);
- console.log(admin);
+console.log(guest);
+console.log(admin);
 ```
 
 Output:
