@@ -80,7 +80,8 @@ TypeScript
    Introduction <notes/typescript/introduction.md>
    Compile a TS file <notes/typescript/compile_ts_file.md>
    ECMA 6 <notes/typescript/ecma6.md>
-   ECMA 6 – Template Strings <notes/typescript/template_strings.md>
+   ES 6 – Template Strings <notes/typescript/template_strings.md>
+   ES 6 – Spread Operator <notes/typescript/spread_operator.md>
 
 DevOps
 ===========
