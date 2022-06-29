@@ -82,6 +82,7 @@ TypeScript
    ECMA 6 <notes/typescript/ecma6.md>
    ES 6 – Template Strings <notes/typescript/template_strings.md>
    ES 6 – Spread Operator <notes/typescript/spread_operator.md>
+   ES 6 – Data Structure: Maps <notes/typescript/data_structure_map.md>
 
 DevOps
 ===========
