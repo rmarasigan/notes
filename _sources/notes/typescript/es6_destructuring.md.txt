@@ -15,7 +15,8 @@ var programming = ['javascript', 'go', 'c++', 'python'];
 console.log(programming[0]);
 ```
 
-```{instructor-note} Output
+Output:
+```javascript
 javascript
 ```
 
