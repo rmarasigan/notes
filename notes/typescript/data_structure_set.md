@@ -14,7 +14,12 @@ Create a new Set from an Array:
 ```javascript
 let number = [1, 2, 3, 4, 4, 5, 6, 1, 2, 7];
 let numberSet = new Set(number);
-console.log(numberSet);    // Set(7) {1, 2, 3, 4, 5, 6, 7}
+console.log(numberSet);
+```
+
+Output:
+```javascript
+Set(7) {1, 2, 3, 4, 5, 6, 7}
 ```
 
 To add a new element with specified value to the set.
@@ -27,7 +32,12 @@ names.add("John");
 names.add("Doe");
 names.add("John");
 
-console.log(names);       // Set(2) {'John', 'Doe'}
+console.log(names);
+```
+
+Output:
+```javascript
+Set(2) {'John', 'Doe'}
 ```
 
 To check if the value is in the set:
@@ -39,17 +49,29 @@ console.log(names.has("John"));   // true
 console.log(names.has("Marta"));  // false
 ```
 
+Output:
+```javascript
+true
+false
+```
+
 To remove it from the set:
 ```javascript
 names.add("John");
 names.add("Doe");
 names.add("Marta");
-console.log(names);        // Set(3) {'John', 'Doe', 'Marta'}
+console.log(names);
 
 // delete() method removes a specified value from a
 // Set object, if it is in the set.
 names.delete('John');
-console.log(names);        // Set(2) {'John', 'Doe'}
+console.log(names);
+```
+
+Output:
+```javascript
+Set(3) {'John', 'Doe', 'Marta'}
+Set(2) {'John', 'Doe'}
 ```
 
 To remove/delete all elements in the set:
@@ -57,7 +79,12 @@ To remove/delete all elements in the set:
 // clear() method removes all elements from a Set
 // object.
 names.clear();
-console.log(names);        // Set(0) {}
+console.log(names);
+```
+
+Output:
+```javascript
+Set(0) {}
 ```
 
 To iterate on our set object:
@@ -65,13 +92,25 @@ To iterate on our set object:
 // forEach() method executes a provided function once
 // for each value in the Set object, in insertion order.
 names.forEach(function (e) {
-   console.log(e);         // John  // Doe   // Marta
+   console.log(e);
 });
+```
+
+Output:
+```javascript
+John
+Doe
+Marta
 ```
 
 To get the size of our set object:
 ```javascript
-names.size                 // 3
+names.size
+```
+
+Output:
+```javascript
+3
 ```
 
 ## Reference
