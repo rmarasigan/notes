@@ -10,7 +10,12 @@ It is mostly used in the variable array where there is more thant 1 values are e
 const odd = [1, 3, 5];
 const combined = [2, 4, 6, ...odd];
 
-console.log(combined);     // [2, 4, 6, 1, 3, 5]
+console.log(combined);
+```
+
+Output:
+```javascript
+[2, 4, 6, 1, 3, 5]
 ```
 
 The spread operator allows you to spread out elements of an iterable object such as an array, map, or set. In the example, the three dots (`...`) located in front of the `odd` array is the spread operator. The spread operator (`...`) unpacks the elements of the `odd` array.
@@ -25,7 +30,12 @@ function fn(a, b, ...args) {}
 It also allows you to create dynamic function through the function constructor.
 ```javascript
 var showNumbers = new Function('...numbers', 'console.log(numbers)');
-showNumbers(1, 2, 3);      // [1, 2, 3]
+showNumbers(1, 2, 3);
+```
+
+Output:
+```javascript
+[1, 2, 3]
 ```
 
 In this example, `args` is in array. You could use the `for...of` loop to iterate over its elements and sum them up.
@@ -41,7 +51,12 @@ function sum (...args)
    return total;
 }
 
-sum(1, 2, 3);               // 6
+sum(1, 2, 3);
+```
+
+Output:
+```javascript
+6
 ```
 
 It must appear at the end of the argument list. However, the spread operator can be anywhere. The spread operator unpacks the elements of an iterable object. Keep in mind that you cannot use the `use strict` directive inside any function containing a rest parameter, default parameter, or destructuring parameter.

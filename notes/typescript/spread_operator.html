@@ -251,7 +251,11 @@
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">odd</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
 <span class="kr">const</span> <span class="nx">combined</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="p">...</span><span class="nx">odd</span><span class="p">];</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">combined</span><span class="p">);</span>     <span class="c1">// [2, 4, 6, 1, 3, 5]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">combined</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>The spread operator allows you to spread out elements of an iterable object such as an array, map, or set. In the example, the three dots (<code class="docutils literal notranslate"><span class="pre">...</span></code>) located in front of the <code class="docutils literal notranslate"><span class="pre">odd</span></code> array is the spread operator. The spread operator (<code class="docutils literal notranslate"><span class="pre">...</span></code>) unpacks the elements of the <code class="docutils literal notranslate"><span class="pre">odd</span></code> array.</p>
@@ -263,7 +267,11 @@
 </div>
 <p>It also allows you to create dynamic function through the function constructor.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">showNumbers</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s1">'...numbers'</span><span class="p">,</span> <span class="s1">'console.log(numbers)'</span><span class="p">);</span>
-<span class="nx">showNumbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>      <span class="c1">// [1, 2, 3]</span>
+<span class="nx">showNumbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>In this example, <code class="docutils literal notranslate"><span class="pre">args</span></code> is in array. You could use the <code class="docutils literal notranslate"><span class="pre">for...of</span></code> loop to iterate over its elements and sum them up.</p>
@@ -278,7 +286,11 @@
    <span class="k">return</span> <span class="nx">total</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>               <span class="c1">// 6</span>
+<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span>
 </pre></div>
 </div>
 <p>It must appear at the end of the argument list. However, the spread operator can be anywhere. The spread operator unpacks the elements of an iterable object. Keep in mind that you cannot use the <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">strict</span></code> directive inside any function containing a rest parameter, default parameter, or destructuring parameter.</p>

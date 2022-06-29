@@ -56,7 +56,7 @@
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Installation" href="../docker/Installation.html" />
+    <link rel="next" title="ECMA 6 – Data Structure: Set" href="data_structure_set.html" />
     <link rel="prev" title="ECMA 6 – Spread Operator" href="spread_operator.html" />
   
    
@@ -277,14 +277,22 @@
 <span class="c1">// Syntax: set(key, value)</span>
 <span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'John'</span><span class="p">);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>       <span class="c1">// Map(1) {"name" =&gt; "John"}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Map</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span><span class="s2">"name"</span> <span class="p">=&gt;</span> <span class="s2">"John"</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>We can have function as a key of any primitive data arrays or symbols as well.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="kd">function</span> <span class="nx">print</span><span class="p">()</span>
 <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"hey"</span><span class="p">);</span>
-<span class="p">},</span> <span class="s2">"John"</span><span class="p">);</span>                <span class="c1">// Map(1) {ƒ =&gt; 'John'}</span>
+<span class="p">},</span> <span class="s2">"John"</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Map</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span><span class="nx">ƒ</span> <span class="p">=&gt;</span> <span class="s1">'John'</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>If we added a few things like 3 times with the same key and values, it will get rid of the duplicates.</p>
@@ -292,7 +300,11 @@
 <span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'John'</span><span class="p">);</span>
 <span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'John'</span><span class="p">);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>       <span class="c1">// Map(1) {"name" =&gt; "John"}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Map</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span><span class="s2">"name"</span> <span class="p">=&gt;</span> <span class="s2">"John"</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>But if we change at least one of them, we will get a Map of 2. Basically it will automatically remove the duplicate values and ignore them.</p>
@@ -300,14 +312,22 @@
 <span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name1'</span><span class="p">,</span> <span class="s1">'John1'</span><span class="p">);</span>
 <span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'John'</span><span class="p">);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>       <span class="c1">// Map(2) {'name' =&gt; 'John', 'name1' =&gt; 'John'}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Map</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span><span class="s1">'name'</span> <span class="p">=&gt;</span> <span class="s1">'John'</span><span class="p">,</span> <span class="s1">'name1'</span> <span class="p">=&gt;</span> <span class="s1">'John'</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>To grab the values from a map:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// get() method returns a specified element</span>
 <span class="c1">// from a Map object</span>
 <span class="c1">// Syntax: get(key)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'name'</span><span class="p">));</span>    <span class="c1">// John</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'name'</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">John</span>
 </pre></div>
 </div>
 <p>To check whether the key is available or not:</p>
@@ -315,22 +335,35 @@
 <span class="c1">// whether an element with the specified key</span>
 <span class="c1">// exists or not</span>
 <span class="c1">// Syntax: has(key)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s1">'name1'</span><span class="p">));</span>    <span class="c1">// true</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s1">'name2'</span><span class="p">));</span>    <span class="c1">// false</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s1">'name1'</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s1">'name2'</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kc">true</span>
+<span class="kc">false</span>
 </pre></div>
 </div>
 <p>To get all the keys:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// keys() method returns a new iterator object that</span>
 <span class="c1">// contains the keys for each element in the Map object</span>
 <span class="c1">// in insertion order</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">keys</span><span class="p">());</span>          <span class="c1">// MapIterator {'name', 'name1'}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">keys</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MapIterator</span> <span class="p">{</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'name1'</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>To get all the values:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// values() method returns a new iterator object that</span>
 <span class="c1">// contains the values for each element in the Map</span>
 <span class="c1">// object in insertion order</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">values</span><span class="p">());</span>       <span class="c1">// MapIterator {'John', 'John1'}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">values</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MapIterator</span> <span class="p">{</span><span class="s1">'John'</span><span class="p">,</span> <span class="s1">'John1'</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>To iterate on our map object:</p>
@@ -338,8 +371,13 @@
 <span class="c1">// once per each key/value pair in the Map object,</span>
 <span class="c1">// in insertion order</span>
 <span class="nx">person</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>           <span class="c1">// John  // John1</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
 <span class="p">});</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">John</span>
+<span class="nx">John1</span>
 </pre></div>
 </div>
 <p>Adding a key-value pairs:</p>
@@ -349,7 +387,11 @@
    <span class="p">[</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span> <span class="s1">'today'</span><span class="p">]</span>
 <span class="p">]);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>             <span class="c1">// Map(2) {Array(3) =&gt; undefined, Tue Jun 28 2022 21:18:18 GMT+0800 (Philippine Standard Time) =&gt; 'today'}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Map</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span><span class="nb">Array</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="kc">undefined</span><span class="p">,</span> <span class="nx">Tue</span> <span class="nx">Jun</span> <span class="mi">28</span> <span class="mi">2022</span> <span class="mi">21</span><span class="o">:</span><span class="mi">18</span><span class="o">:</span><span class="mi">18</span> <span class="nx">GMT</span><span class="o">+</span><span class="mi">0800</span> <span class="p">(</span><span class="nx">Philippine</span> <span class="nx">Standard</span> <span class="nx">Time</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="s1">'today'</span><span class="p">}</span>
 </pre></div>
 </div>
 
@@ -388,12 +430,12 @@
             </a>
           
           
-            <a href="../docker/Installation.html" title="Installation"
+            <a href="data_structure_set.html" title="ECMA 6 – Data Structure: Set"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> Installation </span>
+                class="md-footer-nav__direction"> Next </span> ECMA 6 – Data Structure: Set </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>

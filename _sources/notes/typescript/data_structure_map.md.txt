@@ -28,7 +28,12 @@ let person  = new Map();
 // Syntax: set(key, value)
 person.set('name', 'John');
 
-console.log(person);       // Map(1) {"name" => "John"}
+console.log(person);
+```
+
+Output:
+```javascript
+Map(1) {"name" => "John"}
 ```
 
 We can have function as a key of any primitive data arrays or symbols as well.
@@ -36,7 +41,12 @@ We can have function as a key of any primitive data arrays or symbols as well.
 person.set(function print()
 {
    console.log("hey");
-}, "John");                // Map(1) {ƒ => 'John'}
+}, "John");
+```
+
+Output:
+```javascript
+Map(1) {ƒ => 'John'}
 ```
 
 If we added a few things like 3 times with the same key and values, it will get rid of the duplicates.
@@ -45,7 +55,12 @@ person.set('name', 'John');
 person.set('name', 'John');
 person.set('name', 'John');
 
-console.log(person);       // Map(1) {"name" => "John"}
+console.log(person);
+```
+
+Output:
+```javascript
+Map(1) {"name" => "John"}
 ```
 
 But if we change at least one of them, we will get a Map of 2. Basically it will automatically remove the duplicate values and ignore them.
@@ -54,7 +69,12 @@ person.set('name', 'John');
 person.set('name1', 'John1');
 person.set('name', 'John');
 
-console.log(person);       // Map(2) {'name' => 'John', 'name1' => 'John'}
+console.log(person);
+```
+
+Output:
+```javascript
+Map(2) {'name' => 'John', 'name1' => 'John'}
 ```
 
 To grab the values from a map:
@@ -62,7 +82,12 @@ To grab the values from a map:
 // get() method returns a specified element
 // from a Map object
 // Syntax: get(key)
-console.log(person.get('name'));    // John
+console.log(person.get('name'));
+```
+
+Output:
+```javascript
+John
 ```
 
 To check whether the key is available or not:
@@ -72,8 +97,14 @@ To check whether the key is available or not:
 // whether an element with the specified key
 // exists or not
 // Syntax: has(key)
-console.log(person.has('name1'));    // true
-console.log(person.has('name2'));    // false
+console.log(person.has('name1'));
+console.log(person.has('name2'));
+```
+
+Output:
+```javascript
+true
+false
 ```
 
 To get all the keys:
@@ -82,7 +113,12 @@ To get all the keys:
 // keys() method returns a new iterator object that
 // contains the keys for each element in the Map object
 // in insertion order
-console.log(person.keys());          // MapIterator {'name', 'name1'}
+console.log(person.keys());
+```
+
+Output:
+```javascript
+MapIterator {'name', 'name1'}
 ```
 
 To get all the values:
@@ -91,7 +127,12 @@ To get all the values:
 // values() method returns a new iterator object that
 // contains the values for each element in the Map
 // object in insertion order
-console.log(person.values());       // MapIterator {'John', 'John1'}
+console.log(person.values());
+```
+
+Output:
+```javascript
+MapIterator {'John', 'John1'}
 ```
 
 To iterate on our map object:
@@ -100,8 +141,14 @@ To iterate on our map object:
 // once per each key/value pair in the Map object,
 // in insertion order
 person.forEach(function (person) {
-   console.log(person);           // John  // John1
+   console.log(person);
 });
+```
+
+Output:
+```javascript
+John
+John1
 ```
 
 Adding a key-value pairs:
@@ -112,7 +159,12 @@ let person = new Map([
    [new Date(), 'today']
 ]);
 
-console.log(person);             // Map(2) {Array(3) => undefined, Tue Jun 28 2022 21:18:18 GMT+0800 (Philippine Standard Time) => 'today'}
+console.log(person);
+```
+
+Output:
+```javascript
+Map(2) {Array(3) => undefined, Tue Jun 28 2022 21:18:18 GMT+0800 (Philippine Standard Time) => 'today'}
 ```
 
 ## Reference
