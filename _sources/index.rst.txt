@@ -87,6 +87,7 @@ TypeScript
    ES 6 – "for-of" Loop  <notes/typescript/for_of_loop.md>
    ES 6 – Default Parameters <notes/typescript/es6_default_parameters.md>
    ES 6 – Arrow Functions <notes/typescript/es6_arrow_functions.md>
+   ES 6 – Destructuring <notes/typescript/es6_destructuring.md>
 
 DevOps
 ===========
