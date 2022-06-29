@@ -85,6 +85,8 @@ TypeScript
    ES 6 – Data Structure: Maps <notes/typescript/data_structure_map.md>
    ES 6 – Data Structure: Set <notes/typescript/data_structure_set.md>
    ES 6 – "for-of" Loop  <notes/typescript/for_of_loop.md>
+   ES 6 – Default Parameters <notes/typescript/es6_default_parameters.md>
+   ES 6 – Arrow Functions <notes/typescript/es6_arrow_functions.md>
 
 DevOps
 ===========
