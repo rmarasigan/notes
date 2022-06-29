@@ -84,6 +84,7 @@ TypeScript
    ES 6 – Spread Operator <notes/typescript/spread_operator.md>
    ES 6 – Data Structure: Maps <notes/typescript/data_structure_map.md>
    ES 6 – Data Structure: Set <notes/typescript/data_structure_set.md>
+   ES 6 – "for-of" Loop  <notes/typescript/for_of_loop.md>
 
 DevOps
 ===========
