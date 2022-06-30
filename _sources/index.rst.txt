@@ -88,6 +88,8 @@ TypeScript
    ES 6 – Default Parameters <notes/typescript/es6_default_parameters.md>
    ES 6 – Arrow Functions <notes/typescript/es6_arrow_functions.md>
    ES 6 – Destructuring <notes/typescript/es6_destructuring.md>
+   ES 6 – Generator Functions <notes/typescript/es6_generator_functions.md>
+   ES 6 – Classes <notes/typescript/es6_classes.md>
 
 DevOps
 ===========
