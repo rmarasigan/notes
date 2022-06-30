@@ -23,7 +23,7 @@ add();
 Basically we are not passing any value to the function `add()`. So it will give you a result of `NaN` which means *not a number*.
 
 Output:
-```javascript
+```
 NaN
 ```
 
@@ -39,7 +39,7 @@ add(2, 3);
 ```
 
 Output:
-```javascript
+```
 10
 5
 ```
@@ -50,7 +50,7 @@ add(2)
 ```
 
 Output:
-```javascript
+```
 7
 ```
 
@@ -88,7 +88,7 @@ console.log(person.name());
 ```
 
 Output:
-```javascript
+```
 John
 ```
 
@@ -108,7 +108,7 @@ console.log(person.name());
 ```
 
 Output:
-```javascript
+```
 John
 ```
 
@@ -125,7 +125,7 @@ console.log(laptop.make);
 ```
 
 Output:
-```javascript
+```
 Apple
 ```
 
@@ -143,7 +143,7 @@ console.log(machine['machine hours']);
 ```
 
 Output:
-```javascript
+```
 server
 10000
 ```

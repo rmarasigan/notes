@@ -14,7 +14,7 @@ console.log(combined);
 ```
 
 Output:
-```javascript
+```
 [2, 4, 6, 1, 3, 5]
 ```
 
@@ -34,7 +34,7 @@ showNumbers(1, 2, 3);
 ```
 
 Output:
-```javascript
+```
 [1, 2, 3]
 ```
 
@@ -55,7 +55,7 @@ sum(1, 2, 3);
 ```
 
 Output:
-```javascript
+```
 6
 ```
 

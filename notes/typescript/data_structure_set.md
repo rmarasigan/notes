@@ -18,7 +18,7 @@ console.log(numberSet);
 ```
 
 Output:
-```javascript
+```
 Set(7) {1, 2, 3, 4, 5, 6, 7}
 ```
 
@@ -36,7 +36,7 @@ console.log(names);
 ```
 
 Output:
-```javascript
+```
 Set(2) {'John', 'Doe'}
 ```
 
@@ -50,7 +50,7 @@ console.log(names.has("Marta"));  // false
 ```
 
 Output:
-```javascript
+```
 true
 false
 ```
@@ -69,7 +69,7 @@ console.log(names);
 ```
 
 Output:
-```javascript
+```
 Set(3) {'John', 'Doe', 'Marta'}
 Set(2) {'John', 'Doe'}
 ```
@@ -83,7 +83,7 @@ console.log(names);
 ```
 
 Output:
-```javascript
+```
 Set(0) {}
 ```
 
@@ -97,7 +97,7 @@ names.forEach(function (e) {
 ```
 
 Output:
-```javascript
+```
 John
 Doe
 Marta
@@ -109,7 +109,7 @@ names.size
 ```
 
 Output:
-```javascript
+```
 3
 ```
 

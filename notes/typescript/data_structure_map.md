@@ -32,7 +32,7 @@ console.log(person);
 ```
 
 Output:
-```javascript
+```
 Map(1) {"name" => "John"}
 ```
 
@@ -45,7 +45,7 @@ person.set(function print()
 ```
 
 Output:
-```javascript
+```
 Map(1) {ƒ => 'John'}
 ```
 
@@ -59,7 +59,7 @@ console.log(person);
 ```
 
 Output:
-```javascript
+```
 Map(1) {"name" => "John"}
 ```
 
@@ -73,7 +73,7 @@ console.log(person);
 ```
 
 Output:
-```javascript
+```
 Map(2) {'name' => 'John', 'name1' => 'John'}
 ```
 
@@ -86,7 +86,7 @@ console.log(person.get('name'));
 ```
 
 Output:
-```javascript
+```
 John
 ```
 
@@ -102,7 +102,7 @@ console.log(person.has('name2'));
 ```
 
 Output:
-```javascript
+```
 true
 false
 ```
@@ -117,7 +117,7 @@ console.log(person.keys());
 ```
 
 Output:
-```javascript
+```
 MapIterator {'name', 'name1'}
 ```
 
@@ -131,7 +131,7 @@ console.log(person.values());
 ```
 
 Output:
-```javascript
+```
 MapIterator {'John', 'John1'}
 ```
 
@@ -146,7 +146,7 @@ person.forEach(function (person) {
 ```
 
 Output:
-```javascript
+```
 John
 John1
 ```
@@ -163,7 +163,7 @@ console.log(person);
 ```
 
 Output:
-```javascript
+```
 Map(2) {Array(3) => undefined, Tue Jun 28 2022 21:18:18 GMT+0800 (Philippine Standard Time) => 'today'}
 ```
 
