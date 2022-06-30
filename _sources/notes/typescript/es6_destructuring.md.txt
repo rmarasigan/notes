@@ -16,7 +16,7 @@ console.log(programming[0]);
 ```
 
 Output:
-```javascript
+```
 javascript
 ```
 
@@ -30,7 +30,7 @@ console.log(last);
 ```
 
 Output:
-```javascript
+```
 javascript
 go
 ```
@@ -43,7 +43,7 @@ console.log(last);
 ```
 
 Output:
-```javascript
+```
 javascript
 python
 ```
@@ -57,7 +57,7 @@ console.log(c);
 ```
 
 Output:
-```javascript
+```
 a
 b
 c
@@ -77,7 +77,7 @@ console.log(admin);
 ```
 
 Output:
-```javascript
+```
 Manson
 John
 ```
@@ -93,7 +93,7 @@ console.log(surname);
 ```
 
 Output:
-```javascript
+```
 John
 Anonymous
 ```
@@ -121,7 +121,7 @@ console.log(height);
 ```
 
 Output:
-```javascript
+```
 Menu
 100
 200
@@ -137,7 +137,7 @@ console.log(height);
 ```
 
 Output:
-```javascript
+```
 Menu
 100
 200
@@ -154,7 +154,7 @@ console.log(height);
 ```
 
 Output:
-```javascript
+```
 Menu
 100
 200

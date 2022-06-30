@@ -54,7 +54,7 @@ person('John');
 ```
 
 Output:
-```javascript
+```
 John
 ```
 
@@ -68,7 +68,7 @@ person('John');
 ```
 
 Output:
-```javascript
+```
 John
 ```
 
@@ -79,7 +79,7 @@ console.log(person);
 ```
 
 Output:
-```javascript
+```
 John
 ```
 
@@ -90,7 +90,7 @@ console.log(person);
 ```
 
 Output:
-```javascript
+```
 John
 ```
 

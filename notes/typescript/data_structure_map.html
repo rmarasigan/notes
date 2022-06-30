@@ -281,7 +281,7 @@
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Map</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span><span class="s2">"name"</span> <span class="p">=&gt;</span> <span class="s2">"John"</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span><span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>We can have function as a key of any primitive data arrays or symbols as well.</p>
@@ -292,7 +292,7 @@
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Map</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span><span class="nx">ƒ</span> <span class="p">=&gt;</span> <span class="s1">'John'</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span><span class="n">ƒ</span> <span class="o">=&gt;</span> <span class="s1">'John'</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>If we added a few things like 3 times with the same key and values, it will get rid of the duplicates.</p>
@@ -304,7 +304,7 @@
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Map</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span><span class="s2">"name"</span> <span class="p">=&gt;</span> <span class="s2">"John"</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span><span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s2">"John"</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>But if we change at least one of them, we will get a Map of 2. Basically it will automatically remove the duplicate values and ignore them.</p>
@@ -316,7 +316,7 @@
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Map</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span><span class="s1">'name'</span> <span class="p">=&gt;</span> <span class="s1">'John'</span><span class="p">,</span> <span class="s1">'name1'</span> <span class="p">=&gt;</span> <span class="s1">'John'</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span><span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'John'</span><span class="p">,</span> <span class="s1">'name1'</span> <span class="o">=&gt;</span> <span class="s1">'John'</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>To grab the values from a map:</p>
@@ -327,7 +327,7 @@
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">John</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">John</span>
 </pre></div>
 </div>
 <p>To check whether the key is available or not:</p>
@@ -340,8 +340,8 @@
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kc">true</span>
-<span class="kc">false</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">true</span>
+<span class="n">false</span>
 </pre></div>
 </div>
 <p>To get all the keys:</p>
@@ -352,7 +352,7 @@
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MapIterator</span> <span class="p">{</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'name1'</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MapIterator</span> <span class="p">{</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'name1'</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>To get all the values:</p>
@@ -363,7 +363,7 @@
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">MapIterator</span> <span class="p">{</span><span class="s1">'John'</span><span class="p">,</span> <span class="s1">'John1'</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MapIterator</span> <span class="p">{</span><span class="s1">'John'</span><span class="p">,</span> <span class="s1">'John1'</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>To iterate on our map object:</p>
@@ -376,8 +376,8 @@
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">John</span>
-<span class="nx">John1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">John</span>
+<span class="n">John1</span>
 </pre></div>
 </div>
 <p>Adding a key-value pairs:</p>
@@ -391,7 +391,7 @@
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Map</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span><span class="nb">Array</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="kc">undefined</span><span class="p">,</span> <span class="nx">Tue</span> <span class="nx">Jun</span> <span class="mi">28</span> <span class="mi">2022</span> <span class="mi">21</span><span class="o">:</span><span class="mi">18</span><span class="o">:</span><span class="mi">18</span> <span class="nx">GMT</span><span class="o">+</span><span class="mi">0800</span> <span class="p">(</span><span class="nx">Philippine</span> <span class="nx">Standard</span> <span class="nx">Time</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="s1">'today'</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span><span class="n">Array</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">undefined</span><span class="p">,</span> <span class="n">Tue</span> <span class="n">Jun</span> <span class="mi">28</span> <span class="mi">2022</span> <span class="mi">21</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">18</span> <span class="n">GMT</span><span class="o">+</span><span class="mi">0800</span> <span class="p">(</span><span class="n">Philippine</span> <span class="n">Standard</span> <span class="n">Time</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s1">'today'</span><span class="p">}</span>
 </pre></div>
 </div>
 
