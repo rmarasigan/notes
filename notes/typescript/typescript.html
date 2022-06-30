@@ -46,7 +46,7 @@
   
   
   
-    <title>Installation &#8212; Aide Memoire 1.0.0 documentation</title>
+    <title>TypeScript &#8212; Aide Memoire 1.0.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
@@ -56,8 +56,8 @@
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Getting Started" href="GettingStarted.html" />
-    <link rel="prev" title="TypeScript" href="../typescript/typescript.html" />
+    <link rel="next" title="Installation" href="../docker/Installation.html" />
+    <link rel="prev" title="ES 6 – Promises" href="es6_promises.html" />
   
    
 
@@ -76,7 +76,7 @@
   <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
   <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
   <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#notes/docker/Installation" tabindex="1" class="md-skip"> Skip to content </a>
+  <a href="#notes/typescript/typescript" tabindex="1" class="md-skip"> Skip to content </a>
   <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
@@ -94,7 +94,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">Aide Memoire 👩🏻‍💻</span>
-          <span class="md-header-nav__topic"> Installation </span>
+          <span class="md-header-nav__topic"> TypeScript </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -215,22 +215,32 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#notes-docker-installation--page-root" class="md-nav__link">Installation</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#notes-typescript-typescript--page-root" class="md-nav__link">TypeScript</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#docker-on-ubuntu" class="md-nav__link"><strong>Docker on Ubuntu</strong></a>
+        <li class="md-nav__item"><a href="#typescript-components" class="md-nav__link">TypeScript Components</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#language" class="md-nav__link">Language</a>
         </li>
-        <li class="md-nav__item"><a href="#run-as-rootless" class="md-nav__link"><strong>Run as ROOTLESS</strong></a>
+        <li class="md-nav__item"><a href="#compiler" class="md-nav__link">Compiler</a>
         </li>
-        <li class="md-nav__item"><a href="#docker-compose-on-ubuntu" class="md-nav__link"><strong>Docker Compose on Ubuntu</strong></a>
+        <li class="md-nav__item"><a href="#language-services" class="md-nav__link">Language Services</a>
+        </li></ul>
+            </nav>
         </li>
-        <li class="md-nav__item"><a href="#docker-on-mac" class="md-nav__link"><strong>Docker on MAC</strong></a>
+        <li class="md-nav__item"><a href="#type-annotations" class="md-nav__link">Type Annotations</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#type-annotation-of-parameters" class="md-nav__link">Type Annotation of Parameters</a>
         </li>
-        <li class="md-nav__item"><a href="#minikube-installation" class="md-nav__link">Minikube Installation</a>
+        <li class="md-nav__item"><a href="#type-annotation-in-object" class="md-nav__link">Type Annotation in Object</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#reference" class="md-nav__link">Reference</a>
         </li></ul>
             </nav>
         </li>
     
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/docker/Installation.md.txt">Show Source</a> </li>
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/typescript/typescript.md.txt">Show Source</a> </li>
 
 <li id="searchbox" class="md-nav__item"></li>
 
@@ -244,138 +254,78 @@
           <article class="md-content__inner md-typeset" role="main">
             
   
-<h1 id="notes-docker-installation--page-root">Installation<a class="headerlink" href="#notes-docker-installation--page-root" title="Permalink to this heading">¶</a></h1>
+<h1 id="notes-typescript-typescript--page-root">TypeScript<a class="headerlink" href="#notes-typescript-typescript--page-root" title="Permalink to this heading">¶</a></h1>
 
-<h2 id="docker-on-ubuntu"><strong>Docker on Ubuntu</strong><a class="headerlink" href="#docker-on-ubuntu" title="Permalink to this heading">¶</a></h2>
-<p><strong>OS requirements</strong></p>
-<p>You need the 64-bit version of one of these Ubuntu versions and minimum of 8GB RAM</p>
+<h2 id="typescript-components">TypeScript Components<a class="headerlink" href="#typescript-components" title="Permalink to this heading">¶</a></h2>
+<a class="reference internal image-reference" href="../../_images/typescript_components.jpg"><img alt="typescript_components" src="../../_images/typescript_components.jpg" style="width: 500px;"/></a>
+<p>The compiler performs the type erasure and code transformations that convert your TypeScript code into JavaScript. It will emit warnings and errors if it detects problems and can perform additional tasks such as combining the output into a single file, generating source maps, and more.</p>
+
+<h3 id="language">Language<a class="headerlink" href="#language" title="Permalink to this heading">¶</a></h3>
+<p>It features the TypeScript language elements. It comprises elements like syntax, keywords, and type annotations.</p>
+
+
+<h3 id="compiler">Compiler<a class="headerlink" href="#compiler" title="Permalink to this heading">¶</a></h3>
+<p>The TypeScript Compiler (TSC) transform the TypeScript program equivalent to its JavaScript code. It also performs the parsing, the type checking of our TypeScript code to JavaScript code. Browser doesn’t support the execution of TypeScript code directly. So the program written in TypeScript must be re-written in JavaScript equivalent code which supports the execution of code in the browser directly. We can compile the TypeScript file by running <code class="docutils literal notranslate"><span class="pre">tsc</span></code> command on the command line.</p>
+
+
+<h3 id="language-services">Language Services<a class="headerlink" href="#language-services" title="Permalink to this heading">¶</a></h3>
+<p>The language service provides information which helps editors and other tools to give better assistance features such as automated refactoring and IntelliSense. It exposes an additional layer around the core-compiler pipeline. It supports some standard typical editor operations like code formatting and outlining, colorization, statement, completion, signature help, etc.</p>
+
+
+
+<h2 id="type-annotations">Type Annotations<a class="headerlink" href="#type-annotations" title="Permalink to this heading">¶</a></h2>
+<p>We can specify the type using <code class="docutils literal notranslate"><span class="pre">:Type</span></code> after the name of the variable, parameter of property. There can be a space after the colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>).</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">variable_name</span>: <span class="kt">type_annotation</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">variable_name</span>: <span class="kt">type_annotation</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">variable_name</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+
+<span class="c1">// Example Type Annotation with different data types</span>
+<span class="kd">let</span> <span class="nx">name</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s2">"John"</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">age</span>: <span class="kt">number</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">isUpdated</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In the example above, you cannot change the value using a different data type other than the declared data type of a variable. If you try to do so, TypeScript will show an error. This helps in catching JavaScript errors. Type Annotations are used to enforce type checking. However, it helps the compiler in checking types and helps avoid errors dealing with data types.</p>
+
+<h3 id="type-annotation-of-parameters">Type Annotation of Parameters<a class="headerlink" href="#type-annotation-of-parameters" title="Permalink to this heading">¶</a></h3>
+<p>Basic syntax:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">functionName</span><span class="p">(</span><span class="nx">param_1</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">param_2</span>: <span class="kt">number</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="c1">// code block here</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">display</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">name</span>: <span class="kt">string</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Id = </span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">, Name = </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+<h3 id="type-annotation-in-object">Type Annotation in Object<a class="headerlink" href="#type-annotation-in-object" title="Permalink to this heading">¶</a></h3>
+<p>Basic syntax:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">variable_name</span> <span class="p">{</span>
+   <span class="nx">obj_1</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="nx">obj_2</span>: <span class="kt">number</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">employee</span> <span class="p">{</span>
+   <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+   <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+
+
+
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>Ubuntu Hirsute 21.04</p></li>
-<li><p>Ubuntu Groovy 20.10</p></li>
-<li><p>Ubuntu Focal 20.04 (LTS)</p></li>
-<li><p>Ubuntu Bionic 18.04 (LTS)</p></li>
+<li><p><a class="reference external" href="https://www.javatpoint.com/typescript-components">Components of TypeScript</a></p></li>
+<li><p><a class="reference external" href="https://www.tutorialsteacher.com/typescript/type-annotation">TypeScript - Type Annotations</a></p></li>
 </ul>
-<p><strong>Installation Guide</strong></p>
-<ol class="arabic simple">
-<li><p>Update the apt package index and install packages to allow apt to use a repository over HTTPS</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
-
-dev@dev-PC:~$ sudo apt install \
-  apt-transport-https \
-  ca-certificates \
-  curl \
-  gnupg \
-  lsb-release
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>Add Docker’s official GPG key</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>Install Docker Engine</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt install docker-ce docker-ce-cli containerd.io
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>Verify that Docker Engine is installed correctly by running the hello-world image</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev-PC:~$ sudo docker run hello-world
-</pre></div>
-</div>
-<ol class="arabic simple" start="5">
-<li><p>Create <a class="reference external" href="https://hub.docker.com/signup">Dockerhub</a> account</p></li>
-</ol>
-<p>Reference:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Install Docker on Ubuntu Documenation</a></p></li>
-</ul>
-
-
-<h2 id="run-as-rootless"><strong>Run as ROOTLESS</strong><a class="headerlink" href="#run-as-rootless" title="Permalink to this heading">¶</a></h2>
-<p><strong>Check if the group exist</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ grep "docker" /etc/group
-</pre></div>
-</div>
-<p><strong>Steps</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo groupadd docker
-dev@dev:~$ sudo usermod -aG docker $USER
-dev@dev:~$ newgrp docker
-</pre></div>
-</div>
-<p>After that, restart your PC.</p>
-<p>Reference:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://jhooq.com/permission-denied-docker-daemon/">Docker can not connect to docker daemon and permission denied</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=FcZ1Dh3X5JQ">Fixing - permission denied trying to connect to Docker daemon socket at unix:///var/run/docker.sock
-</a></p></li>
-<li><p><a class="reference external" href="https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user">Run without Sudo</a></p></li>
-</ul>
-
-
-<h2 id="docker-compose-on-ubuntu"><strong>Docker Compose on Ubuntu</strong><a class="headerlink" href="#docker-compose-on-ubuntu" title="Permalink to this heading">¶</a></h2>
-<ol class="arabic simple">
-<li><p>Run this command to download the current stable release of Docker Compose</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-</pre></div>
-</div>
-<p>To install a different version of Compose, substitute <code class="docutils literal notranslate"><span class="pre">1.29.2</span></code> with the version of Compose you want to use.</p>
-<ol class="arabic simple" start="2">
-<li><p>Apply executable permissions to the binary</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo chmod +x /usr/local/bin/docker-compose
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>Test the installation.</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker-compose --version
-</pre></div>
-</div>
-<p>Reference:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.docker.com/compose/install/">Install Docker Compose on Ubuntu Documenation</a></p></li>
-</ul>
-
-
-<h2 id="docker-on-mac"><strong>Docker on MAC</strong><a class="headerlink" href="#docker-on-mac" title="Permalink to this heading">¶</a></h2>
-<p><strong>Installation Guide</strong></p>
-<ol class="arabic simple">
-<li><p>Sign up for a <a class="reference external" href="https://www.docker.com/">Docker Hub Account</a> and click on <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">Started</span></code> and find <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">for</span> <span class="pre">Mac</span></code>.</p></li>
-<li><p>Download / Install Docker for Mac</p></li>
-<li><p>Log-in to Docker</p></li>
-<li><p>Verify Docker installation</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker version
-</pre></div>
-</div>
-
-
-<h2 id="minikube-installation">Minikube Installation<a class="headerlink" href="#minikube-installation" title="Permalink to this heading">¶</a></h2>
-<ol class="arabic simple">
-<li><p>Update the packages and make sure to install (or check whether you already have) <code class="docutils literal notranslate"><span class="pre">curl</span></code> before running the second command.</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt-get update -y
-dev@dev:~$ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>Install minikube</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo install minikube-linux-amd64 /usr/local/bin/minikube
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>Check minikube status</p></li>
-</ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ minikube status
-</pre></div>
-</div>
 
 
 
@@ -389,7 +339,7 @@ dev@dev:~$ curl -LO https://storage.googleapis.com/minikube/releases/latest/mini
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="../typescript/typescript.html" title="TypeScript"
+            <a href="es6_promises.html" title="ES 6 – Promises"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -398,17 +348,17 @@ dev@dev:~$ curl -LO https://storage.googleapis.com/minikube/releases/latest/mini
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> TypeScript </span>
+                      class="md-footer-nav__direction"> Previous </span> ES 6 – Promises </span>
               </div>
             </a>
           
           
-            <a href="GettingStarted.html" title="Getting Started"
+            <a href="../docker/Installation.html" title="Installation"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> Getting Started </span>
+                class="md-footer-nav__direction"> Next </span> Installation </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
