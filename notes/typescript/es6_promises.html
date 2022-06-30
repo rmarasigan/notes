@@ -219,7 +219,11 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#creating-and-using-a-promise" class="md-nav__link">Creating and using a <code class="docutils literal notranslate"><span class="pre">Promise</span></code></a>
         </li>
-        <li class="md-nav__item"><a href="#creating-and-using-a-promise-in-getting-data" class="md-nav__link">Creating and using a <code class="docutils literal notranslate"><span class="pre">Promise</span></code> in getting data</a>
+        <li class="md-nav__item"><a href="#creating-and-using-a-promise-in-getting-data" class="md-nav__link">Creating and using a <code class="docutils literal notranslate"><span class="pre">Promise</span></code> in getting data</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#loading-data-with-fetch" class="md-nav__link">Loading data with <code class="docutils literal notranslate"><span class="pre">fetch()</span></code></a>
+        </li></ul>
+            </nav>
         </li>
         <li class="md-nav__item"><a href="#reference" class="md-nav__link">Reference</a>
         </li></ul>
@@ -426,7 +430,7 @@
 <span class="n">Promise</span> <span class="n">Resolved</span>
 </pre></div>
 </div>
-<p>Instead of having a callback inside the <code class="docutils literal notranslate"><span class="pre">then</span></code>, we can make it a little bit modular.</p>
+<p>Instead of having a callback inside the <code class="docutils literal notranslate"><span class="pre">then()</span></code>, we can make it a little bit modular.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">printData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
 <span class="p">{</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
@@ -450,6 +454,39 @@
 </pre></div>
 </div>
 
+<h3 id="loading-data-with-fetch">Loading data with <code class="docutils literal notranslate"><span class="pre">fetch()</span></code><a class="headerlink" href="#loading-data-with-fetch" title="Permalink to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">fetch()</span></code> method is available in the global scope that instructs the web browsers to send a request to a URL. It requires only one parameter which is the URL of the resource that you want to fetch. It also uses a <code class="docutils literal notranslate"><span class="pre">Promise</span></code> so you can then use the <code class="docutils literal notranslate"><span class="pre">then()</span></code> and <code class="docutils literal notranslate"><span class="pre">catch()</span></code> methods to handle it.</p>
+<p>Basic Fetch API:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get all users</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="s1">'https://jsonplaceholder.typicode.com/users/'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Promise {&lt;pending&gt;}
+Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users/', redirected: false, status: 200, ok: true, …}
+</pre></div>
+</div>
+<p>But how can we return the data as JSON? To get the actual data, you call one of the methods of the response object like <code class="docutils literal notranslate"><span class="pre">text()</span></code> or <code class="docutils literal notranslate"><span class="pre">json()</span></code>. These methods resolve into the actual data.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get all users</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="s1">'https://jsonplaceholder.typicode.com/users/'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">()).</span><span class="nx">then</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+   0: (8) {id: 1, name: "Leanne Graham", usern...}
+   1: (8) {id: 2, name: "Ervin Howell", userna...}
+   2: (8) {id: 3, name: "Clementine Bauch", us...}
+   3: (8) {id: 4, name: "Patricia Lebsack", us...}
+   4: (8) {id: 5, name: "Chelsey Dietrich", us...}
+   5: (8) {id: 6, name: "Mrs. Dennis Schulist"...}
+   6: (8) {id: 7, name: "Kurtis Weissnat", use...}
+   7: (8) {id: 8, name: "Nicholas Runolfsdotti...}
+   8: (8) {id: 9, name: "Glenna Reichert", use...}
+   9: (8) {id: 10, name: "Clementina DuBuque",...}
+</pre></div>
+</div>
+
+
 
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
@@ -457,8 +494,10 @@
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises">Using Promises</a></p></li>
 <li><p><a class="reference external" href="https://www.geeksforgeeks.org/es6-promises/">ES6 | Promises</a></p></li>
 <li><p><a class="reference external" href="https://javascript.info/xmlhttprequest">XMLHTTPRequest</a></p></li>
+<li><p><a class="reference external" href="https://www.javascripttutorial.net/javascript-fetch-api/">JavaScript Fetch API</a></p></li>
 <li><p><a class="reference external" href="https://codeburst.io/a-simple-guide-to-es6-promises-d71bacd2e13a">A Simple Guide to ES6 Promises</a></p></li>
 <li><p><a class="reference external" href="https://www.freecodecamp.org/news/javascript-es6-promises-for-beginners-resolve-reject-and-chaining-explained/">JavaScript Promise Tutorial: Resolve, Reject, and Chaining in JS and ES6</a></p></li>
+<li><p><a class="reference external" href="https://www.freecodecamp.org/news/a-practical-es6-guide-on-how-to-perform-http-requests-using-the-fetch-api-594c3d91a547/">A practical ES6 guide on how to perform HTTP requests using the Fetch API</a></p></li>
 </ul>
 
 

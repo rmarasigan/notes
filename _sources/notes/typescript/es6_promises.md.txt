@@ -183,7 +183,7 @@ Output:
 Promise Resolved
 ```
 
-Instead of having a callback inside the `then`, we can make it a little bit modular.
+Instead of having a callback inside the `then()`, we can make it a little bit modular.
 ```javascript
 function printData(data)
 {
@@ -208,10 +208,48 @@ Output:
    9: (8) {id: 10, name: "Clementina DuBuque",...}
 ```
 
+### Loading data with `fetch()`
+The `fetch()` method is available in the global scope that instructs the web browsers to send a request to a URL. It requires only one parameter which is the URL of the resource that you want to fetch. It also uses a `Promise` so you can then use the `then()` and `catch()` methods to handle it.
+
+Basic Fetch API:
+```javascript
+// Get all users
+fetch('https://jsonplaceholder.typicode.com/users/').then(console.log);
+```
+
+Output:
+```
+Promise {<pending>}
+Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users/', redirected: false, status: 200, ok: true, …}
+```
+
+But how can we return the data as JSON? To get the actual data, you call one of the methods of the response object like `text()` or `json()`. These methods resolve into the actual data.
+```javascript
+// Get all users
+fetch('https://jsonplaceholder.typicode.com/users/').then(response => response.json()).then(console.log);
+```
+
+Output
+```
+(10) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+   0: (8) {id: 1, name: "Leanne Graham", usern...}
+   1: (8) {id: 2, name: "Ervin Howell", userna...}
+   2: (8) {id: 3, name: "Clementine Bauch", us...}
+   3: (8) {id: 4, name: "Patricia Lebsack", us...}
+   4: (8) {id: 5, name: "Chelsey Dietrich", us...}
+   5: (8) {id: 6, name: "Mrs. Dennis Schulist"...}
+   6: (8) {id: 7, name: "Kurtis Weissnat", use...}
+   7: (8) {id: 8, name: "Nicholas Runolfsdotti...}
+   8: (8) {id: 9, name: "Glenna Reichert", use...}
+   9: (8) {id: 10, name: "Clementina DuBuque",...}
+```
+
 ## Reference
 * [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 * [Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
 * [ES6 | Promises](https://www.geeksforgeeks.org/es6-promises/)
 * [XMLHTTPRequest](https://javascript.info/xmlhttprequest)
+* [JavaScript Fetch API](https://www.javascripttutorial.net/javascript-fetch-api/)
 * [A Simple Guide to ES6 Promises](https://codeburst.io/a-simple-guide-to-es6-promises-d71bacd2e13a)
 * [JavaScript Promise Tutorial: Resolve, Reject, and Chaining in JS and ES6](https://www.freecodecamp.org/news/javascript-es6-promises-for-beginners-resolve-reject-and-chaining-explained/)
+* [A practical ES6 guide on how to perform HTTP requests using the Fetch API](https://www.freecodecamp.org/news/a-practical-es6-guide-on-how-to-perform-http-requests-using-the-fetch-api-594c3d91a547/)
