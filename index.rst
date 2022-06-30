@@ -91,6 +91,7 @@ TypeScript
    ES 6 – Generator Functions <notes/typescript/es6_generator_functions.md>
    ES 6 – Classes <notes/typescript/es6_classes.md>
    ES 6 – Promises <notes/typescript/es6_promises.md>
+   TypeScript <notes/typescript/typescript.md>
 
 DevOps
 ===========
