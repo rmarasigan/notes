@@ -64,6 +64,58 @@ There are just few differences between class constructor signatures and function
 * Constructor can't have type parameters – these belong on the outer class declaration
 * Constructor can't have return type annotations – the class instance type is always what's returned
 
+### `constructor` shorthand
+In TypeScript, there is a shorthand to create and assign class properties from constructor params. TypeScript offers special syntax for turning a constructor parameter into a class property with the same name and value. These are called **parameter properties** and are created by prefixing a constructor argument with one of the visbility modifiers `public`, `private`, `protected` or `readonly`.
+
+Syntax:
+```typescript
+class class_name
+{
+   constructor(access_modifier variable_1: data_type, access_modifier variable_2: data_type){}
+}
+```
+
+Imagine you have the following code:
+```typescript
+class User
+{
+   ID: string;
+   FullName: string;
+
+   constructor(user_id: string, full_name: string)
+   {
+      this.ID = user_id;
+      this.FullName = full_name;
+   }
+}
+
+let user = new User("0098172018", "Mark Manson");
+console.log(`User ID: ${user.ID} Name: ${user.FullName}`);
+```
+
+Output:
+```
+User ID: 0098172018 Name: Mark Manson
+```
+
+You can write the same class using shorter syntax:
+```typescript
+class User
+{
+   constructor(public user_id: string, public full_name: string){}
+}
+
+let user = new User("0098172018", "Mark Manson");
+console.log(`User ID: ${user.user_id} Name: ${user.full_name}`);
+```
+
+Output:
+```
+User ID: 0098172018 Name: Mark Manson
+```
+
+You can use this constructor assignment technique to save some lines of code.
+
 ## Methods
 A function property on a class is called a *method*. Methods can use all the same type annotations as function and constructors. It is similar to a function used to expose the behaviour of an object.
 
