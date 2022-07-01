@@ -94,6 +94,7 @@ TypeScript
    TypeScript <notes/typescript/typescript.md>
    TS – Basic Types <notes/typescript/ts_basic_types.md>
    TS – Advance Types <notes/typescript/ts_advance_types.md>
+   TS – Functions <notes/typescript/ts_functions.md>
 
 DevOps
 ===========

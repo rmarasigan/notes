@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="263238">
+  <script src="../../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>TS – Functions &#8212; Aide Memoire 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Installation" href="../docker/Installation.html" />
+    <link rel="prev" title="TS – Advance Types" href="ts_advance_types.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue data-md-color-accent=light-blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#notes/typescript/ts_functions" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../index.html" title="Aide Memoire 1.0.0 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Aide Memoire 👩🏻‍💻</span>
+          <span class="md-header-nav__topic"> TS – Functions </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/rmarasigan/notes" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Notes
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../../"versions.json"",
+        target_loc = "../../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">Aide Memoire 1.0.0 documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../index.html" title="Aide Memoire 1.0.0 documentation" class="md-nav__button md-logo">
+      
+        <img src="../../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../../index.html"
+       title="Aide Memoire 1.0.0 documentation">Aide Memoire 👩🏻‍💻</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/rmarasigan/notes" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Notes
+  </div>
+</a>
+    </div>
+  
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#notes-typescript-ts-functions--page-root" class="md-nav__link">TS – Functions</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#named-functions" class="md-nav__link">Named Functions</a>
+        </li>
+        <li class="md-nav__item"><a href="#anonymous-function" class="md-nav__link">Anonymous Function</a>
+        </li>
+        <li class="md-nav__item"><a href="#optional-parameters" class="md-nav__link">Optional Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#default-parameters" class="md-nav__link">Default Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#rest-parameters" class="md-nav__link">Rest Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#reference" class="md-nav__link">Reference</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/typescript/ts_functions.md.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<h1 id="notes-typescript-ts-functions--page-root">TS – Functions<a class="headerlink" href="#notes-typescript-ts-functions--page-root" title="Permalink to this heading">¶</a></h1>
+<p>Functions are the primary means of passing data around in JavaScript. They are the primary blocks of any program. With functions, you can implement/mimic the concepts of object-oriented programming like classes, objects, polymorphism, and abstraction. Functions ensure that the program is maintainable and reusable, and organized into readable blocks. It is a set of statements to perform a specific task. Once defined, functions may be called to access code. This makes the code reusable.</p>
+<p>A function declaration tells the compiler about a function’s name, return type, and parameters. A function definition provides the actual body of the function.</p>
+
+<h2 id="named-functions">Named Functions<a class="headerlink" href="#named-functions" title="Permalink to this heading">¶</a></h2>
+<p>A named function is one where you declare and call a function by its given name.</p>
+<p>Syntax:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">display() {</span><span class="p">}</span>
+
+<span class="nx">display</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Functions can also include parameter types and return type.</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">x</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">y</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">:</span> <span class="kt">number</span>
+<span class="p">{</span>
+   <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span>
+</pre></div>
+</div>
+<p>In this example, the <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function accepts two parameters with the <code class="docutils literal notranslate"><span class="pre">number</span></code> type. In it, you can only pass numbers into it, not the values of other types. The <code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">number</span></code> after the parentheses indicate the return type. The <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function return a value of the <code class="docutils literal notranslate"><span class="pre">number</span></code> type.</p>
+<p>When a function has a return type, the TypeScript compiler checks every <code class="docutils literal notranslate"><span class="pre">return</span></code> statement against the return type to ensure that the return vlalue is compatible with it. If a function does not return a value, you can use the <code class="docutils literal notranslate"><span class="pre">void</span></code> type as the return type. The <code class="docutils literal notranslate"><span class="pre">void</span></code> keyword indicates that the function doesn’t return any value.</p>
+<p>Example:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">print</span><span class="p">(</span><span class="nx">message</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">:</span> <span class="k">void</span>
+<span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+
+<h2 id="anonymous-function">Anonymous Function<a class="headerlink" href="#anonymous-function" title="Permalink to this heading">¶</a></h2>
+<p>An anonymous function is one which is defined as an expression. This expression is stored in a variable. So, the function itself does not have a name. These functions are invoked using the variable name that the function is stored in. An anonymous function is usually not accesible after its initial creation. Variables can be assigned an anonymous function. Such an expression is called a function expression.</p>
+<p>Syntax:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">anonymous</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="nx">anonymous</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>An anonymous function can also include parameter types and return type, just as standard functions do.</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">y</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">:</span> <span class="kt">number</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span>
+</pre></div>
+</div>
+
+
+<h2 id="optional-parameters">Optional Parameters<a class="headerlink" href="#optional-parameters" title="Permalink to this heading">¶</a></h2>
+<p>Optional parameters can be used when arguments need not be compulsorily passed for a function’s execution. A parameter can be marked optimal by append a question mark to its name. The optional parameter <em>should be set as the last argument</em> in a function.</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">function_name</span> <span class="p">(</span><span class="nx">param_1</span>: <span class="kt">data_type</span><span class="p">,</span> <span class="nx">param_2</span>: <span class="kt">data_type</span><span class="p">,</span> <span class="nx">param_3?</span>: <span class="kt">data_type</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">user_details</span><span class="p">(</span><span class="nx">name</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">email</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">mobile?</span>: <span class="kt">string</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">mobile</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="c1">// code block here</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">user_details</span><span class="p">(</span><span class="s2">"Manson"</span><span class="p">,</span> <span class="s2">"mark_manson@gmail.com"</span><span class="p">);</span>
+<span class="nx">user_details</span><span class="p">(</span><span class="s2">"Paulo"</span><span class="p">,</span> <span class="s2">"paulo_cuelho@gmail.com"</span><span class="p">,</span> <span class="s2">"12345678923"</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In the above example, the last parameter <code class="docutils literal notranslate"><span class="pre">mobile</span></code> is marked as optional with a question mark appended at the end. If we do not specify the last parameter then its value will be <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
+
+
+<h2 id="default-parameters">Default Parameters<a class="headerlink" href="#default-parameters" title="Permalink to this heading">¶</a></h2>
+<p>Like optional parameters, default parameters are also optional. It means that you can omit the default parameters when calling the function. A parameter cannot be declared optional and default at the same time.</p>
+<p>Syntax:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">function_name</span> <span class="p">(</span><span class="nx">param_1</span> <span class="o">=</span> <span class="nx">default_value1</span><span class="p">,</span> <span class="p">...)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>In this syntax, if you don’t pass arguments or pass the <code class="docutils literal notranslate"><span class="pre">undefined</span></code> into the function when calling it, the function will take the default initialized values for the omitted parameters.</p>
+<p>Example:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">calculate</span> <span class="p">(</span><span class="nx">price</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">rate</span>: <span class="kt">number</span> <span class="o">=</span> <span class="mf">0.50</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">discount</span> <span class="o">=</span> <span class="nx">price</span> <span class="o">*</span> <span class="nx">rate</span><span class="p">;</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Discount Amount: </span><span class="si">${</span><span class="nx">discount</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">calculate</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<span class="nx">calculate</span><span class="p">(</span><span class="mi">2500</span><span class="p">,</span> <span class="mf">0.30</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Discount</span> <span class="n">Amount</span><span class="p">:</span> <span class="mi">1000</span>
+<span class="n">Discount</span> <span class="n">Amount</span><span class="p">:</span> <span class="mi">750</span>
+</pre></div>
+</div>
+<p>In the example above, the <code class="docutils literal notranslate"><span class="pre">calculate</span></code> function takes two parameters – price and rate. The default parameter value for rate is set to 0.50. When the program invokes the function, only passing the price parameter, the value of rate is 0.50 as there is no rate parameter being passed so the default value will be used. Again, the same function is invoked but with two arguments. The default value of rate is overwritten and is set to the value explicitly passed.</p>
+
+
+<h2 id="rest-parameters">Rest Parameters<a class="headerlink" href="#rest-parameters" title="Permalink to this heading">¶</a></h2>
+<p>When the number of parameters that a function will receive is not known or can vary, we can use rest parameters. With TypeScript we can use rest parameters denoted by ellipsis <code class="docutils literal notranslate"><span class="pre">...</span></code>. We can pass zero or more arguments to the rest parameters. The compiler will create an array of arguments with the rest parameter name provided by us.</p>
+<p>Rest parameters don’t restrict the number of values that you can pass to a function. However, the values passed must all be of the same type. In other words, rest parameters act as placeholders for multiple arguments of the same type. Any nonrest parameter should come before the rest parameter.</p>
+<p>Syntax:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">function_name</span> <span class="p">(</span><span class="nx">param_1</span>: <span class="kt">data_type</span><span class="p">,</span> <span class="p">...</span><span class="nx">param_2</span>: <span class="kt">data_type</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">sum</span><span class="p">(...</span><span class="nx">numbers</span>: <span class="kt">numbers</span><span class="p">[])</span><span class="o">:</span> <span class="kt">number</span>
+<span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">total</span> <span class="o">+=</span> <span class="nx">num</span><span class="p">);</span>
+   <span class="k">return</span> <span class="nx">total</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span>
+</pre></div>
+</div>
+<p>In this example, the <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function calculates the total amount of numbers passed into it. Since the <code class="docutils literal notranslate"><span class="pre">numbers</span></code> parameter is a rest parameter, you can pass one or more numbers to calcule the total.</p>
+
+
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.typescripttutorial.net/typescript-tutorial/typescript-functions/">TypeScript Functions</a></p></li>
+<li><p><a class="reference external" href="https://www.tutorialsteacher.com/typescript/typescript-function">TypeScript - Functions</a></p></li>
+<li><p><a class="reference external" href="https://www.tutorialspoint.com/typescript/typescript_functions.htm">TypeScript - Functions</a></p></li>
+<li><p><a class="reference external" href="https://www.typescripttutorial.net/typescript-tutorial/typescript-rest-parameters/">TypeScript Rest Parameters</a></p></li>
+<li><p><a class="reference external" href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#functions">Everyday Types - Functions</a></p></li>
+<li><p><a class="reference external" href="https://www.tutorialsteacher.com/typescript/rest-parameters">TypeScript - Rest Parameters</a></p></li>
+</ul>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="ts_advance_types.html" title="TS – Advance Types"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> TS – Advance Types </span>
+              </div>
+            </a>
+          
+          
+            <a href="../docker/Installation.html" title="Installation"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Installation </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2022, rmarasigan.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>
