@@ -96,6 +96,7 @@ TypeScript
    TS – Advance Types <notes/typescript/ts_advance_types.md>
    TS – Functions <notes/typescript/ts_functions.md>
    TS – Interfaces <notes/typescript/ts_interfaces.md>
+   TS – Classes <notes/typescript/ts_classes.md>
 
 DevOps
 ===========
