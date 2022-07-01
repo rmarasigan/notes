@@ -64,7 +64,7 @@ Output:
 
 The `user.id_number` syntax will throw an error because the property cannot be changed.
 ```typescript
-user.id_number = '0089200107';]
+user.id_number = '0089200107';
 ```
 
 Error:
