@@ -93,6 +93,7 @@ TypeScript
    ES 6 – Promises <notes/typescript/es6_promises.md>
    TypeScript <notes/typescript/typescript.md>
    TS – Basic Types <notes/typescript/ts_basic_types.md>
+   TS – Advance Types <notes/typescript/ts_advance_types.md>
 
 DevOps
 ===========
