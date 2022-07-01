@@ -217,7 +217,11 @@
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#notes-typescript-ts-classes--page-root" class="md-nav__link">TS – Classes</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a>
+        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#constructor-shorthand" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">constructor</span></code> shorthand</a>
+        </li></ul>
+            </nav>
         </li>
         <li class="md-nav__item"><a href="#methods" class="md-nav__link">Methods</a>
         </li>
@@ -327,6 +331,53 @@
 <li><p>Constructor can’t have type parameters – these belong on the outer class declaration</p></li>
 <li><p>Constructor can’t have return type annotations – the class instance type is always what’s returned</p></li>
 </ul>
+
+<h3 id="constructor-shorthand"><code class="docutils literal notranslate"><span class="pre">constructor</span></code> shorthand<a class="headerlink" href="#constructor-shorthand" title="Permalink to this heading">¶</a></h3>
+<p>In TypeScript, there is a shorthand to create and assign class properties from constructor params. TypeScript offers special syntax for turning a constructor parameter into a class property with the same name and value. These are called <strong>parameter properties</strong> and are created by prefixing a constructor argument with one of the visbility modifiers <code class="docutils literal notranslate"><span class="pre">public</span></code>, <code class="docutils literal notranslate"><span class="pre">private</span></code>, <code class="docutils literal notranslate"><span class="pre">protected</span></code> or <code class="docutils literal notranslate"><span class="pre">readonly</span></code>.</p>
+<p>Syntax:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">class_name</span>
+<span class="p">{</span>
+   <span class="kr">constructor</span><span class="p">(</span><span class="nx">access_modifier</span> <span class="nx">variable_1</span>: <span class="kt">data_type</span><span class="p">,</span> <span class="nx">access_modifier</span> <span class="nx">variable_2</span>: <span class="kt">data_type</span><span class="p">){}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Imagine you have the following code:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">User</span>
+<span class="p">{</span>
+   <span class="nx">ID</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="nx">FullName</span>: <span class="kt">string</span><span class="p">;</span>
+
+   <span class="kr">constructor</span><span class="p">(</span><span class="nx">user_id</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">full_name</span>: <span class="kt">string</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">ID</span> <span class="o">=</span> <span class="nx">user_id</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">FullName</span> <span class="o">=</span> <span class="nx">full_name</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="s2">"0098172018"</span><span class="p">,</span> <span class="s2">"Mark Manson"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`User ID: </span><span class="si">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">ID</span><span class="si">}</span><span class="sb"> Name: </span><span class="si">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">FullName</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">User</span> <span class="n">ID</span><span class="p">:</span> <span class="mi">0098172018</span> <span class="n">Name</span><span class="p">:</span> <span class="n">Mark</span> <span class="n">Manson</span>
+</pre></div>
+</div>
+<p>You can write the same class using shorter syntax:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">User</span>
+<span class="p">{</span>
+   <span class="kr">constructor</span><span class="p">(</span><span class="kr">public</span> <span class="nx">user_id</span>: <span class="kt">string</span><span class="p">,</span> <span class="kr">public</span> <span class="nx">full_name</span>: <span class="kt">string</span><span class="p">){}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="s2">"0098172018"</span><span class="p">,</span> <span class="s2">"Mark Manson"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`User ID: </span><span class="si">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">user_id</span><span class="si">}</span><span class="sb"> Name: </span><span class="si">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">full_name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">User</span> <span class="n">ID</span><span class="p">:</span> <span class="mi">0098172018</span> <span class="n">Name</span><span class="p">:</span> <span class="n">Mark</span> <span class="n">Manson</span>
+</pre></div>
+</div>
+<p>You can use this constructor assignment technique to save some lines of code.</p>
+
 
 
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
