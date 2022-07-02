@@ -1,4 +1,4 @@
-# TS – Classes | Access Modifiers and `static`
+# TS – Classes | Access Modifiers, Accessor and `static`
 
 ## Access Modifers
 In object-oriented programming, the concept of *Encapsulation* is used to make class members public or private. For example, a class can control the visibility of tis data members. This is done using access modifiers. It gives direct access control to the class members. These class members are functions and properties. We can use class members inside its own class, anywhere outside the class, or within its child or derived class.
