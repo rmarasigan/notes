@@ -310,14 +310,107 @@ Employee Name: Manson, Mark Age: 27
 
 In the above example, we have declared `User` interface with `first_name`, `last_name`, `age` as property and `FullName()` and `GetAge()` as method/function. The `Employee` class implements this interface by using the `implements` keyword. After implementing an interface, we must declare the properties and methods in the class. If we do not implement those properties and methods, it throws a compile-time error. We have also declared a constructor in the class. So when we instantiate the class, we need to pass the necessary parameters otherwise it throws an error at compile time.
 
+## Abstract Classes
+Abstract classes are mainly for inheritance where other classes may derive from them. We cannot create an instance of an abstract class. An abstract class typically includes one or more abstract methods or property declarations. The class which extends the abstract class must define all the abstract methods. To declare an abstract class, you use the `abstract` keyword. Classes, methods, and fields in TypeScript may be abstract. An abstract method or abstract field is one that hasn’t had an implementation provided. These members must exist inside an abstract class, which cannot be directly instantiated.
+
+Syntax:
+```typescript
+abstract class abstract_class_name {}
+```
+
+An abstract method does not contain implementation. It only defines the signature of the method without including the method body. An abstract method must be implemented in the derived class. The role of abstract classes is to serve as a base class for subclasses which do implement all the abstract members. When a class doesn’t have any abstract members, it is said to be concrete.
+
+Example:
+```typescript
+abstract class User
+{
+   constructor(private FirstName: string, private LastName: string){}
+   abstract getSalary(): number;
+
+   get FullName(): string
+   {
+      return `${this.FirstName} ${this.LastName}`;
+   }
+
+   Compensation(): string
+   {
+      return `${this.FullName} makes ${this.getSalary()} a month`;
+   }
+}
+
+class Employee extends User
+{
+   constructor(FirstName: string, LastName: string, private Salary: number)
+   {
+      super(FirstName, LastName, Salary);
+   }
+
+   getSalary(): number
+   {
+      return this.Salary;
+   }
+}
+
+class Manager extends Employee
+{
+   public Employees: Employee[];
+
+   Details(): string
+   {
+      // We are accessing the FullName from
+      // User abtract class
+      return super.FullName;
+   }
+
+   TotalEmployees(): number
+   {
+      return this.Employees.length;
+   }
+}
+
+// Create an instance of employee
+let employee = new Employee('John', 'Doe', 1200);
+console.log(employee.Compensation());
+
+// Create an instance of manager
+let manager = new Manager('Mark', 'Manson', 2500);
+manager.Employees = new Array();
+manager.Employees.push(employee);
+
+console.log(`Manager Details: ${manager.Details()}`);
+console.log(`Employee Count: ${manager.TotalEmployees()}`);
+```
+
+Output:
+```
+John Doe makes 1200 a month
+Manager Details: Mark Manson
+Employee Count: 1
+```
+
+In the above example, we have an abstract class which is the `User`. The constructor declares the `FirstName` and `LastName` properties. The `getSalary()` method is an abstract method. The derived class will implement the logic based on the type of the user. Because the `User` class is abtract, you cannot create a new object from it. Lastly, we have a `Manager` class where it extends the `Employee` class and tries to access the `User` abstract class `FullName` method using the `super` keyword.
+
+Example:
+```typescript
+let user = new User('John','Doe');
+```
+
+Error:
+```
+Cannot create an instance of an abstract class.
+```
+
 ## Reference
 * [TypeScript Class](https://www.typescripttutorial.net/typescript-tutorial/typescript-class/)
+* [Classes `abstract`](https://www.typescriptlang.org/docs/handbook/2/classes.html#abstract-classes-and-members)
 * [TypeScript Classes](https://www.javatpoint.com/typescript-classes)
 * [TypeScript - Classes](https://www.tutorialsteacher.com/typescript/typescript-class)
 * [TypeScript - Classes](https://www.tutorialspoint.com/typescript/typescript_classes.htm)
 * [TypeScript Interface](https://www.javatpoint.com/typescript-interface)
 * [TypeScript Inheritance](https://www.javatpoint.com/typescript-inheritance)
 * [Everyday Types - Classes](https://www.typescriptlang.org/docs/handbook/2/classes.html)
+* [TypeScript - Abstract Class](https://www.tutorialsteacher.com/typescript/abstract-class)
+* [TypeScript Abstract Classes](https://www.typescripttutorial.net/typescript-tutorial/typescript-abstract-classes/)
 * [TypeScript Tutorial: Beyond the Basics](https://www.itprotoday.com/programming-languages/typescript-tutorial-beyond-basics)
 * [How to implement Inheritance in Typescript ?](https://www.geeksforgeeks.org/how-to-implement-inheritance-in-typescript/)
 * [Top 50 TypeScript Interview Questions & Answers You Should Know in 2020](https://morioh.com/p/2b395e280dc7)

@@ -56,7 +56,7 @@
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="TS – Classes | Access Modifiers and static" href="ts_access_modifiers_static.html" />
+    <link rel="next" title="TS – Classes | Access Modifiers, Accessor and static" href="ts_access_modifiers_static.html" />
     <link rel="prev" title="TS – Interfaces" href="ts_interfaces.html" />
   
    
@@ -238,6 +238,8 @@
             </nav>
         </li>
         <li class="md-nav__item"><a href="#class-implements-interface" class="md-nav__link">Class Implements Interface</a>
+        </li>
+        <li class="md-nav__item"><a href="#abstract-classes" class="md-nav__link">Abstract Classes</a>
         </li>
         <li class="md-nav__item"><a href="#reference" class="md-nav__link">Reference</a>
         </li></ul>
@@ -580,15 +582,102 @@
 <p>In the above example, we have declared <code class="docutils literal notranslate"><span class="pre">User</span></code> interface with <code class="docutils literal notranslate"><span class="pre">first_name</span></code>, <code class="docutils literal notranslate"><span class="pre">last_name</span></code>, <code class="docutils literal notranslate"><span class="pre">age</span></code> as property and <code class="docutils literal notranslate"><span class="pre">FullName()</span></code> and <code class="docutils literal notranslate"><span class="pre">GetAge()</span></code> as method/function. The <code class="docutils literal notranslate"><span class="pre">Employee</span></code> class implements this interface by using the <code class="docutils literal notranslate"><span class="pre">implements</span></code> keyword. After implementing an interface, we must declare the properties and methods in the class. If we do not implement those properties and methods, it throws a compile-time error. We have also declared a constructor in the class. So when we instantiate the class, we need to pass the necessary parameters otherwise it throws an error at compile time.</p>
 
 
+<h2 id="abstract-classes">Abstract Classes<a class="headerlink" href="#abstract-classes" title="Permalink to this heading">¶</a></h2>
+<p>Abstract classes are mainly for inheritance where other classes may derive from them. We cannot create an instance of an abstract class. An abstract class typically includes one or more abstract methods or property declarations. The class which extends the abstract class must define all the abstract methods. To declare an abstract class, you use the <code class="docutils literal notranslate"><span class="pre">abstract</span></code> keyword. Classes, methods, and fields in TypeScript may be abstract. An abstract method or abstract field is one that hasn’t had an implementation provided. These members must exist inside an abstract class, which cannot be directly instantiated.</p>
+<p>Syntax:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">abstract</span> <span class="kr">class</span> <span class="nx">abstract_class_name</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>An abstract method does not contain implementation. It only defines the signature of the method without including the method body. An abstract method must be implemented in the derived class. The role of abstract classes is to serve as a base class for subclasses which do implement all the abstract members. When a class doesn’t have any abstract members, it is said to be concrete.</p>
+<p>Example:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">abstract</span> <span class="kr">class</span> <span class="nx">User</span>
+<span class="p">{</span>
+   <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">FirstName</span>: <span class="kt">string</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">LastName</span>: <span class="kt">string</span><span class="p">){}</span>
+   <span class="kr">abstract</span> <span class="nx">getSalary</span><span class="p">()</span><span class="o">:</span> <span class="kt">number</span><span class="p">;</span>
+
+   <span class="nx">get</span> <span class="nx">FullName</span><span class="p">()</span><span class="o">:</span> <span class="kt">string</span>
+   <span class="p">{</span>
+      <span class="k">return</span> <span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">FirstName</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">LastName</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="nx">Compensation</span><span class="p">()</span><span class="o">:</span> <span class="kt">string</span>
+   <span class="p">{</span>
+      <span class="k">return</span> <span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">FullName</span><span class="si">}</span><span class="sb"> makes </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">getSalary</span><span class="p">()</span><span class="si">}</span><span class="sb"> a month`</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">Employee</span> <span class="kr">extends</span> <span class="nx">User</span>
+<span class="p">{</span>
+   <span class="kr">constructor</span><span class="p">(</span><span class="nx">FirstName</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">LastName</span>: <span class="kt">string</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">Salary</span>: <span class="kt">number</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="kr">super</span><span class="p">(</span><span class="nx">FirstName</span><span class="p">,</span> <span class="nx">LastName</span><span class="p">,</span> <span class="nx">Salary</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="nx">getSalary</span><span class="p">()</span><span class="o">:</span> <span class="kt">number</span>
+   <span class="p">{</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">Salary</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">Manager</span> <span class="kr">extends</span> <span class="nx">Employee</span>
+<span class="p">{</span>
+   <span class="kr">public</span> <span class="nx">Employees</span>: <span class="kt">Employee</span><span class="p">[];</span>
+
+   <span class="nx">Details</span><span class="p">()</span><span class="o">:</span> <span class="kt">string</span>
+   <span class="p">{</span>
+      <span class="c1">// We are accessing the FullName from</span>
+      <span class="c1">// User abtract class</span>
+      <span class="k">return</span> <span class="kr">super</span><span class="p">.</span><span class="nx">FullName</span><span class="p">;</span>
+   <span class="p">}</span>
+
+   <span class="nx">TotalEmployees</span><span class="p">()</span><span class="o">:</span> <span class="kt">number</span>
+   <span class="p">{</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">Employees</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Create an instance of employee</span>
+<span class="kd">let</span> <span class="nx">employee</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="s1">'John'</span><span class="p">,</span> <span class="s1">'Doe'</span><span class="p">,</span> <span class="mi">1200</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">employee</span><span class="p">.</span><span class="nx">Compensation</span><span class="p">());</span>
+
+<span class="c1">// Create an instance of manager</span>
+<span class="kd">let</span> <span class="nx">manager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Manager</span><span class="p">(</span><span class="s1">'Mark'</span><span class="p">,</span> <span class="s1">'Manson'</span><span class="p">,</span> <span class="mi">2500</span><span class="p">);</span>
+<span class="nx">manager</span><span class="p">.</span><span class="nx">Employees</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+<span class="nx">manager</span><span class="p">.</span><span class="nx">Employees</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">employee</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Manager Details: </span><span class="si">${</span><span class="nx">manager</span><span class="p">.</span><span class="nx">Details</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Employee Count: </span><span class="si">${</span><span class="nx">manager</span><span class="p">.</span><span class="nx">TotalEmployees</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">John</span> <span class="n">Doe</span> <span class="n">makes</span> <span class="mi">1200</span> <span class="n">a</span> <span class="n">month</span>
+<span class="n">Manager</span> <span class="n">Details</span><span class="p">:</span> <span class="n">Mark</span> <span class="n">Manson</span>
+<span class="n">Employee</span> <span class="n">Count</span><span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>In the above example, we have an abstract class which is the <code class="docutils literal notranslate"><span class="pre">User</span></code>. The constructor declares the <code class="docutils literal notranslate"><span class="pre">FirstName</span></code> and <code class="docutils literal notranslate"><span class="pre">LastName</span></code> properties. The <code class="docutils literal notranslate"><span class="pre">getSalary()</span></code> method is an abstract method. The derived class will implement the logic based on the type of the user. Because the <code class="docutils literal notranslate"><span class="pre">User</span></code> class is abtract, you cannot create a new object from it. Lastly, we have a <code class="docutils literal notranslate"><span class="pre">Manager</span></code> class where it extends the <code class="docutils literal notranslate"><span class="pre">Employee</span></code> class and tries to access the <code class="docutils literal notranslate"><span class="pre">User</span></code> abstract class <code class="docutils literal notranslate"><span class="pre">FullName</span></code> method using the <code class="docutils literal notranslate"><span class="pre">super</span></code> keyword.</p>
+<p>Example:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="s1">'John'</span><span class="p">,</span><span class="s1">'Doe'</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cannot</span> <span class="n">create</span> <span class="n">an</span> <span class="n">instance</span> <span class="n">of</span> <span class="n">an</span> <span class="n">abstract</span> <span class="n">class</span><span class="o">.</span>
+</pre></div>
+</div>
+
+
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.typescripttutorial.net/typescript-tutorial/typescript-class/">TypeScript Class</a></p></li>
+<li><p><a class="reference external" href="https://www.typescriptlang.org/docs/handbook/2/classes.html#abstract-classes-and-members">Classes <code class="docutils literal notranslate"><span class="pre">abstract</span></code></a></p></li>
 <li><p><a class="reference external" href="https://www.javatpoint.com/typescript-classes">TypeScript Classes</a></p></li>
 <li><p><a class="reference external" href="https://www.tutorialsteacher.com/typescript/typescript-class">TypeScript - Classes</a></p></li>
 <li><p><a class="reference external" href="https://www.tutorialspoint.com/typescript/typescript_classes.htm">TypeScript - Classes</a></p></li>
 <li><p><a class="reference external" href="https://www.javatpoint.com/typescript-interface">TypeScript Interface</a></p></li>
 <li><p><a class="reference external" href="https://www.javatpoint.com/typescript-inheritance">TypeScript Inheritance</a></p></li>
 <li><p><a class="reference external" href="https://www.typescriptlang.org/docs/handbook/2/classes.html">Everyday Types - Classes</a></p></li>
+<li><p><a class="reference external" href="https://www.tutorialsteacher.com/typescript/abstract-class">TypeScript - Abstract Class</a></p></li>
+<li><p><a class="reference external" href="https://www.typescripttutorial.net/typescript-tutorial/typescript-abstract-classes/">TypeScript Abstract Classes</a></p></li>
 <li><p><a class="reference external" href="https://www.itprotoday.com/programming-languages/typescript-tutorial-beyond-basics">TypeScript Tutorial: Beyond the Basics</a></p></li>
 <li><p><a class="reference external" href="https://www.geeksforgeeks.org/how-to-implement-inheritance-in-typescript/">How to implement Inheritance in Typescript ?</a></p></li>
 <li><p><a class="reference external" href="https://morioh.com/p/2b395e280dc7">Top 50 TypeScript Interview Questions &amp; Answers You Should Know in 2020</a></p></li>
@@ -620,12 +709,12 @@
             </a>
           
           
-            <a href="ts_access_modifiers_static.html" title="TS – Classes | Access Modifiers and static"
+            <a href="ts_access_modifiers_static.html" title="TS – Classes | Access Modifiers, Accessor and static"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> TS – Classes | Access Modifiers and <code class="docutils literal notranslate"><span class="pre">static</span></code> </span>
+                class="md-footer-nav__direction"> Next </span> TS – Classes | Access Modifiers, Accessor and <code class="docutils literal notranslate"><span class="pre">static</span></code> </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
