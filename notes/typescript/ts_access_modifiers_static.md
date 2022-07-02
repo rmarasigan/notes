@@ -150,7 +150,7 @@ User ID: 98172018 Name: Mark Manson
 
 The `user.name` syntax will throw an error because the property cannot be changed.
 ```typescript
-user.name = 'Paulo Cuelho';
+user.name = 'Paulo Coelho';
 ```
 
 Error:

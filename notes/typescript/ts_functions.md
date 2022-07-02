@@ -83,7 +83,7 @@ function user_details(name: string, email: string, mobile?: string)
 }
 
 user_details("Manson", "mark_manson@gmail.com");
-user_details("Paulo", "paulo_cuelho@gmail.com", "12345678923");
+user_details("Paulo", "paulo_coelho@gmail.com", "12345678923");
 ```
 
 In the above example, the last parameter `mobile` is marked as optional with a question mark appended at the end. If we do not specify the last parameter then its value will be `undefined`.
