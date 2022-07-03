@@ -101,6 +101,7 @@ TypeScript
    TS – Generics <notes/typescript/ts_generics.md>
    TS – Modules <notes/typescript/ts_modules.md>
    TS – Namespaces <notes/typescript/ts_namespaces.md>
+   TS – tsconfig.json <notes/typescript/ts_config_file.md>
 
 DevOps
 ===========
