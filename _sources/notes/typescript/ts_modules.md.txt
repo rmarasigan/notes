@@ -4,7 +4,7 @@ A module is a way to create a group of related variables, functions, classes, an
 
 Modules import another module by using a **module loader**. At runtime, the module loader is responsible for locating and executing all dependencies of a module before executing it. The most common modules loaders which are used in JavaScript are the CommonJS module loader for Node.js and require.js for Web applications. In TypeScript, files containing a top-level export or import are considered modules.
 
-<img src = "assets/img/namespaces-vs-modules.png" alt = "namespaces-vs-modules" width = "600">
+<img src = "assets/img/namespaces-vs-modules.png" alt = "namespaces-vs-modules" width = "600"/>
 
 There are three main things to consider when writing module-based code in TypeScript:
 * Syntax
