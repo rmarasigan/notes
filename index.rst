@@ -100,6 +100,7 @@ TypeScript
    TS – Classes | Access Modifiers, Accessor and static <notes/typescript/ts_access_modifiers_static.md>
    TS – Generics <notes/typescript/ts_generics.md>
    TS – Modules <notes/typescript/ts_modules.md>
+   TS – Namespaces <notes/typescript/ts_namespaces.md>
 
 DevOps
 ===========
