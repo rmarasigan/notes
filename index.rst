@@ -71,6 +71,39 @@ Go
    Palindrome <notes/go-lang/Palindrome.md>
    Simple Client and Server TCP connection <notes/go-lang/client-server-tcp.md>
 
+JavaScript
+-----------
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   JavaScript Fundamentals <https://javascript.info/first-steps>
+   Code Quality <https://javascript.info/code-quality>
+   Objects: the basics <https://javascript.info/object-basics>
+   Data Types <https://javascript.info/data-types>
+   Advanced working with functions <https://javascript.info/advanced-functions>
+   Object properties configuration <https://javascript.info/object-properties>
+   Prototypes, inheritance <https://javascript.info/prototypes>
+   Classes <https://javascript.info/classes>
+   Error handling <https://javascript.info/error-handling>
+   Promises, async/await <https://javascript.info/async>
+   Generators, advanced iteration <https://javascript.info/generators-iterators>
+   Modules <https://javascript.info/modules>
+   Miscellaneous <https://javascript.info/js-misc>
+   Document <https://javascript.info/document>
+   Introduction to Events <https://javascript.info/events>
+   UI Events <https://javascript.info/event-details>
+   Forms, controls <https://javascript.info/forms-controls>
+   Document and resource loading <https://javascript.info/loading>
+   Miscellaneous <https://javascript.info/ui-misc>
+   Frames and windows <https://javascript.info/frames-and-windows>
+   Binary data, files <https://javascript.info/binary>
+   Network requests <https://javascript.info/network>
+   Storing data in browser <https://javascript.info/data-storage>
+   Animation <https://javascript.info/animation>
+   Web Components <https://javascript.info/web-components>
+   Regular expressions <https://javascript.info/regular-expressions>
+
 TypeScript
 -----------
 .. toctree::
