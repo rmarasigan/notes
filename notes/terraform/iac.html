@@ -46,7 +46,7 @@
   
   
   
-    <title>Imperative vs Declarative &#8212; Aide Memoire 1.0.0 documentation</title>
+    <title>What is Infrastructure as Code? &#8212; Aide Memoire 1.0.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
@@ -56,8 +56,8 @@
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Terminologies" href="Terms.html" />
-    <link rel="prev" title="Introduction" href="Introduction.html" />
+    <link rel="next" title="Network" href="../networks/Network.html" />
+    <link rel="prev" title="Deploying HTML on Heruko using Heroku CLI" href="../heroku/Deploy-Static-Site.html" />
   
    
 
@@ -76,7 +76,7 @@
   <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
   <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
   <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-  <a href="#notes/kubernetes/ImperativeVSDeclarative" tabindex="1" class="md-skip"> Skip to content </a>
+  <a href="#notes/terraform/iac" tabindex="1" class="md-skip"> Skip to content </a>
   <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
@@ -94,7 +94,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">Aide Memoire 👩🏻‍💻</span>
-          <span class="md-header-nav__topic"> Imperative vs Declarative </span>
+          <span class="md-header-nav__topic"> What is Infrastructure as Code? </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -215,20 +215,26 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#notes-kubernetes-imperativevsdeclarative--page-root" class="md-nav__link">Imperative vs Declarative</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#notes-terraform-iac--page-root" class="md-nav__link">What is Infrastructure as Code?</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#imperative" class="md-nav__link">Imperative</a>
         </li>
         <li class="md-nav__item"><a href="#declarative" class="md-nav__link">Declarative</a>
         </li>
-        <li class="md-nav__item"><a href="#why-declarative-over-imperative" class="md-nav__link">Why “declarative over imperative”?</a>
+        <li class="md-nav__item"><a href="#benefits-of-infrastructure-as-code-iac" class="md-nav__link">Benefits of Infrastructure-as-Code (IaC)</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#infrastructure-as-code-with-terraform" class="md-nav__link">Infrastructure as Code with Terraform</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#standardize-your-deployment-workflow" class="md-nav__link">Standardize your deployment workflow</a>
         </li>
         <li class="md-nav__item"><a href="#reference" class="md-nav__link">Reference</a>
         </li></ul>
             </nav>
         </li>
     
-<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/kubernetes/ImperativeVSDeclarative.md.txt">Show Source</a> </li>
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/terraform/iac.md.txt">Show Source</a> </li>
 
 <li id="searchbox" class="md-nav__item"></li>
 
@@ -242,33 +248,105 @@
           <article class="md-content__inner md-typeset" role="main">
             
   
-<h1 id="notes-kubernetes-imperativevsdeclarative--page-root">Imperative vs Declarative<a class="headerlink" href="#notes-kubernetes-imperativevsdeclarative--page-root" title="Permalink to this heading">¶</a></h1>
-<p>Kubernetes is a declarative system. Instead of a single controller, however, it has several controllers that are each responsible for a different Kubernetes object type, such as ReplicaSet or Deployment, for example. The API Server acts as the processor, applying the commands given by the controllers to the system state, which is stored in the Kubernetes Object Store.</p>
-<p><img alt="https://miro.medium.com/max/2400/1*OoPeNDU1WwsiP8OLhRgnAw.png" src="https://miro.medium.com/max/2400/1*OoPeNDU1WwsiP8OLhRgnAw.png"/><br/></p>
-<p>In an imperative system, the user is responsible for knowing how to drive the system to the desired state, whereas in a declarative system, the system is responsible for knowing how to drive itself to the desired state.</p>
+<h1 id="notes-terraform-iac--page-root">What is Infrastructure as Code?<a class="headerlink" href="#notes-terraform-iac--page-root" title="Permalink to this heading">¶</a></h1>
+<p>Infrastructure as Code (IaC) can be defined as managing and provisioning of infrastructure through code instead of through manual processes like provisioning resources through AWS, GCP console, etc. This allows you to automatically provision and patch new resources, which saves time and leads to fewer configuration mistakes. IaC tools use either a declarative or imperative programming language to execute configuration scripts.</p>
 
 <h2 id="imperative">Imperative<a class="headerlink" href="#imperative" title="Permalink to this heading">¶</a></h2>
-<p>The user knows the desired state, determines the sequence of commands to transition to the system to the desired state and supplies a representation of the commands to the system. The component of the system that applies the command to transition the state is called a processor.</p>
-<p><img alt="https://miro.medium.com/max/2400/1*TmGqScQkRz7Qn70j0AD7aQ.png" src="https://miro.medium.com/max/2400/1*TmGqScQkRz7Qn70j0AD7aQ.png"/><br/></p>
-<p>Using an imperative paradigm, the user is responsible for defining exact steps which are necessary to achieve the end goal, such as instructions for software installation, configuration, database creation, etc. Those steps are later executed in a fully automated way. The ultimate state of the environment is a result of particular operations defined by the user. While keeping full control over the automation framework, users have to carefully plan every step and the sequence in which they are executed. Although suitable for small deployments, imperative DevOps does not scale and fails while deploying big software environments, such as OpenStack.</p>
+<p>With this approach, we define our desired configuration as a sequence of commands executed in a certain order. You tell your IaC tool how to create each environment using a sequence of command imperatives. <a class="reference external" href="https://www.chef.io/">Chef</a> is a popular imperative IaC tool, and both Ansible and Salt have some support for imperative programming as well.</p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ aws s3api create-bucket --bucket <span class="s2">"bucket-name"</span>
+</pre></div>
+</div>
+<p>Imperative infrastructures call for an understanding of both the programming language being used and the target system’s business logic. It focuses on how you want your infrastructure to be created with scripts that are typically written in languages like Ruby or Ptyhon. Imperative Infrastructure as Code is a style of coding the infrastructure that focuses on giving a list of instructions for completing a task.</p>
+<p>Imperative Infrastructure as Code focuses on describing what you need your infrastructure to do. You write code that specifies how virtual machines should be set up and what instances should be created for your application. It also includes modifying these scripts to accommodate changing needs and altering the configuration of the system.</p>
 
 
 <h2 id="declarative">Declarative<a class="headerlink" href="#declarative" title="Permalink to this heading">¶</a></h2>
-<p>The user knows the desired state, supplies a representation of the desired state to the system, then the system reads the current state and determines the sequence of commands to transition the system to the desired state. The component that determines the necessary sequence of commands is called a controller. Declarative systems have the distinct advantage of being able to react to unintended state changes without further supervision: In the event of an unintended state change leading to a state drift, the system may autonomously determine and apply the set of mitigating actions leading to a state match. This process is called a <strong>control loop</strong>, a popular choice for the implementation of controllers.</p>
-<p>Declarative define the <em><strong>desired state</strong></em> of our system and let Kubernetes automation work to ensure that the <em><strong>actual state</strong></em> of the system reflects these desires. Kubernetes will detect when the actual state of the system doesn’t meet these expectations and it will intervene on your behalf to fix the problem. This enables our systems to be <strong>self-healing</strong> and react to problems without the need for human intervention. The “state” of your system is defined by a collection of <strong>objects</strong>. Each Kubernetes object has (1) a <em><strong>specification</strong></em> in which you provide the desired state and (2) a <em><strong>status</strong></em> which reflects the current state of the object. If an object’s status has drifted from the specification, Kubernetes will issue the necessary commands to drive that object back to its desired state.</p>
-<p><img alt="https://miro.medium.com/max/2400/1*YZZY5GwXRnGZGo_UJ77mkA.png" src="https://miro.medium.com/max/2400/1*YZZY5GwXRnGZGo_UJ77mkA.png"/><br/></p>
+<p>A declarative approach defines the system’s desired state, including what resources you need and any properties they should have. A declarative approach also keeps a list of the current state of your system objects, which makes taking down the infrastructure simpler to manage.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S3Bucket</span><span class="p">:</span>
+   <span class="n">Type</span><span class="p">:</span> <span class="n">AWS</span><span class="p">::</span><span class="n">S3</span><span class="p">::</span><span class="n">Bucket</span>
+   <span class="n">Properties</span><span class="p">:</span>
+      <span class="n">BucketName</span><span class="p">:</span> <span class="n">bucket</span><span class="o">-</span><span class="n">name</span>
+</pre></div>
+</div>
+<p>Declarative infrastructures can be written in any language for any type of target system so long as it follows the declarative syntax. It focuses on describing what you want your infrastructure to look like. This means that the entire process is done through a declarative language, for example YAML or JSON.</p>
+<p>This is a powerful way to ensure that your desired configuration is maintained across all parts of your system. It also makes it easy to manage changes and deployments. Declarative Infrastructure as Code is all about making your infrastructure more reliable, faster, and cheaper. Thant means that you’ll spen less time on day-to-day operations and more time innovating. You’ll be able to do this by automating the entire software delivery pipeline for your applications.</p>
 
 
-<h2 id="why-declarative-over-imperative">Why “declarative over imperative”?<a class="headerlink" href="#why-declarative-over-imperative" title="Permalink to this heading">¶</a></h2>
-<p>A declarative API makes the system more robust to component failures. With an imperative API, the crashed component may have missed a call while it was down and requires some external component to “catch it up” when it comes back up. But with a declarative API, the components simply look at the current state of the API server when it comes back up to determine what it needs to be doing (“ah, I need to ensure this container is running”).</p>
-<p>In an <strong>edge triggered</strong> system, if the system misses “<em>an event</em>” (“<em>an edge</em>”), the event must be replayed in order for the system to recover. In a <strong>level-triggered</strong> system, even if the system misses the “event” (maybe because it is down), when it recovers it can look at the current state of the signal and respond accordingly.</p>
+<h2 id="benefits-of-infrastructure-as-code-iac">Benefits of Infrastructure-as-Code (IaC)<a class="headerlink" href="#benefits-of-infrastructure-as-code-iac" title="Permalink to this heading">¶</a></h2>
+<p>Instead of manually configuring cloud nodes or physical hardware, IaC automates the process infrastructure management through source code. Here are several of the major key benefits of using an IaC solution like Terraform.</p>
+<ul class="simple">
+<li><p><strong>Consistency</strong></p>
+<ul>
+<li><p>The goal of IaC is to eliminate manual processes which helps us iterate faster while maintaining consistency as our infrastructure evolves.</p></li>
+</ul>
+</li>
+<li><p><strong>Speed and Simplicity</strong></p>
+<ul>
+<li><p>IaC eliminates manual processes, thereby accelerating the delivery and management lifecycles. IaC makes it possible to spin up an entire infrastructure architecture by simply running a script.</p></li>
+<li><p>We can pretty much provision not only for development but also for staging, and production environments which makes our <a class="reference external" href="https://www.tutorialspoint.com/sdlc/sdlc_overview.htm">software development life cycle (SDLC)</a> much simpler.</p></li>
+</ul>
+</li>
+<li><p><strong>Team Collaboration</strong></p>
+<ul>
+<li><p>Various team members can collaborate on IaC software in the same way they would with regular application code through tools like Github.</p></li>
+</ul>
+</li>
+<li><p><strong>Error Reduction</strong></p>
+<ul>
+<li><p>IaC minimizes the probability of errors or deviations when provisioning your infrastructure. The code completely standardizes your setup, allowing applications to run smoothly and error-free without the constant need for admin oversight.</p></li>
+</ul>
+</li>
+<li><p><strong>Disaster Recovery</strong></p>
+<ul>
+<li><p>With IaC you can recover from disasters more rapidly. You can usually just re-run scripts and have the exact same software provisioned again.</p></li>
+</ul>
+</li>
+<li><p><strong>Enhanced Security</strong></p>
+<ul>
+<li><p>IaC relies on automation that removes many security risks associated with human error. When an IaC-base is installed correctly, the overall security of your computing architecture and associated data improves massively.</p></li>
+</ul>
+</li>
+<li><p><strong>Risk minimization</strong></p>
+<ul>
+<li><p>Imagine having a DevOps engineer who’s the only one who knows your infrastructure setup and its ins and outs. Now, imagine that engineer is leaving your company. Here, IaC is a perfect fit as a new engineer is onboarded, they won’t need to spend much time understanding how our infrastructure is provisioned.</p></li>
+</ul>
+</li>
+</ul>
+
+
+
+<h1 id="infrastructure-as-code-with-terraform">Infrastructure as Code with Terraform<a class="headerlink" href="#infrastructure-as-code-with-terraform" title="Permalink to this heading">¶</a></h1>
+<p>Infrastructure as Code (IaC) tools allow you to manage infrastructure with configuration files rather than through a graphical user interface. IaC allows you to build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share. Terraform uses <strong>HashiCorp Language (HCL)</strong> as its language to define a resource regardless of the provider being used.</p>
+<ul class="simple">
+<li><p>Terraform can manage infrastructure on multiple cloud platforms</p></li>
+<li><p>The human-readable configuration language helps you write infrastructure code quickly</p></li>
+<li><p>Terraform’s state allows you to track resource changes throughout your deployments</p></li>
+<li><p>You can commit your configurations to version control to safely collaborate on infrastructure</p></li>
+</ul>
+
+<h2 id="standardize-your-deployment-workflow">Standardize your deployment workflow<a class="headerlink" href="#standardize-your-deployment-workflow" title="Permalink to this heading">¶</a></h2>
+<p><strong>Providers</strong> define individual units of infrastructure, for example, compute instances or private networks, as resources. You can compose resources from different providers into reusable Terraform configurations called <strong>modules</strong>, and manage them with a consistent language and workflow.</p>
+<p>Terraform’s configuration language is <em>declarative</em>, meaning that it describes the desired end-state for your infrastructure, in contrast to procedural programming languages  that require step-by-step instructions to perform tasks. Terraform automatically calculate dependencies between resources to create or destroy them in the correct order.</p>
+<p><img alt="terraform-iac" src="../../_images/terraform-iac.png"/></p>
+<p>To deploy infrastructure with Terraform:</p>
+<ul class="simple">
+<li><p><strong>Scope</strong> - identify the infrastructure for your project</p></li>
+<li><p><strong>Author</strong> - write the configuration for your infrastructure</p></li>
+<li><p><strong>Initialize</strong> - install the plugins Terreform needs to manage the infrastructure</p></li>
+<li><p><strong>Plan</strong> - preview the changes Terraform will make to match your configuration</p></li>
+<li><p><strong>Apply</strong> - make the planned changes</p></li>
+</ul>
 
 
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.jeremyjordan.me/kubernetes/">Kubernetes</a></p></li>
-<li><p><a class="reference external" href="https://dominik-tornow.medium.com/imperative-vs-declarative-8abc7dcae82e">Imperative vs Declarative</a></p></li>
-<li><p><a class="reference external" href="https://thenewstack.io/kubernetes-design-and-development-explained/">Design &amp; Development Explained</a></p></li>
+<li><p><a class="reference external" href="https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac">What is Infrastructure as Code (IaC)?</a></p></li>
+<li><p><a class="reference external" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">What is Infrastructure as Code with Terraform?</a></p></li>
+<li><p><a class="reference external" href="https://www.varonis.com/blog/what-is-terraform">What is Terraform: Everything You Need to Know</a></p></li>
+<li><p><a class="reference external" href="https://www.devgeon.com/infrastructure-as-code-declarative-vs-imperative/">Infrastructure as Code Declarative vs Imperative</a></p></li>
+<li><p><a class="reference external" href="https://dev.to/karanpratapsingh/introduction-to-infrastructure-as-code-with-terraform-4f29">Introduction to Infrastructure as Code with Terraform</a></p></li>
 </ul>
 
 
@@ -283,7 +361,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="Introduction.html" title="Introduction"
+            <a href="../heroku/Deploy-Static-Site.html" title="Deploying HTML on Heruko using Heroku CLI"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -292,17 +370,17 @@
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> Introduction </span>
+                      class="md-footer-nav__direction"> Previous </span> Deploying HTML on Heruko using Heroku CLI </span>
               </div>
             </a>
           
           
-            <a href="Terms.html" title="Terminologies"
+            <a href="../networks/Network.html" title="Network"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> Terminologies </span>
+                class="md-footer-nav__direction"> Next </span> Network </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
