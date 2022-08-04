@@ -172,6 +172,14 @@ Heroku
 
    Deploy Static Site <notes/heroku/Deploy-Static-Site.md>
 
+Terraform
+-----------
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   Infrastructure as Code <notes/terraform/iac.md>
+
 Amazon Web Services
 ===================
 Cloud Practitioner
