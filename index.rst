@@ -179,6 +179,7 @@ Terraform
    :glob:
 
    Infrastructure as Code <notes/terraform/iac.md>
+   Introduction <notes/terraform/introduction.md>
 
 Amazon Web Services
 ===================
