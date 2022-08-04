@@ -180,6 +180,7 @@ Terraform
 
    Infrastructure as Code <notes/terraform/iac.md>
    Introduction <notes/terraform/introduction.md>
+   Installation <notes/terraform/installation.md>
 
 Amazon Web Services
 ===================
