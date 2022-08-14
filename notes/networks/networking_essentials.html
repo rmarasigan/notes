@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="263238">
+  <script src="../../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>TrendMicro : Computer Networking Essentials &#8212; Aide Memoire 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Network" href="Network.html" />
+    <link rel="prev" title="Installation" href="../terraform/installation.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue data-md-color-accent=light-blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#notes/networks/networking_essentials" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../index.html" title="Aide Memoire 1.0.0 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Aide Memoire 👩🏻‍💻</span>
+          <span class="md-header-nav__topic"> TrendMicro : Computer Networking Essentials </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/rmarasigan/notes" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Notes
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="../../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../../"versions.json"",
+        target_loc = "../../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">Aide Memoire 1.0.0 documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../index.html" title="Aide Memoire 1.0.0 documentation" class="md-nav__button md-logo">
+      
+        <img src="../../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../../index.html"
+       title="Aide Memoire 1.0.0 documentation">Aide Memoire 👩🏻‍💻</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/rmarasigan/notes" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Notes
+  </div>
+</a>
+    </div>
+  
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#notes-networks-networking-essentials--page-root" class="md-nav__link">TrendMicro : Computer Networking Essentials</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#what-is-a-network" class="md-nav__link">What is a network?</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#what-makes-a-network" class="md-nav__link">What makes a network?</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#servers" class="md-nav__link">Servers</a>
+        </li>
+        <li class="md-nav__item"><a href="#clients" class="md-nav__link">Clients</a>
+        </li>
+        <li class="md-nav__item"><a href="#network-cables" class="md-nav__link">Network Cables</a>
+        </li>
+        <li class="md-nav__item"><a href="#network-interface-card-nic" class="md-nav__link">Network Interface Card (NIC)</a>
+        </li>
+        <li class="md-nav__item"><a href="#connectivity-devices" class="md-nav__link">Connectivity Devices</a>
+        </li>
+        <li class="md-nav__item"><a href="#network-operating-systems" class="md-nav__link">Network Operating Systems</a>
+        </li>
+        <li class="md-nav__item"><a href="#osi-layers" class="md-nav__link">OSI Layers</a>
+        </li>
+        <li class="md-nav__item"><a href="#ip-addressing" class="md-nav__link">IP Addressing</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#ipv4" class="md-nav__link">IPv4</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#binary-to-decimal" class="md-nav__link">Binary to Decimal</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#ip-address-classes" class="md-nav__link">IP Address Classes</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#ip-address-class" class="md-nav__link">IP Address Class</a>
+        </li>
+        <li class="md-nav__item"><a href="#private-ip-address" class="md-nav__link">Private IP Address</a>
+        </li>
+        <li class="md-nav__item"><a href="#special-ip-address" class="md-nav__link">Special IP Address</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#dynamic-host-configurtion-protocol-dhcp" class="md-nav__link">Dynamic Host Configurtion Protocol (DHCP)</a>
+        </li>
+        <li class="md-nav__item"><a href="#domain-name-server-dns" class="md-nav__link">Domain Name Server (DNS)</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/notes/networks/networking_essentials.md.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<h1 id="notes-networks-networking-essentials--page-root">TrendMicro : Computer Networking Essentials<a class="headerlink" href="#notes-networks-networking-essentials--page-root" title="Permalink to this heading">¶</a></h1>
+<p><img alt="trend-micro-computer-network-essentials" src="../../_images/trend-micro-computer-network-essentials.jpg"/></p>
+
+<h2 id="what-is-a-network">What is a network?<a class="headerlink" href="#what-is-a-network" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>A network is simply two or more computers connected together that can communicate with each other and exchange data</p></li>
+<li><p>Benefits of a network:</p>
+<ul>
+<li><p>Information/Resource sharing</p></li>
+<li><p>Efficient Communication/Collaboration</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="what-makes-a-network" src="../../_images/what-makes-a-network.png"/></p>
+
+<h3 id="what-makes-a-network">What makes a network?<a class="headerlink" href="#what-makes-a-network" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Servers</p></li>
+<li><p>Client</p></li>
+<li><p>Network Cables</p></li>
+<li><p>Network Interface Card (NIC)</p></li>
+<li><p>Connectivity Devices</p></li>
+<li><p>Network Operating System</p></li>
+</ul>
+
+
+
+<h2 id="servers">Servers<a class="headerlink" href="#servers" title="Permalink to this heading">¶</a></h2>
+<p>High performance computers just like our laptops or desktops but they have higher specifications and are purposely built to serve something. For example, a mail server is a dedicated machine that is used to receive and send emails to clients. Servers serves something to the client.</p>
+<ul class="simple">
+<li><p>Mail</p></li>
+<li><p>Application</p></li>
+<li><p>Web</p></li>
+<li><p>Database</p></li>
+<li><p>Backup</p></li>
+</ul>
+
+
+<h2 id="clients">Clients<a class="headerlink" href="#clients" title="Permalink to this heading">¶</a></h2>
+<p>Clients gets the data or communicate from the Server.</p>
+<ul class="simple">
+<li><p>Desktop</p></li>
+<li><p>Laptop</p></li>
+<li><p>Tablet</p></li>
+<li><p>Mobiles phone</p></li>
+</ul>
+
+
+<h2 id="network-cables">Network Cables<a class="headerlink" href="#network-cables" title="Permalink to this heading">¶</a></h2>
+<p>It connects the computers together.</p>
+<ul>
+<li><p>Coaxial cable</p>
+<blockquote>
+<div><p>We do not actually use them anymore and they are legacy cables.</p>
+</div></blockquote>
+</li>
+<li><p>Fiber optic</p>
+<blockquote>
+<div><p>Use optical fibers to transmit data via fast-traveling pulses of light.</p>
+</div></blockquote>
+</li>
+<li><p>UTP / STP</p>
+<blockquote>
+<div><p>Unshielded or Shielded Twisted Pair (e.g. LAN Cable)</p>
+</div></blockquote>
+</li>
+</ul>
+
+
+<h2 id="network-interface-card-nic">Network Interface Card (NIC)<a class="headerlink" href="#network-interface-card-nic" title="Permalink to this heading">¶</a></h2>
+<p>There are two types of Network Interface Card, a wired connection and a wireless connection. A network interface card (NIC) is a hardware component, typically a circuit board or chip, which is installed on a computer so it can connect to a network.</p>
+<ul class="simple">
+<li><p>Wireless (WiFi)</p></li>
+<li><p>Wired</p></li>
+</ul>
+
+
+<h2 id="connectivity-devices">Connectivity Devices<a class="headerlink" href="#connectivity-devices" title="Permalink to this heading">¶</a></h2>
+<p>They are the devices in which computers connect to.</p>
+<ul>
+<li><p>Hub</p>
+<blockquote>
+<div><p>This is one of the original connectivity devices. Already outdated and slower.</p>
+</div></blockquote>
+</li>
+<li><p>Switches</p>
+<blockquote>
+<div><p>You can identify switches if you see a device that has a lot of ports. It is the center of the network and allow network communication between one computer to another computer.</p>
+</div></blockquote>
+</li>
+<li><p>Router</p>
+<blockquote>
+<div><p>Used in conjuction with a switch so that computer within the network can traverse or go to another network. The purpose of a router is to connect one network to different networks.</p>
+</div></blockquote>
+</li>
+</ul>
+
+
+<h2 id="network-operating-systems">Network Operating Systems<a class="headerlink" href="#network-operating-systems" title="Permalink to this heading">¶</a></h2>
+<p>Capable of using networking but before old types of operating system does not have networking capability.</p>
+<p><img alt="operating-system" src="../../_images/operating-system.png"/></p>
+
+
+<h2 id="osi-layers">OSI Layers<a class="headerlink" href="#osi-layers" title="Permalink to this heading">¶</a></h2>
+<p>OSI (Open Systems Interconnection) layers describes how computers communicate to each other. It gives the person an idea how much you understand networking.</p>
+<p><img alt="trend-micro-osi-model" src="../../_images/trend-micro-osi-model.png"/></p>
+<ol class="arabic" start="7">
+<li><p>Application</p>
+<blockquote>
+<div><p>Interface to end user. Interaction directly with software application.</p>
+</div></blockquote>
+</li>
+<li><p>Presentation</p>
+<blockquote>
+<div><p>Formats datat to be “presented” between application-layer entities.</p>
+</div></blockquote>
+</li>
+<li><p>Session</p>
+<blockquote>
+<div><p>Manages connections between local and remote application.</p>
+</div></blockquote>
+</li>
+<li><p>Transport</p>
+<blockquote>
+<div><p>Ensures integrity of data transmission.</p>
+</div></blockquote>
+</li>
+<li><p>Network</p>
+<blockquote>
+<div><p>Determines how data gets from one hosts to another.</p>
+</div></blockquote>
+</li>
+<li><p>Data Link</p>
+<blockquote>
+<div><p>Defines formats of data on the network.</p>
+</div></blockquote>
+</li>
+<li><p>Physical</p>
+<blockquote>
+<div><p>Transmits raw bit stream over physical medium.</p>
+</div></blockquote>
+</li>
+</ol>
+<p>Example:</p>
+<p><img alt="trend-micro-osi-example" src="../../_images/trend-micro-osi-example.png"/></p>
+
+
+<h2 id="ip-addressing">IP Addressing<a class="headerlink" href="#ip-addressing" title="Permalink to this heading">¶</a></h2>
+<p>A way to identify in where to send ata to.</p>
+
+<h3 id="ipv4">IPv4<a class="headerlink" href="#ipv4" title="Permalink to this heading">¶</a></h3>
+<p>It is a 32-bits (4-octets) and is divided into <strong>Network ID</strong> and <strong>Host ID</strong>. This is the most common IP address and it is assigned to each device connected to a network. An IP address should be unique. In an example, Network ID would be your street and the Host ID would be your house number.</p>
+<p>Example:</p>
+<p>172.16.1.10</p>
+
+<h4 id="binary-to-decimal">Binary to Decimal<a class="headerlink" href="#binary-to-decimal" title="Permalink to this heading">¶</a></h4>
+<table>
+<tr>
+<td>128</td>
+<td>64</td>
+<td>32</td>
+<td>16</td>
+<td>8</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</table>
+<p>128 + 32 + 16 + 4 + 1 = 181</p>
+
+
+
+<h3 id="ip-address-classes">IP Address Classes<a class="headerlink" href="#ip-address-classes" title="Permalink to this heading">¶</a></h3>
+<p>It is like a telephone number. IP addresses are designed to be scalable and the higher classes will be smaller than the lower classes.</p>
+
+<h4 id="ip-address-class">IP Address Class<a class="headerlink" href="#ip-address-class" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Class A</strong></p>
+<ul>
+<li><p>1.0.0.0 - 126.255.255.255</p></li>
+</ul>
+</li>
+<li><p><strong>Class B</strong></p>
+<ul>
+<li><p>128.0.0.0 - 191.255.255.255</p></li>
+</ul>
+</li>
+<li><p><strong>Class C</strong></p></li>
+<li><p>192.0.0.0 - 223.255.255.255</p></li>
+</ul>
+<p>Class D and Class E but they are normally not used to be assigned. <strong>Class D</strong> is used for multicast IP addressing while <strong>Class E</strong> are reserved IP addresses.</p>
+
+
+<h4 id="private-ip-address">Private IP Address<a class="headerlink" href="#private-ip-address" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Class A</strong></p>
+<ul>
+<li><p>10.0.0.0 - 10.255.255.255</p></li>
+</ul>
+</li>
+<li><p><strong>Class B</strong></p>
+<ul>
+<li><p>172.16.0.0 - 172.31.255.255
+<strong>Class C</strong></p></li>
+<li><p>192.168.0.0 - 192.168.255.255</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h4 id="special-ip-address">Special IP Address<a class="headerlink" href="#special-ip-address" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Loop Back</strong></p>
+<ul>
+<li><p>127.0.0.1 - 127.255.255.255</p></li>
+<li><p>It is not assigned to a particular computer.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Default Gateway</strong> is basically the router’s private IP address. The term <em>default gateway</em> is used to mean the router on your LAN which has the responsibility of being the first point of contact for traffic to computers outside the LAN.</p>
+
+
+
+
+<h2 id="dynamic-host-configurtion-protocol-dhcp">Dynamic Host Configurtion Protocol (DHCP)<a class="headerlink" href="#dynamic-host-configurtion-protocol-dhcp" title="Permalink to this heading">¶</a></h2>
+<p><strong>DHCP</strong> is a protocol used by computers to automatically obtain an IP address and network configuration. A <strong>DHCP Server</strong> is a network server that automatically provides and assigns IP addresses, default gateways and other network parameters to client devices. It relies on the standard protocol known as Dynamic Host Configuration Protocol or DHCP to respond to broadcast queries by clients.</p>
+<p><img alt="trend-micro-dhcp" src="../../_images/trend-micro-dhcp.png"/></p>
+
+
+<h2 id="domain-name-server-dns">Domain Name Server (DNS)<a class="headerlink" href="#domain-name-server-dns" title="Permalink to this heading">¶</a></h2>
+<p><strong>DNS</strong>, or the domain name system, is the phonebook of the Internet, connecting web browsers with websites. They are human readable names instead of showing up an IP address that will be hard to remember (e.g. <code class="docutils literal notranslate"><span class="pre">facebook.com</span></code>). A <strong>DNS server</strong> is a computer with a database containing the public IP addresses associated with the names of the websites an IP address brings a user to. DNS acts like a phonebook for the internet. Whenever people type domain names, like Yahoo.com, into the address bar of web browsers, the DNS finds the right IP address. The site’s IP address is what directs the device to go to the correct place to access the site’s data.</p>
+<p><img alt="trend-micro-dns" src="../../_images/trend-micro-dns.png"/></p>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="../terraform/installation.html" title="Installation"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Installation </span>
+              </div>
+            </a>
+          
+          
+            <a href="Network.html" title="Network"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Network </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2022, rmarasigan.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

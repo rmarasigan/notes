@@ -210,6 +210,7 @@ Networks
    :maxdepth: 1
    :glob:
 
+   TrendMicro: Computer Networking Essentials <notes/networks/networking_essentials.md>
    Network <notes/networks/Network.md>
    Internet Protocol (IP) <notes/networks/IP.md>
    Transmission Control Protocol (TCP) <notes/networks/TCP.md>
