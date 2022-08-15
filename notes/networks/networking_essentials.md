@@ -19,7 +19,7 @@
 * Network Operating System
 
 ## Servers
-High performance computers just like our laptops or desktops but they have higher specifications and are purposely built to serve something. For example, a mail server is a dedicated machine that is used to receive and send emails to clients. Servers serves something to the client.
+High performance computers just like our laptops or desktops, but they have higher specifications and are purposely build to serve something. For example, a mail server is a dedicated machine that is used to receive and send emails to clients. Servers serves something to the client.
  
 * Mail
 * Application
@@ -63,15 +63,15 @@ They are the devices in which computers connect to.
    > You can identify switches if you see a device that has a lot of ports. It is the center of the network and allow network communication between one computer to another computer.
 
 * Router
-   > Used in conjuction with a switch so that computer within the network can traverse or go to another network. The purpose of a router is to connect one network to different networks.
+   > Used in conjunction with a switch so that a computer within the network can traverse or go to another network. The purpose of a router is to connect one network to different networks.
 
 ## Network Operating Systems
-Capable of using networking but before old types of operating system does not have networking capability.
+Capable of using networking, but before old types of operating systems does not have networking capability.
 
 ![operating-system](assets/img/operating-system.png)
 
 ## OSI Layers
-OSI (Open Systems Interconnection) layers describes how computers communicate to each other. It gives the person an idea how much you understand networking.
+OSI (Open Systems Interconnection) layers describe how computers communicate with each other. It gives the person an idea of how much you understand networking.
 
 ![trend-micro-osi-model](assets/img/trend-micro-osi-model.png)
 
@@ -79,10 +79,10 @@ OSI (Open Systems Interconnection) layers describes how computers communicate to
    > Interface to end user. Interaction directly with software application.
 
 6. Presentation
-   > Formats datat to be "presented" between application-layer entities.
+   > Formats data to be “presented” between application-layer entities.
 
 5. Session
-   > Manages connections between local and remote application.
+   > Manages connections between local and remote applications.
 
 4. Transport
    > Ensures integrity of data transmission.
@@ -101,10 +101,10 @@ Example:
 ![trend-micro-osi-example](assets/img/trend-micro-osi-example.png)
 
 ## IP Addressing
-A way to identify in where to send ata to.
+A way to identify in where to send data to.
 
 ### IPv4
-It is a 32-bits (4-octets) and is divided into **Network ID** and **Host ID**. This is the most common IP address and it is assigned to each device connected to a network. An IP address should be unique. In an example, Network ID would be your street and the Host ID would be your house number. 
+It is 32-bits (4-octets) and is divided into **Network ID** and **Host ID**. This is the most common IP address, and it is assigned to each device connected to a network. An IP address should be unique. For example, the Network ID would be your street, and the Host ID would be your house number.
 
 Example:
 
@@ -137,7 +137,7 @@ Example:
 128 + 32 + 16 + 4 + 1 = 181
 
 ### IP Address Classes
-It is like a telephone number. IP addresses are designed to be scalable and the higher classes will be smaller than the lower classes.
+It is like a telephone number. IP addresses are designed to be scalable, and the higher classes will be smaller than the lower classes.
 
 #### IP Address Class
 
@@ -148,7 +148,7 @@ It is like a telephone number. IP addresses are designed to be scalable and the 
 * **Class C**
 * 192.0.0.0 - 223.255.255.255
 
-Class D and Class E but they are normally not used to be assigned. **Class D** is used for multicast IP addressing while **Class E** are reserved IP addresses.
+Class D and Class E but they are normally not used to be assigned. **Class D** is use for multicast IP addressing, while **Class E** are reserved IP addresses.
 
 #### Private IP Address
 
@@ -167,11 +167,11 @@ Class D and Class E but they are normally not used to be assigned. **Class D** i
 **Default Gateway** is basically the router's private IP address. The term *default gateway* is used to mean the router on your LAN which has the responsibility of being the first point of contact for traffic to computers outside the LAN.
 
 ## Dynamic Host Configurtion Protocol (DHCP)
-**DHCP** is a protocol used by computers to automatically obtain an IP address and network configuration. A **DHCP Server** is a network server that automatically provides and assigns IP addresses, default gateways and other network parameters to client devices. It relies on the standard protocol known as Dynamic Host Configuration Protocol or DHCP to respond to broadcast queries by clients.
+**DHCP** is a protocol used by computers to automatically obtain an IP address and network configuration. A **DHCP Server** is a network server that automatically provides and assigns IP addresses, default gateways, and other network parameters to client devices. It relies on the standard protocol known as Dynamic Host Configuration Protocol or DHCP to respond to broadcast queries by clients.
 
 ![trend-micro-dhcp](assets/img/trend-micro-dhcp.png)
 
 ## Domain Name Server (DNS)
-**DNS**, or the domain name system, is the phonebook of the Internet, connecting web browsers with websites. They are human readable names instead of showing up an IP address that will be hard to remember (e.g. `facebook.com`). A **DNS server** is a computer with a database containing the public IP addresses associated with the names of the websites an IP address brings a user to. DNS acts like a phonebook for the internet. Whenever people type domain names, like Yahoo.com, into the address bar of web browsers, the DNS finds the right IP address. The site’s IP address is what directs the device to go to the correct place to access the site’s data.
+**DNS**, or the domain name system, is the phonebook of the Internet, connecting web browsers with websites. They are human-readable names instead of showing up an IP address that will be hard to remember (e.g. `facebook.com`). A **DNS server** is a computer with a database containing the public IP addresses associated with the names of the websites an IP address brings a user to. DNS acts like a phonebook for the internet. Whenever people type domain names, like Yahoo.com, into the address bar of web browsers, the DNS finds the right IP address. The site’s IP address is what directs the device to go to the correct place to access the site’s data.
 
 ![trend-micro-dns](assets/img/trend-micro-dns.png)
