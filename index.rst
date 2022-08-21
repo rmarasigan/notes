@@ -182,6 +182,14 @@ Terraform
    Introduction <notes/terraform/introduction.md>
    Installation <notes/terraform/installation.md>
 
+OpenTelemetry (OTel)
+-----------
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   Introduction <notes/open-telemetry/introduction.md>
+
 Amazon Web Services
 ===================
 Cloud Practitioner
