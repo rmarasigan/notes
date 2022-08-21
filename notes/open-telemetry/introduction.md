@@ -1,5 +1,7 @@
 # Introduction
 
+![opentelemetry](assets/img/opentelemetry.jpeg)
+
 **OpenTelemetry** (OTel for short) is a collection of APIs and SDKs that allows us to collect, export, and generate traces, logs, and metrics (also known as the three pillars of observability). **Open** stands for *open-source*. **Telemetry** comes from the greek word **Tele** which means *remote* and **metry** means *measurement*. So OpenTelemetry is an open-source technology allowing you to collect remote measurements.
 
 In fact it comes from two existing open-source projects that merged and it is **[OpenTracing](https://github.com/opentracing)** and **[OpenCensus](https://github.com/census-instrumentation)**. It doesn't provide any observability back-end solution like Prometheus or Jaeger. It is defining a standard.
