@@ -189,6 +189,8 @@ OpenTelemetry (OTel)
    :glob:
 
    Introduction <notes/open-telemetry/introduction.md>
+   Traces <notes/open-telemetry/traces.md>
+   Span <notes/open-telemetry/span.md>
 
 Amazon Web Services
 ===================
