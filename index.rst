@@ -191,7 +191,7 @@ OpenTelemetry (OTel)
    Introduction <notes/open-telemetry/introduction.md>
    Traces <notes/open-telemetry/traces.md>
    Span <notes/open-telemetry/span.md>
-   Collector <ntoes/open-telemetry/collector.md>
+   Collector <notes/open-telemetry/collector.md>
 
 Amazon Web Services
 ===================
