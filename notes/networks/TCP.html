@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -237,16 +237,16 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-networks-tcp--page-root"><a class="reference external" href="#notes-networks-tcp--page-root">Transmission Control Protocol (TCP)</a><a class="headerlink" href="#notes-networks-tcp--page-root" title="Permalink to this heading">¶</a></h1>
-
-<h2 id="what-is-a-tcp">What is a TCP?<a class="headerlink" href="#what-is-a-tcp" title="Permalink to this heading">¶</a></h2>
+  <section id="transmission-control-protocol-tcp">
+<h1 id="notes-networks-tcp--page-root"><a class="reference external" href="#notes-networks-tcp--page-root">Transmission Control Protocol (TCP)</a><a class="headerlink" href="#notes-networks-tcp--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="what-is-a-tcp">
+<h2 id="what-is-a-tcp">What is a TCP?<a class="headerlink" href="#what-is-a-tcp" title="Permalink to this headline">¶</a></h2>
 <p>It is a connection-based, which means that, before data is sent, a connection between two hosts must be established. The process used to establish a TCP connection is known a <em>three-way handshake</em>. After the data is transmitted, the connection is terminated.</p>
 <p>TCP uses sequence numbers to identify the order of the bytes sent from each computer so that the data can be reconstructed in order. If any data is lost during the transmission, the sender can retransmit the data. The TCP header is up to 24 bytes long and consists of the following fields:</p>
 <a class="reference internal image-reference" href="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/03/tcp_header.webp"><img alt="tcp_header" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/03/tcp_header.webp" style="width: 450px;"/></a>
-
-
-<h2 id="tcp-three-way-handshake"><a class="reference external" href="https://study-ccna.com/tcp-three-way-handshake/">TCP three-way handshake</a><a class="headerlink" href="#tcp-three-way-handshake" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="tcp-three-way-handshake">
+<h2 id="tcp-three-way-handshake"><a class="reference external" href="https://study-ccna.com/tcp-three-way-handshake/">TCP three-way handshake</a><a class="headerlink" href="#tcp-three-way-handshake" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/09/tcp_three_way_handshake_numbers-360x130.avif"><img alt="tcp_three_way_handshake" src="https://603168-1953132-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/09/tcp_three_way_handshake_numbers-360x130.avif" style="width: 450px;"/></a>
 <p>Three-way handshake process consists of three steps:</p>
 <ol class="arabic simple">
@@ -262,8 +262,8 @@
 <li><p>Server sends its own TCP segment with the FIN flag set to 1 to the client in order to terminate the connection.</p></li>
 <li><p>The client acknowledges the server’s FIN segment and closes the connection.</p></li>
 </ol>
-
-
+</section>
+</section>
 
 
           </article>
@@ -312,7 +312,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

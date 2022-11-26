@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -241,37 +241,37 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-kubernetes-imperativevsdeclarative--page-root">Imperative vs Declarative<a class="headerlink" href="#notes-kubernetes-imperativevsdeclarative--page-root" title="Permalink to this heading">¶</a></h1>
+  <section id="imperative-vs-declarative">
+<h1 id="notes-kubernetes-imperativevsdeclarative--page-root">Imperative vs Declarative<a class="headerlink" href="#notes-kubernetes-imperativevsdeclarative--page-root" title="Permalink to this headline">¶</a></h1>
 <p>Kubernetes is a declarative system. Instead of a single controller, however, it has several controllers that are each responsible for a different Kubernetes object type, such as ReplicaSet or Deployment, for example. The API Server acts as the processor, applying the commands given by the controllers to the system state, which is stored in the Kubernetes Object Store.</p>
 <p><img alt="https://miro.medium.com/max/2400/1*OoPeNDU1WwsiP8OLhRgnAw.png" src="https://miro.medium.com/max/2400/1*OoPeNDU1WwsiP8OLhRgnAw.png"/><br/></p>
 <p>In an imperative system, the user is responsible for knowing how to drive the system to the desired state, whereas in a declarative system, the system is responsible for knowing how to drive itself to the desired state.</p>
-
-<h2 id="imperative">Imperative<a class="headerlink" href="#imperative" title="Permalink to this heading">¶</a></h2>
+<section id="imperative">
+<h2 id="imperative">Imperative<a class="headerlink" href="#imperative" title="Permalink to this headline">¶</a></h2>
 <p>The user knows the desired state, determines the sequence of commands to transition to the system to the desired state and supplies a representation of the commands to the system. The component of the system that applies the command to transition the state is called a processor.</p>
 <p><img alt="https://miro.medium.com/max/2400/1*TmGqScQkRz7Qn70j0AD7aQ.png" src="https://miro.medium.com/max/2400/1*TmGqScQkRz7Qn70j0AD7aQ.png"/><br/></p>
 <p>Using an imperative paradigm, the user is responsible for defining exact steps which are necessary to achieve the end goal, such as instructions for software installation, configuration, database creation, etc. Those steps are later executed in a fully automated way. The ultimate state of the environment is a result of particular operations defined by the user. While keeping full control over the automation framework, users have to carefully plan every step and the sequence in which they are executed. Although suitable for small deployments, imperative DevOps does not scale and fails while deploying big software environments, such as OpenStack.</p>
-
-
-<h2 id="declarative">Declarative<a class="headerlink" href="#declarative" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="declarative">
+<h2 id="declarative">Declarative<a class="headerlink" href="#declarative" title="Permalink to this headline">¶</a></h2>
 <p>The user knows the desired state, supplies a representation of the desired state to the system, then the system reads the current state and determines the sequence of commands to transition the system to the desired state. The component that determines the necessary sequence of commands is called a controller. Declarative systems have the distinct advantage of being able to react to unintended state changes without further supervision: In the event of an unintended state change leading to a state drift, the system may autonomously determine and apply the set of mitigating actions leading to a state match. This process is called a <strong>control loop</strong>, a popular choice for the implementation of controllers.</p>
 <p>Declarative define the <em><strong>desired state</strong></em> of our system and let Kubernetes automation work to ensure that the <em><strong>actual state</strong></em> of the system reflects these desires. Kubernetes will detect when the actual state of the system doesn’t meet these expectations and it will intervene on your behalf to fix the problem. This enables our systems to be <strong>self-healing</strong> and react to problems without the need for human intervention. The “state” of your system is defined by a collection of <strong>objects</strong>. Each Kubernetes object has (1) a <em><strong>specification</strong></em> in which you provide the desired state and (2) a <em><strong>status</strong></em> which reflects the current state of the object. If an object’s status has drifted from the specification, Kubernetes will issue the necessary commands to drive that object back to its desired state.</p>
 <p><img alt="https://miro.medium.com/max/2400/1*YZZY5GwXRnGZGo_UJ77mkA.png" src="https://miro.medium.com/max/2400/1*YZZY5GwXRnGZGo_UJ77mkA.png"/><br/></p>
-
-
-<h2 id="why-declarative-over-imperative">Why “declarative over imperative”?<a class="headerlink" href="#why-declarative-over-imperative" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="why-declarative-over-imperative">
+<h2 id="why-declarative-over-imperative">Why “declarative over imperative”?<a class="headerlink" href="#why-declarative-over-imperative" title="Permalink to this headline">¶</a></h2>
 <p>A declarative API makes the system more robust to component failures. With an imperative API, the crashed component may have missed a call while it was down and requires some external component to “catch it up” when it comes back up. But with a declarative API, the components simply look at the current state of the API server when it comes back up to determine what it needs to be doing (“ah, I need to ensure this container is running”).</p>
 <p>In an <strong>edge triggered</strong> system, if the system misses “<em>an event</em>” (“<em>an edge</em>”), the event must be replayed in order for the system to recover. In a <strong>level-triggered</strong> system, even if the system misses the “event” (maybe because it is down), when it recovers it can look at the current state of the signal and respond accordingly.</p>
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.jeremyjordan.me/kubernetes/">Kubernetes</a></p></li>
 <li><p><a class="reference external" href="https://dominik-tornow.medium.com/imperative-vs-declarative-8abc7dcae82e">Imperative vs Declarative</a></p></li>
 <li><p><a class="reference external" href="https://thenewstack.io/kubernetes-design-and-development-explained/">Design &amp; Development Explained</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -320,7 +320,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

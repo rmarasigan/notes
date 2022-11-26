@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -243,8 +243,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-typescript-es6-promises--page-root">ES 6 – Promises<a class="headerlink" href="#notes-typescript-es6-promises--page-root" title="Permalink to this heading">¶</a></h1>
+  <section id="es-6-promises">
+<h1 id="notes-typescript-es6-promises--page-root">ES 6 – Promises<a class="headerlink" href="#notes-typescript-es6-promises--page-root" title="Permalink to this headline">¶</a></h1>
 <p>A <code class="docutils literal notranslate"><span class="pre">Promise</span></code> is an object that is used as a placeholder for the eventual results of a deferred (and possibly asynchronous) computation. Simply, a promise is a container for a future value. Like if you order any food from any site to deliver it to your place that order record will be the promise and the food will be the value of that promise. So the order details are the container of the food you ordered.</p>
 <p>It is an object representing the eventual completion or failure of an asynchronous operation. Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a function. A promise has 2 possible outcomes: it will either be kept when the time comes, or it won’t.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">Promise</span></code> is in one of these states:</p>
@@ -285,10 +285,10 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Promise</span> <span class="n">fulfilled</span>
 </pre></div>
 </div>
-
-<h2 id="creating-and-using-a-promise">Creating and using a <code class="docutils literal notranslate"><span class="pre">Promise</span></code><a class="headerlink" href="#creating-and-using-a-promise" title="Permalink to this heading">¶</a></h2>
+<section id="creating-and-using-a-promise">
+<h2 id="creating-and-using-a-promise">Creating and using a <code class="docutils literal notranslate"><span class="pre">Promise</span></code><a class="headerlink" href="#creating-and-using-a-promise" title="Permalink to this headline">¶</a></h2>
 <p>Firstly, we use a constructor to create a <code class="docutils literal notranslate"><span class="pre">Promise</span></code> object. It takes two parameters, one for success (<em>resolve</em>) and one for fail (<em>reject</em>). Finally, there will be a condition that if the condition is met, the <code class="docutils literal notranslate"><span class="pre">Promise</span></code> will be resolved, otherwise it will be rejected. If the <code class="docutils literal notranslate"><span class="pre">Promise</span></code> gets resolved (sucess case), then something will happen next (depends on what we dot with the successful <code class="docutils literal notranslate"><span class="pre">Promise</span></code>). The <code class="docutils literal notranslate"><span class="pre">then()</span></code> method is called after the <code class="docutils literal notranslate"><span class="pre">Promise</span></code> is resolved. Then we can decide what to do with the resolved <code class="docutils literal notranslate"><span class="pre">Promise</span></code>. However, the <code class="docutils literal notranslate"><span class="pre">then()</span></code> method is only for resolved <code class="docutils literal notranslate"><span class="pre">Promise</span></code>. So if the <code class="docutils literal notranslate"><span class="pre">Promise</span></code> gets rejected, we need to use the <code class="docutils literal notranslate"><span class="pre">catch()</span></code> method.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">promise</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
    <span class="kd">let</span> <span class="nx">finished</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
    
    <span class="c1">// Checks if condition is met</span>
@@ -314,9 +314,9 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Finished</span> <span class="n">Work</span>
 </pre></div>
 </div>
-
-
-<h2 id="creating-and-using-a-promise-in-getting-data">Creating and using a <code class="docutils literal notranslate"><span class="pre">Promise</span></code> in getting data<a class="headerlink" href="#creating-and-using-a-promise-in-getting-data" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="creating-and-using-a-promise-in-getting-data">
+<h2 id="creating-and-using-a-promise-in-getting-data">Creating and using a <code class="docutils literal notranslate"><span class="pre">Promise</span></code> in getting data<a class="headerlink" href="#creating-and-using-a-promise-in-getting-data" title="Permalink to this headline">¶</a></h2>
 <p>First, XMLHttpRequest is a built-in browser object that allows to make HTTP requests in JavaScript. We create the request and initialize it. The <code class="docutils literal notranslate"><span class="pre">xhr.open</span></code> configures the request and does not open the connection but the network activity only starts with the call of <code class="docutils literal notranslate"><span class="pre">xhr.send</span></code>.</p>
 <p>The XMLHttpRequest object is a developers dream, because you can:</p>
 <ul class="simple">
@@ -327,18 +327,18 @@
 </ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">getData</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="ow">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="c1">// Include the module in your project and use as the browser-based XHR object</span>
     <span class="c1">// This is a node-XMLHttpRequest</span>
     <span class="kd">let</span> <span class="nx">XMLHttpRequest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"xmlhttprequest"</span><span class="p">).</span><span class="nx">XMLHttpRequest</span><span class="p">;</span>
 
     <span class="c1">//  Create XMLHTTPRequest</span>
-    <span class="kd">let</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+    <span class="kd">let</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
     <span class="c1">//  Initialize it</span>
     <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">url</span><span class="p">);</span>
 
     <span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">&gt;=</span> <span class="mi">200</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">&gt;=</span> <span class="mf">200</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">&lt;</span> <span class="mf">300</span><span class="p">)</span>
       <span class="p">{</span>
         <span class="nx">resolve</span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
       <span class="p">}</span>
@@ -367,7 +367,7 @@
 
 <span class="kd">function</span> <span class="nx">printData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
 <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="nx">getData</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'https://jsonplaceholder.typicode.com/users/'</span><span class="p">)</span>
@@ -433,7 +433,7 @@
 <p>Instead of having a callback inside the <code class="docutils literal notranslate"><span class="pre">then()</span></code>, we can make it a little bit modular.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">printData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
 <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="nx">getData</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'https://jsonplaceholder.typicode.com/users/'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">printData</span><span class="p">);</span>
@@ -453,8 +453,8 @@
    <span class="mi">9</span><span class="p">:</span> <span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="p">{</span><span class="nb">id</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s2">"Clementina DuBuque"</span><span class="p">,</span><span class="o">...</span><span class="p">}</span>
 </pre></div>
 </div>
-
-<h3 id="loading-data-with-fetch">Loading data with <code class="docutils literal notranslate"><span class="pre">fetch()</span></code><a class="headerlink" href="#loading-data-with-fetch" title="Permalink to this heading">¶</a></h3>
+<section id="loading-data-with-fetch">
+<h3 id="loading-data-with-fetch">Loading data with <code class="docutils literal notranslate"><span class="pre">fetch()</span></code><a class="headerlink" href="#loading-data-with-fetch" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">fetch()</span></code> method is available in the global scope that instructs the web browsers to send a request to a URL. It requires only one parameter which is the URL of the resource that you want to fetch. It also uses a <code class="docutils literal notranslate"><span class="pre">Promise</span></code> so you can then use the <code class="docutils literal notranslate"><span class="pre">then()</span></code> and <code class="docutils literal notranslate"><span class="pre">catch()</span></code> methods to handle it.</p>
 <p>Basic Fetch API:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get all users</span>
@@ -485,10 +485,10 @@ Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users/', red
    9: (8) {id: 10, name: "Clementina DuBuque",...}
 </pre></div>
 </div>
-
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></p></li>
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises">Using Promises</a></p></li>
@@ -499,8 +499,8 @@ Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users/', red
 <li><p><a class="reference external" href="https://www.freecodecamp.org/news/javascript-es6-promises-for-beginners-resolve-reject-and-chaining-explained/">JavaScript Promise Tutorial: Resolve, Reject, and Chaining in JS and ES6</a></p></li>
 <li><p><a class="reference external" href="https://www.freecodecamp.org/news/a-practical-es6-guide-on-how-to-perform-http-requests-using-the-fetch-api-594c3d91a547/">A practical ES6 guide on how to perform HTTP requests using the Fetch API</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -549,7 +549,7 @@ Response {type: 'cors', url: 'https://jsonplaceholder.typicode.com/users/', red
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

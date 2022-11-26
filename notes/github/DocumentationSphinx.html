@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -269,10 +269,10 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-github-documentationsphinx--page-root">Producing Documentation with Sphinx<a class="headerlink" href="#notes-github-documentationsphinx--page-root" title="Permalink to this heading">¶</a></h1>
-
-<h2 id="file-hierarchy">File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this heading">¶</a></h2>
+  <section id="producing-documentation-with-sphinx">
+<h1 id="notes-github-documentationsphinx--page-root">Producing Documentation with Sphinx<a class="headerlink" href="#notes-github-documentationsphinx--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="file-hierarchy">
+<h2 id="file-hierarchy">File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>repo-name
 │
 └───.github
@@ -296,18 +296,18 @@
 └───requirements.txt
 </pre></div>
 </div>
-
-
-<h2 id="set-up">Set-up<a class="headerlink" href="#set-up" title="Permalink to this heading">¶</a></h2>
-
-<h3 id="requirements-txt">requirements.txt<a class="headerlink" href="#requirements-txt" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="set-up">
+<h2 id="set-up">Set-up<a class="headerlink" href="#set-up" title="Permalink to this headline">¶</a></h2>
+<section id="requirements-txt">
+<h3 id="requirements-txt">requirements.txt<a class="headerlink" href="#requirements-txt" title="Permalink to this headline">¶</a></h3>
 <p>Add the requirements of your project</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">myst</span><span class="o">-</span><span class="n">parser</span>
 </pre></div>
 </div>
-
-
-<h3 id="gh-pages-yml">gh-pages.yml<a class="headerlink" href="#gh-pages-yml" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="gh-pages-yml">
+<h3 id="gh-pages-yml">gh-pages.yml<a class="headerlink" href="#gh-pages-yml" title="Permalink to this headline">¶</a></h3>
 <p>This is to automate the deployment of your documentation</p>
 <div class="highlight-yml notranslate"><div class="highlight"><pre><span></span>name: Automate Sphinx Deployment
 
@@ -335,12 +335,12 @@ jobs:
         folder: _build/html # The folder the action should deploy.
 </pre></div>
 </div>
-
-
-<h3 id="conf-py">conf.py<a class="headerlink" href="#conf-py" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="conf-py">
+<h3 id="conf-py">conf.py<a class="headerlink" href="#conf-py" title="Permalink to this headline">¶</a></h3>
 <p>This is your configuration for your Sphinx Documentation</p>
-
-<h4 id="general-configuration">General configuration<a class="headerlink" href="#general-configuration" title="Permalink to this heading">¶</a></h4>
+<section id="general-configuration">
+<h4 id="general-configuration">General configuration<a class="headerlink" href="#general-configuration" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># If your documentation needs a minimal Sphinx version, state it here.</span>
 <span class="c1">#</span>
 <span class="c1"># needs_sphinx = '1.0'</span>
@@ -377,7 +377,7 @@ jobs:
 <span class="c1">#</span>
 <span class="c1"># This is also used if you do content translation via gettext catalogs.</span>
 <span class="c1"># Usually you set "language" from the command line for these cases.</span>
-<span class="n">language</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">language</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="c1"># List of patterns, relative to source directory, that match files and</span>
 <span class="c1"># directories to ignore when looking for source files.</span>
@@ -391,12 +391,12 @@ jobs:
 <span class="p">]</span>
 
 <span class="c1"># The name of the Pygments (syntax highlighting) style to use.</span>
-<span class="n">pygments_style</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">pygments_style</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
-
-
-<h4 id="project-information">Project Information<a class="headerlink" href="#project-information" title="Permalink to this heading">¶</a></h4>
+</section>
+<section id="project-information">
+<h4 id="project-information">Project Information<a class="headerlink" href="#project-information" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">project</span> <span class="o">=</span> <span class="s1">'Project Name'</span>
 <span class="n">copyright</span> <span class="o">=</span> <span class="s1">'year, username'</span>
 <span class="n">author</span> <span class="o">=</span> <span class="s1">'Your Name'</span>
@@ -407,9 +407,9 @@ jobs:
 <span class="n">release</span> <span class="o">=</span> <span class="s1">'1.0.0'</span>
 </pre></div>
 </div>
-
-
-<h4 id="options-for-html-output">Options for HTML output<a class="headerlink" href="#options-for-html-output" title="Permalink to this heading">¶</a></h4>
+</section>
+<section id="options-for-html-output">
+<h4 id="options-for-html-output">Options for HTML output<a class="headerlink" href="#options-for-html-output" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The theme to use for HTML and HTML Help pages.  See the documentation for</span>
 <span class="c1"># a list of builtin themes.</span>
 <span class="n">html_theme</span> <span class="o">=</span> <span class="s1">'sphinx_material'</span>
@@ -461,40 +461,40 @@ jobs:
 <span class="p">}</span>
 </pre></div>
 </div>
-
-
-<h4 id="options-for-htmlhelp-output">Options for HTMLHelp output<a class="headerlink" href="#options-for-htmlhelp-output" title="Permalink to this heading">¶</a></h4>
+</section>
+<section id="options-for-htmlhelp-output">
+<h4 id="options-for-htmlhelp-output">Options for HTMLHelp output<a class="headerlink" href="#options-for-htmlhelp-output" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output file base name for HTML help builder.</span>
 <span class="n">htmlhelp_basename</span> <span class="o">=</span> <span class="s1">'Notesdoc'</span>
 </pre></div>
 </div>
-
-
-<h4 id="options-for-manual-page-output">Options for manual page output<a class="headerlink" href="#options-for-manual-page-output" title="Permalink to this heading">¶</a></h4>
+</section>
+<section id="options-for-manual-page-output">
+<h4 id="options-for-manual-page-output">Options for manual page output<a class="headerlink" href="#options-for-manual-page-output" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># One entry per manual page. List of tuples</span>
 <span class="c1"># (source start file, name, description, authors, manual section).</span>
 <span class="n">man_pages</span> <span class="o">=</span> <span class="p">[(</span><span class="n">master_doc</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">,</span> <span class="s1">'description'</span><span class="p">,</span> <span class="p">[</span><span class="n">author</span><span class="p">],</span> <span class="mi">1</span><span class="p">)]</span>
 </pre></div>
 </div>
-
-
-
-<h3 id="index-rst">index.rst<a class="headerlink" href="#index-rst" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+<section id="index-rst">
+<h3 id="index-rst">index.rst<a class="headerlink" href="#index-rst" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Heading</span>
 <span class="gh">===============</span>
 <span class="gh">Subheading</span>
 <span class="gh">---------</span>
 <span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
-   <span class="nc">:maxdepth:</span> <span class="nf">1</span>
+   <span class="nc">:maxdepth:</span> 1
    <span class="nc">:glob:</span>
 
    Title &lt;internal-link-to-md-file&gt;
    Title2 &lt;https://external-link.com&gt;
 </pre></div>
 </div>
-
-
-<h3 id="makefile">Makefile<a class="headerlink" href="#makefile" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="makefile">
+<h3 id="makefile">Makefile<a class="headerlink" href="#makefile" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># You can set these variables from the command line.</span>
 <span class="nv">SPHINXOPTS</span>    <span class="o">=</span>
 <span class="nv">SPHINXBUILD</span>   <span class="o">=</span> sphinx-build
@@ -513,21 +513,21 @@ jobs:
 	@<span class="k">$(</span>SPHINXBUILD<span class="k">)</span> -M <span class="nv">$@</span> <span class="s2">"</span><span class="k">$(</span>SOURCEDIR<span class="k">)</span><span class="s2">"</span> <span class="s2">"</span><span class="k">$(</span>BUILDDIR<span class="k">)</span><span class="s2">"</span> <span class="k">$(</span>SPHINXOPTS<span class="k">)</span> <span class="k">$(</span>O<span class="k">)</span>
 </pre></div>
 </div>
-
-
-
-<h2 id="enable-github-pages">Enable Github Pages<a class="headerlink" href="#enable-github-pages" title="Permalink to this heading">¶</a></h2>
-
-<h3 id="steps">Steps<a class="headerlink" href="#steps" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+<section id="enable-github-pages">
+<h2 id="enable-github-pages">Enable Github Pages<a class="headerlink" href="#enable-github-pages" title="Permalink to this headline">¶</a></h2>
+<section id="steps">
+<h3 id="steps">Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Go to Github Pages &lt;<a class="reference external" href="https://github.com/username/repo-name/settings/pages">https://github.com/username/repo-name/settings/pages</a>&gt;</p></li>
 <li><p>In the <strong>Source</strong> section, please choose <em>gh-pages</em> as your branch and the selected folder would be <em>/(root)</em></p></li>
 <li><p>Click on <strong>Save</strong></p></li>
 </ol>
-
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://sphinx-themes.org/">Sphinx Themes</a></p></li>
 <li><p><a class="reference external" href="https://sphinx-themes.org/sample-sites/sphinx-material/">Material Sample</a></p></li>
@@ -535,8 +535,8 @@ jobs:
 <li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/theming.html#using-a-theme">Sphinx HTML Theming</a></p></li>
 <li><p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/optional.html">MyST Syntax Extenstions</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -585,7 +585,7 @@ jobs:
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

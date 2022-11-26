@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -253,29 +253,29 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-docker-dockerfilereference--page-root"><a class="reference external" href="#notes-docker-dockerfilereference--page-root">Dockerfile Reference</a><a class="headerlink" href="#notes-docker-dockerfilereference--page-root" title="Permalink to this heading">¶</a></h1>
+  <section id="dockerfile-reference">
+<h1 id="notes-docker-dockerfilereference--page-root"><a class="reference external" href="#notes-docker-dockerfilereference--page-root">Dockerfile Reference</a><a class="headerlink" href="#notes-docker-dockerfilereference--page-root" title="Permalink to this headline">¶</a></h1>
 <p><strong>Dockerfile</strong></p>
-<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> golang:1.17</span>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">golang:1.17</span>
 
-<span class="k">RUN</span> apt update
-<span class="k">RUN</span> apt install -y rsyslog
+<span class="k">RUN</span><span class="w"> </span>apt update
+<span class="k">RUN</span><span class="w"> </span>apt install -y rsyslog
 
-<span class="k">WORKDIR</span><span class="s"> /go/src/application</span>
-<span class="k">COPY</span> . .
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/go/src/application</span>
+<span class="k">COPY</span><span class="w"> </span>. .
 
-<span class="k">RUN</span> go get -d -v ./...
-<span class="k">RUN</span> go install -v ./...
-<span class="k">RUN</span> go build
+<span class="k">RUN</span><span class="w"> </span>go get -d -v ./...
+<span class="k">RUN</span><span class="w"> </span>go install -v ./...
+<span class="k">RUN</span><span class="w"> </span>go build
 
-<span class="k">RUN</span> service rsyslog start
+<span class="k">RUN</span><span class="w"> </span>service rsyslog start
 
-<span class="k">CMD</span> <span class="p">[</span><span class="s2">"application"</span><span class="p">]</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"application"</span><span class="p">]</span>
 </pre></div>
 </div>
 <br/>
-
-<h2 id="build-image">Build Image<a class="headerlink" href="#build-image" title="Permalink to this heading">¶</a></h2>
+<section id="build-image">
+<h2 id="build-image">Build Image<a class="headerlink" href="#build-image" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker build .
 Sending build context to Docker daemon <span class="m">2</span>.04kB
 </pre></div>
@@ -285,94 +285,94 @@ Sending build context to Docker daemon <span class="m">2</span>.04kB
 </pre></div>
 </div>
 <br/>
-
-
-<h2 id="tagging-an-image">Tagging an Image<a class="headerlink" href="#tagging-an-image" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="tagging-an-image">
+<h2 id="tagging-an-image">Tagging an Image<a class="headerlink" href="#tagging-an-image" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker build -t docker_id/image_name:latest .
 </pre></div>
 </div>
 <br/>
-
-
-<h2 id="from"><code class="docutils literal notranslate"><span class="pre">FROM</span></code><a class="headerlink" href="#from" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="from">
+<h2 id="from"><code class="docutils literal notranslate"><span class="pre">FROM</span></code><a class="headerlink" href="#from" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">FROM</span></code> instruction initializes a new build stage and sets the Base Image for subsequent instructions.</p>
-<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> &lt;image&gt;:&lt;tag&gt;</span>
-<span class="k">FROM</span><span class="s"> golang:1.17</span>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">&lt;image&gt;:&lt;tag&gt;</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">golang:1.17</span>
 
-<span class="k">FROM</span><span class="s"> [--platform=&lt;platform&gt;] &lt;image&gt; [AS &lt;name&gt;]</span>
-<span class="k">FROM</span><span class="s"> --platform=$BUILDPLATFORM alpine AS build</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">[--platform=&lt;platform&gt;]</span><span class="w"> </span>&lt;image&gt; <span class="o">[</span>AS &lt;name&gt;<span class="o">]</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">--platform=$BUILDPLATFORM</span><span class="w"> </span>alpine AS build
 
-<span class="k">FROM</span><span class="s"> [--platform=&lt;platform&gt;] &lt;image&gt;[:&lt;tag&gt;] [AS &lt;name&gt;]</span>
-<span class="k">FROM</span><span class="s"> --platform=$BUILDPLATFORM golang:alpine AS build</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">[--platform=&lt;platform&gt;]</span><span class="w"> </span>&lt;image&gt;<span class="o">[</span>:&lt;tag&gt;<span class="o">]</span> <span class="o">[</span>AS &lt;name&gt;<span class="o">]</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">--platform=$BUILDPLATFORM</span><span class="w"> </span>golang:alpine AS build
 
-<span class="k">FROM</span><span class="s"> [--platform=&lt;platform&gt;] &lt;image&gt;[@&lt;digest&gt;] [AS &lt;name&gt;]</span>
-<span class="k">FROM</span><span class="s"> --platform=$BUILDPLATFORM ubuntu@sha256:82becede498899ec668628e7cb0ad87b6e1c371cb8a1e597d83a47fac21d6af3 AS build</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">[--platform=&lt;platform&gt;]</span><span class="w"> </span>&lt;image&gt;<span class="o">[</span>@&lt;digest&gt;<span class="o">]</span> <span class="o">[</span>AS &lt;name&gt;<span class="o">]</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">--platform=$BUILDPLATFORM</span><span class="w"> </span>ubuntu@sha256:82becede498899ec668628e7cb0ad87b6e1c371cb8a1e597d83a47fac21d6af3 AS build
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">tag</span></code> or <code class="docutils literal notranslate"><span class="pre">digest</span></code> values are optional. If you omit either of them, the builder assumes a latest tag by default. The builder returns an error if it cannot find the tag value. The optional <code class="docutils literal notranslate"><span class="pre">--platform</span></code> flag can be used to specify the platform of the image in case <code class="docutils literal notranslate"><span class="pre">FROM</span></code> references a multi-platform image. For example, linux/amd64, linux/arm64, or windows/amd64. By default, the target platform of the build request is used.</p>
 <br/>
-
-
-<h2 id="run"><code class="docutils literal notranslate"><span class="pre">RUN</span></code><a class="headerlink" href="#run" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="run">
+<h2 id="run"><code class="docutils literal notranslate"><span class="pre">RUN</span></code><a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">RUN</span></code> instruction will execute any commands in a new layer on top of the current image and commit the results. The resulting committed image will be used for the next step in the <strong>Dockerfile</strong>.</p>
 <div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="c"># shell form, the command is run in a shell,</span>
 <span class="c"># which by default is /bin/sh -c on Linux</span>
 <span class="c"># or cmd /S /C on Windows</span>
-<span class="k">RUN</span> &lt;command&gt;
+<span class="k">RUN</span><span class="w"> </span>&lt;command&gt;
 
 <span class="c"># exec form</span>
-<span class="k">RUN</span> <span class="o">[</span><span class="s2">"executable"</span>, <span class="s2">"param1"</span>, <span class="s2">"param2"</span><span class="o">]</span>
+<span class="k">RUN</span><span class="w"> </span><span class="o">[</span><span class="s2">"executable"</span>, <span class="s2">"param1"</span>, <span class="s2">"param2"</span><span class="o">]</span>
 </pre></div>
 </div>
 <p>The <em>exec</em> form makes it possible to avoid shell string munging, and to <code class="docutils literal notranslate"><span class="pre">RUN</span></code> commands using a base image that does not contain the specified shell executable. The default shell for the <em>shell</em> form can be changed using the <code class="docutils literal notranslate"><span class="pre">SHELL</span></code> command.</p>
 <p><strong>Example</strong></p>
 <div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="c"># shell form</span>
-<span class="k">RUN</span> /bin/bash -c <span class="s1">'source $HOME/.bashrc; echo $HOME'</span>
+<span class="k">RUN</span><span class="w"> </span>/bin/bash -c <span class="s1">'source $HOME/.bashrc; echo $HOME'</span>
 
 <span class="c"># exec form</span>
-<span class="k">RUN</span> <span class="o">[</span><span class="s2">"/bin/bash"</span>, <span class="s2">"-c"</span>, <span class="s2">"echo hello"</span><span class="o">]</span>
+<span class="k">RUN</span><span class="w"> </span><span class="o">[</span><span class="s2">"/bin/bash"</span>, <span class="s2">"-c"</span>, <span class="s2">"echo hello"</span><span class="o">]</span>
 </pre></div>
 </div>
 <br/>
-
-
-<h2 id="cmd"><code class="docutils literal notranslate"><span class="pre">CMD</span></code><a class="headerlink" href="#cmd" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="cmd">
+<h2 id="cmd"><code class="docutils literal notranslate"><span class="pre">CMD</span></code><a class="headerlink" href="#cmd" title="Permalink to this headline">¶</a></h2>
 <p>There can only be one <code class="docutils literal notranslate"><span class="pre">CMD</span></code> instruction in a <strong>Dockerfile</strong>. If you list more than one <code class="docutils literal notranslate"><span class="pre">CMD</span></code> then only the last <code class="docutils literal notranslate"><span class="pre">CMD</span></code> will take effect. The <strong>main purpose of a CMD</strong> is to provide defaults for an executing container. These defaults can include an executable, or they can omit the executable, in which case you must specify an <code class="docutils literal notranslate"><span class="pre">ENTRYPOINT</span></code> instruction as well.</p>
 <div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="c"># exec form, this is the preferred form</span>
-<span class="k">CMD</span> <span class="p">[</span><span class="s2">"executable"</span><span class="p">,</span><span class="s2">"param1"</span><span class="p">,</span><span class="s2">"param2"</span><span class="p">]</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"executable"</span><span class="p">,</span><span class="s2">"param1"</span><span class="p">,</span><span class="s2">"param2"</span><span class="p">]</span>
 
 <span class="c"># as default parameters to ENTRYPOINT</span>
-<span class="k">CMD</span> <span class="p">[</span><span class="s2">"param1"</span><span class="p">,</span><span class="s2">"param2"</span><span class="p">]</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"param1"</span><span class="p">,</span><span class="s2">"param2"</span><span class="p">]</span>
 
 <span class="c"># shell form</span>
-<span class="k">CMD</span> <span class="nb">command</span> param1 param2
+<span class="k">CMD</span><span class="w"> </span><span class="nb">command</span> param1 param2
 </pre></div>
 </div>
 <p>If you use the <em>shell form</em> of the <code class="docutils literal notranslate"><span class="pre">CMD</span></code>, then the <code class="docutils literal notranslate"><span class="pre">&lt;command&gt;</span></code> will execute in <code class="docutils literal notranslate"><span class="pre">/bin/sh</span> <span class="pre">-c</span></code>:</p>
-<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> ubuntu</span>
-<span class="k">CMD</span> <span class="nb">echo</span> <span class="s2">"This is a test."</span> <span class="p">|</span> wc -
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">ubuntu</span>
+<span class="k">CMD</span><span class="w"> </span><span class="nb">echo</span> <span class="s2">"This is a test."</span> <span class="p">|</span> wc -
 </pre></div>
 </div>
 <p>If you want to run your <code class="docutils literal notranslate"><span class="pre">&lt;command&gt;</span></code> without a shell then you must express the command as a JSON array and give the full path to the executable. This array form is the preferred format of <code class="docutils literal notranslate"><span class="pre">CMD</span></code>. Any additional parameters must be individually expressed as strings in the array:</p>
-<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="s"> ubuntu</span>
-<span class="k">CMD</span> <span class="p">[</span><span class="s2">"/usr/bin/wc"</span><span class="p">,</span> <span class="s2">"--help"</span><span class="p">]</span>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">ubuntu</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"/usr/bin/wc"</span><span class="p">,</span><span class="w"> </span><span class="s2">"--help"</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>If you would like your container to run the same executable every time, then you should consider using ENTRYPOINT in combination with <code class="docutils literal notranslate"><span class="pre">CMD</span></code>.</p>
 <br/>
-
-
-<h2 id="expose"><code class="docutils literal notranslate"><span class="pre">EXPOSE</span></code><a class="headerlink" href="#expose" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="expose">
+<h2 id="expose"><code class="docutils literal notranslate"><span class="pre">EXPOSE</span></code><a class="headerlink" href="#expose" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">EXPOSE</span></code> instruction informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified. The <code class="docutils literal notranslate"><span class="pre">EXPOSE</span></code> instruction does not actually publish the port. It functions as a type of documentation between the person who builds the image and the person who runs the container, about which ports are intended to be published. To actually publish the port when running the container, use the <code class="docutils literal notranslate"><span class="pre">-p</span></code> flag on <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> to publish and map one or more ports, or the <code class="docutils literal notranslate"><span class="pre">-P</span></code> flag to publish all exposed ports and map them to high-order ports.</p>
-<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">EXPOSE</span><span class="s"> &lt;port&gt; [&lt;port&gt;/&lt;protocol&gt;...]</span>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">EXPOSE</span><span class="w"> </span><span class="s">&lt;port&gt; [&lt;port&gt;/&lt;protocol&gt;...]</span>
 
 <span class="c"># By default, EXPOSE assumes TCP.</span>
 <span class="c"># You can also specify UDP</span>
-<span class="k">EXPOSE</span><span class="s"> 80/udp</span>
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">80/udp</span>
 
 <span class="c"># To expose on both TCP and UDP</span>
-<span class="k">EXPOSE</span><span class="s"> 80/tcp</span>
-<span class="k">EXPOSE</span><span class="s"> 80/udp</span>
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">80/tcp</span>
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">80/udp</span>
 </pre></div>
 </div>
 <p>Regardless of the <code class="docutils literal notranslate"><span class="pre">EXPOSE</span></code> settings, you can override them at runtime by using the <code class="docutils literal notranslate"><span class="pre">-p</span></code> flag.</p>
@@ -380,59 +380,59 @@ Sending build context to Docker daemon <span class="m">2</span>.04kB
 </pre></div>
 </div>
 <br/>
+</section>
+<section id="env">
+<h2 id="env"><code class="docutils literal notranslate"><span class="pre">ENV</span></code><a class="headerlink" href="#env" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">ENV</span><span class="w"> </span>&lt;key&gt;<span class="o">=</span>&lt;value&gt; ...
 
-
-<h2 id="env"><code class="docutils literal notranslate"><span class="pre">ENV</span></code><a class="headerlink" href="#env" title="Permalink to this heading">¶</a></h2>
-<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">ENV</span> &lt;key&gt;<span class="o">=</span>&lt;value&gt; ...
-
-<span class="k">ENV</span> <span class="nv">GO111MODULE</span><span class="o">=</span>on
-<span class="k">ENV</span> <span class="nv">GOOS</span><span class="o">=</span><span class="s2">"linux"</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">GO111MODULE</span><span class="o">=</span>on
+<span class="k">ENV</span><span class="w"> </span><span class="nv">GOOS</span><span class="o">=</span><span class="s2">"linux"</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">ENV</span></code> instruction sets the environment variable <code class="docutils literal notranslate"><span class="pre">&lt;key&gt;</span></code> to the value <code class="docutils literal notranslate"><span class="pre">&lt;value&gt;</span></code>. This value will be in the environment for all subsequent instructions in the build stage and can be replaced inline in many as well. The environment variables set using <code class="docutils literal notranslate"><span class="pre">ENV</span></code> will persist when a container is run from the resulting image. You can view the values using <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">inspect</span></code>, and change them using <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">--env</span> <span class="pre">&lt;key&gt;=&lt;value&gt;</span></code>.</p>
 <br/>
-
-
-<h2 id="copy"><code class="docutils literal notranslate"><span class="pre">COPY</span></code><a class="headerlink" href="#copy" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="copy">
+<h2 id="copy"><code class="docutils literal notranslate"><span class="pre">COPY</span></code><a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">COPY</span></code> instruction copies new files or directories from <code class="docutils literal notranslate"><span class="pre">&lt;src&gt;</span></code> and adds them to the filesystem of the container at the path <code class="docutils literal notranslate"><span class="pre">&lt;dest&gt;</span></code>. Multiple<code class="docutils literal notranslate"> <span class="pre">&lt;src&gt;</span></code> resources may be specified but the paths of files and directories will be interpreted as relative to the source of the context of the build. The <code class="docutils literal notranslate"><span class="pre">--chown</span></code> feature is only supported on Dockerfiles used to build Linux containers, and will not work on Windows containers. The <code class="docutils literal notranslate"><span class="pre">&lt;dest&gt;</span></code> is an absolute path, or a path relative to <code class="docutils literal notranslate"><span class="pre">WORKDIR</span></code>, into which the source will be copied inside the destination container.</p>
 <p>Optionally <code class="docutils literal notranslate"><span class="pre">COPY</span></code> accepts a flag <code class="docutils literal notranslate"><span class="pre">--from=&lt;name&gt;</span></code> that can be used to set the source location to a previous build stage (created with <code class="docutils literal notranslate"><span class="pre">FROM</span> <span class="pre">..</span> <span class="pre">AS</span> <span class="pre">&lt;name&gt;</span></code>) that will be used instead of a build context sent by the user. In case a build stage with a specified name can’t be found an image with the same name is attempted to be used instead.</p>
-<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">COPY</span> <span class="o">[</span>--chown<span class="o">=</span>&lt;user&gt;:&lt;group&gt;<span class="o">]</span> &lt;src&gt;... &lt;dest&gt;
-<span class="k">COPY</span> --chown<span class="o">=</span>username:groupname files* /somedir/
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">COPY</span><span class="w"> </span><span class="o">[</span>--chown<span class="o">=</span>&lt;user&gt;:&lt;group&gt;<span class="o">]</span> &lt;src&gt;... &lt;dest&gt;
+<span class="k">COPY</span><span class="w"> </span>--chown<span class="o">=</span>username:groupname files* /somedir/
 
-<span class="k">COPY</span> <span class="o">[</span>--chown<span class="o">=</span>&lt;user&gt;:&lt;group&gt;<span class="o">]</span> <span class="o">[</span><span class="s2">"&lt;src&gt;"</span>,... <span class="s2">"&lt;dest&gt;"</span><span class="o">]</span>
+<span class="k">COPY</span><span class="w"> </span><span class="o">[</span>--chown<span class="o">=</span>&lt;user&gt;:&lt;group&gt;<span class="o">]</span> <span class="o">[</span><span class="s2">"&lt;src&gt;"</span>,... <span class="s2">"&lt;dest&gt;"</span><span class="o">]</span>
 
 <span class="c"># uses a relative path, and adds file.txt”</span>
 <span class="c"># to &lt;WORKDIR&gt;/relativeDir/</span>
-<span class="k">COPY</span> file.txt relativeDir/
+<span class="k">COPY</span><span class="w"> </span>file.txt relativeDir/
 
 <span class="c"># uses an absolute path, and adds file.txt”</span>
 <span class="c"># to /absoluteDir/</span>
-<span class="k">COPY</span> file.txt /absoluteDir/
+<span class="k">COPY</span><span class="w"> </span>file.txt /absoluteDir/
 </pre></div>
 </div>
 <br/>
-
-
-<h2 id="volume"><code class="docutils literal notranslate"><span class="pre">VOLUME</span></code><a class="headerlink" href="#volume" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="volume">
+<h2 id="volume"><code class="docutils literal notranslate"><span class="pre">VOLUME</span></code><a class="headerlink" href="#volume" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">VOLUME</span></code> instruction creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers. The value can be a JSON array,<code class="docutils literal notranslate"> <span class="pre">VOLUME</span> <span class="pre">["/var/log/"]</span></code>, or a plain string with multiple arguments, such as <code class="docutils literal notranslate"><span class="pre">VOLUME</span> <span class="pre">/var/log</span> <span class="pre">or</span> <span class="pre">VOLUME</span> <span class="pre">/var/log</span> <span class="pre">/var/db</span></code>.</p>
-<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">VOLUME</span> <span class="p">[</span><span class="s2">"/data"</span><span class="p">]</span>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">VOLUME</span><span class="w"> </span><span class="p">[</span><span class="s2">"/data"</span><span class="p">]</span>
 </pre></div>
 </div>
 <br/>
-
-
-<h2 id="workdir"><code class="docutils literal notranslate"><span class="pre">WORKDIR</span></code><a class="headerlink" href="#workdir" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="workdir">
+<h2 id="workdir"><code class="docutils literal notranslate"><span class="pre">WORKDIR</span></code><a class="headerlink" href="#workdir" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">WORKDIR</span></code> instruction sets the working directory for any <code class="docutils literal notranslate"><span class="pre">RUN</span></code>, <code class="docutils literal notranslate"><span class="pre">CMD</span></code>, <code class="docutils literal notranslate"><span class="pre">ENTRYPOINT</span></code>, <code class="docutils literal notranslate"><span class="pre">COPY</span></code> and <code class="docutils literal notranslate"><span class="pre">ADD</span></code> instructions that follow it in the <strong>Dockerfile</strong>. If the <code class="docutils literal notranslate"><span class="pre">WORKDIR</span></code> doesn’t exist, it will be created even if it’s not used in any subsequent <strong>Dockerfile</strong> instruction. The <code class="docutils literal notranslate"><span class="pre">WORKDIR</span></code> instruction can be used multiple times in a <strong>Dockerfile</strong>.</p>
-<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">WORKDIR</span><span class="s"> /path/to/workdir</span>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/path/to/workdir</span>
 
 <span class="c"># The WORKDIR instruction can resolve environment</span>
 <span class="c"># variables previously set using ENV</span>
-<span class="k">ENV</span> <span class="nv">DIRPATH</span><span class="o">=</span>/path
-<span class="k">WORKDIR</span><span class="s"> $DIRPATH</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">DIRPATH</span><span class="o">=</span>/path
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">$DIRPATH</span>
 </pre></div>
 </div>
-
-
+</section>
+</section>
 
 
           </article>
@@ -481,7 +481,7 @@ Sending build context to Docker daemon <span class="m">2</span>.04kB
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

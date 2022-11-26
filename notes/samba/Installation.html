@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -245,13 +245,13 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-samba-installation--page-root">Installation<a class="headerlink" href="#notes-samba-installation--page-root" title="Permalink to this heading">¶</a></h1>
-
-<h2 id="what-is-samba">What is Samba?<a class="headerlink" href="#what-is-samba" title="Permalink to this heading">¶</a></h2>
-
-
-<h2 id="installing-samba">Installing Samba<a class="headerlink" href="#installing-samba" title="Permalink to this heading">¶</a></h2>
+  <section id="installation">
+<h1 id="notes-samba-installation--page-root">Installation<a class="headerlink" href="#notes-samba-installation--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="what-is-samba">
+<h2 id="what-is-samba">What is Samba?<a class="headerlink" href="#what-is-samba" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="installing-samba">
+<h2 id="installing-samba">Installing Samba<a class="headerlink" href="#installing-samba" title="Permalink to this headline">¶</a></h2>
 <p>To install Samba:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
 dev@dev:~$ sudo apt install samba
@@ -262,9 +262,9 @@ dev@dev:~$ sudo apt install samba
 samba: /usr/sbin/samba /usr/lib/x86_64-linux-gnu/samba /etc/samba /usr/share/samba /usr/share/man/man7/samba.7.gz /usr/share/man/man8/samba.8.gz
 </pre></div>
 </div>
-
-
-<h2 id="setting-up-samba">Setting up Samba<a class="headerlink" href="#setting-up-samba" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="setting-up-samba">
+<h2 id="setting-up-samba">Setting up Samba<a class="headerlink" href="#setting-up-samba" title="Permalink to this headline">¶</a></h2>
 <p>Create a directory for it to share:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ mkdir /home/&lt;username&gt;/sambashare/
 </pre></div>
@@ -293,18 +293,18 @@ Rules updated <span class="o">(</span>v6<span class="o">)</span>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo chmod <span class="m">2770</span> /home/username/sambashare/
 </pre></div>
 </div>
-
-
-<h2 id="setup-a-samba-password-for-the-user-account">Setup a Samba password for the user account<a class="headerlink" href="#setup-a-samba-password-for-the-user-account" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="setup-a-samba-password-for-the-user-account">
+<h2 id="setup-a-samba-password-for-the-user-account">Setup a Samba password for the user account<a class="headerlink" href="#setup-a-samba-password-for-the-user-account" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo smbpasswd -a username
 New SMB password:
 Retype new SMB password:
 Added user username
 </pre></div>
 </div>
-
-
-<h2 id="connecting-to-a-samba-share-from-linux">Connecting to a Samba Share from Linux<a class="headerlink" href="#connecting-to-a-samba-share-from-linux" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="connecting-to-a-samba-share-from-linux">
+<h2 id="connecting-to-a-samba-share-from-linux">Connecting to a Samba Share from Linux<a class="headerlink" href="#connecting-to-a-samba-share-from-linux" title="Permalink to this headline">¶</a></h2>
 <p>Install <code class="docutils literal notranslate"><span class="pre">smbclient</span></code> on Ubuntu:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt install smbclient
 </pre></div>
@@ -314,14 +314,14 @@ Added user username
 Enter WORKGROUP\username's password:
 </pre></div>
 </div>
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://ubuntu.com/tutorials/install-and-configure-samba#1-overview">Install and Configure Samba</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -370,7 +370,7 @@ Enter WORKGROUP\username's password:
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

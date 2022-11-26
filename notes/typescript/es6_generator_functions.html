@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -241,8 +241,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-typescript-es6-generator-functions--page-root">ES 6 – Generator Functions<a class="headerlink" href="#notes-typescript-es6-generator-functions--page-root" title="Permalink to this heading">¶</a></h1>
+  <section id="es-6-generator-functions">
+<h1 id="notes-typescript-es6-generator-functions--page-root">ES 6 – Generator Functions<a class="headerlink" href="#notes-typescript-es6-generator-functions--page-root" title="Permalink to this headline">¶</a></h1>
 <p>Generator function objects created with a constructor are parsed when the function is created. That is less efficient than declaring a generator function with a <code class="docutils literal notranslate"><span class="pre">function*</span></code> expression and calling it within your code, because such functions are parsed with the rest of the code. A generator is a function that can stop midway and then continue from where it stopped.</p>
 <p>It gives a new way to work with iterators and functions. ES6 Generator is a new type of function that can be paused in the middle or many times in the middle and resumed later. In standard function, control remains with the called function until it returns, but generator function allows the caller function to control the execution of a called function.</p>
 <p>Here are some other common definitions of generators:</p>
@@ -250,8 +250,8 @@
 <li><p>Generators are a special class of functions that simplify the task of writing iterators</p></li>
 <li><p>A generator is a function that produces a sequence of results instead of a single value</p></li>
 </ul>
-
-<h2 id="normal-vs-generator-functions">Normal vs Generator Functions<a class="headerlink" href="#normal-vs-generator-functions" title="Permalink to this heading">¶</a></h2>
+<section id="normal-vs-generator-functions">
+<h2 id="normal-vs-generator-functions">Normal vs Generator Functions<a class="headerlink" href="#normal-vs-generator-functions" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="../../_images/normal-vs-generator-function.png"><img alt="normal-vs-generator-function" src="../../_images/normal-vs-generator-function.png" style="width: 600px;"/></a>
 <p>The difference between a generator and a regular function is:</p>
 <ul class="simple">
@@ -259,9 +259,9 @@
 <li><p>At any time, the generator function can return (or yield) the control back to the caller</p></li>
 <li><p>The generator can return (or yield) multiple values according to the requirement, unlike a regular function</p></li>
 </ul>
-
-
-<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="syntax">
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
 <p>Generator functions have a similar syntax to regular functions. As the only difference is denoted by an asterisk (<code class="docutils literal notranslate"><span class="pre">*</span></code>) after the function keyword.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="o">*</span><span class="nx">functionName</span><span class="p">()</span> <span class="p">{}</span>
 </pre></div>
@@ -284,16 +284,16 @@
 </ul>
 </li>
 </ul>
-
-
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="example">
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>For creating a generator function, we use <code class="docutils literal notranslate"><span class="pre">function</span> <span class="pre">*</span></code> syntax instead of just <code class="docutils literal notranslate"><span class="pre">function</span></code>. Inside the body, we don’t have a <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword. Instead we have <code class="docutils literal notranslate"><span class="pre">yield</span></code>. It is an operator with which a generator can pause itself. Everytime a generator encounters a <code class="docutils literal notranslate"><span class="pre">yield</span></code>, it returns the value specified after it. Calling a generator function does not execute the body immediately. Instead of returning any value, a generator function <em>always</em> returns a generator object. The generator object is an iterator.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="o">*</span><span class="nx">myFunction</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">yield</span> <span class="nx">i</span><span class="p">;</span>
-   <span class="k">yield</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
+   <span class="k">yield</span> <span class="nx">i</span> <span class="o">+</span> <span class="mf">5</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">generator</span> <span class="o">=</span> <span class="nx">myFunction</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">generator</span> <span class="o">=</span> <span class="nx">myFunction</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">generator</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -305,10 +305,10 @@
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="o">*</span><span class="nx">myFunction</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">yield</span> <span class="nx">i</span><span class="p">;</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="s2">" Just log this"</span><span class="p">);</span>
-   <span class="k">yield</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
+   <span class="k">yield</span> <span class="nx">i</span> <span class="o">+</span> <span class="mf">5</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">generator</span> <span class="o">=</span> <span class="nx">myFunction</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">generator</span> <span class="o">=</span> <span class="nx">myFunction</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">generator</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">generator</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
 </pre></div>
@@ -320,17 +320,17 @@
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">next()</span></code> method returns an object with a <code class="docutils literal notranslate"><span class="pre">value</span></code> property containing the yielded value and a <code class="docutils literal notranslate"><span class="pre">done</span></code> property which indicates whether the generator has yiedled its last value, as a boolean.</p>
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*">function*</a></p></li>
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction">GeneratorFunction</a></p></li>
 <li><p><a class="reference external" href="https://www.geeksforgeeks.org/explain-the-generator-function-in-es6/">Explain the Generator Function in ES6</a></p></li>
 <li><p><a class="reference external" href="https://codeburst.io/understanding-generators-in-es6-javascript-with-examples-6728834016d5">Understanding Generators in ES6 JavaScript with Examples</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -379,7 +379,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

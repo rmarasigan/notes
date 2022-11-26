@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -222,6 +222,8 @@
         <li class="md-nav__item"><a href="#go-installation" class="md-nav__link">Go Installation</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#file-hierarchy" class="md-nav__link">File Hierarchy</a>
+        </li>
+        <li class="md-nav__item"><a href="#upgrade-go-version" class="md-nav__link">Upgrade Go Version</a>
         </li></ul>
             </nav>
         </li>
@@ -253,8 +255,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-go-lang-installation--page-root">Installation<a class="headerlink" href="#notes-go-lang-installation--page-root" title="Permalink to this heading">¶</a></h1>
+  <section id="installation">
+<h1 id="notes-go-lang-installation--page-root">Installation<a class="headerlink" href="#notes-go-lang-installation--page-root" title="Permalink to this headline">¶</a></h1>
 <p>To <strong>download and install</strong>, please follow the instructions describe <a class="reference external" href="https://go.dev/doc/install">here</a>.</p>
 <p>Prerequisite:</p>
 <ul class="simple">
@@ -263,10 +265,10 @@
 <li><p>GCC Compiler</p></li>
 <li><p>Visual Studio Code (Optional)</p></li>
 </ul>
-
-<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permalink to this heading">¶</a></h2>
-
-<h3 id="go-installation">Go Installation<a class="headerlink" href="#go-installation" title="Permalink to this heading">¶</a></h3>
+<section id="linux">
+<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
+<section id="go-installation">
+<h3 id="go-installation">Go Installation<a class="headerlink" href="#go-installation" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt install software-properties-common apt-transport-https wget
 dev@dev:~$ wget -c https://go.dev/dl/go1.xx.xx.linux-amd64.tar.gz
 dev@dev:~$ sudo tar -C /usr/local -xzf go1.xx.xx.linux-amd64.tar.gz
@@ -274,8 +276,8 @@ dev@dev:~$ sudo vim .profile
 </pre></div>
 </div>
 <p>NOTE: Please remember to change the xx.xx to your desired version of go.</p>
-
-<h4 id="file-hierarchy">File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this heading">¶</a></h4>
+<section id="file-hierarchy">
+<h4 id="file-hierarchy">File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>go
 │
 └───bin
@@ -302,10 +304,24 @@ dev@dev:~$ sudo vim .profile
 go version go1.xx.xx linux/amd64
 </pre></div>
 </div>
+</section>
+<section id="upgrade-go-version">
+<h4 id="upgrade-go-version">Upgrade Go Version<a class="headerlink" href="#upgrade-go-version" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Delete the /usr/local/go
+dev@dev:~$ sudo rm -rf /usr/local/go
 
+# Download the new version
+dev@dev:~$ wget https://go.dev/dl/go1.xx.xx.linux-amd64.tar.gz
 
-
-<h3 id="git-installation">GIT Installation<a class="headerlink" href="#git-installation" title="Permalink to this heading">¶</a></h3>
+# Extract the archive file
+dev@dev:~$ sudo tar -C /usr/local -xzf /home/smarasigan/Downloads/go1.19.3.linux-amd64.tar.gz
+</pre></div>
+</div>
+<p><strong>NOTE</strong>: Please remember to change the xx.xx to your desired version of go.</p>
+</section>
+</section>
+<section id="git-installation">
+<h3 id="git-installation">GIT Installation<a class="headerlink" href="#git-installation" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
 dev@dev:~$ sudo apt-get install git
 <span class="c1"># Git configuration</span>
@@ -313,9 +329,9 @@ dev@dev:~$ git config --global user.name <span class="s2">"username"</span>
 dev@dev:~$ git config --global user.email <span class="s2">"email@email.com"</span>
 </pre></div>
 </div>
-
-
-<h3 id="gcc-installation">GCC Installation<a class="headerlink" href="#gcc-installation" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="gcc-installation">
+<h3 id="gcc-installation">GCC Installation<a class="headerlink" href="#gcc-installation" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
 dev@dev:~$ sudo apt install build-essential
 dev@dev:~$ gcc --version
@@ -324,9 +340,9 @@ Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2017
 This is free software<span class="p">;</span> see the <span class="nb">source</span> <span class="k">for</span> copying conditions. There is NO warranty<span class="p">;</span> not even <span class="k">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 </pre></div>
 </div>
-
-
-<h3 id="vs-code-installation">VS Code Installation<a class="headerlink" href="#vs-code-installation" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="vs-code-installation">
+<h3 id="vs-code-installation">VS Code Installation<a class="headerlink" href="#vs-code-installation" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
 dev@dev:~$ sudo apt install software-properties-common apt-transport-https
 dev@dev:~$ wget -qO- https://packages.microsoft.com/keys/microsoft.asc <span class="p">|</span> gpg --dearmor &gt; packages.microsoft.gpg
@@ -337,15 +353,15 @@ dev@dev:~$ sudo apt install code
 </pre></div>
 </div>
 <p><strong>NOTE:</strong> Due to its size, the installation takes approximately 5 minutes.</p>
-
-<h4 id="vs-code-plugin-installation">VS Code Plugin Installation<a class="headerlink" href="#vs-code-plugin-installation" title="Permalink to this heading">¶</a></h4>
+<section id="vs-code-plugin-installation">
+<h4 id="vs-code-plugin-installation">VS Code Plugin Installation<a class="headerlink" href="#vs-code-plugin-installation" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>Go to <strong>Extension</strong> on the left side panel and install <strong>Go by lukehoban</strong></p></li>
 </ul>
-
-
-
-
+</section>
+</section>
+</section>
+</section>
 
 
           </article>
@@ -394,7 +410,7 @@ dev@dev:~$ sudo apt install code
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

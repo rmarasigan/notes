@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -237,27 +237,27 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-docker-docker-compose-cheatsheet--page-root">docker-compose<a class="headerlink" href="#notes-docker-docker-compose-cheatsheet--page-root" title="Permalink to this heading">¶</a></h1>
+  <section id="docker-compose">
+<h1 id="notes-docker-docker-compose-cheatsheet--page-root">docker-compose<a class="headerlink" href="#notes-docker-docker-compose-cheatsheet--page-root" title="Permalink to this headline">¶</a></h1>
 <p><strong>docker-compose.yml</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span> <span class="s">'2'</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">'2'</span><span class="w"></span>
 
-<span class="nt">services</span><span class="p">:</span>
-  <span class="nt">web</span><span class="p">:</span>
-    <span class="nt">build</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
-    <span class="c1"># build from Dockerfile</span>
-    <span class="nt">context</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./path</span>
-    <span class="nt">dockerfile</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Dockerfile</span>
-    <span class="nt">ports</span><span class="p">:</span>
-     <span class="p p-Indicator">-</span> <span class="s">"5000:5000"</span>
-    <span class="nt">volumes</span><span class="p">:</span>
-     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">.:/container_path</span>
-  <span class="nt">redis</span><span class="p">:</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">redis</span>
+<span class="nt">services</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># build from Dockerfile</span><span class="w"></span>
+<span class="w">    </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./path</span><span class="w"></span>
+<span class="w">    </span><span class="nt">dockerfile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dockerfile</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"></span>
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"5000:5000"</span><span class="w"></span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w"></span>
+<span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.:/container_path</span><span class="w"></span>
+<span class="w">  </span><span class="nt">redis</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis</span><span class="w"></span>
 </pre></div>
 </div>
-
-<h2 id="commands"><strong>Commands</strong><a class="headerlink" href="#commands" title="Permalink to this heading">¶</a></h2>
+<section id="commands">
+<h2 id="commands"><strong>Commands</strong><a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker-compose start
 dev@dev:~$ docker-compose stop
 dev@dev:~$ docker-compose pause
@@ -267,99 +267,99 @@ dev@dev:~$ docker-compose up
 dev@dev:~$ docker-compose down
 </pre></div>
 </div>
-
-
-<h2 id="reference"><strong>Reference</strong><a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="reference">
+<h2 id="reference"><strong>Reference</strong><a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <p><strong>Building</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build image</span>
-<span class="nt">web</span><span class="p">:</span>
-  <span class="c1"># build from Dockerfile</span>
-  <span class="nt">build</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build image</span><span class="w"></span>
+<span class="nt">web</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># build from Dockerfile</span><span class="w"></span>
+<span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># build from custom Dockerfile</span>
-  <span class="nt">build</span><span class="p">:</span>
-    <span class="nt">context</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./dir</span>
-    <span class="nt">dockerfile</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Dockerfile.dev</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># build from custom Dockerfile</span><span class="w"></span>
+<span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./dir</span><span class="w"></span>
+<span class="w">    </span><span class="nt">dockerfile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dockerfile.dev</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># build from image</span>
-  <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
-  <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu:14.04</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># build from image</span><span class="w"></span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu</span><span class="w"></span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu:14.04</span><span class="w"></span>
 </pre></div>
 </div>
 <p><strong>Ports</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>  <span class="nt">ports</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">"3000"</span>
-    <span class="p p-Indicator">-</span> <span class="s">"8000:80"</span>  <span class="c1"># guest:host</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">ports</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"3000"</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"8000:80"</span><span class="w">  </span><span class="c1"># guest:host</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># expose ports to linked services (not to host)</span>
-  <span class="nt">expose</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">"3000"</span><span class="p p-Indicator">]</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># expose ports to linked services (not to host)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">expose</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"3000"</span><span class="p p-Indicator">]</span><span class="w"></span>
 </pre></div>
 </div>
 <p><strong>Commands</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># command to execute</span>
-  <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">bundle exec thin -p 3000</span>
-  <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">bundle</span><span class="p p-Indicator">,</span> <span class="nv">exec</span><span class="p p-Indicator">,</span> <span class="nv">thin</span><span class="p p-Indicator">,</span> <span class="nv">-p</span><span class="p p-Indicator">,</span> <span class="nv">3000</span><span class="p p-Indicator">]</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># command to execute</span><span class="w"></span>
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bundle exec thin -p 3000</span><span class="w"></span>
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">bundle</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">exec</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">thin</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-p</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3000</span><span class="p p-Indicator">]</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># override the entrypoint</span>
-  <span class="nt">entrypoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/app/start.sh</span>
-  <span class="nt">entrypoint</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">php</span><span class="p p-Indicator">,</span> <span class="nv">-d</span><span class="p p-Indicator">,</span> <span class="nv">vendor/bin/phpunit</span><span class="p p-Indicator">]</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># override the entrypoint</span><span class="w"></span>
+<span class="w">  </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/app/start.sh</span><span class="w"></span>
+<span class="w">  </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">php</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-d</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">vendor/bin/phpunit</span><span class="p p-Indicator">]</span><span class="w"></span>
 </pre></div>
 </div>
 <p><strong>Environment Variables</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># environment variabless</span>
-  <span class="nt">environment</span><span class="p">:</span>
-    <span class="nt">RACK_ENV</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">development</span>
-  <span class="nt">environment</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">RACK_ENV=development</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># environment variabless</span><span class="w"></span>
+<span class="w">  </span><span class="nt">environment</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">RACK_ENV</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">development</span><span class="w"></span>
+<span class="w">  </span><span class="nt">environment</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RACK_ENV=development</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># environment vars from file</span>
-  <span class="nt">env_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.env</span>
-  <span class="nt">env_file</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">.env</span><span class="p p-Indicator">,</span> <span class="nv">.development.env</span><span class="p p-Indicator">]</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># environment vars from file</span><span class="w"></span>
+<span class="w">  </span><span class="nt">env_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.env</span><span class="w"></span>
+<span class="w">  </span><span class="nt">env_file</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">.env</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">.development.env</span><span class="p p-Indicator">]</span><span class="w"></span>
 </pre></div>
 </div>
 <p><strong>Dependencies</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># makes the `db` service available as the hostname `database`</span>
-  <span class="c1"># (implies depends_on)</span>
-  <span class="nt">links</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">db:database</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">redis</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># makes the `db` service available as the hostname `database`</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># (implies depends_on)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">links</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db:database</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># make sure `db` is alive before starting</span>
-  <span class="nt">depends_on</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">db</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1"># make sure `db` is alive before starting</span><span class="w"></span>
+<span class="w">  </span><span class="nt">depends_on</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db</span><span class="w"></span>
 </pre></div>
 </div>
 <p><strong>DNS Servers</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
-  <span class="nt">web</span><span class="p">:</span>
-    <span class="nt">dns</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8.8.8.8</span>
-    <span class="nt">dns</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">8.8.8.8</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">8.8.4.4</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">dns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8.8.8.8</span><span class="w"></span>
+<span class="w">    </span><span class="nt">dns</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8.8.8.8</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8.8.4.4</span><span class="w"></span>
 </pre></div>
 </div>
 <p><strong>Devices</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
-  <span class="nt">web</span><span class="p">:</span>
-    <span class="nt">devices</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="s">"/dev/ttyUSB0:/dev/ttyUSB0"</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">devices</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"/dev/ttyUSB0:/dev/ttyUSB0"</span><span class="w"></span>
 </pre></div>
 </div>
 <p><strong>Hosts</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
-  <span class="nt">web</span><span class="p">:</span>
-    <span class="nt">extra_hosts</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">"somehost:192.168.1.100"</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">extra_hosts</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"somehost:192.168.1.100"</span><span class="w"></span>
 </pre></div>
 </div>
-
-
+</section>
+</section>
 
 
           </article>
@@ -408,7 +408,7 @@ dev@dev:~$ docker-compose down
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

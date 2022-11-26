@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -249,8 +249,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-open-telemetry-span--page-root">Spans<a class="headerlink" href="#notes-open-telemetry-span--page-root" title="Permalink to this heading">¶</a></h1>
+  <section id="spans">
+<h1 id="notes-open-telemetry-span--page-root">Spans<a class="headerlink" href="#notes-open-telemetry-span--page-root" title="Permalink to this headline">¶</a></h1>
 <p><strong>Span</strong> represents an operation (unit of work) in a trace. A span could be a remote procedure call (RPC), a database query, or an in-process function call. A span has:</p>
 <ul class="simple">
 <li><p>Parent Span</p></li>
@@ -263,12 +263,12 @@
 <li><p>A list of links to other spans</p></li>
 <li><p>A span context that propagates trace ID and other data between different services</p></li>
 </ul>
-
-<h2 id="span-names">Span names<a class="headerlink" href="#span-names" title="Permalink to this heading">¶</a></h2>
+<section id="span-names">
+<h2 id="span-names">Span names<a class="headerlink" href="#span-names" title="Permalink to this headline">¶</a></h2>
 <p>To group spans properly, give them short and concise names. The total number of unique span names should be less than 1000.</p>
-
-
-<h2 id="span-kind">Span kind<a class="headerlink" href="#span-kind" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="span-kind">
+<h2 id="span-kind">Span kind<a class="headerlink" href="#span-kind" title="Permalink to this headline">¶</a></h2>
 <p><strong>Span kind</strong> must have one of the following values:</p>
 <ul class="simple">
 <li><p>server — for server operations, for example, HTTP server handler</p></li>
@@ -277,9 +277,9 @@
 <li><p>consumer — for message consumers and async processing in general</p></li>
 <li><p>internal — for internal operations</p></li>
 </ul>
-
-
-<h2 id="status-code">Status Code<a class="headerlink" href="#status-code" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="status-code">
+<h2 id="status-code">Status Code<a class="headerlink" href="#status-code" title="Permalink to this headline">¶</a></h2>
 <p><strong>Status code</strong> indicates whether an operation succeeded or failed. It must have one of the following values:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Ok</span></code> — Success</p></li>
@@ -287,27 +287,27 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">Unset</span></code> — the default value which allows backends to assign the status</p></li>
 </ul>
 <p>A status will be attached to a span. Typically, you will set a span status when there is a known error in the application code such as an exception. When an exception is handled, a Span status can be set to <code class="docutils literal notranslate"><span class="pre">Error</span></code>. Otherwise, a Span status is in the Unset state.</p>
-
-
-<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="attributes">
+<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <p>To record contextual information, you can annotate spans with attributes that carry information specific to the operation. You can name attributes as you want, but for common operations, you should use <a class="reference external" href="https://uptrace.dev/opentelemetry/attributes.html">semantic attributes</a> convention.</p>
 <p><strong>Attributes</strong> are key-value pairs that contain metadata that you can use to annotate a Span to carry information about the operation it is tracking. Attributes have the following rules that each language SDK implements:</p>
 <ul class="simple">
 <li><p>Keys must be non-null string values</p></li>
 <li><p>Values must be non-null string, boolean, floating point value, integer, or an array of these values</p></li>
 </ul>
-
-
-<h2 id="events">Events<a class="headerlink" href="#events" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="events">
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
 <p>You can also annotate spans with events that have a start time and an arbitrary number of attributes. The main difference between events and spans is that events don’t have an end time (and therefore no duration). <strong>Events</strong> usually represent exceptions, errors, logs, and messages, but you can create custom events as well.</p>
 <p>A Span Event can be thought of as a structured log message (or annotation) on a Span, typically used to denote a meaningful, singular point in time during the Span’s duration.</p>
-
-
-<h2 id="links">Links<a class="headerlink" href="#links" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="links">
+<h2 id="links">Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
 <p>Links exist so that you can associate one span with one or more spans, implying a casual relationship. Links are optional but serve as a good way to associate trace spans with one another.</p>
-
-
-<h2 id="context">Context<a class="headerlink" href="#context" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="context">
+<h2 id="context">Context<a class="headerlink" href="#context" title="Permalink to this headline">¶</a></h2>
 <p>Trace/span context is a request-scoped data such as:</p>
 <ul class="simple">
 <li><p><strong>Trace ID</strong> — unique trace identification</p></li>
@@ -315,16 +315,16 @@
 <li><p><strong>Trace flags</strong> — various flags such as sampled, deferred, and debug</p></li>
 </ul>
 <p><strong>Span Context</strong> is the part of a span that is serialized and propagated alongside Distributed Context and Baggage. Because Span Context contains the Trace DI, it is used when creating Span Links.</p>
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://opentelemetry.io/docs/concepts/signals/traces/#span-context">Traces</a></p></li>
 <li><p><a class="reference external" href="https://opentelemetry.io/docs/reference/specification/trace/semantic_conventions/">Trace Semantic Conventions</a></p></li>
 <li><p><a class="reference external" href="https://uptrace.dev/opentelemetry/distributed-tracing.html">OpenTelemetry Distributed Tracing</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -373,7 +373,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

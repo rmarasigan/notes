@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -243,8 +243,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-typescript-ts-config-file--page-root">TS – tsconfig.json<a class="headerlink" href="#notes-typescript-ts-config-file--page-root" title="Permalink to this heading">¶</a></h1>
+  <section id="ts-tsconfig-json">
+<h1 id="notes-typescript-ts-config-file--page-root">TS – tsconfig.json<a class="headerlink" href="#notes-typescript-ts-config-file--page-root" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">tsconfig.json</span></code> file is a file which is in JSON format. In the <code class="docutils literal notranslate"><span class="pre">tsconfig.json</span></code> file, we can specify various options which tell the computer how to compile the current project. We can compile a typescript project in one of the following ways:</p>
 <ul class="simple">
 <li><p><strong>By invoking <code class="docutils literal notranslate"><span class="pre">tsc</span></code> with no input files</strong></p>
@@ -259,8 +259,8 @@
 </li>
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">tsconfig.json</span></code> is generally put in the root folder of the project and it provides the compiler options required to compile the project.</p>
-
-<h2 id="create-tsconfig-json">Create <code class="docutils literal notranslate"><span class="pre">tsconfig.json</span></code><a class="headerlink" href="#create-tsconfig-json" title="Permalink to this heading">¶</a></h2>
+<section id="create-tsconfig-json">
+<h2 id="create-tsconfig-json">Create <code class="docutils literal notranslate"><span class="pre">tsconfig.json</span></code><a class="headerlink" href="#create-tsconfig-json" title="Permalink to this headline">¶</a></h2>
 <p>Navigate to the root folder of your project in your terminal or command prompt or powershell and run the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ tsc --init
 Created a new tsconfig.json with:                                                                                       
@@ -379,9 +379,9 @@ You can learn more at https://aka.ms/tsconfig.json
 }
 </pre></div>
 </div>
-
-
-<h2 id="include-and-exclude-properties"><code class="docutils literal notranslate"><span class="pre">include</span></code> and <code class="docutils literal notranslate"><span class="pre">exclude</span></code> Properties<a class="headerlink" href="#include-and-exclude-properties" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="include-and-exclude-properties">
+<h2 id="include-and-exclude-properties"><code class="docutils literal notranslate"><span class="pre">include</span></code> and <code class="docutils literal notranslate"><span class="pre">exclude</span></code> Properties<a class="headerlink" href="#include-and-exclude-properties" title="Permalink to this headline">¶</a></h2>
 <p>An <strong>include</strong> and <strong>exclude</strong> properties allows us to take an array pattern to add or remove a list of TypeScript files from the compilation process. The <strong><code class="docutils literal notranslate"><span class="pre">include</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">exclude</span></code></strong> properties take a list of glob-like patterns. The supported glob wildcards are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> matches zero or more characters (excluding directory separators)</p></li>
@@ -389,28 +389,28 @@ You can learn more at https://aka.ms/tsconfig.json
 <li><p><code class="docutils literal notranslate"><span class="pre">**/</span></code> recursively matches any subdirectory</p></li>
 </ul>
 <p>If we have a large number of files, we use the <code class="docutils literal notranslate"><span class="pre">include</span></code> property, which allows us to take an array pattern to add a list of <code class="docutils literal notranslate"><span class="pre">.ts</span></code> files to the compilation process.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>  "include": ["src/**", "tests/**"]
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"src/**"</span><span class="p">,</span><span class="w"> </span><span class="s2">"tests/**"</span><span class="p">]</span><span class="w"></span>
 </pre></div>
 </div>
 <p>We can exclude files in the same way with the <code class="docutils literal notranslate"><span class="pre">exclude</span></code> property.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>  "exclude": ["node_modules", "**/*.spec.ts"]
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">"exclude"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"node_modules"</span><span class="p">,</span><span class="w"> </span><span class="s2">"**/*.spec.ts"</span><span class="p">]</span><span class="w"></span>
 </pre></div>
 </div>
-
-
-<h2 id="compileroptions-property"><code class="docutils literal notranslate"><span class="pre">compilerOptions</span></code> Property<a class="headerlink" href="#compileroptions-property" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="compileroptions-property">
+<h2 id="compileroptions-property"><code class="docutils literal notranslate"><span class="pre">compilerOptions</span></code> Property<a class="headerlink" href="#compileroptions-property" title="Permalink to this headline">¶</a></h2>
 <p>We can customize the compiler options properties by using the <code class="docutils literal notranslate"><span class="pre">compilerOptions</span></code>. It allows specifying additional options to the TypeScript compiler. It can be omitted, in which case the compiler’s default are used. Here’s a sample JSON file describing how you can define a <code class="docutils literal notranslate"><span class="pre">tsconfig.json</span></code> file containing different parameters of the <code class="docutils literal notranslate"><span class="pre">compilerOptions</span></code> property.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">"compilerOptions"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">"module"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span>
-      <span class="nt">"noImplicitAny"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="nt">"removeComments"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="nt">"allowUnreachableCode"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="nt">"strictNullChecks"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="nt">"outFile"</span><span class="p">:</span> <span class="s2">"../javascript/type_script/js_file_name.js"</span><span class="p">,</span>
-      <span class="nt">"sourceMap"</span><span class="p">:</span> <span class="kc">true</span>
-   <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nt">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"system"</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">"noImplicitAny"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">"removeComments"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">"allowUnreachableCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">"strictNullChecks"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">"outFile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../javascript/type_script/js_file_name.js"</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">"sourceMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>You can check on these list of pages for more details:</p>
@@ -419,29 +419,29 @@ You can learn more at https://aka.ms/tsconfig.json
 <li><p><strong><a class="reference external" href="https://typescript-site-76.ortam.vercel.app/docs/handbook/compiler-options.html#compiler-options">Compiler Options</a></strong></p></li>
 <li><p><strong><a class="reference external" href="https://www.typescriptlang.org/tsconfig">Intro to the TSConfig Reference</a></strong></p></li>
 </ul>
-
-
-<h2 id="compileonsave"><code class="docutils literal notranslate"><span class="pre">compileOnSave</span></code><a class="headerlink" href="#compileonsave" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="compileonsave">
+<h2 id="compileonsave"><code class="docutils literal notranslate"><span class="pre">compileOnSave</span></code><a class="headerlink" href="#compileonsave" title="Permalink to this headline">¶</a></h2>
 <p>It is the property which is used to set the IDE to compile the included TypeScript files and generate the output automatically. It signals to the IDE to generate all files for a given <code class="docutils literal notranslate"><span class="pre">tsconfig,json</span></code> upon saving.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">"compileOnSave"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-   <span class="nt">"compilerOptions"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">"noImplicitAny"</span> <span class="p">:</span> <span class="kc">true</span>  
-   <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nt">"compileOnSave"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="nt">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">"noImplicitAny"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.javatpoint.com/typescript-compilation-context">Typescript Compilation Context</a></p></li>
 <li><p><a class="reference external" href="https://howtodoinjava.com/typescript/tsconfig-json/">TypeScript Compiler Configuration</a></p></li>
 <li><p><a class="reference external" href="https://dzone.com/articles/what-is-the-tsconfigjson-configuration-file">What Is the tsconfig.json Configuration File?</a></p></li>
 <li><p><a class="reference external" href="https://www.koderhq.com/tutorial/typescript/config/">TypeScript Compilation Config (tsconfig.json) Tutorial</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -490,7 +490,7 @@ You can learn more at https://aka.ms/tsconfig.json
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

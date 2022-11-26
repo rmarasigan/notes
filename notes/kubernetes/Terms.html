@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -251,10 +251,10 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-kubernetes-terms--page-root">Terminologies<a class="headerlink" href="#notes-kubernetes-terms--page-root" title="Permalink to this heading">¶</a></h1>
-
-<h2 id="object-types">Object Types<a class="headerlink" href="#object-types" title="Permalink to this heading">¶</a></h2>
+  <section id="terminologies">
+<h1 id="notes-kubernetes-terms--page-root">Terminologies<a class="headerlink" href="#notes-kubernetes-terms--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="object-types">
+<h2 id="object-types">Object Types<a class="headerlink" href="#object-types" title="Permalink to this headline">¶</a></h2>
 <p><strong>Pods</strong></p>
 <ul class="simple">
 <li><p>Runs one or more closely related containers</p></li>
@@ -296,54 +296,54 @@
 <ul class="simple">
 <li><p>Securely stores a piece of information in the cluster, such as a database password</p></li>
 </ul>
-
-
-<h2 id="path-to-production">Path to Production<a class="headerlink" href="#path-to-production" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="path-to-production">
+<h2 id="path-to-production">Path to Production<a class="headerlink" href="#path-to-production" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Create config files for each service and deployment</p></li>
 <li><p>Test locally on minikube</p></li>
 <li><p>Create a Github/Travis flow to build images and deploy</p></li>
 <li><p>Deploy app to a cloud provider</p></li>
 </ul>
-
-<h3 id="controller">Controller<a class="headerlink" href="#controller" title="Permalink to this heading">¶</a></h3>
+<section id="controller">
+<h3 id="controller">Controller<a class="headerlink" href="#controller" title="Permalink to this headline">¶</a></h3>
 <p>Any type of object that constantly works to make some desired state a reality of our cluster.</p>
-
-
-<h3 id="ingress-config">Ingress Config<a class="headerlink" href="#ingress-config" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="ingress-config">
+<h3 id="ingress-config">Ingress Config<a class="headerlink" href="#ingress-config" title="Permalink to this headline">¶</a></h3>
 <p>An object that has a set of configuration rules describing how traffic should be routed.</p>
-
-
-<h3 id="ingress-controller">Ingress Controller<a class="headerlink" href="#ingress-controller" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="ingress-controller">
+<h3 id="ingress-controller">Ingress Controller<a class="headerlink" href="#ingress-controller" title="Permalink to this headline">¶</a></h3>
 <p>Watches for changes to the ingress and updates the ‘thing’ that handles traffic.</p>
-
-
-
-<h2 id="volume">Volume<a class="headerlink" href="#volume" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+<section id="volume">
+<h2 id="volume">Volume<a class="headerlink" href="#volume" title="Permalink to this headline">¶</a></h2>
 <p><strong>PVC</strong> = Persistent Volume Claim</p>
 <p><strong>“Volume” in generic container terminology</strong></p>
 <p>Some type of mechanism that allows a container to access filesystem outside itself</p>
 <p><strong>“Volume” in Kubernetes</strong></p>
 <p>An <strong>object</strong> that allows a container to store data at the pod level</p>
-
-
-<h2 id="why-google-cloud">Why Google Cloud?<a class="headerlink" href="#why-google-cloud" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="why-google-cloud">
+<h2 id="why-google-cloud">Why Google Cloud?<a class="headerlink" href="#why-google-cloud" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Google created Kubernetes</p></li>
 <li><p>AWS only “recently” got Kubernetes support</p></li>
 <li><p>Far, far easier to poke around Kubernetes on Google Cloud</p></li>
 <li><p>Excellent documentation for beginners</p></li>
 </ul>
-
-
-<h2 id="role-based-access-control-rbac">Role Based Access Control (RBAC)<a class="headerlink" href="#role-based-access-control-rbac" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="role-based-access-control-rbac">
+<h2 id="role-based-access-control-rbac">Role Based Access Control (RBAC)<a class="headerlink" href="#role-based-access-control-rbac" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Limits who can access and modify objects in our cluster</p></li>
 <li><p>Enabled on Google Cloud by default</p></li>
 <li><p>Tiller wants to make changes to our cluster, so it needs to get some permissions set</p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -392,7 +392,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

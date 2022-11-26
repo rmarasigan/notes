@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -251,28 +251,28 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-docker-gettingstarted--page-root">Getting Started<a class="headerlink" href="#notes-docker-gettingstarted--page-root" title="Permalink to this heading">¶</a></h1>
-
-<h2 id="why-use-docker">Why use Docker?<a class="headerlink" href="#why-use-docker" title="Permalink to this heading">¶</a></h2>
+  <section id="getting-started">
+<h1 id="notes-docker-gettingstarted--page-root">Getting Started<a class="headerlink" href="#notes-docker-gettingstarted--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="why-use-docker">
+<h2 id="why-use-docker">Why use Docker?<a class="headerlink" href="#why-use-docker" title="Permalink to this headline">¶</a></h2>
 <p>Docker makes it really easy to install and run software without worrying about setup or dependencies.</p>
-
-
-<h2 id="what-is-docker">What is Docker<a class="headerlink" href="#what-is-docker" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="what-is-docker">
+<h2 id="what-is-docker">What is Docker<a class="headerlink" href="#what-is-docker" title="Permalink to this headline">¶</a></h2>
 <p>Docker is a platform or ecosystem around creating and running containers.</p>
 <p><img alt="docker-ecosystem" src="../../_images/docker-ecosystem.png"/></p>
-
-
-<h2 id="what-is-an-image-or-container">What is an Image or Container?<a class="headerlink" href="#what-is-an-image-or-container" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="what-is-an-image-or-container">
+<h2 id="what-is-an-image-or-container">What is an Image or Container?<a class="headerlink" href="#what-is-an-image-or-container" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>An <code class="docutils literal notranslate"><span class="pre">image</span></code> is a single file containing all the dependencies and all configuration required to run a very specific program. This is a single file that gets stored on your hard drive.</p></li>
 <li><p>A <code class="docutils literal notranslate"><span class="pre">container</span></code> is an instance of an image and you can kind of think of it as being like a running program. It is a program with its own isolated set of hardware resources. So it kind of has its own little set or its own little space of memory, has its own little space of networking technology and its own little space of hard drive space as well.</p></li>
 </ul>
 <p><img alt="docker-image-container" src="../../_images/docker-img-container.png"/></p>
 <br/>
-
-
-<h2 id="using-docker-client">Using Docker Client<a class="headerlink" href="#using-docker-client" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="using-docker-client">
+<h2 id="using-docker-client">Using Docker Client<a class="headerlink" href="#using-docker-client" title="Permalink to this headline">¶</a></h2>
 <center>
 <p><img alt="docker-run-helloworld" src="../../_images/docker-run-helloworld.png"/></p>
 </center>
@@ -288,35 +288,35 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 </pre></div>
 </div>
-
-
-<h2 id="docker-cli-docker-client">Docker CLI (Docker Client)<a class="headerlink" href="#docker-cli-docker-client" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="docker-cli-docker-client">
+<h2 id="docker-cli-docker-client">Docker CLI (Docker Client)<a class="headerlink" href="#docker-cli-docker-client" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>Docker CLI</strong> is in charge of taking commands from you, kind of doing a little bit of processing on them and then communicating the commands over to something called the <strong>Docker Server</strong>.</p>
-
-
-<h2 id="docker-server">Docker Server<a class="headerlink" href="#docker-server" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="docker-server">
+<h2 id="docker-server">Docker Server<a class="headerlink" href="#docker-server" title="Permalink to this headline">¶</a></h2>
 <p>It’s in charge of the heavy lifting. When you ran the command <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">docker</span> <span class="pre">run</span> <span class="pre">hello-world</span></code>, that meant that you wanted to start up a new container using the image with the name of <code class="docutils literal notranslate"><span class="pre">hello-world</span></code>. The first thing that the <strong>Docker Server</strong> did was check to see if it already had a local copy, like a copy on your personal machine of the <code class="docutils literal notranslate"><span class="pre">hello-world</span></code> image or that <code class="docutils literal notranslate"><span class="pre">hello-world</span></code> file. So the <strong>Docker Server</strong> looked into something called the <code class="docutils literal notranslate"><span class="pre">image</span> <span class="pre">cache</span></code>. If the image cache is empty, the <strong>Docker Server</strong> decided to reach out to a free service called <strong>Docker Hub</strong>.</p>
-
-
-<h2 id="docker-hub">Docker Hub<a class="headerlink" href="#docker-hub" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="docker-hub">
+<h2 id="docker-hub">Docker Hub<a class="headerlink" href="#docker-hub" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>Docker Hub</strong> is a repository of free public images so you can freely download and run on your personal computer.</p>
 <br/>
-
-
-<h2 id="namespacing-and-control-groups">Namespacing and Control Groups<a class="headerlink" href="#namespacing-and-control-groups" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="namespacing-and-control-groups">
+<h2 id="namespacing-and-control-groups">Namespacing and Control Groups<a class="headerlink" href="#namespacing-and-control-groups" title="Permalink to this headline">¶</a></h2>
 <p>Namespacing and Control Groups belong to <strong>Linux</strong>. Not to Windows. Not to MAC OS.</p>
 <p><img alt="docker-namespace-cgroups" src="../../_images/docker-namespace-cgroups.png"/></p>
 <p><strong>Namespacing</strong> is not only used in hardware, it can be also used for software elements as well. So these two features put together can be used to really kind of isolate a single process and limit the amount of resources it can talk to and the amount of bandwidth essentially that it can make use of.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">container</span></code> is really a process or set of processes that have a grouping of resources specifically assigned to it and every time that we talk about an <code class="docutils literal notranslate"><span class="pre">image</span></code>, we’re really talking about a file system snapshot.</p>
 <p><img alt="docker-namespace-cgroups-container-img" src="../../_images/docker-namespace-cgroups-container-img.png"/></p>
 <br/>
-
-
-<h2 id="how-s-docker-running-on-your-computer">How’s Docker Running on your computer?<a class="headerlink" href="#how-s-docker-running-on-your-computer" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="how-s-docker-running-on-your-computer">
+<h2 id="how-s-docker-running-on-your-computer">How’s Docker Running on your computer?<a class="headerlink" href="#how-s-docker-running-on-your-computer" title="Permalink to this headline">¶</a></h2>
 <p>When you installed <strong>Docker for Windows</strong> or <strong>Docker for Mac</strong>, you installed a Linux virtual machine. So as  long as Docker app is running, you technically have a Linux virtual machine running on your computer. Inside of the virtual machine is where all these containers are going to be created. So inside the virtual machine, we have a Linux kernel and that Linux kernel is going to be hosting running processes inside of containers and it’s that Linux kernel that’s going to be in charge of limiting access or kind of constraining access or isolating access to different hardware resources on your computer.</p>
 <p><img alt="docker-running-on-your-computer" src="../../_images/docker-running-on-your-computer.png"/></p>
-
-
+</section>
+</section>
 
 
           </article>
@@ -365,7 +365,7 @@ This message shows that your installation appears to be working correctly.
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

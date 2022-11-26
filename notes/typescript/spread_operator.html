@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -241,15 +241,15 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-typescript-spread-operator--page-root">ECMA 6 – Spread Operator<a class="headerlink" href="#notes-typescript-spread-operator--page-root" title="Permalink to this heading">¶</a></h1>
-
-<h2 id="spread-syntax">Spread syntax<a class="headerlink" href="#spread-syntax" title="Permalink to this heading">¶</a></h2>
+  <section id="ecma-6-spread-operator">
+<h1 id="notes-typescript-spread-operator--page-root">ECMA 6 – Spread Operator<a class="headerlink" href="#notes-typescript-spread-operator--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="spread-syntax">
+<h2 id="spread-syntax">Spread syntax<a class="headerlink" href="#spread-syntax" title="Permalink to this headline">¶</a></h2>
 <p>Spread syntax (<code class="docutils literal notranslate"><span class="pre">...</span></code>) allows an iterable such as an array expression or string to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in placecs where zero or more key-value pairs (for object literals) are expected.</p>
 <p>It is mostly used in the variable array where there is more thant 1 values are expected. It allows us the privilege to obtain a list of parameters from an array.</p>
 <p><strong>Syntax</strong></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">odd</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
-<span class="kr">const</span> <span class="nx">combined</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="p">...</span><span class="nx">odd</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">odd</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="mf">5</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">combined</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2</span><span class="p">,</span> <span class="mf">4</span><span class="p">,</span> <span class="mf">6</span><span class="p">,</span> <span class="p">...</span><span class="nx">odd</span><span class="p">];</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">combined</span><span class="p">);</span>
 </pre></div>
@@ -259,15 +259,15 @@
 </pre></div>
 </div>
 <p>The spread operator allows you to spread out elements of an iterable object such as an array, map, or set. In the example, the three dots (<code class="docutils literal notranslate"><span class="pre">...</span></code>) located in front of the <code class="docutils literal notranslate"><span class="pre">odd</span></code> array is the spread operator. The spread operator (<code class="docutils literal notranslate"><span class="pre">...</span></code>) unpacks the elements of the <code class="docutils literal notranslate"><span class="pre">odd</span></code> array.</p>
-
-<h3 id="spread-operator-vs-rest-parameter">Spread Operator vs Rest Parameter<a class="headerlink" href="#spread-operator-vs-rest-parameter" title="Permalink to this heading">¶</a></h3>
+<section id="spread-operator-vs-rest-parameter">
+<h3 id="spread-operator-vs-rest-parameter">Spread Operator vs Rest Parameter<a class="headerlink" href="#spread-operator-vs-rest-parameter" title="Permalink to this headline">¶</a></h3>
 <p>The <em>rest parameter</em> packs the elements into and array. It allows you to represent an indefinite number of arguments as an array. See the following syntax:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="p">...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{}</span>
 </pre></div>
 </div>
 <p>It also allows you to create dynamic function through the function constructor.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">showNumbers</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s1">'...numbers'</span><span class="p">,</span> <span class="s1">'console.log(numbers)'</span><span class="p">);</span>
-<span class="nx">showNumbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">showNumbers</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s1">'...numbers'</span><span class="p">,</span> <span class="s1">'console.log(numbers)'</span><span class="p">);</span>
+<span class="nx">showNumbers</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -277,8 +277,8 @@
 <p>In this example, <code class="docutils literal notranslate"><span class="pre">args</span></code> is in array. You could use the <code class="docutils literal notranslate"><span class="pre">for...of</span></code> loop to iterate over its elements and sum them up.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">sum</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)</span>
 <span class="p">{</span>
-   <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-   <span class="k">for</span> <span class="p">(</span><span class="kr">const</span> <span class="nx">a</span> <span class="k">of</span> <span class="nx">args</span><span class="p">)</span>
+   <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+   <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">a</span> <span class="k">of</span> <span class="nx">args</span><span class="p">)</span>
    <span class="p">{</span>
       <span class="nx">total</span> <span class="o">+=</span> <span class="nx">a</span><span class="p">;</span>
    <span class="p">}</span>
@@ -286,7 +286,7 @@
    <span class="k">return</span> <span class="nx">total</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">sum</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -298,17 +298,17 @@
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">var_name</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">iterable</span><span class="p">];</span> 
 </pre></div>
 </div>
-
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.geeksforgeeks.org/javascript-spread-operator/">JavaScript | Spread Operator</a></p></li>
 <li><p><a class="reference external" href="https://www.javascripttutorial.net/es6/javascript-rest-parameters/">Introduction to JavaScript Rest Parameters</a></p></li>
 <li><p><a class="reference external" href="https://www.javascripttutorial.net/es6/javascript-spread/">Introduction to the JavaScript Spread Operator</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -357,7 +357,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

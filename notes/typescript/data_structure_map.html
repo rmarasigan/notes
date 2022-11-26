@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -239,11 +239,11 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-typescript-data-structure-map--page-root">ECMA 6 – Data Structure: Maps<a class="headerlink" href="#notes-typescript-data-structure-map--page-root" title="Permalink to this heading">¶</a></h1>
+  <section id="ecma-6-data-structure-maps">
+<h1 id="notes-typescript-data-structure-map--page-root">ECMA 6 – Data Structure: Maps<a class="headerlink" href="#notes-typescript-data-structure-map--page-root" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">map</span></code> object is a simple key-value pair. Keys and values in a map may be primitive or objects. This data structure enables mapping a key to a value. You can create a <code class="docutils literal notranslate"><span class="pre">Map</span></code> by passing an iterable object whose elements are in the form of key-value, or you can create an empty <code class="docutils literal notranslate"><span class="pre">Map</span></code>, then insert entries.</p>
-
-<h2 id="object-vs-maps">Object vs Maps<a class="headerlink" href="#object-vs-maps" title="Permalink to this heading">¶</a></h2>
+<section id="object-vs-maps">
+<h2 id="object-vs-maps">Object vs Maps<a class="headerlink" href="#object-vs-maps" title="Permalink to this headline">¶</a></h2>
 <p>Object is similar to Map — both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. <em>Regular Object</em> in JavaScript is <em>dictionary type</em> of data collection — which means it also follows key-value stored conecpt like Map. Each key in Object — or we normally call it “property” — is also unique and associated with a single value. It also has built-in prototype.</p>
 <p>Map is a data collection in which data is stored in a form of pairs, which contains a unique key and value mapped to that key. Because of the uniqueness of each stored key, there is no duplicated pair stored. Map is mainly used for fast searching and looking up data.</p>
 <p>They are indeed quite different from each other, mainly in:</p>
@@ -266,11 +266,11 @@
 </ul>
 </li>
 </ul>
-
-
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="methods">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <p>To create a map object:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">person</span>  <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">person</span>  <span class="o">=</span> <span class="ow">new</span> <span class="nb">Map</span><span class="p">();</span>
 
 <span class="c1">// set() method adds or updates an element with a</span>
 <span class="c1">// specified key and value</span>
@@ -382,9 +382,9 @@
 </div>
 <p>Adding a key-value pairs:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">john</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'John'</span><span class="p">,</span> <span class="s1">'29'</span><span class="p">,</span> <span class="s1">'programmer'</span><span class="p">]</span>
-<span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">([</span>
+<span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Map</span><span class="p">([</span>
    <span class="p">[</span><span class="nx">john</span><span class="p">],</span>
-   <span class="p">[</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span> <span class="s1">'today'</span><span class="p">]</span>
+   <span class="p">[</span><span class="ow">new</span> <span class="nb">Date</span><span class="p">(),</span> <span class="s1">'today'</span><span class="p">]</span>
 <span class="p">]);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
@@ -394,17 +394,17 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span><span class="n">Array</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">undefined</span><span class="p">,</span> <span class="n">Tue</span> <span class="n">Jun</span> <span class="mi">28</span> <span class="mi">2022</span> <span class="mi">21</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">18</span> <span class="n">GMT</span><span class="o">+</span><span class="mi">0800</span> <span class="p">(</span><span class="n">Philippine</span> <span class="n">Standard</span> <span class="n">Time</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s1">'today'</span><span class="p">}</span>
 </pre></div>
 </div>
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></p></li>
 <li><p><a class="reference external" href="https://www.tutorialspoint.com/es6/es6_collections.htm">ES6 - Collections</a></p></li>
 <li><p><a class="reference external" href="https://medium.com/front-end-weekly/es6-map-vs-object-what-and-when-b80621932373">ES6 - Map vs Object</a></p></li>
 <li><p><a class="reference external" href="https://levelup.gitconnected.com/simple-introduction-to-map-in-javascript-6786034f9154">Simple Introduction to the ES6 Map Data Structure in JavaScript</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -453,7 +453,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

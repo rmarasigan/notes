@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -251,13 +251,13 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-typescript-introduction--page-root">Introduction<a class="headerlink" href="#notes-typescript-introduction--page-root" title="Permalink to this heading">¶</a></h1>
-
-<h2 id="what-is-typescript">What is TypeScript?<a class="headerlink" href="#what-is-typescript" title="Permalink to this heading">¶</a></h2>
+  <section id="introduction">
+<h1 id="notes-typescript-introduction--page-root">Introduction<a class="headerlink" href="#notes-typescript-introduction--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="what-is-typescript">
+<h2 id="what-is-typescript">What is TypeScript?<a class="headerlink" href="#what-is-typescript" title="Permalink to this headline">¶</a></h2>
 <p>It is a superset of JavaScript programming language that has the concept of static typing to the core feature of JavaScript. This is a big deal because JavaScript is and always has been a dynamic language. TypeScript does not run directly on the browser as JavaScript run, we have to compile the TypeScript file to the JavaScript then it will work as usual.</p>
-
-<h3 id="dynamic-vs-static">Dynamic vs. Static<a class="headerlink" href="#dynamic-vs-static" title="Permalink to this heading">¶</a></h3>
+<section id="dynamic-vs-static">
+<h3 id="dynamic-vs-static">Dynamic vs. Static<a class="headerlink" href="#dynamic-vs-static" title="Permalink to this headline">¶</a></h3>
 <table>
 <thead>
 <tr class="row-odd"><th class="head"><p>DYNAMIC</p></th>
@@ -279,11 +279,11 @@
 </tr>
 </tbody>
 </table>
-
-
-<h3 id="example">Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
-
-<h4 id="duck-typing">Duck Typing<a class="headerlink" href="#duck-typing" title="Permalink to this heading">¶</a></h4>
+</section>
+<section id="example">
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<section id="duck-typing">
+<h4 id="duck-typing">Duck Typing<a class="headerlink" href="#duck-typing" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nx">name</span><span class="o">:</span> <span class="s2">"duck"</span><span class="p">,</span>
    <span class="nx">quack</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{}</span>
@@ -295,21 +295,21 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-
-
-<h4 id="static-typing">Static Typing<a class="headerlink" href="#static-typing" title="Permalink to this heading">¶</a></h4>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Duck</span>
+</section>
+<section id="static-typing">
+<h4 id="static-typing">Static Typing<a class="headerlink" href="#static-typing" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">Duck</span>
 <span class="p">{</span>
-   <span class="kr">public</span> <span class="kt">string</span> <span class="nx">name</span><span class="p">;</span>
-   <span class="kr">public</span> <span class="k">void</span> <span class="nx">quack</span><span class="p">(){}</span>
+   <span class="k">public</span> <span class="kt">string</span> <span class="nx">name</span><span class="p">;</span>
+   <span class="k">public</span> <span class="ow">void</span> <span class="nx">quack</span><span class="p">(){}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-
-
-
-
-<h2 id="linux-installation">Linux Installation<a class="headerlink" href="#linux-installation" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="linux-installation">
+<h2 id="linux-installation">Linux Installation<a class="headerlink" href="#linux-installation" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Install Node.js</p>
 <p>If you install Node.js, NPM will be automatically installed.</p>
@@ -356,17 +356,17 @@ tsc: The TypeScript Compiler - Version <span class="m">4</span>.6.3
 </div>
 </li>
 </ol>
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://nodejs.org/en/">Node.js</a></p></li>
 <li><p><a class="reference external" href="https://www.typescriptlang.org/">TypeScript</a></p></li>
 <li><p><a class="reference external" href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">What is tsconfig.json</a></p></li>
 <li><p><a class="reference external" href="https://www.typescriptlang.org/docs/">TypeScript Documentation</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -415,7 +415,7 @@ tsc: The TypeScript Compiler - Version <span class="m">4</span>.6.3
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

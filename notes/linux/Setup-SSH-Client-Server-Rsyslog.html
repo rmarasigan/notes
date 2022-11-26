@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -245,10 +245,10 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-linux-setup-ssh-client-server-rsyslog--page-root">Setup centralized SSH logging with RSyslog<a class="headerlink" href="#notes-linux-setup-ssh-client-server-rsyslog--page-root" title="Permalink to this heading">¶</a></h1>
-
-<h2 id="install-rsyslog">Install RSyslog<a class="headerlink" href="#install-rsyslog" title="Permalink to this heading">¶</a></h2>
+  <section id="setup-centralized-ssh-logging-with-rsyslog">
+<h1 id="notes-linux-setup-ssh-client-server-rsyslog--page-root">Setup centralized SSH logging with RSyslog<a class="headerlink" href="#notes-linux-setup-ssh-client-server-rsyslog--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="install-rsyslog">
+<h2 id="install-rsyslog">Install RSyslog<a class="headerlink" href="#install-rsyslog" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
 dev@dev:~$ sudo apt install rsyslog
 </pre></div>
@@ -259,11 +259,11 @@ dev@dev:~$ sudo systemctl <span class="nb">enable</span> rsyslog
 dev@dev:~$ sudo systemctl status rsyslog
 </pre></div>
 </div>
-
-
-<h2 id="ssh-logs">SSH Logs<a class="headerlink" href="#ssh-logs" title="Permalink to this heading">¶</a></h2>
-
-<h3 id="remote-server-client-rsyslog-configuration">Remote Server Client RSyslog configuration<a class="headerlink" href="#remote-server-client-rsyslog-configuration" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="ssh-logs">
+<h2 id="ssh-logs">SSH Logs<a class="headerlink" href="#ssh-logs" title="Permalink to this headline">¶</a></h2>
+<section id="remote-server-client-rsyslog-configuration">
+<h3 id="remote-server-client-rsyslog-configuration">Remote Server Client RSyslog configuration<a class="headerlink" href="#remote-server-client-rsyslog-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Open the main configuration file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo vim /etc/rsyslog.conf
 </pre></div>
@@ -292,9 +292,9 @@ rsyslogd: End of config validation run. Bye.
 dev@dev:~$ sudo systemctl restart syslog.socket rsyslog.service
 </pre></div>
 </div>
-
-
-<h3 id="remote-logging-server-rsyslog-configuration">Remote logging Server RSyslog configuration<a class="headerlink" href="#remote-logging-server-rsyslog-configuration" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="remote-logging-server-rsyslog-configuration">
+<h3 id="remote-logging-server-rsyslog-configuration">Remote logging Server RSyslog configuration<a class="headerlink" href="#remote-logging-server-rsyslog-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Create a new file named, <strong><code class="docutils literal notranslate"><span class="pre">remote_host.conf</span></code></strong>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo vim /etc/rsyslog.d/remote_host.conf
 </pre></div>
@@ -385,15 +385,15 @@ rsyslogd: End of config validation run. Bye.
 dev@dev:~$ sudo systemctl restart syslog.socket rsyslog.service
 </pre></div>
 </div>
-
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.rsyslog.com/doc/master/configuration/index.html">RSyslog Configuration Documentation</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -442,7 +442,7 @@ dev@dev:~$ sudo systemctl restart syslog.socket rsyslog.service
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

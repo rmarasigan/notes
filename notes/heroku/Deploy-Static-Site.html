@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -245,10 +245,10 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-heroku-deploy-static-site--page-root">Deploying HTML on Heruko using Heroku CLI<a class="headerlink" href="#notes-heroku-deploy-static-site--page-root" title="Permalink to this heading">¶</a></h1>
-
-<h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permalink to this heading">¶</a></h2>
+  <section id="deploying-html-on-heruko-using-heroku-cli">
+<h1 id="notes-heroku-deploy-static-site--page-root">Deploying HTML on Heruko using Heroku CLI<a class="headerlink" href="#notes-heroku-deploy-static-site--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="steps">
+<h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Register a free account on <a class="reference external" href="https://github.com/signup">Github</a></p></li>
 <li><p>Create a new (<strong>private</strong>) repository on Github</p></li>
@@ -271,7 +271,7 @@ heroku/7.60.2 linux-x64 node-v14.19.0
 <li><p>Create files in Github repo</p>
 <p>a. <code class="docutils literal notranslate"><span class="pre">composer.json</span></code>
 You just need the simple entry of <strong>{}</strong>.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>   <span class="p">{}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="p">{}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>b. <code class="docutils literal notranslate"><span class="pre">index.php</span></code></p>
@@ -283,36 +283,36 @@ This is the core of your web page and it will contain the HTML content that you 
 </li>
 <li><p>Deploy your code</p></li>
 </ol>
-
-<h3 id="for-an-existing-app">For an Existing App<a class="headerlink" href="#for-an-existing-app" title="Permalink to this heading">¶</a></h3>
+<section id="for-an-existing-app">
+<h3 id="for-an-existing-app">For an Existing App<a class="headerlink" href="#for-an-existing-app" title="Permalink to this headline">¶</a></h3>
 <p>Add a remote to your local repository with the <code class="docutils literal notranslate"><span class="pre">heroku</span> <span class="pre">git:remote</span></code> command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># set git remote heroku to https://git.heroku.com/example-app.git</span>
 dev@dev:~$ heroku git:remote -a example-app
 </pre></div>
 </div>
-
-
-<h3 id="confirming-that-a-remote-named-heroku-has-been-set-for-your-app">Confirming that a remote named <code class="docutils literal notranslate"><span class="pre">heroku</span></code> has been set for your app<a class="headerlink" href="#confirming-that-a-remote-named-heroku-has-been-set-for-your-app" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="confirming-that-a-remote-named-heroku-has-been-set-for-your-app">
+<h3 id="confirming-that-a-remote-named-heroku-has-been-set-for-your-app">Confirming that a remote named <code class="docutils literal notranslate"><span class="pre">heroku</span></code> has been set for your app<a class="headerlink" href="#confirming-that-a-remote-named-heroku-has-been-set-for-your-app" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ git remote -v
 heroku  https://git.heroku.com/example-app.git <span class="o">(</span>fetch<span class="o">)</span>
 heroku  https://git.heroku.com/example-app.git <span class="o">(</span>push<span class="o">)</span>
 </pre></div>
 </div>
-
-
-<h3 id="rename-a-remote">Rename a remote<a class="headerlink" href="#rename-a-remote" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="rename-a-remote">
+<h3 id="rename-a-remote">Rename a remote<a class="headerlink" href="#rename-a-remote" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ git remote rename heroku heroku-staging
 </pre></div>
 </div>
-
-
-<h3 id="deploying-your-code">Deploying your code<a class="headerlink" href="#deploying-your-code" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="deploying-your-code">
+<h3 id="deploying-your-code">Deploying your code<a class="headerlink" href="#deploying-your-code" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ git push heroku master
 </pre></div>
 </div>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -361,7 +361,7 @@ heroku  https://git.heroku.com/example-app.git <span class="o">(</span>push<span
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

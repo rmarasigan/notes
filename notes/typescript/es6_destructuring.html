@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -241,19 +241,19 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-typescript-es6-destructuring--page-root">ES 6 – Destructuring<a class="headerlink" href="#notes-typescript-es6-destructuring--page-root" title="Permalink to this heading">¶</a></h1>
+  <section id="es-6-destructuring">
+<h1 id="notes-typescript-es6-destructuring--page-root">ES 6 – Destructuring<a class="headerlink" href="#notes-typescript-es6-destructuring--page-root" title="Permalink to this headline">¶</a></h1>
 <p>The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables. It allows you to assign the properties of an array or object to variables using syntax that looks similar to array or object literals. This syntax can be extremely terse, while still exhibiting more clarity than the traditional property access.</p>
 <p>The two most used data structures in JavaScript are Object and Array.</p>
 <ul class="simple">
 <li><p>Objects allows us to create a single entity that stores data items by key</p></li>
 <li><p>Arrays allow us to gather data items into an ordered list</p></li>
 </ul>
-
-<h2 id="destructuring-arrays">Destructuring Arrays<a class="headerlink" href="#destructuring-arrays" title="Permalink to this heading">¶</a></h2>
+<section id="destructuring-arrays">
+<h2 id="destructuring-arrays">Destructuring Arrays<a class="headerlink" href="#destructuring-arrays" title="Permalink to this headline">¶</a></h2>
 <p>The object and array literal expressions provide an easy way to create ad hoc packages of data.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">programming</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'javascript'</span><span class="p">,</span> <span class="s1">'go'</span><span class="p">,</span> <span class="s1">'c++'</span><span class="p">,</span> <span class="s1">'python'</span><span class="p">];</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programming</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programming</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -314,9 +314,9 @@
 </pre></div>
 </div>
 <p>Here we create a temporary array of two variables and immediately destructure it in swapped order.</p>
-
-
-<h2 id="default-values">Default Values<a class="headerlink" href="#default-values" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="default-values">
+<h2 id="default-values">Default Values<a class="headerlink" href="#default-values" title="Permalink to this headline">¶</a></h2>
 <p>If the array is shorter than the list of variables at the left, there’ll be no errors. Absent values are considered undefined. But if we want a <em>default</em> value to replace the missing one, we can provide it using the <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="p">[</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"Guest"</span><span class="p">,</span> <span class="nx">surname</span> <span class="o">=</span> <span class="s2">"Anonymous"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"John"</span><span class="p">];</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
@@ -328,9 +328,9 @@
 <span class="n">Anonymous</span>
 </pre></div>
 </div>
-
-
-<h2 id="object-destructuring">Object Destructuring<a class="headerlink" href="#object-destructuring" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="object-destructuring">
+<h2 id="object-destructuring">Object Destructuring<a class="headerlink" href="#object-destructuring" title="Permalink to this headline">¶</a></h2>
 <p>The basic syntax is:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="p">{</span><span class="nx">var1</span><span class="p">,</span> <span class="nx">var2</span><span class="p">}</span> <span class="o">=</span> <span class="p">{</span><span class="nx">var1</span><span class="o">:</span> <span class="p">...,</span> <span class="nx">var2</span><span class="o">:</span> <span class="p">....}</span>
 </pre></div>
@@ -338,8 +338,8 @@
 <p>We should have an existing object on the right side, that we want to split into variables. The left side contains an object-like “pattern” for corresponding properties.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
    <span class="nx">title</span><span class="o">:</span> <span class="s2">"Menu"</span><span class="p">,</span>
-   <span class="nx">width</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
-   <span class="nx">height</span><span class="o">:</span> <span class="mi">200</span>
+   <span class="nx">width</span><span class="o">:</span> <span class="mf">100</span><span class="p">,</span>
+   <span class="nx">height</span><span class="o">:</span> <span class="mf">200</span>
 <span class="p">}</span>
 
 <span class="kd">let</span> <span class="p">{</span><span class="nx">title</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">}</span> <span class="o">=</span> <span class="nx">options</span><span class="p">;</span>
@@ -356,7 +356,7 @@
 </pre></div>
 </div>
 <p>Properties <code class="docutils literal notranslate"><span class="pre">options.title</span></code>, <code class="docutils literal notranslate"><span class="pre">options.width</span></code> and <code class="docutils literal notranslate"><span class="pre">options.height</span></code> are assigned to the corresponding variables. Also, the order does not matter. This works too:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="p">{</span><span class="nx">height</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">title</span><span class="p">}</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">"Menu"</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span> <span class="nx">width</span><span class="o">:</span> <span class="mi">100</span> <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="p">{</span><span class="nx">height</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">title</span><span class="p">}</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">"Menu"</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span> <span class="mf">200</span><span class="p">,</span> <span class="nx">width</span><span class="o">:</span> <span class="mf">100</span> <span class="p">}</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">width</span><span class="p">);</span>
@@ -385,17 +385,17 @@
 </pre></div>
 </div>
 <p>The colon shows “what : goes where”. In the example above the property <code class="docutils literal notranslate"><span class="pre">width</span></code> goes to <code class="docutils literal notranslate"><span class="pre">w</span></code>, property <code class="docutils literal notranslate"><span class="pre">height</span></code> goes to <code class="docutils literal notranslate"><span class="pre">h</span></code>, and <code class="docutils literal notranslate"><span class="pre">title</span></code> is assigned to the same name. The identifier before the colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>) is the property of the object and the identifier after the colon is the variable.</p>
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://javascript.info/destructuring-assignment">Destructuring assignment</a></p></li>
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">Destructuring assignment</a></p></li>
 <li><p><a class="reference external" href="https://hacks.mozilla.org/2015/05/es6-in-depth-destructuring/">ES6 In Depth: Destructuring</a></p></li>
 <li><p><a class="reference external" href="https://www.javascripttutorial.net/es6/javascript-object-destructuring/">JavaScript Object Destructuring</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -444,7 +444,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

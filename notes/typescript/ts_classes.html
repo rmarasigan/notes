@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -259,8 +259,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-typescript-ts-classes--page-root">TS – Classes<a class="headerlink" href="#notes-typescript-ts-classes--page-root" title="Permalink to this heading">¶</a></h1>
+  <section id="ts-classes">
+<h1 id="notes-typescript-ts-classes--page-root">TS – Classes<a class="headerlink" href="#notes-typescript-ts-classes--page-root" title="Permalink to this headline">¶</a></h1>
 <p>TypeScript introduced classes so that they can avail the benefits of object-oriented techniques like encapsulation and abstraction. The class in TypeScript is compiled to plain JavaScript functions by the TypeScript compiler to work across platforms and browsers. Classes are blueprints that define the shape and structure of an object. A class in TypeScript can hold any number of properties, functions, “getters” and “setters”. With classes, you can perform encapsulation by assigning different access modifiers (such as public, private and protected). In terms of OOPs, a class is a <em>template</em> or <em>blueprint</em> for creating objects. It is a logical entity.</p>
 <p>A class can include the following:</p>
 <ul class="simple">
@@ -269,7 +269,7 @@
 <li><p>Methdos</p></li>
 </ul>
 <p>Syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">class_name</span> <span class="p">{}</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">class_name</span> <span class="p">{}</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword is followed by the class name. The rules for identifiers must be considered while naming a class. A class definition can include the following:</p>
@@ -297,12 +297,12 @@
 <li><p>Polymorphism</p></li>
 <li><p>Abstraction</p></li>
 </ul>
-
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this heading">¶</a></h2>
+<section id="constructors">
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
 <p>Class constructors are very similar to functions. You can add parameters with type annotations, default values and overloads. Constructors are used to instantiate object of the class type with the variables of it initialized to specific values.</p>
 <p>To define a constructor for a class, use the <code class="docutils literal notranslate"><span class="pre">constructor</span></code> keyword followed the list of variables enclosed in parenthesis, and then body of constructor enclosed in flower brackets. In the constructor, we can access the member of a class by using <code class="docutils literal notranslate"><span class="pre">this</span></code> keyword.</p>
 <p>Syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">class_name</span> <span class="p">{</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">class_name</span> <span class="p">{</span>
    <span class="nx">variable_name1</span>: <span class="kt">data_type</span><span class="p">;</span>
    <span class="nx">variable_name2</span>: <span class="kt">data_type</span><span class="p">;</span>
 
@@ -315,12 +315,12 @@
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Point</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">Point</span>
 <span class="p">{</span>
    <span class="nx">x</span>: <span class="kt">number</span><span class="p">;</span>
    <span class="nx">y</span>: <span class="kt">number</span><span class="p">;</span>
 
-   <span class="kr">constructor</span> <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+   <span class="kr">constructor</span> <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="mf">0</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mf">0</span><span class="p">)</span>
    <span class="p">{</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
@@ -333,18 +333,18 @@
 <li><p>Constructor can’t have type parameters – these belong on the outer class declaration</p></li>
 <li><p>Constructor can’t have return type annotations – the class instance type is always what’s returned</p></li>
 </ul>
-
-<h3 id="constructor-shorthand"><code class="docutils literal notranslate"><span class="pre">constructor</span></code> shorthand<a class="headerlink" href="#constructor-shorthand" title="Permalink to this heading">¶</a></h3>
+<section id="constructor-shorthand">
+<h3 id="constructor-shorthand"><code class="docutils literal notranslate"><span class="pre">constructor</span></code> shorthand<a class="headerlink" href="#constructor-shorthand" title="Permalink to this headline">¶</a></h3>
 <p>In TypeScript, there is a shorthand to create and assign class properties from constructor params. TypeScript offers special syntax for turning a constructor parameter into a class property with the same name and value. These are called <strong>parameter properties</strong> and are created by prefixing a constructor argument with one of the visbility modifiers <code class="docutils literal notranslate"><span class="pre">public</span></code>, <code class="docutils literal notranslate"><span class="pre">private</span></code>, <code class="docutils literal notranslate"><span class="pre">protected</span></code> or <code class="docutils literal notranslate"><span class="pre">readonly</span></code>.</p>
 <p>Syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">class_name</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">class_name</span>
 <span class="p">{</span>
    <span class="kr">constructor</span><span class="p">(</span><span class="nx">access_modifier</span> <span class="nx">variable_1</span>: <span class="kt">data_type</span><span class="p">,</span> <span class="nx">access_modifier</span> <span class="nx">variable_2</span>: <span class="kt">data_type</span><span class="p">){}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Imagine you have the following code:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">User</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">User</span>
 <span class="p">{</span>
    <span class="nx">ID</span>: <span class="kt">string</span><span class="p">;</span>
    <span class="nx">FullName</span>: <span class="kt">string</span><span class="p">;</span>
@@ -356,7 +356,7 @@
    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="s2">"0098172018"</span><span class="p">,</span> <span class="s2">"Mark Manson"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">User</span><span class="p">(</span><span class="s2">"0098172018"</span><span class="p">,</span> <span class="s2">"Mark Manson"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`User ID: </span><span class="si">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">ID</span><span class="si">}</span><span class="sb"> Name: </span><span class="si">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">FullName</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -365,12 +365,12 @@
 </pre></div>
 </div>
 <p>You can write the same class using shorter syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">User</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">User</span>
 <span class="p">{</span>
-   <span class="kr">constructor</span><span class="p">(</span><span class="kr">public</span> <span class="nx">user_id</span>: <span class="kt">string</span><span class="p">,</span> <span class="kr">public</span> <span class="nx">full_name</span>: <span class="kt">string</span><span class="p">){}</span>
+   <span class="kr">constructor</span><span class="p">(</span><span class="k">public</span> <span class="nx">user_id</span>: <span class="kt">string</span><span class="p">,</span> <span class="k">public</span> <span class="nx">full_name</span>: <span class="kt">string</span><span class="p">){}</span>
 <span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="s2">"0098172018"</span><span class="p">,</span> <span class="s2">"Mark Manson"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">User</span><span class="p">(</span><span class="s2">"0098172018"</span><span class="p">,</span> <span class="s2">"Mark Manson"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`User ID: </span><span class="si">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">user_id</span><span class="si">}</span><span class="sb"> Name: </span><span class="si">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">full_name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -379,10 +379,10 @@
 </pre></div>
 </div>
 <p>You can use this constructor assignment technique to save some lines of code.</p>
-
-
-
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+<section id="methods">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <p>A function property on a class is called a <em>method</em>. Methods can use all the same type annotations as function and constructors. It is similar to a function used to expose the behaviour of an object.</p>
 <p>Advantage of Method:</p>
 <ul class="simple">
@@ -391,7 +391,7 @@
 </ul>
 <p>Example:</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Defining a Point class</span>
-<span class="kr">class</span> <span class="nx">Point</span>
+<span class="kd">class</span> <span class="nx">Point</span>
 <span class="p">{</span>
    <span class="c1">// Defining fields</span>
    <span class="nx">x</span>: <span class="kt">number</span><span class="p">;</span>
@@ -404,7 +404,7 @@
    <span class="p">}</span>
 
    <span class="c1">// Creating method or function</span>
-   <span class="nx">scale</span><span class="p">(</span><span class="nx">n</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span>
+   <span class="nx">scale</span><span class="p">(</span><span class="nx">n</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="ow">void</span>
    <span class="p">{</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">*=</span> <span class="nx">n</span><span class="p">;</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">*=</span> <span class="nx">n</span><span class="p">;</span>
@@ -414,23 +414,23 @@
 <span class="p">}</span>
 
 <span class="c1">// Creating an object or instance</span>
-<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Point</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">24</span><span class="p">);</span>
-<span class="nx">obj</span><span class="p">.</span><span class="nx">scale</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Point</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span> <span class="mf">24</span><span class="p">);</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">scale</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Output:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">:</span> <span class="mi">50</span> <span class="n">Y</span><span class="p">:</span> <span class="mi">240</span>
 </pre></div>
 </div>
-
-
-<h2 id="inheritance">Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="inheritance">
+<h2 id="inheritance">Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h2>
 <p>Inheritance is the ability of a program to create new classes from an existing class. The class that is extended to create newer classes is called <em>parent class</em> or <em>super class</em>. The newly created classes are called the <em>child/sub class</em>. A class inherits from another class using the <code class="docutils literal notranslate"><span class="pre">extends</span></code> keyword. Child classes inherit all properties and methods except private members and constructors from the parent class. We can not implement hybrid and multiple inheritances using TypeScript. The inheritance uses class-based inheritance and it can be implemented using extends keywords in typescript.</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Parent / Super / Base Class</span>
-<span class="kr">class</span> <span class="nx">parent_class_name</span> <span class="p">{}</span>
+<span class="kd">class</span> <span class="nx">parent_class_name</span> <span class="p">{}</span>
 
 <span class="c1">// Child / Sub / Derived Class</span>
-<span class="kr">class</span> <span class="nx">child_class_name</span> <span class="kr">extends</span> <span class="nx">parent_class_name</span> <span class="p">{}</span>
+<span class="kd">class</span> <span class="nx">child_class_name</span> <span class="k">extends</span> <span class="nx">parent_class_name</span> <span class="p">{}</span>
 </pre></div>
 </div>
 <p>Inheritance can be classified as:</p>
@@ -447,18 +447,18 @@
 </ul>
 </li>
 </ul>
-
-<h3 id="why-use-inheritance">Why use inheritance?<a class="headerlink" href="#why-use-inheritance" title="Permalink to this heading">¶</a></h3>
+<section id="why-use-inheritance">
+<h3 id="why-use-inheritance">Why use inheritance?<a class="headerlink" href="#why-use-inheritance" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>We can use it for Method Overriding (so runtime polymorphism can be achieved)</p></li>
 <li><p>We can use it for code reusability</p></li>
 </ul>
-
-
-<h3 id="single-inheritance">Single Inheritance<a class="headerlink" href="#single-inheritance" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="single-inheritance">
+<h3 id="single-inheritance">Single Inheritance<a class="headerlink" href="#single-inheritance" title="Permalink to this headline">¶</a></h3>
 <p>Single inheritance can inherit properties and behaviour at most <em>one parent class</em>. It allows a derived/child class to inherit the properties and behaviour of a base/parent class that enable the code reusability as well as we cann add new features to the existing code. It makes the code less repetitive.</p>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Shape</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">Shape</span>
 <span class="p">{</span>
    <span class="nx">Area</span>: <span class="kt">number</span><span class="p">;</span>
 
@@ -468,15 +468,15 @@
    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">class</span> <span class="nx">Circle</span> <span class="kr">extends</span> <span class="nx">Shape</span>
+<span class="kd">class</span> <span class="nx">Circle</span> <span class="k">extends</span> <span class="nx">Shape</span>
 <span class="p">{</span>
-   <span class="nx">display</span><span class="p">()</span> <span class="o">:</span> <span class="k">void</span>
+   <span class="nx">display</span><span class="p">()</span> <span class="o">:</span> <span class="ow">void</span>
    <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Area of the circle: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">Area</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Circle</span><span class="p">(</span><span class="mi">320</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Circle</span><span class="p">(</span><span class="mf">320</span><span class="p">);</span>
 <span class="nx">obj</span><span class="p">.</span><span class="nx">display</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -484,35 +484,35 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Area</span> <span class="n">of</span> <span class="n">the</span> <span class="n">circle</span><span class="p">:</span> <span class="mi">320</span>
 </pre></div>
 </div>
-
-<h4 id="multi-level-inheritance">Multi-level Inheritance<a class="headerlink" href="#multi-level-inheritance" title="Permalink to this heading">¶</a></h4>
+<section id="multi-level-inheritance">
+<h4 id="multi-level-inheritance">Multi-level Inheritance<a class="headerlink" href="#multi-level-inheritance" title="Permalink to this headline">¶</a></h4>
 <p>When a derived class is derived from another derived class, then this type of inheritance is known as <em>multi-level inheritance</em>. Thus, a multilevel inheritance has more than one parent class. It is similar to the relation between Grandfather, Father, and Child.</p>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Animal</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">Animal</span>
 <span class="p">{</span>
-   <span class="nx">eat</span><span class="p">()</span> <span class="o">:</span> <span class="k">void</span>
+   <span class="nx">eat</span><span class="p">()</span> <span class="o">:</span> <span class="ow">void</span>
    <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Eating"</span><span class="p">);</span>
    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">class</span> <span class="nx">Dogs</span> <span class="kr">extends</span> <span class="nx">Animal</span>
+<span class="kd">class</span> <span class="nx">Dogs</span> <span class="k">extends</span> <span class="nx">Animal</span>
 <span class="p">{</span>
-   <span class="nx">bark</span><span class="p">()</span> <span class="o">:</span> <span class="k">void</span>
+   <span class="nx">bark</span><span class="p">()</span> <span class="o">:</span> <span class="ow">void</span>
    <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Barking"</span><span class="p">);</span>
    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">class</span> <span class="nx">Puppy</span> <span class="kr">extends</span> <span class="nx">Dogs</span>
+<span class="kd">class</span> <span class="nx">Puppy</span> <span class="k">extends</span> <span class="nx">Dogs</span>
 <span class="p">{</span>
-   <span class="nx">weep</span><span class="p">()</span> <span class="o">:</span> <span class="k">void</span>
+   <span class="nx">weep</span><span class="p">()</span> <span class="o">:</span> <span class="ow">void</span>
    <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Weeping"</span><span class="p">);</span>
    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Puppy</span><span class="p">();</span>
+<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Puppy</span><span class="p">();</span>
 <span class="nx">obj</span><span class="p">.</span><span class="nx">eat</span><span class="p">();</span>
 <span class="nx">obj</span><span class="p">.</span><span class="nx">bark</span><span class="p">();</span>
 <span class="nx">obj</span><span class="p">.</span><span class="nx">weep</span><span class="p">();</span>
@@ -524,15 +524,15 @@
 <span class="n">Weeping</span>
 </pre></div>
 </div>
-
-
-
-
-<h2 id="class-implements-interface">Class Implements Interface<a class="headerlink" href="#class-implements-interface" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="class-implements-interface">
+<h2 id="class-implements-interface">Class Implements Interface<a class="headerlink" href="#class-implements-interface" title="Permalink to this headline">¶</a></h2>
 <p>A class can implement single or multiple interfaces. It implements the interface by using the <code class="docutils literal notranslate"><span class="pre">implements</span></code> keyword.</p>
 <p>Example:</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Defining interface for class</span>
-<span class="kr">interface</span> <span class="nx">User</span>
+<span class="kd">interface</span> <span class="nx">User</span>
 <span class="p">{</span>
    <span class="nx">first_name</span>: <span class="kt">string</span><span class="p">;</span>
    <span class="nx">last_name</span>: <span class="kt">string</span><span class="p">;</span>
@@ -542,7 +542,7 @@
 <span class="p">}</span>
 
 <span class="c1">// Implementing the interface</span>
-<span class="kr">class</span> <span class="nx">Employee</span> <span class="kr">implements</span> <span class="nx">User</span>
+<span class="kd">class</span> <span class="nx">Employee</span> <span class="k">implements</span> <span class="nx">User</span>
 <span class="p">{</span>
    <span class="nx">first_name</span>: <span class="kt">string</span><span class="p">;</span>
    <span class="nx">last_name</span>: <span class="kt">string</span><span class="p">;</span>
@@ -568,7 +568,7 @@
 
 <span class="c1">// Create an instance of Employee</span>
 <span class="c1">// Using the class that implements interface</span>
-<span class="kd">let</span> <span class="nx">employee</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="s1">'Mark'</span><span class="p">,</span> <span class="s1">'Manson'</span><span class="p">,</span> <span class="mi">27</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">employee</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="s1">'Mark'</span><span class="p">,</span> <span class="s1">'Manson'</span><span class="p">,</span> <span class="mf">27</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">fullname</span> <span class="o">=</span> <span class="nx">employee</span><span class="p">.</span><span class="nx">FullName</span><span class="p">();</span>
 <span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="nx">employee</span><span class="p">.</span><span class="nx">GetAge</span><span class="p">();</span>
 
@@ -580,20 +580,20 @@
 </pre></div>
 </div>
 <p>In the above example, we have declared <code class="docutils literal notranslate"><span class="pre">User</span></code> interface with <code class="docutils literal notranslate"><span class="pre">first_name</span></code>, <code class="docutils literal notranslate"><span class="pre">last_name</span></code>, <code class="docutils literal notranslate"><span class="pre">age</span></code> as property and <code class="docutils literal notranslate"><span class="pre">FullName()</span></code> and <code class="docutils literal notranslate"><span class="pre">GetAge()</span></code> as method/function. The <code class="docutils literal notranslate"><span class="pre">Employee</span></code> class implements this interface by using the <code class="docutils literal notranslate"><span class="pre">implements</span></code> keyword. After implementing an interface, we must declare the properties and methods in the class. If we do not implement those properties and methods, it throws a compile-time error. We have also declared a constructor in the class. So when we instantiate the class, we need to pass the necessary parameters otherwise it throws an error at compile time.</p>
-
-
-<h2 id="abstract-classes">Abstract Classes<a class="headerlink" href="#abstract-classes" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="abstract-classes">
+<h2 id="abstract-classes">Abstract Classes<a class="headerlink" href="#abstract-classes" title="Permalink to this headline">¶</a></h2>
 <p>Abstract classes are mainly for inheritance where other classes may derive from them. We cannot create an instance of an abstract class. An abstract class typically includes one or more abstract methods or property declarations. The class which extends the abstract class must define all the abstract methods. To declare an abstract class, you use the <code class="docutils literal notranslate"><span class="pre">abstract</span></code> keyword. Classes, methods, and fields in TypeScript may be abstract. An abstract method or abstract field is one that hasn’t had an implementation provided. These members must exist inside an abstract class, which cannot be directly instantiated.</p>
 <p>Syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">abstract</span> <span class="kr">class</span> <span class="nx">abstract_class_name</span> <span class="p">{}</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">abstract</span> <span class="kd">class</span> <span class="nx">abstract_class_name</span> <span class="p">{}</span>
 </pre></div>
 </div>
 <p>An abstract method does not contain implementation. It only defines the signature of the method without including the method body. An abstract method must be implemented in the derived class. The role of abstract classes is to serve as a base class for subclasses which do implement all the abstract members. When a class doesn’t have any abstract members, it is said to be concrete.</p>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">abstract</span> <span class="kr">class</span> <span class="nx">User</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">abstract</span> <span class="kd">class</span> <span class="nx">User</span>
 <span class="p">{</span>
-   <span class="kr">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">FirstName</span>: <span class="kt">string</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">LastName</span>: <span class="kt">string</span><span class="p">){}</span>
-   <span class="kr">abstract</span> <span class="nx">getSalary</span><span class="p">()</span><span class="o">:</span> <span class="kt">number</span><span class="p">;</span>
+   <span class="kr">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">FirstName</span>: <span class="kt">string</span><span class="p">,</span> <span class="k">private</span> <span class="nx">LastName</span>: <span class="kt">string</span><span class="p">){}</span>
+   <span class="k">abstract</span> <span class="nx">getSalary</span><span class="p">()</span><span class="o">:</span> <span class="kt">number</span><span class="p">;</span>
 
    <span class="nx">get</span> <span class="nx">FullName</span><span class="p">()</span><span class="o">:</span> <span class="kt">string</span>
    <span class="p">{</span>
@@ -606,11 +606,11 @@
    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">class</span> <span class="nx">Employee</span> <span class="kr">extends</span> <span class="nx">User</span>
+<span class="kd">class</span> <span class="nx">Employee</span> <span class="k">extends</span> <span class="nx">User</span>
 <span class="p">{</span>
-   <span class="kr">constructor</span><span class="p">(</span><span class="nx">FirstName</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">LastName</span>: <span class="kt">string</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">Salary</span>: <span class="kt">number</span><span class="p">)</span>
+   <span class="kr">constructor</span><span class="p">(</span><span class="nx">FirstName</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">LastName</span>: <span class="kt">string</span><span class="p">,</span> <span class="k">private</span> <span class="nx">Salary</span>: <span class="kt">number</span><span class="p">)</span>
    <span class="p">{</span>
-      <span class="kr">super</span><span class="p">(</span><span class="nx">FirstName</span><span class="p">,</span> <span class="nx">LastName</span><span class="p">,</span> <span class="nx">Salary</span><span class="p">);</span>
+      <span class="k">super</span><span class="p">(</span><span class="nx">FirstName</span><span class="p">,</span> <span class="nx">LastName</span><span class="p">,</span> <span class="nx">Salary</span><span class="p">);</span>
    <span class="p">}</span>
 
    <span class="nx">getSalary</span><span class="p">()</span><span class="o">:</span> <span class="kt">number</span>
@@ -619,15 +619,15 @@
    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">class</span> <span class="nx">Manager</span> <span class="kr">extends</span> <span class="nx">Employee</span>
+<span class="kd">class</span> <span class="nx">Manager</span> <span class="k">extends</span> <span class="nx">Employee</span>
 <span class="p">{</span>
-   <span class="kr">public</span> <span class="nx">Employees</span>: <span class="kt">Employee</span><span class="p">[];</span>
+   <span class="k">public</span> <span class="nx">Employees</span>: <span class="kt">Employee</span><span class="p">[];</span>
 
    <span class="nx">Details</span><span class="p">()</span><span class="o">:</span> <span class="kt">string</span>
    <span class="p">{</span>
       <span class="c1">// We are accessing the FullName from</span>
       <span class="c1">// User abtract class</span>
-      <span class="k">return</span> <span class="kr">super</span><span class="p">.</span><span class="nx">FullName</span><span class="p">;</span>
+      <span class="k">return</span> <span class="k">super</span><span class="p">.</span><span class="nx">FullName</span><span class="p">;</span>
    <span class="p">}</span>
 
    <span class="nx">TotalEmployees</span><span class="p">()</span><span class="o">:</span> <span class="kt">number</span>
@@ -637,12 +637,12 @@
 <span class="p">}</span>
 
 <span class="c1">// Create an instance of employee</span>
-<span class="kd">let</span> <span class="nx">employee</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="s1">'John'</span><span class="p">,</span> <span class="s1">'Doe'</span><span class="p">,</span> <span class="mi">1200</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">employee</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="s1">'John'</span><span class="p">,</span> <span class="s1">'Doe'</span><span class="p">,</span> <span class="mf">1200</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">employee</span><span class="p">.</span><span class="nx">Compensation</span><span class="p">());</span>
 
 <span class="c1">// Create an instance of manager</span>
-<span class="kd">let</span> <span class="nx">manager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Manager</span><span class="p">(</span><span class="s1">'Mark'</span><span class="p">,</span> <span class="s1">'Manson'</span><span class="p">,</span> <span class="mi">2500</span><span class="p">);</span>
-<span class="nx">manager</span><span class="p">.</span><span class="nx">Employees</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+<span class="kd">let</span> <span class="nx">manager</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Manager</span><span class="p">(</span><span class="s1">'Mark'</span><span class="p">,</span> <span class="s1">'Manson'</span><span class="p">,</span> <span class="mf">2500</span><span class="p">);</span>
+<span class="nx">manager</span><span class="p">.</span><span class="nx">Employees</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Array</span><span class="p">();</span>
 <span class="nx">manager</span><span class="p">.</span><span class="nx">Employees</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">employee</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Manager Details: </span><span class="si">${</span><span class="nx">manager</span><span class="p">.</span><span class="nx">Details</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
@@ -657,16 +657,16 @@
 </div>
 <p>In the above example, we have an abstract class which is the <code class="docutils literal notranslate"><span class="pre">User</span></code>. The constructor declares the <code class="docutils literal notranslate"><span class="pre">FirstName</span></code> and <code class="docutils literal notranslate"><span class="pre">LastName</span></code> properties. The <code class="docutils literal notranslate"><span class="pre">getSalary()</span></code> method is an abstract method. The derived class will implement the logic based on the type of the user. Because the <code class="docutils literal notranslate"><span class="pre">User</span></code> class is abtract, you cannot create a new object from it. Lastly, we have a <code class="docutils literal notranslate"><span class="pre">Manager</span></code> class where it extends the <code class="docutils literal notranslate"><span class="pre">Employee</span></code> class and tries to access the <code class="docutils literal notranslate"><span class="pre">User</span></code> abstract class <code class="docutils literal notranslate"><span class="pre">FullName</span></code> method using the <code class="docutils literal notranslate"><span class="pre">super</span></code> keyword.</p>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="s1">'John'</span><span class="p">,</span><span class="s1">'Doe'</span><span class="p">);</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">User</span><span class="p">(</span><span class="s1">'John'</span><span class="p">,</span><span class="s1">'Doe'</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Error:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cannot</span> <span class="n">create</span> <span class="n">an</span> <span class="n">instance</span> <span class="n">of</span> <span class="n">an</span> <span class="n">abstract</span> <span class="n">class</span><span class="o">.</span>
 </pre></div>
 </div>
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.typescripttutorial.net/typescript-tutorial/typescript-class/">TypeScript Class</a></p></li>
 <li><p><a class="reference external" href="https://www.typescriptlang.org/docs/handbook/2/classes.html#abstract-classes-and-members">Classes <code class="docutils literal notranslate"><span class="pre">abstract</span></code></a></p></li>
@@ -682,8 +682,8 @@
 <li><p><a class="reference external" href="https://www.geeksforgeeks.org/how-to-implement-inheritance-in-typescript/">How to implement Inheritance in Typescript ?</a></p></li>
 <li><p><a class="reference external" href="https://morioh.com/p/2b395e280dc7">Top 50 TypeScript Interview Questions &amp; Answers You Should Know in 2020</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -732,7 +732,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -251,16 +251,16 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-go-lang-client-server-tcp--page-root">Simple Client and Server TCP connection<a class="headerlink" href="#notes-go-lang-client-server-tcp--page-root" title="Permalink to this heading">¶</a></h1>
+  <section id="simple-client-and-server-tcp-connection">
+<h1 id="notes-go-lang-client-server-tcp--page-root">Simple Client and Server TCP connection<a class="headerlink" href="#notes-go-lang-client-server-tcp--page-root" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial is a simple client and server TCP communication where the client receive and send a message to the server and vice versa.</p>
-
-<h2 id="connecting-to-a-tcp-socket">Connecting to a TCP socket<a class="headerlink" href="#connecting-to-a-tcp-socket" title="Permalink to this heading">¶</a></h2>
+<section id="connecting-to-a-tcp-socket">
+<h2 id="connecting-to-a-tcp-socket">Connecting to a TCP socket<a class="headerlink" href="#connecting-to-a-tcp-socket" title="Permalink to this headline">¶</a></h2>
 <p>To establish a connection, the client uses the <code class="docutils literal notranslate"><span class="pre">DialTCP</span></code> in the net package and it returns a <code class="docutils literal notranslate"><span class="pre">TCPConn</span></code> object.  When a connection is established, the client and server begin exchanging data: the client sends a request to the server through a TCPConn object, the server parses the request and sends a response, and the TCPConn object receives the response from the server.</p>
 <a class="reference internal image-reference" href="https://yalantis.com/uploads/ckeditor/pictures/4266/tcp-socket.png"><img alt="tcp_socket" src="https://yalantis.com/uploads/ckeditor/pictures/4266/tcp-socket.png" style="width: 500px;"/></a>
-
-
-<h2 id="client-set-up">Client Set-up<a class="headerlink" href="#client-set-up" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="client-set-up">
+<h2 id="client-set-up">Client Set-up<a class="headerlink" href="#client-set-up" title="Permalink to this headline">¶</a></h2>
 <p>Basic operation for the client:</p>
 <ul class="simple">
 <li><p>Establish connection to remote host</p></li>
@@ -268,201 +268,201 @@
 <li><p>Send and receive bytes of information</p></li>
 <li><p>Close the connection</p></li>
 </ul>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w"></span>
 
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">"fmt"</span>
-	<span class="s">"log"</span>
-	<span class="s">"net"</span>
-	<span class="s">"os"</span>
-	<span class="s">"sync"</span>
-<span class="p">)</span>
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">	</span><span class="s">"fmt"</span><span class="w"></span>
+<span class="w">	</span><span class="s">"log"</span><span class="w"></span>
+<span class="w">	</span><span class="s">"net"</span><span class="w"></span>
+<span class="w">	</span><span class="s">"os"</span><span class="w"></span>
+<span class="w">	</span><span class="s">"sync"</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 
-<span class="kd">var</span> <span class="p">(</span>
-	<span class="nx">protocol</span> <span class="p">=</span> <span class="s">"tcp"</span>
-	<span class="nx">server</span>   <span class="p">=</span> <span class="s">"0.0.0.0:9000"</span>
-	<span class="nx">wg</span>       <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span> <span class="c1">// WaitGroup waits for a collection of goroutines to finish</span>
-<span class="p">)</span>
+<span class="kd">var</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">	</span><span class="nx">protocol</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"tcp"</span><span class="w"></span>
+<span class="w">	</span><span class="nx">server</span><span class="w">   </span><span class="p">=</span><span class="w"> </span><span class="s">"0.0.0.0:9000"</span><span class="w"></span>
+<span class="w">	</span><span class="nx">wg</span><span class="w">       </span><span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span><span class="w"> </span><span class="c1">// WaitGroup waits for a collection of goroutines to finish</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="c1">// Resolves address to an address of TCP endpoint</span>
-	<span class="nx">address</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nx">ResolveTCPAddr</span><span class="p">(</span><span class="nx">protocol</span><span class="p">,</span> <span class="nx">server</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Error resolving TCP address: %s"</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span>
-		<span class="k">return</span>
-	<span class="p">}</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="c1">// Resolves address to an address of TCP endpoint</span><span class="w"></span>
+<span class="w">	</span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">net</span><span class="p">.</span><span class="nx">ResolveTCPAddr</span><span class="p">(</span><span class="nx">protocol</span><span class="p">,</span><span class="w"> </span><span class="nx">server</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Error resolving TCP address: %s"</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span><span class="w"></span>
+<span class="w">		</span><span class="k">return</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
 
-	<span class="c1">// Connects to a server using a TCP connection</span>
-	<span class="nx">connection</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nx">DialTCP</span><span class="p">(</span><span class="nx">protocol</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">address</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Failed to Dial Server TCP. Error: %s"</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span>
-		<span class="k">return</span>
-	<span class="p">}</span>
+<span class="w">	</span><span class="c1">// Connects to a server using a TCP connection</span><span class="w"></span>
+<span class="w">	</span><span class="nx">connection</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">net</span><span class="p">.</span><span class="nx">DialTCP</span><span class="p">(</span><span class="nx">protocol</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Failed to Dial Server TCP. Error: %s"</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span><span class="w"></span>
+<span class="w">		</span><span class="k">return</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
 
-	<span class="c1">// Increment the WaitGroup counter.</span>
-	<span class="nx">wg</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-	<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
-		<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-			<span class="nx">wg</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">	</span><span class="c1">// Increment the WaitGroup counter.</span><span class="w"></span>
+<span class="w">	</span><span class="nx">wg</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="k">go</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">			</span><span class="nx">wg</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
 
-			<span class="c1">// Send a message to the server</span>
-			<span class="nx">message</span> <span class="o">:=</span> <span class="s">"Hello!! Register me as one of your sender."</span>
-			<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">connection</span><span class="p">.</span><span class="nx">Write</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">message</span><span class="p">))</span>
-			<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-				<span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Failed to write data. Error: %s"</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span>
-				<span class="k">return</span>
-			<span class="p">}</span>
-			<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"Client connected to "</span><span class="p">,</span> <span class="nx">connection</span><span class="p">.</span><span class="nx">RemoteAddr</span><span class="p">().</span><span class="nx">String</span><span class="p">())</span>
+<span class="w">			</span><span class="c1">// Send a message to the server</span><span class="w"></span>
+<span class="w">			</span><span class="nx">message</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">"Hello!! Register me as one of your sender."</span><span class="w"></span>
+<span class="w">			</span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">connection</span><span class="p">.</span><span class="nx">Write</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">message</span><span class="p">))</span><span class="w"></span>
+<span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">				</span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Failed to write data. Error: %s"</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span><span class="w"></span>
+<span class="w">				</span><span class="k">return</span><span class="w"></span>
+<span class="w">			</span><span class="p">}</span><span class="w"></span>
+<span class="w">			</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"Client connected to "</span><span class="p">,</span><span class="w"> </span><span class="nx">connection</span><span class="p">.</span><span class="nx">RemoteAddr</span><span class="p">().</span><span class="nx">String</span><span class="p">())</span><span class="w"></span>
 
-			<span class="nx">buffer</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="mi">420</span><span class="p">)</span>
-			<span class="c1">// Read from TCP buffer</span>
-			<span class="nx">length</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">connection</span><span class="p">.</span><span class="nx">Read</span><span class="p">(</span><span class="nx">buffer</span><span class="p">)</span>
-			<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-				<span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Failed to read message from TCP server session"</span><span class="p">)</span>
-				<span class="k">return</span>
-			<span class="p">}</span>
-			<span class="nx">tmp</span> <span class="o">:=</span> <span class="nx">buffer</span><span class="p">[:</span><span class="nx">length</span><span class="p">]</span>
-			<span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Server Reply: %s\n"</span><span class="p">,</span> <span class="nb">string</span><span class="p">(</span><span class="nx">tmp</span><span class="p">))</span>
-			<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"--------------------------------------------------------------------"</span><span class="p">)</span>
+<span class="w">			</span><span class="nx">buffer</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="mi">420</span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="c1">// Read from TCP buffer</span><span class="w"></span>
+<span class="w">			</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">connection</span><span class="p">.</span><span class="nx">Read</span><span class="p">(</span><span class="nx">buffer</span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">				</span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Failed to read message from TCP server session"</span><span class="p">)</span><span class="w"></span>
+<span class="w">				</span><span class="k">return</span><span class="w"></span>
+<span class="w">			</span><span class="p">}</span><span class="w"></span>
+<span class="w">			</span><span class="nx">tmp</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">buffer</span><span class="p">[:</span><span class="nx">length</span><span class="p">]</span><span class="w"></span>
+<span class="w">			</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Server Reply: %s\n"</span><span class="p">,</span><span class="w"> </span><span class="nb">string</span><span class="p">(</span><span class="nx">tmp</span><span class="p">))</span><span class="w"></span>
+<span class="w">			</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"--------------------------------------------------------------------"</span><span class="p">)</span><span class="w"></span>
 
-			<span class="c1">// Decrement the counter when the goroutine completes.</span>
-			<span class="k">defer</span> <span class="nx">wg</span><span class="p">.</span><span class="nx">Done</span><span class="p">()</span>
-			<span class="c1">// Close the connection</span>
-			<span class="k">defer</span> <span class="nx">connection</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
-			<span class="c1">// Terminate or exit execution</span>
-			<span class="k">defer</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-		<span class="p">}</span>
-	<span class="p">}()</span>
-	<span class="c1">// Wait for it to complete.</span>
-	<span class="nx">wg</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span>
-<span class="p">}</span>
+<span class="w">			</span><span class="c1">// Decrement the counter when the goroutine completes.</span><span class="w"></span>
+<span class="w">			</span><span class="k">defer</span><span class="w"> </span><span class="nx">wg</span><span class="p">.</span><span class="nx">Done</span><span class="p">()</span><span class="w"></span>
+<span class="w">			</span><span class="c1">// Close the connection</span><span class="w"></span>
+<span class="w">			</span><span class="k">defer</span><span class="w"> </span><span class="nx">connection</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span><span class="w"></span>
+<span class="w">			</span><span class="c1">// Terminate or exit execution</span><span class="w"></span>
+<span class="w">			</span><span class="k">defer</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">		</span><span class="p">}</span><span class="w"></span>
+<span class="w">	</span><span class="p">}()</span><span class="w"></span>
+<span class="w">	</span><span class="c1">// Wait for it to complete.</span><span class="w"></span>
+<span class="w">	</span><span class="nx">wg</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-
-
-<h2 id="server-set-up">Server Set-up<a class="headerlink" href="#server-set-up" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="server-set-up">
+<h2 id="server-set-up">Server Set-up<a class="headerlink" href="#server-set-up" title="Permalink to this headline">¶</a></h2>
 <p>Basic operation of the server socket:</p>
 <ul class="simple">
 <li><p>Create a socket on a specific port</p></li>
 <li><p>Listen to any attempt of connection</p></li>
 <li><p>If the connection is successful, communication can begin between client and server</p></li>
 </ul>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w"></span>
 
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">"fmt"</span>
-	<span class="s">"log"</span>
-	<span class="s">"net"</span>
-	<span class="s">"os"</span>
-	<span class="s">"sync"</span>
-<span class="p">)</span>
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">	</span><span class="s">"fmt"</span><span class="w"></span>
+<span class="w">	</span><span class="s">"log"</span><span class="w"></span>
+<span class="w">	</span><span class="s">"net"</span><span class="w"></span>
+<span class="w">	</span><span class="s">"os"</span><span class="w"></span>
+<span class="w">	</span><span class="s">"sync"</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 
-<span class="kd">var</span> <span class="p">(</span>
-	<span class="nx">protocol</span> <span class="p">=</span> <span class="s">"tcp"</span>
-	<span class="nx">host</span>     <span class="p">=</span> <span class="s">"0.0.0.0:9000"</span>
-	<span class="nx">wg</span>       <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span> <span class="c1">// WaitGroup waits for a collection of goroutines to finish</span>
-<span class="p">)</span>
+<span class="kd">var</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">	</span><span class="nx">protocol</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"tcp"</span><span class="w"></span>
+<span class="w">	</span><span class="nx">host</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="s">"0.0.0.0:9000"</span><span class="w"></span>
+<span class="w">	</span><span class="nx">wg</span><span class="w">       </span><span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span><span class="w"> </span><span class="c1">// WaitGroup waits for a collection of goroutines to finish</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Server started: %s...\n"</span><span class="p">,</span> <span class="nx">host</span><span class="p">)</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Server started: %s...\n"</span><span class="p">,</span><span class="w"> </span><span class="nx">host</span><span class="p">)</span><span class="w"></span>
 
-	<span class="c1">// Resolves address to an address of TCP endpoint</span>
-	<span class="nx">address</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nx">ResolveTCPAddr</span><span class="p">(</span><span class="nx">protocol</span><span class="p">,</span> <span class="nx">host</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Error resolving TCP address: %s"</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span>
-		<span class="k">return</span>
-	<span class="p">}</span>
+<span class="w">	</span><span class="c1">// Resolves address to an address of TCP endpoint</span><span class="w"></span>
+<span class="w">	</span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">net</span><span class="p">.</span><span class="nx">ResolveTCPAddr</span><span class="p">(</span><span class="nx">protocol</span><span class="p">,</span><span class="w"> </span><span class="nx">host</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Error resolving TCP address: %s"</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span><span class="w"></span>
+<span class="w">		</span><span class="k">return</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
 
-	<span class="c1">// Setup listener for any incoming TCP connections</span>
-	<span class="nx">server</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nx">ListenTCP</span><span class="p">(</span><span class="nx">protocol</span><span class="p">,</span> <span class="nx">address</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Failed to listen to the server. Error: %s"</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span>
-		<span class="k">return</span>
-	<span class="p">}</span>
-	<span class="c1">// Close the connection</span>
-	<span class="k">defer</span> <span class="nx">server</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+<span class="w">	</span><span class="c1">// Setup listener for any incoming TCP connections</span><span class="w"></span>
+<span class="w">	</span><span class="nx">server</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">net</span><span class="p">.</span><span class="nx">ListenTCP</span><span class="p">(</span><span class="nx">protocol</span><span class="p">,</span><span class="w"> </span><span class="nx">address</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Failed to listen to the server. Error: %s"</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span><span class="w"></span>
+<span class="w">		</span><span class="k">return</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="w">	</span><span class="c1">// Close the connection</span><span class="w"></span>
+<span class="w">	</span><span class="k">defer</span><span class="w"> </span><span class="nx">server</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span><span class="w"></span>
 
-	<span class="c1">// Accept any new incoming TCP request and returns a connection</span>
-	<span class="nx">connection</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">server</span><span class="p">.</span><span class="nx">AcceptTCP</span><span class="p">()</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Failed to accept incoming TCP connection"</span><span class="p">)</span>
-		<span class="k">return</span>
-	<span class="p">}</span>
+<span class="w">	</span><span class="c1">// Accept any new incoming TCP request and returns a connection</span><span class="w"></span>
+<span class="w">	</span><span class="nx">connection</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">server</span><span class="p">.</span><span class="nx">AcceptTCP</span><span class="p">()</span><span class="w"></span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Failed to accept incoming TCP connection"</span><span class="p">)</span><span class="w"></span>
+<span class="w">		</span><span class="k">return</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
 
-	<span class="c1">// Increment the WaitGroup counter.</span>
-	<span class="nx">wg</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-	<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
-		<span class="k">for</span> <span class="p">{</span>
-			<span class="nx">wg</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">	</span><span class="c1">// Increment the WaitGroup counter.</span><span class="w"></span>
+<span class="w">	</span><span class="nx">wg</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="k">go</span><span class="w"> </span><span class="kd">func</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">			</span><span class="nx">wg</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
 
-			<span class="c1">// Send message to client server</span>
-			<span class="nx">message</span> <span class="o">:=</span> <span class="s">"Hi! Thanks for connecting. I received your message."</span>
-			<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">connection</span><span class="p">.</span><span class="nx">Write</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">message</span><span class="p">))</span>
-			<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-				<span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Failed to write data. Error: %s"</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span>
-				<span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-			<span class="p">}</span>
+<span class="w">			</span><span class="c1">// Send message to client server</span><span class="w"></span>
+<span class="w">			</span><span class="nx">message</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">"Hi! Thanks for connecting. I received your message."</span><span class="w"></span>
+<span class="w">			</span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">connection</span><span class="p">.</span><span class="nx">Write</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">message</span><span class="p">))</span><span class="w"></span>
+<span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">				</span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Failed to write data. Error: %s"</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span><span class="w"></span>
+<span class="w">				</span><span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="p">}</span><span class="w"></span>
 
-			<span class="nx">buffer</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="mi">420</span><span class="p">)</span>
-			<span class="c1">// Read from TCP buffer</span>
-			<span class="nx">length</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">connection</span><span class="p">.</span><span class="nx">Read</span><span class="p">(</span><span class="nx">buffer</span><span class="p">)</span>
-			<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-				<span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Failed to read message from TCP server session. Error: %s"</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span>
-				<span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-			<span class="p">}</span>
+<span class="w">			</span><span class="nx">buffer</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span><span class="w"> </span><span class="mi">420</span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="c1">// Read from TCP buffer</span><span class="w"></span>
+<span class="w">			</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">connection</span><span class="p">.</span><span class="nx">Read</span><span class="p">(</span><span class="nx">buffer</span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">				</span><span class="nx">log</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Failed to read message from TCP server session. Error: %s"</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">Error</span><span class="p">())</span><span class="w"></span>
+<span class="w">				</span><span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="p">}</span><span class="w"></span>
 
-			<span class="nx">tmp</span> <span class="o">:=</span> <span class="nx">buffer</span><span class="p">[:</span><span class="nx">length</span><span class="p">]</span>
-			<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"------------------------------------------------------------"</span><span class="p">)</span>
-			<span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Client Message: %s\n"</span><span class="p">,</span> <span class="nb">string</span><span class="p">(</span><span class="nx">tmp</span><span class="p">))</span>
-			<span class="c1">// Decrement the counter when the goroutine completes.</span>
-			<span class="nx">wg</span><span class="p">.</span><span class="nx">Done</span><span class="p">()</span>
-		<span class="p">}</span>
-	<span class="p">}()</span>
-	<span class="c1">// Terminate or exit execution</span>
-	<span class="k">defer</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-	<span class="c1">// Wait for it to complete.</span>
-	<span class="nx">wg</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span>
-<span class="p">}</span>
+<span class="w">			</span><span class="nx">tmp</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">buffer</span><span class="p">[:</span><span class="nx">length</span><span class="p">]</span><span class="w"></span>
+<span class="w">			</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"------------------------------------------------------------"</span><span class="p">)</span><span class="w"></span>
+<span class="w">			</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Client Message: %s\n"</span><span class="p">,</span><span class="w"> </span><span class="nb">string</span><span class="p">(</span><span class="nx">tmp</span><span class="p">))</span><span class="w"></span>
+<span class="w">			</span><span class="c1">// Decrement the counter when the goroutine completes.</span><span class="w"></span>
+<span class="w">			</span><span class="nx">wg</span><span class="p">.</span><span class="nx">Done</span><span class="p">()</span><span class="w"></span>
+<span class="w">		</span><span class="p">}</span><span class="w"></span>
+<span class="w">	</span><span class="p">}()</span><span class="w"></span>
+<span class="w">	</span><span class="c1">// Terminate or exit execution</span><span class="w"></span>
+<span class="w">	</span><span class="k">defer</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="c1">// Wait for it to complete.</span><span class="w"></span>
+<span class="w">	</span><span class="nx">wg</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-
-<h3 id="go"><code class="docutils literal notranslate"><span class="pre">go</span></code><a class="headerlink" href="#go" title="Permalink to this heading">¶</a></h3>
+<section id="go">
+<h3 id="go"><code class="docutils literal notranslate"><span class="pre">go</span></code><a class="headerlink" href="#go" title="Permalink to this headline">¶</a></h3>
 <p>A Goroutine is a lightweight thread managed by the Go runtime. It is a function or method which executes independently and simultaneously in connection with any other Goroutines present in your program.</p>
 <p>Syntax:</p>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// using go keyword as the prefix of your function call</span>
-<span class="k">go</span> <span class="nx">name</span><span class="p">()</span>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// using go keyword as the prefix of your function call</span><span class="w"></span>
+<span class="k">go</span><span class="w"> </span><span class="nx">name</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
-
-
-<h3 id="waitgroup"><code class="docutils literal notranslate"><span class="pre">WaitGroup</span></code><a class="headerlink" href="#waitgroup" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="waitgroup">
+<h3 id="waitgroup"><code class="docutils literal notranslate"><span class="pre">WaitGroup</span></code><a class="headerlink" href="#waitgroup" title="Permalink to this headline">¶</a></h3>
 <p>To wait for the function to finish, you can use a <a class="reference external" href="https://pkg.go.dev/sync#WaitGroup">WaitGroup</a>. The WaitGroup primitive works by counting how many things it needs to wait for using the <code class="docutils literal notranslate"><span class="pre">Add</span></code>, <code class="docutils literal notranslate"><span class="pre">Done</span></code> and <code class="docutils literal notranslate"><span class="pre">Wait</span></code> functions.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Add</span></code>: increases the count by the number provided to the function (<code class="docutils literal notranslate"><span class="pre">wg.Add(1)</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Done</span></code>: decreases the count by one (<code class="docutils literal notranslate"><span class="pre">wg.Done()</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Wait</span></code>: can then be used to wait until the count reaches zero, meaning that <code class="docutils literal notranslate"><span class="pre">Done</span></code> has been called enough times to offset the calls to <code class="docutils literal notranslate"><span class="pre">Add</span></code>.</p></li>
 </ul>
-
-
-<h3 id="os-exit"><code class="docutils literal notranslate"><span class="pre">os.Exit</span></code><a class="headerlink" href="#os-exit" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="os-exit">
+<h3 id="os-exit"><code class="docutils literal notranslate"><span class="pre">os.Exit</span></code><a class="headerlink" href="#os-exit" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">os.Exit</span></code> is used when you need to abort the program <em>immediately</em>, with no possibility of recovery or running a deferred clean-up statement. This can also be used when your program has done everything it needed to do, and now just needs to exit, i.e. after printing a help message.</p>
-
-
-<h3 id="defer"><code class="docutils literal notranslate"><span class="pre">defer</span></code><a class="headerlink" href="#defer" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="defer">
+<h3 id="defer"><code class="docutils literal notranslate"><span class="pre">defer</span></code><a class="headerlink" href="#defer" title="Permalink to this headline">¶</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">defer</span></code> statement defers the execution of a function until the surrounding function returns.</p>
 <p>The deferred call’s arguments are evaluated immediately, but the function call is not executed until the surrounding function returns.</p>
-
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://stackoverflow.com/questions/28472922/when-to-use-os-exit-and-panic">When to use os.Exit and panic</a></p></li>
 <li><p><a class="reference external" href="https://yalantis.com/blog/how-to-build-websockets-in-go/">How to build websockets in Go</a></p></li>
 <li><p><a class="reference external" href="https://www.developer.com/languages/intro-socket-programming-go/">Intro to Socket Programming in Go</a></p></li>
 <li><p><a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-run-multiple-functions-concurrently-in-go">How to run multiple functions concurrently in Go</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -511,7 +511,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -237,48 +237,48 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-go-lang-palindrome--page-root">Palindrome<a class="headerlink" href="#notes-go-lang-palindrome--page-root" title="Permalink to this heading">¶</a></h1>
-
-<h2 id="what-is-a-palindrome">What is a palindrome?<a class="headerlink" href="#what-is-a-palindrome" title="Permalink to this heading">¶</a></h2>
+  <section id="palindrome">
+<h1 id="notes-go-lang-palindrome--page-root">Palindrome<a class="headerlink" href="#notes-go-lang-palindrome--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="what-is-a-palindrome">
+<h2 id="what-is-a-palindrome">What is a palindrome?<a class="headerlink" href="#what-is-a-palindrome" title="Permalink to this headline">¶</a></h2>
 <p>A <strong>palindrome</strong> is a string of characters that read the same forwards as they do backwards.</p>
 <br/>
-
-
-<h2 id="palindrome-go">palindrome.go<a class="headerlink" href="#palindrome-go" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="palindrome-go">
+<h2 id="palindrome-go">palindrome.go<a class="headerlink" href="#palindrome-go" title="Permalink to this headline">¶</a></h2>
 <p>This checks the string if it’s a palindrome using a reverse string comparison approach and the comparison should be a case sensitive.</p>
-<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w"></span>
 
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">"fmt"</span>
-	<span class="s">"strings"</span>
-<span class="p">)</span>
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">	</span><span class="s">"fmt"</span><span class="w"></span>
+<span class="w">	</span><span class="s">"strings"</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 
-<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="c1">// Declaring variables</span>
-	<span class="kd">var</span> <span class="nx">input</span> <span class="kt">string</span>
-	<span class="kd">var</span> <span class="nx">palindrome</span> <span class="p">[]</span><span class="kt">string</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"Enter a palindrome word: "</span><span class="p">)</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="c1">// Declaring variables</span><span class="w"></span>
+<span class="w">	</span><span class="kd">var</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="kt">string</span><span class="w"></span>
+<span class="w">	</span><span class="kd">var</span><span class="w"> </span><span class="nx">palindrome</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="w"></span>
+<span class="w">	</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"Enter a palindrome word: "</span><span class="p">)</span><span class="w"></span>
 
-	<span class="c1">// Take the input of the user</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Scan</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">input</span><span class="p">)</span>
+<span class="w">	</span><span class="c1">// Take the input of the user</span><span class="w"></span>
+<span class="w">	</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Scan</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">input</span><span class="p">)</span><span class="w"></span>
 
-	<span class="c1">// Checks the input if not empty</span>
-	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
-		<span class="c1">// Reverse string and append it to palindrome which is an array of string</span>
-		<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span> <span class="nx">i</span><span class="o">--</span> <span class="p">{</span>
-			<span class="nx">palindrome</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">palindrome</span><span class="p">,</span> <span class="nb">string</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">]))</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
+<span class="w">	</span><span class="c1">// Checks the input if not empty</span><span class="w"></span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="c1">// Reverse string and append it to palindrome which is an array of string</span><span class="w"></span>
+<span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span><span class="w"> </span><span class="nx">i</span><span class="o">--</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">			</span><span class="nx">palindrome</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">append</span><span class="p">(</span><span class="nx">palindrome</span><span class="p">,</span><span class="w"> </span><span class="nb">string</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="nx">i</span><span class="p">]))</span><span class="w"></span>
+<span class="w">		</span><span class="p">}</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
 
-	<span class="c1">// Joining character of strings and compare the formed word to the input.</span>
-	<span class="k">if</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">palindrome</span><span class="p">,</span> <span class="s">""</span><span class="p">)</span> <span class="o">==</span> <span class="nx">input</span> <span class="p">{</span>
-     		<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"---------------------------------"</span><span class="p">)</span>
-		<span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Word: %s\nInput: %s\nUser entered a palindrome word\n"</span><span class="p">,</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">palindrome</span><span class="p">,</span> <span class="s">""</span><span class="p">),</span> <span class="nx">input</span><span class="p">)</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-		<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"Not a palindrome word"</span><span class="p">)</span>
-	<span class="p">}</span>
-<span class="p">}</span>
+<span class="w">	</span><span class="c1">// Joining character of strings and compare the formed word to the input.</span><span class="w"></span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">strings</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">palindrome</span><span class="p">,</span><span class="w"> </span><span class="s">""</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     		</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"---------------------------------"</span><span class="p">)</span><span class="w"></span>
+<span class="w">		</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">"Word: %s\nInput: %s\nUser entered a palindrome word\n"</span><span class="p">,</span><span class="w"> </span><span class="nx">strings</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">palindrome</span><span class="p">,</span><span class="w"> </span><span class="s">""</span><span class="p">),</span><span class="w"> </span><span class="nx">input</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">"Not a palindrome word"</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -290,8 +290,8 @@
 <span class="n">User</span> <span class="n">entered</span> <span class="n">a</span> <span class="n">palindrome</span> <span class="n">word</span>
 </pre></div>
 </div>
-
-
+</section>
+</section>
 
 
           </article>
@@ -340,7 +340,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

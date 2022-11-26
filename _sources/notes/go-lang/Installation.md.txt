@@ -51,6 +51,20 @@ dev@dev:~$ go version
 go version go1.xx.xx linux/amd64
 ```
 
+##### Upgrade Go Version
+```
+# Delete the /usr/local/go
+dev@dev:~$ sudo rm -rf /usr/local/go
+
+# Download the new version
+dev@dev:~$ wget https://go.dev/dl/go1.xx.xx.linux-amd64.tar.gz
+
+# Extract the archive file
+dev@dev:~$ sudo tar -C /usr/local -xzf /home/smarasigan/Downloads/go1.19.3.linux-amd64.tar.gz
+```
+
+**NOTE**: Please remember to change the xx.xx to your desired version of go.
+
 #### GIT Installation
 ```bash
 dev@dev:~$ sudo apt update

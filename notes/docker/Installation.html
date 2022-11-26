@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -243,10 +243,10 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-docker-installation--page-root">Installation<a class="headerlink" href="#notes-docker-installation--page-root" title="Permalink to this heading">¶</a></h1>
-
-<h2 id="docker-on-ubuntu"><strong>Docker on Ubuntu</strong><a class="headerlink" href="#docker-on-ubuntu" title="Permalink to this heading">¶</a></h2>
+  <section id="installation">
+<h1 id="notes-docker-installation--page-root">Installation<a class="headerlink" href="#notes-docker-installation--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="docker-on-ubuntu">
+<h2 id="docker-on-ubuntu"><strong>Docker on Ubuntu</strong><a class="headerlink" href="#docker-on-ubuntu" title="Permalink to this headline">¶</a></h2>
 <p><strong>OS requirements</strong></p>
 <p>You need the 64-bit version of one of these Ubuntu versions and minimum of 8GB RAM</p>
 <ul class="simple">
@@ -294,9 +294,9 @@ dev@dev-PC:~$ sudo apt install \
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Install Docker on Ubuntu Documenation</a></p></li>
 </ul>
-
-
-<h2 id="run-as-rootless"><strong>Run as ROOTLESS</strong><a class="headerlink" href="#run-as-rootless" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="run-as-rootless">
+<h2 id="run-as-rootless"><strong>Run as ROOTLESS</strong><a class="headerlink" href="#run-as-rootless" title="Permalink to this headline">¶</a></h2>
 <p><strong>Check if the group exist</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ grep "docker" /etc/group
 </pre></div>
@@ -315,9 +315,9 @@ dev@dev:~$ newgrp docker
 </a></p></li>
 <li><p><a class="reference external" href="https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user">Run without Sudo</a></p></li>
 </ul>
-
-
-<h2 id="docker-compose-on-ubuntu"><strong>Docker Compose on Ubuntu</strong><a class="headerlink" href="#docker-compose-on-ubuntu" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="docker-compose-on-ubuntu">
+<h2 id="docker-compose-on-ubuntu"><strong>Docker Compose on Ubuntu</strong><a class="headerlink" href="#docker-compose-on-ubuntu" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Run this command to download the current stable release of Docker Compose</p></li>
 </ol>
@@ -341,9 +341,9 @@ dev@dev:~$ newgrp docker
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.docker.com/compose/install/">Install Docker Compose on Ubuntu Documenation</a></p></li>
 </ul>
-
-
-<h2 id="docker-on-mac"><strong>Docker on MAC</strong><a class="headerlink" href="#docker-on-mac" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="docker-on-mac">
+<h2 id="docker-on-mac"><strong>Docker on MAC</strong><a class="headerlink" href="#docker-on-mac" title="Permalink to this headline">¶</a></h2>
 <p><strong>Installation Guide</strong></p>
 <ol class="arabic simple">
 <li><p>Sign up for a <a class="reference external" href="https://www.docker.com/">Docker Hub Account</a> and click on <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">Started</span></code> and find <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">for</span> <span class="pre">Mac</span></code>.</p></li>
@@ -354,9 +354,9 @@ dev@dev:~$ newgrp docker
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker version
 </pre></div>
 </div>
-
-
-<h2 id="minikube-installation">Minikube Installation<a class="headerlink" href="#minikube-installation" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="minikube-installation">
+<h2 id="minikube-installation">Minikube Installation<a class="headerlink" href="#minikube-installation" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Update the packages and make sure to install (or check whether you already have) <code class="docutils literal notranslate"><span class="pre">curl</span></code> before running the second command.</p></li>
 </ol>
@@ -376,8 +376,8 @@ dev@dev:~$ curl -LO https://storage.googleapis.com/minikube/releases/latest/mini
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ minikube status
 </pre></div>
 </div>
-
-
+</section>
+</section>
 
 
           </article>
@@ -426,7 +426,7 @@ dev@dev:~$ curl -LO https://storage.googleapis.com/minikube/releases/latest/mini
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -249,13 +249,13 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-typescript-template-strings--page-root">ECMA 6 – Template Strings<a class="headerlink" href="#notes-typescript-template-strings--page-root" title="Permalink to this heading">¶</a></h1>
+  <section id="ecma-6-template-strings">
+<h1 id="notes-typescript-template-strings--page-root">ECMA 6 – Template Strings<a class="headerlink" href="#notes-typescript-template-strings--page-root" title="Permalink to this headline">¶</a></h1>
 <p>Template literals (template strings) are literals delimited with backtick (`), allowing for multi-line strings, for string interpolation with embedded expressions, and for special constructs called <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates">tagged templates</a>. Template strings allow you to embed code expressions within string literals.</p>
-
-<h2 id="without-template-strings">Without template strings<a class="headerlink" href="#without-template-strings" title="Permalink to this heading">¶</a></h2>
-
-<h3 id="index-html">index.html<a class="headerlink" href="#index-html" title="Permalink to this heading">¶</a></h3>
+<section id="without-template-strings">
+<h2 id="without-template-strings">Without template strings<a class="headerlink" href="#without-template-strings" title="Permalink to this headline">¶</a></h2>
+<section id="index-html">
+<h3 id="index-html">index.html<a class="headerlink" href="#index-html" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -272,9 +272,9 @@
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-
-
-<h3 id="script-js">script.js<a class="headerlink" href="#script-js" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="script-js">
+<h3 id="script-js">script.js<a class="headerlink" href="#script-js" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">print</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">profession</span><span class="p">,</span> <span class="nx">gender</span><span class="p">)</span>
 <span class="p">{</span>
    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"Name: "</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
@@ -283,7 +283,7 @@
    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"Gender: "</span> <span class="o">+</span> <span class="nx">gender</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nx">print</span><span class="p">(</span><span class="s2">"Robert"</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="s2">"Developer"</span><span class="p">,</span> <span class="s2">"male"</span><span class="p">);</span>
+<span class="nx">print</span><span class="p">(</span><span class="s2">"Robert"</span><span class="p">,</span> <span class="mf">29</span><span class="p">,</span> <span class="s2">"Developer"</span><span class="p">,</span> <span class="s2">"male"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -300,12 +300,12 @@
 <span class="n">Age</span><span class="p">:</span> <span class="mi">29</span><span class="n">Profession</span><span class="p">:</span> <span class="n">DeveloperGender</span><span class="p">:</span> <span class="n">male</span>
 </pre></div>
 </div>
-
-
-
-<h2 id="with-template-strings">With template strings<a class="headerlink" href="#with-template-strings" title="Permalink to this heading">¶</a></h2>
-
-<h3 id="id1">script.js<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+<section id="with-template-strings">
+<h2 id="with-template-strings">With template strings<a class="headerlink" href="#with-template-strings" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h3 id="id1">script.js<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">print</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">profession</span><span class="p">,</span> <span class="nx">gender</span><span class="p">)</span>
 <span class="p">{</span>
    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="sb">`Name: </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"></span>
@@ -314,7 +314,7 @@
 <span class="sb">                  Gender: </span><span class="si">${</span><span class="nx">gender</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nx">print</span><span class="p">(</span><span class="s2">"Robert"</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="s2">"Developer"</span><span class="p">,</span> <span class="s2">"male"</span><span class="p">);</span>
+<span class="nx">print</span><span class="p">(</span><span class="s2">"Robert"</span><span class="p">,</span> <span class="mf">29</span><span class="p">,</span> <span class="s2">"Developer"</span><span class="p">,</span> <span class="s2">"male"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -335,15 +335,15 @@
 <span class="n">Gender</span><span class="p">:</span> <span class="n">male</span>
 </pre></div>
 </div>
-
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Template literals (Template strings)</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -392,7 +392,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

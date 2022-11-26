@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -52,7 +53,6 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -269,19 +269,19 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="notes-typescript-ts-access-modifiers-static--page-root">TS – Classes | Access Modifiers, Accessor and <code class="docutils literal notranslate"><span class="pre">static</span></code><a class="headerlink" href="#notes-typescript-ts-access-modifiers-static--page-root" title="Permalink to this heading">¶</a></h1>
-
-<h2 id="access-modifers">Access Modifers<a class="headerlink" href="#access-modifers" title="Permalink to this heading">¶</a></h2>
+  <section id="ts-classes-access-modifiers-accessor-and-static">
+<h1 id="notes-typescript-ts-access-modifiers-static--page-root">TS – Classes | Access Modifiers, Accessor and <code class="docutils literal notranslate"><span class="pre">static</span></code><a class="headerlink" href="#notes-typescript-ts-access-modifiers-static--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="access-modifers">
+<h2 id="access-modifers">Access Modifers<a class="headerlink" href="#access-modifers" title="Permalink to this headline">¶</a></h2>
 <p>In object-oriented programming, the concept of <em>Encapsulation</em> is used to make class members public or private. For example, a class can control the visibility of tis data members. This is done using access modifiers. It gives direct access control to the class members. These class members are functions and properties. We can use class members inside its own class, anywhere outside the class, or within its child or derived class.</p>
 <p>The access modifier increases the security of the class membes and prevents them from invalid use. We can also use it to control the visibility of data members of a class. If the class does ot ahve to be set any access modifier, TypeScript automatically sets public access modifier to all class members.</p>
-
-<h3 id="public"><code class="docutils literal notranslate"><span class="pre">public</span></code><a class="headerlink" href="#public" title="Permalink to this heading">¶</a></h3>
+<section id="public">
+<h3 id="public"><code class="docutils literal notranslate"><span class="pre">public</span></code><a class="headerlink" href="#public" title="Permalink to this headline">¶</a></h3>
 <p>A public data member has universal accessibility. Data members in a class are public by default. So, there is no need to prefix members with this keyword. We can access this data member anywhere without any restriction.</p>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">User</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">User</span>
 <span class="p">{</span>
-   <span class="kr">public</span> <span class="nx">ID</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="k">public</span> <span class="nx">ID</span>: <span class="kt">string</span><span class="p">;</span>
    <span class="nx">FirstName</span>: <span class="kt">string</span><span class="p">;</span>
    <span class="nx">LastName</span>: <span class="kt">string</span><span class="p">;</span>
 
@@ -293,7 +293,7 @@
    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="s2">"0098172018"</span><span class="p">,</span> <span class="s2">"Mark"</span><span class="p">,</span> <span class="s2">"Manson"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">User</span><span class="p">(</span><span class="s2">"0098172018"</span><span class="p">,</span> <span class="s2">"Mark"</span><span class="p">,</span> <span class="s2">"Manson"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">ID</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -302,15 +302,15 @@
 </pre></div>
 </div>
 <p>In the example above, the <code class="docutils literal notranslate"><span class="pre">ID</span></code> is public and  the <code class="docutils literal notranslate"><span class="pre">FirstName</span></code> and <code class="docutils literal notranslate"><span class="pre">LastName</span></code> is declared without a modifer, so TypeScript will treat them as <em>public</em> by default. Since the data memebrs are public, they can be accessed outside of the class using an object of the class.</p>
-
-
-<h3 id="private"><code class="docutils literal notranslate"><span class="pre">private</span></code><a class="headerlink" href="#private" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="private">
+<h3 id="private"><code class="docutils literal notranslate"><span class="pre">private</span></code><a class="headerlink" href="#private" title="Permalink to this headline">¶</a></h3>
 <p>Private data members are accessible only within the class that define these members. If an exertnal class member tries to access a private member, the compiler throws an error. It ensures that the class members are visible only to that class in which it is containing.</p>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">User</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">User</span>
 <span class="p">{</span>
-   <span class="kr">public</span> <span class="nx">ID</span>: <span class="kt">string</span><span class="p">;</span>
-   <span class="kr">private</span> <span class="nx">Name</span>: <span class="kt">string</span>
+   <span class="k">public</span> <span class="nx">ID</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="k">private</span> <span class="nx">Name</span>: <span class="kt">string</span>
 
    <span class="kr">constructor</span> <span class="p">(</span><span class="nx">user_id</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">full_name</span>: <span class="kt">string</span><span class="p">)</span>
    <span class="p">{</span>
@@ -318,13 +318,13 @@
       <span class="k">this</span><span class="p">.</span><span class="nx">Name</span> <span class="o">=</span> <span class="nx">full_name</span><span class="p">;</span>
    <span class="p">}</span>
 
-   <span class="kr">public</span> <span class="nx">display</span><span class="p">()</span>
+   <span class="k">public</span> <span class="nx">display</span><span class="p">()</span>
    <span class="p">{</span>
       <span class="k">return</span><span class="p">(</span><span class="sb">`User ID: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">ID</span><span class="si">}</span><span class="sb"> Name: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">Name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="s2">"0098172018"</span><span class="p">,</span> <span class="s2">"Mark Manson"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">User</span><span class="p">(</span><span class="s2">"0098172018"</span><span class="p">,</span> <span class="s2">"Mark Manson"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">display</span><span class="p">());</span>
 </pre></div>
 </div>
@@ -333,15 +333,15 @@
 </pre></div>
 </div>
 <p>In here, we have marked the <code class="docutils literal notranslate"><span class="pre">Name</span></code> as private. Hence, when we create an object <code class="docutils literal notranslate"><span class="pre">user</span></code> and try to access the <code class="docutils literal notranslate"><span class="pre">user.Name</span></code> member, it will give an error. To access the <code class="docutils literal notranslate"><span class="pre">Name</span></code> property, we created a public function that will return a message including the <code class="docutils literal notranslate"><span class="pre">Name</span></code> property.</p>
-
-
-<h3 id="protected"><code class="docutils literal notranslate"><span class="pre">protected</span></code><a class="headerlink" href="#protected" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="protected">
+<h3 id="protected"><code class="docutils literal notranslate"><span class="pre">protected</span></code><a class="headerlink" href="#protected" title="Permalink to this headline">¶</a></h3>
 <p>A protected data member is accessible by the members within the same class as that of the former and also by the members of the child classes. We cannot access it from the outside of a class in which it is containing.</p>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">User</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">User</span>
 <span class="p">{</span>
-   <span class="kr">public</span> <span class="nx">ID</span>: <span class="kt">string</span><span class="p">;</span>
-   <span class="kr">protected</span> <span class="nx">Name</span>: <span class="kt">string</span>
+   <span class="k">public</span> <span class="nx">ID</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="k">protected</span> <span class="nx">Name</span>: <span class="kt">string</span>
 
    <span class="kr">constructor</span> <span class="p">(</span><span class="nx">user_id</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">full_name</span>: <span class="kt">string</span><span class="p">)</span>
    <span class="p">{</span>
@@ -350,23 +350,23 @@
    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">class</span> <span class="nx">Employee</span> <span class="kr">extends</span> <span class="nx">User</span>
+<span class="kd">class</span> <span class="nx">Employee</span> <span class="k">extends</span> <span class="nx">User</span>
 <span class="p">{</span>
-   <span class="kr">private</span> <span class="nx">Department</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="k">private</span> <span class="nx">Department</span>: <span class="kt">string</span><span class="p">;</span>
 
    <span class="kr">constructor</span><span class="p">(</span><span class="nx">user_id</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">full_name</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">department</span>: <span class="kt">string</span><span class="p">)</span>
    <span class="p">{</span>
-      <span class="kr">super</span><span class="p">(</span><span class="nx">user_id</span><span class="p">,</span> <span class="nx">full_name</span><span class="p">);</span>
+      <span class="k">super</span><span class="p">(</span><span class="nx">user_id</span><span class="p">,</span> <span class="nx">full_name</span><span class="p">);</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">Department</span> <span class="o">=</span> <span class="nx">department</span><span class="p">;</span>
    <span class="p">}</span>
 
-   <span class="kr">public</span> <span class="nx">EmployeeDetails</span><span class="p">()</span>
+   <span class="k">public</span> <span class="nx">EmployeeDetails</span><span class="p">()</span>
    <span class="p">{</span>
       <span class="k">return</span> <span class="p">(</span><span class="sb">`User ID: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">ID</span><span class="si">}</span><span class="sb"> Employee Name: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">Name</span><span class="si">}</span><span class="sb"> Department: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">Department</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="s2">"0098172018"</span><span class="p">,</span> <span class="s2">"Mark Manson"</span><span class="p">,</span> <span class="s2">"Software Developer"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">User</span><span class="p">(</span><span class="s2">"0098172018"</span><span class="p">,</span> <span class="s2">"Mark Manson"</span><span class="p">,</span> <span class="s2">"Software Developer"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">EmployeeDetails</span><span class="p">());</span>
 </pre></div>
 </div>
@@ -375,13 +375,13 @@
 </pre></div>
 </div>
 <p>In the above example, we can’t use the name from outside of <code class="docutils literal notranslate"><span class="pre">User</span></code> class. We can still use it from within an instance of method of <code class="docutils literal notranslate"><span class="pre">Employee</span></code> class because <code class="docutils literal notranslate"><span class="pre">Employee</span></code> class derives from <code class="docutils literal notranslate"><span class="pre">User</span></code> class.</p>
-
-<h4 id="super-keyword"><code class="docutils literal notranslate"><span class="pre">super</span></code> keyword<a class="headerlink" href="#super-keyword" title="Permalink to this heading">¶</a></h4>
+<section id="super-keyword">
+<h4 id="super-keyword"><code class="docutils literal notranslate"><span class="pre">super</span></code> keyword<a class="headerlink" href="#super-keyword" title="Permalink to this headline">¶</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">super()</span></code> keyword is used to call the parent constructor and passes the property values. The type of a <code class="docutils literal notranslate"><span class="pre">super()</span></code> call expression is <code class="docutils literal notranslate"><span class="pre">void</span></code>. We must call <code class="docutils literal notranslate"><span class="pre">super()</span></code> method first before assigning values to properties in the constructor of the derived class.</p>
-
-
-
-<h3 id="readonly"><code class="docutils literal notranslate"><span class="pre">readonly</span></code><a class="headerlink" href="#readonly" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+<section id="readonly">
+<h3 id="readonly"><code class="docutils literal notranslate"><span class="pre">readonly</span></code><a class="headerlink" href="#readonly" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">readonly</span></code> keyword makes a property as read-only in the class, type or interface. Prefix <code class="docutils literal notranslate"><span class="pre">readonly</span></code> is used to make a propery as read-only. Read-only members can be accessed outside the class, but their value cannot be changed. Since read-only members cannot be changed outside the class, they either need to be initialized at declaration or initialized inside the class constructor.</p>
 <p>The assignment to a <code class="docutils literal notranslate"><span class="pre">readonly</span></code> property can only occur in one of two places:</p>
 <ul class="simple">
@@ -390,19 +390,19 @@
 </ul>
 <p>To mark a property as immutable, you use the <code class="docutils literal notranslate"><span class="pre">readonly</span></code> keyword.</p>
 <p>Syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">class_name</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">class_name</span>
 <span class="p">{</span>
-   <span class="nx">readonly</span> <span class="nx">property_name</span>: <span class="kt">data_type</span><span class="p">;</span>
+   <span class="k">readonly</span> <span class="nx">property_name</span>: <span class="kt">data_type</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">User</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">User</span>
 <span class="p">{</span>
-    <span class="kr">constructor</span><span class="p">(</span><span class="kr">public</span> <span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">readonly</span> <span class="nx">name</span>: <span class="kt">string</span><span class="p">){}</span>
+    <span class="kr">constructor</span><span class="p">(</span><span class="k">public</span> <span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="k">readonly</span> <span class="nx">name</span>: <span class="kt">string</span><span class="p">){}</span>
 <span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="mi">98172018</span><span class="p">,</span> <span class="s1">'Mark Manson'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">User</span><span class="p">(</span><span class="mf">98172018</span><span class="p">,</span> <span class="s1">'Mark Manson'</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`User ID: </span><span class="si">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb"> Name: </span><span class="si">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -418,8 +418,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cannot</span> <span class="n">assign</span> <span class="n">to</span> <span class="s1">'name'</span> <span class="n">because</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span> <span class="nb">property</span><span class="o">.</span>
 </pre></div>
 </div>
-
-<h4 id="readonly-vs-const"><code class="docutils literal notranslate"><span class="pre">readonly</span></code> vs <code class="docutils literal notranslate"><span class="pre">const</span></code><a class="headerlink" href="#readonly-vs-const" title="Permalink to this heading">¶</a></h4>
+<section id="readonly-vs-const">
+<h4 id="readonly-vs-const"><code class="docutils literal notranslate"><span class="pre">readonly</span></code> vs <code class="docutils literal notranslate"><span class="pre">const</span></code><a class="headerlink" href="#readonly-vs-const" title="Permalink to this headline">¶</a></h4>
 <table>
 <thead>
 <tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">readonly</span></code></p></th>
@@ -435,11 +435,11 @@
 </tr>
 </tbody>
 </table>
-
-
-
-
-<h2 id="accessor">Accessor<a class="headerlink" href="#accessor" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="accessor">
+<h2 id="accessor">Accessor<a class="headerlink" href="#accessor" title="Permalink to this headline">¶</a></h2>
 <p>In TypeScript, the accessor property provides a method to access and set the class members. The greater method control over how a member is accessed on each object.</p>
 <p>It has two methods:</p>
 <ul class="simple">
@@ -455,11 +455,11 @@
 </li>
 </ul>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">User</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">User</span>
 <span class="p">{</span>
-   <span class="kr">private</span> <span class="nx">_id</span>: <span class="kt">string</span><span class="p">;</span>
-   <span class="kr">private</span> <span class="nx">_name</span>: <span class="kt">string</span><span class="p">;</span>
-   <span class="kr">private</span> <span class="nx">_department</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="k">private</span> <span class="nx">_id</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="k">private</span> <span class="nx">_name</span>: <span class="kt">string</span><span class="p">;</span>
+   <span class="k">private</span> <span class="nx">_department</span>: <span class="kt">string</span><span class="p">;</span>
 
    <span class="c1">// Getters</span>
    <span class="nx">get</span> <span class="nx">id</span><span class="p">()</span> <span class="o">:</span> <span class="kt">string</span>
@@ -495,7 +495,7 @@
 <span class="p">}</span>
 
 <span class="c1">// Create an instance of User</span>
-<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">();</span>
+<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">User</span><span class="p">();</span>
 
 <span class="c1">// Setting the user name</span>
 <span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"Mark Manson"</span><span class="p">;</span>
@@ -508,16 +508,16 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">User</span> <span class="n">Name</span><span class="p">:</span> <span class="n">Mark</span> <span class="n">Manson</span>
 </pre></div>
 </div>
-
-<h3 id="getter">getter<a class="headerlink" href="#getter" title="Permalink to this heading">¶</a></h3>
+<section id="getter">
+<h3 id="getter">getter<a class="headerlink" href="#getter" title="Permalink to this headline">¶</a></h3>
 <p>The getter accessor property is the conventional method which is used for retrieving the value of a variable. In object literal, the getter property denoted by <strong><code class="docutils literal notranslate"><span class="pre">get</span></code></strong> keyword. A getter can be a public, private, and protected. It is just artificial to make something behave like a property or a function.</p>
 <p>Syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="nx">get</span> <span class="nx">property_name() {</span><span class="p">}</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="nx">get</span> <span class="nx">property_name</span><span class="p">()</span> <span class="p">{}</span>
 </pre></div>
 </div>
-
-
-<h3 id="setter">setter<a class="headerlink" href="#setter" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="setter">
+<h3 id="setter">setter<a class="headerlink" href="#setter" title="Permalink to this headline">¶</a></h3>
 <p>The setter accessor property is the conventional method which is used for updating the value of a variable. In object literal, the setter property is denoted by <strong><code class="docutils literal notranslate"><span class="pre">set</span></code></strong> keyword.</p>
 <p>Syntax:</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="nx">set</span> <span class="nx">property_name</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
@@ -526,39 +526,39 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-
-
-
-<h2 id="static"><code class="docutils literal notranslate"><span class="pre">static</span></code><a class="headerlink" href="#static" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+<section id="static">
+<h2 id="static"><code class="docutils literal notranslate"><span class="pre">static</span></code><a class="headerlink" href="#static" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">static</span></code> keyword can be applied to the data members of a class. A static variable retains its values till the program finishes the execution. Static members are referenced by the class name. The static members of a class are accessed using the class name and dot notation, without creating an object.</p>
 <p>The static members can be defined by using the keyword <code class="docutils literal notranslate"><span class="pre">static</span></code>. The class or constructor cannot be static in TypeScript.</p>
 <p>Syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">class_name</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">class_name</span>
 <span class="p">{</span>
-   <span class="kr">static</span> <span class="nx">property_name</span>: <span class="kt">data_type</span> <span class="o">=</span> <span class="nx">data_value</span><span class="p">;</span>
+   <span class="k">static</span> <span class="nx">property_name</span>: <span class="kt">data_type</span> <span class="o">=</span> <span class="nx">data_value</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">Circle</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">Circle</span>
 <span class="p">{</span>
-   <span class="kr">static</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+   <span class="k">static</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
 
-   <span class="kr">static</span> <span class="nx">Area</span><span class="p">(</span><span class="nx">radius</span>: <span class="kt">number</span><span class="p">)</span>
+   <span class="k">static</span> <span class="nx">Area</span><span class="p">(</span><span class="nx">radius</span>: <span class="kt">number</span><span class="p">)</span>
    <span class="p">{</span>
       <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="nx">radius</span> <span class="o">*</span> <span class="nx">radius</span><span class="p">;</span>
    <span class="p">}</span>
 
    <span class="nx">Circumference</span><span class="p">(</span><span class="nx">radius</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">:</span> <span class="kt">number</span>
    <span class="p">{</span>
-      <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="nx">Circle</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="nx">radius</span><span class="p">;</span>
+      <span class="k">return</span> <span class="mf">2</span> <span class="o">*</span> <span class="nx">Circle</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="nx">radius</span><span class="p">;</span>
    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Circle</span><span class="p">.</span><span class="nx">Area</span><span class="p">(</span><span class="mi">48</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Circle</span><span class="p">.</span><span class="nx">Area</span><span class="p">(</span><span class="mf">48</span><span class="p">));</span>
 
-<span class="kd">let</span> <span class="nx">circle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Circle</span><span class="p">()</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">circle</span><span class="p">.</span><span class="nx">Circumference</span><span class="p">(</span><span class="mi">50</span><span class="p">));</span>
+<span class="kd">let</span> <span class="nx">circle</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Circle</span><span class="p">()</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">circle</span><span class="p">.</span><span class="nx">Circumference</span><span class="p">(</span><span class="mf">50</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -567,8 +567,8 @@
 </pre></div>
 </div>
 <p>In the above example, the <code class="docutils literal notranslate"><span class="pre">Circle</span></code> class includes a static method <code class="docutils literal notranslate"><span class="pre">Area</span></code> and non-static method <code class="docutils literal notranslate"><span class="pre">Circumference</span></code>. As you can see, the static field <code class="docutils literal notranslate"><span class="pre">PI</span></code> can be accessed in the static method using <code class="docutils literal notranslate"><span class="pre">this.PI</span></code> and in the non-static (instance) method using <code class="docutils literal notranslate"><span class="pre">Circle.PI</span></code>.</p>
-
-<h3 id="static-vs-const"><code class="docutils literal notranslate"><span class="pre">static</span></code> vs <code class="docutils literal notranslate"><span class="pre">const</span></code><a class="headerlink" href="#static-vs-const" title="Permalink to this heading">¶</a></h3>
+<section id="static-vs-const">
+<h3 id="static-vs-const"><code class="docutils literal notranslate"><span class="pre">static</span></code> vs <code class="docutils literal notranslate"><span class="pre">const</span></code><a class="headerlink" href="#static-vs-const" title="Permalink to this headline">¶</a></h3>
 <table>
 <thead>
 <tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">static</span></code></p></th>
@@ -584,10 +584,10 @@
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+<section id="reference">
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.tutorialsteacher.com/typescript/typescript-static">TypeScript - Static</a></p></li>
 <li><p><a class="reference external" href="https://www.javatpoint.com/typescript-accessor">TypeScript Accessor</a></p></li>
@@ -597,8 +597,8 @@
 <li><p><a class="reference external" href="https://www.tutorialsteacher.com/typescript/data-modifiers">TypeScript - Data Modifiers</a></p></li>
 <li><p><a class="reference external" href="https://www.typescripttutorial.net/typescript-tutorial/typescript-static-methods-and-properties/">TypeScript Static Methods and Properties</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -647,7 +647,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
