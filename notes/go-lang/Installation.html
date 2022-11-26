@@ -307,14 +307,14 @@ go version go1.xx.xx linux/amd64
 </section>
 <section id="upgrade-go-version">
 <h4 id="upgrade-go-version">Upgrade Go Version<a class="headerlink" href="#upgrade-go-version" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Delete the /usr/local/go
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Delete the /usr/local/go</span>
 dev@dev:~$ sudo rm -rf /usr/local/go
 
-# Download the new version
+<span class="c1"># Download the new version</span>
 dev@dev:~$ wget https://go.dev/dl/go1.xx.xx.linux-amd64.tar.gz
 
-# Extract the archive file
-dev@dev:~$ sudo tar -C /usr/local -xzf /home/smarasigan/Downloads/go1.19.3.linux-amd64.tar.gz
+<span class="c1"># Extract the archive file</span>
+dev@dev:~$ sudo tar -C /usr/local -xzf /home/dev/go1.19.3.linux-amd64.tar.gz
 </pre></div>
 </div>
 <p><strong>NOTE</strong>: Please remember to change the xx.xx to your desired version of go.</p>
