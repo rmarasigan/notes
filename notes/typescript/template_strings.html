@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="ECMA 6 – Spread Operator" href="spread_operator.html" />
@@ -250,12 +249,12 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="ecma-6-template-strings">
-<h1 id="notes-typescript-template-strings--page-root">ECMA 6 – Template Strings<a class="headerlink" href="#notes-typescript-template-strings--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-typescript-template-strings--page-root">ECMA 6 – Template Strings<a class="headerlink" href="#notes-typescript-template-strings--page-root" title="Permalink to this heading">¶</a></h1>
 <p>Template literals (template strings) are literals delimited with backtick (`), allowing for multi-line strings, for string interpolation with embedded expressions, and for special constructs called <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates">tagged templates</a>. Template strings allow you to embed code expressions within string literals.</p>
 <section id="without-template-strings">
-<h2 id="without-template-strings">Without template strings<a class="headerlink" href="#without-template-strings" title="Permalink to this headline">¶</a></h2>
+<h2 id="without-template-strings">Without template strings<a class="headerlink" href="#without-template-strings" title="Permalink to this heading">¶</a></h2>
 <section id="index-html">
-<h3 id="index-html">index.html<a class="headerlink" href="#index-html" title="Permalink to this headline">¶</a></h3>
+<h3 id="index-html">index.html<a class="headerlink" href="#index-html" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -274,16 +273,16 @@
 </div>
 </section>
 <section id="script-js">
-<h3 id="script-js">script.js<a class="headerlink" href="#script-js" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">print</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">profession</span><span class="p">,</span> <span class="nx">gender</span><span class="p">)</span>
+<h3 id="script-js">script.js<a class="headerlink" href="#script-js" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">print</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">,</span><span class="w"> </span><span class="nx">profession</span><span class="p">,</span><span class="w"> </span><span class="nx">gender</span><span class="p">)</span>
 <span class="p">{</span>
-   <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"Name: "</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
-   <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"Age: "</span> <span class="o">+</span> <span class="nx">age</span><span class="p">);</span>
-   <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"Profession: "</span> <span class="o">+</span> <span class="nx">profession</span><span class="p">);</span>
-   <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"Gender: "</span> <span class="o">+</span> <span class="nx">gender</span><span class="p">);</span>
+<span class="w">   </span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"Name: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span>
+<span class="w">   </span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"Age: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">age</span><span class="p">);</span>
+<span class="w">   </span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"Profession: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">profession</span><span class="p">);</span>
+<span class="w">   </span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"Gender: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">gender</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nx">print</span><span class="p">(</span><span class="s2">"Robert"</span><span class="p">,</span> <span class="mf">29</span><span class="p">,</span> <span class="s2">"Developer"</span><span class="p">,</span> <span class="s2">"male"</span><span class="p">);</span>
+<span class="nx">print</span><span class="p">(</span><span class="s2">"Robert"</span><span class="p">,</span><span class="w"> </span><span class="mf">29</span><span class="p">,</span><span class="w"> </span><span class="s2">"Developer"</span><span class="p">,</span><span class="w"> </span><span class="s2">"male"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -291,7 +290,7 @@
 </pre></div>
 </div>
 <p>As you can see, it doesn’t have the spaces within so it is taking a lot more work to finish that. If you want to go to the next line, you are going to add <code class="docutils literal notranslate"><span class="pre">document.write('&lt;br&gt;').</span></code></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"Name: "</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"Name: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">'&lt;br&gt;'</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -303,18 +302,18 @@
 </section>
 </section>
 <section id="with-template-strings">
-<h2 id="with-template-strings">With template strings<a class="headerlink" href="#with-template-strings" title="Permalink to this headline">¶</a></h2>
+<h2 id="with-template-strings">With template strings<a class="headerlink" href="#with-template-strings" title="Permalink to this heading">¶</a></h2>
 <section id="id1">
-<h3 id="id1">script.js<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">print</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">profession</span><span class="p">,</span> <span class="nx">gender</span><span class="p">)</span>
+<h3 id="id1">script.js<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">print</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">,</span><span class="w"> </span><span class="nx">profession</span><span class="p">,</span><span class="w"> </span><span class="nx">gender</span><span class="p">)</span>
 <span class="p">{</span>
-   <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="sb">`Name: </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"></span>
-<span class="sb">                  Age: </span><span class="si">${</span><span class="nx">age</span><span class="si">}</span><span class="sb"></span>
-<span class="sb">                  Profession: </span><span class="si">${</span><span class="nx">profession</span><span class="si">}</span><span class="sb"></span>
+<span class="w">   </span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="sb">`Name: </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span>
+<span class="sb">                  Age: </span><span class="si">${</span><span class="nx">age</span><span class="si">}</span>
+<span class="sb">                  Profession: </span><span class="si">${</span><span class="nx">profession</span><span class="si">}</span>
 <span class="sb">                  Gender: </span><span class="si">${</span><span class="nx">gender</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nx">print</span><span class="p">(</span><span class="s2">"Robert"</span><span class="p">,</span> <span class="mf">29</span><span class="p">,</span> <span class="s2">"Developer"</span><span class="p">,</span> <span class="s2">"male"</span><span class="p">);</span>
+<span class="nx">print</span><span class="p">(</span><span class="s2">"Robert"</span><span class="p">,</span><span class="w"> </span><span class="mf">29</span><span class="p">,</span><span class="w"> </span><span class="s2">"Developer"</span><span class="p">,</span><span class="w"> </span><span class="s2">"male"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -338,7 +337,7 @@
 </section>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Template literals (Template strings)</a></p></li>
 </ul>
@@ -392,7 +391,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

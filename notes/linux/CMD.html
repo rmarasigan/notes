@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Basic Server Security Checking" href="server-security.html" />
@@ -262,132 +261,132 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="linux-command-lines">
-<h1 id="notes-linux-cmd--page-root">Linux Command Lines<a class="headerlink" href="#notes-linux-cmd--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-linux-cmd--page-root">Linux Command Lines<a class="headerlink" href="#notes-linux-cmd--page-root" title="Permalink to this heading">¶</a></h1>
 <section id="kill-specific-port">
-<h2 id="kill-specific-port">Kill specific port<a class="headerlink" href="#kill-specific-port" title="Permalink to this headline">¶</a></h2>
+<h2 id="kill-specific-port">Kill specific port<a class="headerlink" href="#kill-specific-port" title="Permalink to this heading">¶</a></h2>
 <p>List any process listening to the port 8080:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ lsof -i:8080
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>lsof<span class="w"> </span>-i:8080
 </pre></div>
 </div>
 <p>Kill any process listening to the port 8080:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i:8080<span class="k">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span><span class="k">$(</span>lsof<span class="w"> </span>-t<span class="w"> </span>-i:8080<span class="k">)</span>
 </pre></div>
 </div>
 <p>Kill more violently any process listening to the port 8080:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ <span class="nb">kill</span> -9 <span class="k">$(</span>lsof -t -i:8080<span class="k">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="k">$(</span>lsof<span class="w"> </span>-t<span class="w"> </span>-i:8080<span class="k">)</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">-9</span></code> implies the process will be killed forcefully.</p>
 </section>
 <section id="curl">
-<h2 id="curl">cURL<a class="headerlink" href="#curl" title="Permalink to this headline">¶</a></h2>
+<h2 id="curl">cURL<a class="headerlink" href="#curl" title="Permalink to this heading">¶</a></h2>
 <p>It is a command line tool that helps transfer the data from the server to the client and vice-versa using many different protocols such as HTTP, HTTPS, FTP, SFTP and more.</p>
 <p>Installing cURL</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt install curl
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>curl
 </pre></div>
 </div>
 <p>To see the installed version</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl --version
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>curl<span class="w"> </span>--version
 </pre></div>
 </div>
 <section id="download-file-with-curl-command">
-<h3 id="download-file-with-curl-command">Download file with cURL command<a class="headerlink" href="#download-file-with-curl-command" title="Permalink to this headline">¶</a></h3>
+<h3 id="download-file-with-curl-command">Download file with cURL command<a class="headerlink" href="#download-file-with-curl-command" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># HTTPS</span>
-dev@dev:~$ curl https://example.com/file.extension
+dev@dev:~$<span class="w"> </span>curl<span class="w"> </span>https://example.com/file.extension
 
 <span class="c1"># FTP</span>
-dev@dev:~$ curl ftp://ftp-domain/file.tar.gz
+dev@dev:~$<span class="w"> </span>curl<span class="w"> </span>ftp://ftp-domain/file.tar.gz
 </pre></div>
 </div>
 <section id="download-file-with-output-name">
-<h4 id="download-file-with-output-name">Download file with output name<a class="headerlink" href="#download-file-with-output-name" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl https://example.com/file.extension -o file_name.extension
+<h4 id="download-file-with-output-name">Download file with output name<a class="headerlink" href="#download-file-with-output-name" title="Permalink to this heading">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>curl<span class="w"> </span>https://example.com/file.extension<span class="w"> </span>-o<span class="w"> </span>file_name.extension
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">o</span></code> or <code class="docutils literal notranslate"><span class="pre">--output</span></code> options allows you to give the downloaded file a different name.</p>
 </section>
 <section id="download-multiple-files-using-curl">
-<h4 id="download-multiple-files-using-curl">Download multiple files using cURL<a class="headerlink" href="#download-multiple-files-using-curl" title="Permalink to this headline">¶</a></h4>
+<h4 id="download-multiple-files-using-curl">Download multiple files using cURL<a class="headerlink" href="#download-multiple-files-using-curl" title="Permalink to this heading">¶</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">-O</span></code> will save the file with the name of the default website</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl -O https://example.com/file1.extenstion <span class="se">\</span>
-   -O https://example.com/file2.extenstion
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>curl<span class="w"> </span>-O<span class="w"> </span>https://example.com/file1.extenstion<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-O<span class="w"> </span>https://example.com/file2.extenstion
 </pre></div>
 </div>
 <p>You can use the bash for loop too:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">## Define bash shell variable</span>
-<span class="nv">files</span> <span class="o">=</span> <span class="s2">"https://example.com/file1.extension https://example.com/file2.extenstion"</span>
+<span class="nv">files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://example.com/file1.extension https://example.com/file2.extenstion"</span>
 
-<span class="k">for</span> file <span class="k">in</span> <span class="nv">$files</span>
+<span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$files</span>
 <span class="k">do</span>
-   curl -O <span class="s2">"</span><span class="nv">$u</span><span class="s2">"</span>
+<span class="w">   </span>curl<span class="w"> </span>-O<span class="w"> </span><span class="s2">"</span><span class="nv">$u</span><span class="s2">"</span>
 <span class="k">done</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="getting-http-headers-information">
-<h3 id="getting-http-headers-information">Getting HTTP headers information<a class="headerlink" href="#getting-http-headers-information" title="Permalink to this headline">¶</a></h3>
+<h3 id="getting-http-headers-information">Getting HTTP headers information<a class="headerlink" href="#getting-http-headers-information" title="Permalink to this heading">¶</a></h3>
 <p>Fetch HTTP headers without downloading the data or actual files.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl -I https://example.com/file.extension
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>curl<span class="w"> </span>-I<span class="w"> </span>https://example.com/file.extension
 </pre></div>
 </div>
 </section>
 <section id="http-get-and-post-request">
-<h3 id="http-get-and-post-request">HTTP GET and POST Request<a class="headerlink" href="#http-get-and-post-request" title="Permalink to this headline">¶</a></h3>
+<h3 id="http-get-and-post-request">HTTP GET and POST Request<a class="headerlink" href="#http-get-and-post-request" title="Permalink to this heading">¶</a></h3>
 <section id="get-the-body-of-the-response">
-<h4 id="get-the-body-of-the-response">Get the body of the response<a class="headerlink" href="#get-the-body-of-the-response" title="Permalink to this headline">¶</a></h4>
+<h4 id="get-the-body-of-the-response">Get the body of the response<a class="headerlink" href="#get-the-body-of-the-response" title="Permalink to this heading">¶</a></h4>
 <p>By default, <code class="docutils literal notranslate"><span class="pre">GET</span></code> is used.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl https://example.com/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>curl<span class="w"> </span>https://example.com/
 </pre></div>
 </div>
 </section>
 <section id="sending-additional-fields-with-a-post-request">
-<h4 id="sending-additional-fields-with-a-post-request">Sending additional fields with a POST request<a class="headerlink" href="#sending-additional-fields-with-a-post-request" title="Permalink to this headline">¶</a></h4>
+<h4 id="sending-additional-fields-with-a-post-request">Sending additional fields with a POST request<a class="headerlink" href="#sending-additional-fields-with-a-post-request" title="Permalink to this heading">¶</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">-d</span></code> send data with the POST request</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-X</span></code> specifies a custom request method to use</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl -d <span class="s2">"key1=value1&amp;key2=value2"</span> -X POST https://example.com/login
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>curl<span class="w"> </span>-d<span class="w"> </span><span class="s2">"key1=value1&amp;key2=value2"</span><span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://example.com/login
 </pre></div>
 </div>
 </section>
 <section id="specifying-content-type-in-post-request">
-<h4 id="specifying-content-type-in-post-request">Specifying <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> in POST request<a class="headerlink" href="#specifying-content-type-in-post-request" title="Permalink to this headline">¶</a></h4>
+<h4 id="specifying-content-type-in-post-request">Specifying <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> in POST request<a class="headerlink" href="#specifying-content-type-in-post-request" title="Permalink to this heading">¶</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">-d</span></code> sending data as a JSON object</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-H</span></code> is used to send a specific data type or header</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl -d <span class="s1">'{"key1": "value1", "key2": "value2"}'</span> -H <span class="s1">'Content-Type: application/json'</span> https://example.com/login
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>curl<span class="w"> </span>-d<span class="w"> </span><span class="s1">'{"key1": "value1", "key2": "value2"}'</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span>https://example.com/login
 </pre></div>
 </div>
 </section>
 </section>
 </section>
 <section id="clear-or-flush-dns-cache">
-<h2 id="clear-or-flush-dns-cache">Clear or flush DNS cache<a class="headerlink" href="#clear-or-flush-dns-cache" title="Permalink to this headline">¶</a></h2>
+<h2 id="clear-or-flush-dns-cache">Clear or flush DNS cache<a class="headerlink" href="#clear-or-flush-dns-cache" title="Permalink to this heading">¶</a></h2>
 <p>Find out whether the service is running:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo systemctl is-active systemd-resolved.service
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>is-active<span class="w"> </span>systemd-resolved.service
 </pre></div>
 </div>
 <p>Clear the systemd resolved DNS cache:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo systemd-resolve --flush-caches
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>systemd-resolve<span class="w"> </span>--flush-caches
 </pre></div>
 </div>
 <p>Check statistics for the DNS cache:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo systemd-resolve --statistics
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>systemd-resolve<span class="w"> </span>--statistics
 Transactions
-Current Transactions: <span class="m">0</span>
-   Total Transactions: <span class="m">988</span>
+Current<span class="w"> </span>Transactions:<span class="w"> </span><span class="m">0</span>
+<span class="w">   </span>Total<span class="w"> </span>Transactions:<span class="w"> </span><span class="m">988</span>
 Cache
-   Current Cache Size: <span class="m">59</span>
-      Cache Hits: <span class="m">419</span>
-         Cache Misses: <span class="m">335</span>
+<span class="w">   </span>Current<span class="w"> </span>Cache<span class="w"> </span>Size:<span class="w"> </span><span class="m">59</span>
+<span class="w">      </span>Cache<span class="w"> </span>Hits:<span class="w"> </span><span class="m">419</span>
+<span class="w">         </span>Cache<span class="w"> </span>Misses:<span class="w"> </span><span class="m">335</span>
 
-DNSSEC Verdicts
-   Secure: <span class="m">0</span>
-   Insecure: <span class="m">0</span>
-      Bogus: <span class="m">0</span>
-   Indeterminate: <span class="m">0</span>
+DNSSEC<span class="w"> </span>Verdicts
+<span class="w">   </span>Secure:<span class="w"> </span><span class="m">0</span>
+<span class="w">   </span>Insecure:<span class="w"> </span><span class="m">0</span>
+<span class="w">      </span>Bogus:<span class="w"> </span><span class="m">0</span>
+<span class="w">   </span>Indeterminate:<span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
 <p>The important here is the <strong>Current Cache Size</strong>, we’re going to <strong>reset that to 0</strong> by flushing the cache.</p>
@@ -441,7 +440,7 @@ DNSSEC Verdicts
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Terraform" href="introduction.html" />
@@ -248,20 +247,20 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="what-is-infrastructure-as-code">
-<h1 id="notes-terraform-iac--page-root">What is Infrastructure as Code?<a class="headerlink" href="#notes-terraform-iac--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-terraform-iac--page-root">What is Infrastructure as Code?<a class="headerlink" href="#notes-terraform-iac--page-root" title="Permalink to this heading">¶</a></h1>
 <p>Infrastructure as Code (IaC) can be defined as managing and provisioning of infrastructure through code instead of through manual processes like provisioning resources through AWS, GCP console, etc. This allows you to automatically provision and patch new resources, which saves time and leads to fewer configuration mistakes. IaC tools use either a declarative or imperative programming language to execute configuration scripts.</p>
 <section id="imperative">
-<h2 id="imperative">Imperative<a class="headerlink" href="#imperative" title="Permalink to this headline">¶</a></h2>
+<h2 id="imperative">Imperative<a class="headerlink" href="#imperative" title="Permalink to this heading">¶</a></h2>
 <p>With this approach, we define our desired configuration as a sequence of commands executed in a certain order. You tell your IaC tool how to create each environment using a sequence of command imperatives. <a class="reference external" href="https://www.chef.io/">Chef</a> is a popular imperative IaC tool, and both Ansible and Salt have some support for imperative programming as well.</p>
 <p>Example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ aws s3api create-bucket --bucket <span class="s2">"bucket-name"</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>aws<span class="w"> </span>s3api<span class="w"> </span>create-bucket<span class="w"> </span>--bucket<span class="w"> </span><span class="s2">"bucket-name"</span>
 </pre></div>
 </div>
 <p>Imperative infrastructures call for an understanding of both the programming language being used and the target system’s business logic. It focuses on how you want your infrastructure to be created with scripts that are typically written in languages like Ruby or Ptyhon. Imperative Infrastructure as Code is a style of coding the infrastructure that focuses on giving a list of instructions for completing a task.</p>
 <p>Imperative Infrastructure as Code focuses on describing what you need your infrastructure to do. You write code that specifies how virtual machines should be set up and what instances should be created for your application. It also includes modifying these scripts to accommodate changing needs and altering the configuration of the system.</p>
 </section>
 <section id="declarative">
-<h2 id="declarative">Declarative<a class="headerlink" href="#declarative" title="Permalink to this headline">¶</a></h2>
+<h2 id="declarative">Declarative<a class="headerlink" href="#declarative" title="Permalink to this heading">¶</a></h2>
 <p>A declarative approach defines the system’s desired state, including what resources you need and any properties they should have. A declarative approach also keeps a list of the current state of your system objects, which makes taking down the infrastructure simpler to manage.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S3Bucket</span><span class="p">:</span>
@@ -274,7 +273,7 @@
 <p>This is a powerful way to ensure that your desired configuration is maintained across all parts of your system. It also makes it easy to manage changes and deployments. Declarative Infrastructure as Code is all about making your infrastructure more reliable, faster, and cheaper. Thant means that you’ll spen less time on day-to-day operations and more time innovating. You’ll be able to do this by automating the entire software delivery pipeline for your applications.</p>
 </section>
 <section id="benefits-of-infrastructure-as-code-iac">
-<h2 id="benefits-of-infrastructure-as-code-iac">Benefits of Infrastructure-as-Code (IaC)<a class="headerlink" href="#benefits-of-infrastructure-as-code-iac" title="Permalink to this headline">¶</a></h2>
+<h2 id="benefits-of-infrastructure-as-code-iac">Benefits of Infrastructure-as-Code (IaC)<a class="headerlink" href="#benefits-of-infrastructure-as-code-iac" title="Permalink to this heading">¶</a></h2>
 <p>Instead of manually configuring cloud nodes or physical hardware, IaC automates the process infrastructure management through source code. Here are several of the major key benefits of using an IaC solution like Terraform.</p>
 <ul class="simple">
 <li><p><strong>Consistency</strong></p>
@@ -317,7 +316,7 @@
 </section>
 </section>
 <section id="infrastructure-as-code-with-terraform">
-<h1 id="infrastructure-as-code-with-terraform">Infrastructure as Code with Terraform<a class="headerlink" href="#infrastructure-as-code-with-terraform" title="Permalink to this headline">¶</a></h1>
+<h1 id="infrastructure-as-code-with-terraform">Infrastructure as Code with Terraform<a class="headerlink" href="#infrastructure-as-code-with-terraform" title="Permalink to this heading">¶</a></h1>
 <p>Infrastructure as Code (IaC) tools allow you to manage infrastructure with configuration files rather than through a graphical user interface. IaC allows you to build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share. Terraform uses <strong>HashiCorp Language (HCL)</strong> as its language to define a resource regardless of the provider being used.</p>
 <ul class="simple">
 <li><p>Terraform can manage infrastructure on multiple cloud platforms</p></li>
@@ -326,7 +325,7 @@
 <li><p>You can commit your configurations to version control to safely collaborate on infrastructure</p></li>
 </ul>
 <section id="standardize-your-deployment-workflow">
-<h2 id="standardize-your-deployment-workflow">Standardize your deployment workflow<a class="headerlink" href="#standardize-your-deployment-workflow" title="Permalink to this headline">¶</a></h2>
+<h2 id="standardize-your-deployment-workflow">Standardize your deployment workflow<a class="headerlink" href="#standardize-your-deployment-workflow" title="Permalink to this heading">¶</a></h2>
 <p><strong>Providers</strong> define individual units of infrastructure, for example, compute instances or private networks, as resources. You can compose resources from different providers into reusable Terraform configurations called <strong>modules</strong>, and manage them with a consistent language and workflow.</p>
 <p>Terraform’s configuration language is <em>declarative</em>, meaning that it describes the desired end-state for your infrastructure, in contrast to procedural programming languages  that require step-by-step instructions to perform tasks. Terraform automatically calculate dependencies between resources to create or destroy them in the correct order.</p>
 <p><img alt="terraform-iac" src="../../_images/terraform-iac.png"/></p>
@@ -340,7 +339,7 @@
 </ul>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac">What is Infrastructure as Code (IaC)?</a></p></li>
 <li><p><a class="reference external" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">What is Infrastructure as Code with Terraform?</a></p></li>
@@ -398,7 +397,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

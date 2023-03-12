@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Producing Documentation with Sphinx" href="../github/DocumentationSphinx.html" />
@@ -246,26 +245,26 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="setup-centralized-ssh-logging-with-rsyslog">
-<h1 id="notes-linux-setup-ssh-client-server-rsyslog--page-root">Setup centralized SSH logging with RSyslog<a class="headerlink" href="#notes-linux-setup-ssh-client-server-rsyslog--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-linux-setup-ssh-client-server-rsyslog--page-root">Setup centralized SSH logging with RSyslog<a class="headerlink" href="#notes-linux-setup-ssh-client-server-rsyslog--page-root" title="Permalink to this heading">¶</a></h1>
 <section id="install-rsyslog">
-<h2 id="install-rsyslog">Install RSyslog<a class="headerlink" href="#install-rsyslog" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
-dev@dev:~$ sudo apt install rsyslog
+<h2 id="install-rsyslog">Install RSyslog<a class="headerlink" href="#install-rsyslog" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>rsyslog
 </pre></div>
 </div>
 <p>Once the <strong>rsyslog</strong> is installed, you need to start the service, enable it to auto-start at boot and check its status.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo systemctl start rsyslog
-dev@dev:~$ sudo systemctl <span class="nb">enable</span> rsyslog
-dev@dev:~$ sudo systemctl status rsyslog
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>rsyslog
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>rsyslog
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>rsyslog
 </pre></div>
 </div>
 </section>
 <section id="ssh-logs">
-<h2 id="ssh-logs">SSH Logs<a class="headerlink" href="#ssh-logs" title="Permalink to this headline">¶</a></h2>
+<h2 id="ssh-logs">SSH Logs<a class="headerlink" href="#ssh-logs" title="Permalink to this heading">¶</a></h2>
 <section id="remote-server-client-rsyslog-configuration">
-<h3 id="remote-server-client-rsyslog-configuration">Remote Server Client RSyslog configuration<a class="headerlink" href="#remote-server-client-rsyslog-configuration" title="Permalink to this headline">¶</a></h3>
+<h3 id="remote-server-client-rsyslog-configuration">Remote Server Client RSyslog configuration<a class="headerlink" href="#remote-server-client-rsyslog-configuration" title="Permalink to this heading">¶</a></h3>
 <p>Open the main configuration file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo vim /etc/rsyslog.conf
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/rsyslog.conf
 </pre></div>
 </div>
 <p>Add it at the end of the file:</p>
@@ -274,29 +273,29 @@ dev@dev:~$ sudo systemctl status rsyslog
 <span class="c1"># *.* @@remote-host:514                 all messages sent to remote-host via TCP</span>
 <span class="c1"># *.priority @remote-host               with low prirotiy or higher priority will be sent via UDP</span>
 <span class="c1"># Logs all the auth forwarding rule</span>
-auth,auth.*     @@xxx.xxx.xxx.xxx:514
+auth,auth.*<span class="w">     </span>@@xxx.xxx.xxx.xxx:514
 <span class="c1">### END OF FORWARDING RULE ####</span>
 
 <span class="c1"># Define Disk Queue Buffer in case the server goes down</span>
-<span class="nv">$ActionQueueFileName</span> queue      <span class="c1"># define a file name for disk assistance.</span>
-<span class="nv">$ActionQueueMaxDiskSpace</span> 1g     <span class="c1"># The maximum size that all queue files together will use on disk.</span>
-<span class="nv">$ActionQueueSaveOnShutdown</span> on   <span class="c1"># specifies that data should be saved at shutdown</span>
-<span class="nv">$ActionQueueType</span> LinkedList     <span class="c1"># holds enqueued messages in memory which makes the process very fast. </span>
-<span class="nv">$ActionResumeRetryCount</span> -1      <span class="c1"># prevents rsyslog from dropping messages when retrying to connect if server is not responding</span>
+<span class="nv">$ActionQueueFileName</span><span class="w"> </span>queue<span class="w">      </span><span class="c1"># define a file name for disk assistance.</span>
+<span class="nv">$ActionQueueMaxDiskSpace</span><span class="w"> </span>1g<span class="w">     </span><span class="c1"># The maximum size that all queue files together will use on disk.</span>
+<span class="nv">$ActionQueueSaveOnShutdown</span><span class="w"> </span>on<span class="w">   </span><span class="c1"># specifies that data should be saved at shutdown</span>
+<span class="nv">$ActionQueueType</span><span class="w"> </span>LinkedList<span class="w">     </span><span class="c1"># holds enqueued messages in memory which makes the process very fast. </span>
+<span class="nv">$ActionResumeRetryCount</span><span class="w"> </span>-1<span class="w">      </span><span class="c1"># prevents rsyslog from dropping messages when retrying to connect if server is not responding</span>
 </pre></div>
 </div>
 <p>Save the configuration, check the rsyslog configuration for any syntax error and restart the rsyslog service:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ rsyslogd -f /etc/rsyslog.d/remotehost.conf -N1
-rsyslogd: version <span class="m">8</span>.32.0, config validation run <span class="o">(</span>level <span class="m">1</span><span class="o">)</span>, master config /etc/rsyslog.conf
-rsyslogd: End of config validation run. Bye.
-dev@dev:~$ sudo systemctl restart syslog.socket rsyslog.service
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>rsyslogd<span class="w"> </span>-f<span class="w"> </span>/etc/rsyslog.d/remotehost.conf<span class="w"> </span>-N1
+rsyslogd:<span class="w"> </span>version<span class="w"> </span><span class="m">8</span>.32.0,<span class="w"> </span>config<span class="w"> </span>validation<span class="w"> </span>run<span class="w"> </span><span class="o">(</span>level<span class="w"> </span><span class="m">1</span><span class="o">)</span>,<span class="w"> </span>master<span class="w"> </span>config<span class="w"> </span>/etc/rsyslog.conf
+rsyslogd:<span class="w"> </span>End<span class="w"> </span>of<span class="w"> </span>config<span class="w"> </span>validation<span class="w"> </span>run.<span class="w"> </span>Bye.
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>syslog.socket<span class="w"> </span>rsyslog.service
 </pre></div>
 </div>
 </section>
 <section id="remote-logging-server-rsyslog-configuration">
-<h3 id="remote-logging-server-rsyslog-configuration">Remote logging Server RSyslog configuration<a class="headerlink" href="#remote-logging-server-rsyslog-configuration" title="Permalink to this headline">¶</a></h3>
+<h3 id="remote-logging-server-rsyslog-configuration">Remote logging Server RSyslog configuration<a class="headerlink" href="#remote-logging-server-rsyslog-configuration" title="Permalink to this heading">¶</a></h3>
 <p>Create a new file named, <strong><code class="docutils literal notranslate"><span class="pre">remote_host.conf</span></code></strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo vim /etc/rsyslog.d/remote_host.conf
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/rsyslog.d/remote_host.conf
 </pre></div>
 </div>
 <p>Add it to the said file:</p>
@@ -307,11 +306,11 @@ dev@dev:~$ sudo systemctl restart syslog.socket rsyslog.service
 
 <span class="c1"># Provides UDP syslog reception</span>
 module<span class="o">(</span><span class="nv">load</span><span class="o">=</span><span class="s2">"imudp"</span><span class="o">)</span>
-input<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">"imudp"</span> <span class="nv">port</span><span class="o">=</span><span class="s2">"514"</span><span class="o">)</span>
+input<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">"imudp"</span><span class="w"> </span><span class="nv">port</span><span class="o">=</span><span class="s2">"514"</span><span class="o">)</span>
 
 <span class="c1"># Provides TCP syslog reception</span>
 module<span class="o">(</span><span class="nv">load</span><span class="o">=</span><span class="s2">"imtcp"</span><span class="o">)</span>
-input<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">"imtcp"</span> <span class="nv">port</span><span class="o">=</span><span class="s2">"514"</span><span class="o">)</span>
+input<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">"imtcp"</span><span class="w"> </span><span class="nv">port</span><span class="o">=</span><span class="s2">"514"</span><span class="o">)</span>
 
 <span class="c1">###########################</span>
 <span class="c1">#### GLOBAL DIRECTIVES ####</span>
@@ -320,7 +319,7 @@ input<span class="o">(</span><span class="nv">type</span><span class="o">=</span
 <span class="c1"># $AllowedSender [UDP/TCP], ip[/bits], ip[/bits]</span>
 <span class="c1"># $AllowedSender TCP, xxx.xxx.xxx.xxx/22, 10.0.0.0/8</span>
 <span class="c1"># $AllowedSender UDP, xxx.xxx.xxx.xxx/22, 10.0.0.0/8</span>
-<span class="nv">$AllowedSender</span> TCP, xxx.xxx.xxx.xxx
+<span class="nv">$AllowedSender</span><span class="w"> </span>TCP,<span class="w"> </span>xxx.xxx.xxx.xxx
 
 
 <span class="c1">######################################################</span>
@@ -336,39 +335,39 @@ input<span class="o">(</span><span class="nv">type</span><span class="o">=</span
 <span class="c1"># droplastlf: drop a trailing LF, if it is present</span>
 <span class="c1"># spifno1stsp:  expert options for RFC3164 template processing</span>
 <span class="c1"># STANDARD TEMPLATE FOR WRITING TO FILES</span>
-template<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"log_path"</span> <span class="nv">type</span><span class="o">=</span><span class="s2">"list"</span><span class="o">)</span> <span class="o">{</span>
-        constant<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="s2">"/var/log/ssh_log/"</span><span class="o">)</span>
-        property<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"fromhost-ip"</span><span class="o">)</span>
-        constant<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="s2">"_"</span><span class="o">)</span>
-        property<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"timereported"</span><span class="o">)</span>
-        constant<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="s2">".log"</span><span class="o">)</span>
+template<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"log_path"</span><span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">"list"</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>constant<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="s2">"/var/log/ssh_log/"</span><span class="o">)</span>
+<span class="w">        </span>property<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"fromhost-ip"</span><span class="o">)</span>
+<span class="w">        </span>constant<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="s2">"_"</span><span class="o">)</span>
+<span class="w">        </span>property<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"timereported"</span><span class="o">)</span>
+<span class="w">        </span>constant<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="s2">".log"</span><span class="o">)</span>
 
 <span class="o">}</span>
 
-template<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"server_client"</span> <span class="nv">type</span><span class="o">=</span><span class="s2">"list"</span><span class="o">)</span> <span class="o">{</span>
-        property<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"timestamp"</span> <span class="nv">dateformat</span><span class="o">=</span><span class="s2">"rfc3339"</span><span class="o">)</span>
-        constant<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="s2">" "</span><span class="o">)</span>
-        property<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"hostname"</span><span class="o">)</span>
-        constant<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="s2">" "</span><span class="o">)</span>
-        property<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"syslogtag"</span><span class="o">)</span>
-        constant<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="s2">" "</span><span class="o">)</span>
-        property<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"msg"</span> <span class="nv">spifno1stsp</span><span class="o">=</span><span class="s2">"on"</span><span class="o">)</span>
-        property<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"msg"</span> <span class="nv">droplastlf</span><span class="o">=</span><span class="s2">"on"</span><span class="o">)</span>
-        constant<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="s2">"\n"</span><span class="o">)</span>
+template<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"server_client"</span><span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">"list"</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>property<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"timestamp"</span><span class="w"> </span><span class="nv">dateformat</span><span class="o">=</span><span class="s2">"rfc3339"</span><span class="o">)</span>
+<span class="w">        </span>constant<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="s2">" "</span><span class="o">)</span>
+<span class="w">        </span>property<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"hostname"</span><span class="o">)</span>
+<span class="w">        </span>constant<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="s2">" "</span><span class="o">)</span>
+<span class="w">        </span>property<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"syslogtag"</span><span class="o">)</span>
+<span class="w">        </span>constant<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="s2">" "</span><span class="o">)</span>
+<span class="w">        </span>property<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"msg"</span><span class="w"> </span><span class="nv">spifno1stsp</span><span class="o">=</span><span class="s2">"on"</span><span class="o">)</span>
+<span class="w">        </span>property<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s2">"msg"</span><span class="w"> </span><span class="nv">droplastlf</span><span class="o">=</span><span class="s2">"on"</span><span class="o">)</span>
+<span class="w">        </span>constant<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="s2">"\n"</span><span class="o">)</span>
 
 <span class="o">}</span>
 
 <span class="c1"># Make sure nothing interferes with the following definitions</span>
-<span class="nv">$umask</span> <span class="m">0000</span>
+<span class="nv">$umask</span><span class="w"> </span><span class="m">0000</span>
 
-<span class="k">if</span> <span class="nv">$programname</span> contains <span class="s2">"sshd"</span> <span class="k">then</span> <span class="o">{</span>
-	<span class="k">if</span> prifilt<span class="o">(</span><span class="s2">"auth,authpriv.*"</span><span class="o">)</span> <span class="k">then</span> <span class="o">{</span>
-                <span class="c1"># Write to file</span>
-                action<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">"omfile"</span> <span class="nv">dynaFile</span><span class="o">=</span><span class="s2">"logPath"</span> <span class="nv">template</span><span class="o">=</span><span class="s2">"serverClient"</span> <span class="nv">FileCreateMode</span><span class="o">=</span><span class="s2">"0666"</span> <span class="nv">DirCreateMode</span><span class="o">=</span><span class="s2">"0777"</span><span class="o">)</span>
+<span class="k">if</span><span class="w"> </span><span class="nv">$programname</span><span class="w"> </span>contains<span class="w"> </span><span class="s2">"sshd"</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="o">{</span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span>prifilt<span class="o">(</span><span class="s2">"auth,authpriv.*"</span><span class="o">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="c1"># Write to file</span>
+<span class="w">                </span>action<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">"omfile"</span><span class="w"> </span><span class="nv">dynaFile</span><span class="o">=</span><span class="s2">"logPath"</span><span class="w"> </span><span class="nv">template</span><span class="o">=</span><span class="s2">"serverClient"</span><span class="w"> </span><span class="nv">FileCreateMode</span><span class="o">=</span><span class="s2">"0666"</span><span class="w"> </span><span class="nv">DirCreateMode</span><span class="o">=</span><span class="s2">"0777"</span><span class="o">)</span>
 
-                <span class="c1"># Stop directive is required to stop processing this messages, otherwise they will get to common system syslog</span>
-                stop
-        <span class="o">}</span>
+<span class="w">                </span><span class="c1"># Stop directive is required to stop processing this messages, otherwise they will get to common system syslog</span>
+<span class="w">                </span>stop
+<span class="w">        </span><span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
 </div>
@@ -379,16 +378,16 @@ template<span class="o">(</span><span class="nv">name</span><span class="o">=</s
 </div>
 <p>This sample removes all restrictions.</p>
 <p>Save the configuration, check the rsyslog configuration for any syntax error and restart the rsyslog service:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ rsyslogd -f /etc/rsyslog.d/remotehost.conf -N1
-rsyslogd: version <span class="m">8</span>.32.0, config validation run <span class="o">(</span>level <span class="m">1</span><span class="o">)</span>, master config /etc/rsyslog.conf
-rsyslogd: End of config validation run. Bye.
-dev@dev:~$ sudo systemctl restart syslog.socket rsyslog.service
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>rsyslogd<span class="w"> </span>-f<span class="w"> </span>/etc/rsyslog.d/remotehost.conf<span class="w"> </span>-N1
+rsyslogd:<span class="w"> </span>version<span class="w"> </span><span class="m">8</span>.32.0,<span class="w"> </span>config<span class="w"> </span>validation<span class="w"> </span>run<span class="w"> </span><span class="o">(</span>level<span class="w"> </span><span class="m">1</span><span class="o">)</span>,<span class="w"> </span>master<span class="w"> </span>config<span class="w"> </span>/etc/rsyslog.conf
+rsyslogd:<span class="w"> </span>End<span class="w"> </span>of<span class="w"> </span>config<span class="w"> </span>validation<span class="w"> </span>run.<span class="w"> </span>Bye.
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>syslog.socket<span class="w"> </span>rsyslog.service
 </pre></div>
 </div>
 </section>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.rsyslog.com/doc/master/configuration/index.html">RSyslog Configuration Documentation</a></p></li>
 </ul>
@@ -442,7 +441,7 @@ dev@dev:~$ sudo systemctl restart syslog.socket rsyslog.service
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

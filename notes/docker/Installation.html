@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Getting Started" href="GettingStarted.html" />
@@ -244,9 +243,9 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="installation">
-<h1 id="notes-docker-installation--page-root">Installation<a class="headerlink" href="#notes-docker-installation--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-docker-installation--page-root">Installation<a class="headerlink" href="#notes-docker-installation--page-root" title="Permalink to this heading">¶</a></h1>
 <section id="docker-on-ubuntu">
-<h2 id="docker-on-ubuntu"><strong>Docker on Ubuntu</strong><a class="headerlink" href="#docker-on-ubuntu" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-on-ubuntu"><strong>Docker on Ubuntu</strong><a class="headerlink" href="#docker-on-ubuntu" title="Permalink to this heading">¶</a></h2>
 <p><strong>OS requirements</strong></p>
 <p>You need the 64-bit version of one of these Ubuntu versions and minimum of 8GB RAM</p>
 <ul class="simple">
@@ -296,7 +295,7 @@ dev@dev-PC:~$ sudo apt install \
 </ul>
 </section>
 <section id="run-as-rootless">
-<h2 id="run-as-rootless"><strong>Run as ROOTLESS</strong><a class="headerlink" href="#run-as-rootless" title="Permalink to this headline">¶</a></h2>
+<h2 id="run-as-rootless"><strong>Run as ROOTLESS</strong><a class="headerlink" href="#run-as-rootless" title="Permalink to this heading">¶</a></h2>
 <p><strong>Check if the group exist</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ grep "docker" /etc/group
 </pre></div>
@@ -317,7 +316,7 @@ dev@dev:~$ newgrp docker
 </ul>
 </section>
 <section id="docker-compose-on-ubuntu">
-<h2 id="docker-compose-on-ubuntu"><strong>Docker Compose on Ubuntu</strong><a class="headerlink" href="#docker-compose-on-ubuntu" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-compose-on-ubuntu"><strong>Docker Compose on Ubuntu</strong><a class="headerlink" href="#docker-compose-on-ubuntu" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Run this command to download the current stable release of Docker Compose</p></li>
 </ol>
@@ -343,7 +342,7 @@ dev@dev:~$ newgrp docker
 </ul>
 </section>
 <section id="docker-on-mac">
-<h2 id="docker-on-mac"><strong>Docker on MAC</strong><a class="headerlink" href="#docker-on-mac" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-on-mac"><strong>Docker on MAC</strong><a class="headerlink" href="#docker-on-mac" title="Permalink to this heading">¶</a></h2>
 <p><strong>Installation Guide</strong></p>
 <ol class="arabic simple">
 <li><p>Sign up for a <a class="reference external" href="https://www.docker.com/">Docker Hub Account</a> and click on <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">Started</span></code> and find <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">for</span> <span class="pre">Mac</span></code>.</p></li>
@@ -356,24 +355,24 @@ dev@dev:~$ newgrp docker
 </div>
 </section>
 <section id="minikube-installation">
-<h2 id="minikube-installation">Minikube Installation<a class="headerlink" href="#minikube-installation" title="Permalink to this headline">¶</a></h2>
+<h2 id="minikube-installation">Minikube Installation<a class="headerlink" href="#minikube-installation" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Update the packages and make sure to install (or check whether you already have) <code class="docutils literal notranslate"><span class="pre">curl</span></code> before running the second command.</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt-get update -y
-dev@dev:~$ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span>-y
+dev@dev:~$<span class="w"> </span>curl<span class="w"> </span>-LO<span class="w"> </span>https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Install minikube</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo install minikube-linux-amd64 /usr/local/bin/minikube
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>install<span class="w"> </span>minikube-linux-amd64<span class="w"> </span>/usr/local/bin/minikube
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Check minikube status</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ minikube status
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>minikube<span class="w"> </span>status
 </pre></div>
 </div>
 </section>
@@ -426,7 +425,7 @@ dev@dev:~$ curl -LO https://storage.googleapis.com/minikube/releases/latest/mini
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

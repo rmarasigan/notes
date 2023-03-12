@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Transmission Control Protocol (TCP)" href="TCP.html" />
@@ -244,14 +243,14 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="internet-protocol-ip">
-<h1 id="notes-networks-ip--page-root">Internet Protocol (IP)<a class="headerlink" href="#notes-networks-ip--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-networks-ip--page-root">Internet Protocol (IP)<a class="headerlink" href="#notes-networks-ip--page-root" title="Permalink to this heading">¶</a></h1>
 <section id="what-is-ip">
-<h2 id="what-is-ip">What is IP?<a class="headerlink" href="#what-is-ip" title="Permalink to this headline">¶</a></h2>
+<h2 id="what-is-ip">What is IP?<a class="headerlink" href="#what-is-ip" title="Permalink to this heading">¶</a></h2>
 <p>It is a method for sending data from one device to another across the internt. Every device has an IP address that uniquely identifies it and enables it to communicate with and exchange data with other devices connected to the internet.</p>
 <p>IP is the main protocol within the internet layer of the TCP/IP. Its main purpose is to deliver data packets between the source application or device and the destination using methods and structures that place tags, such as address information, within data packets.</p>
 </section>
 <section id="how-does-an-ip-network-work">
-<h2 id="how-does-an-ip-network-work">How does an IP Network work?<a class="headerlink" href="#how-does-an-ip-network-work" title="Permalink to this headline">¶</a></h2>
+<h2 id="how-does-an-ip-network-work">How does an IP Network work?<a class="headerlink" href="#how-does-an-ip-network-work" title="Permalink to this heading">¶</a></h2>
 <p>The way Internet Protocol works is that information is transmitted over the network in discrete chunks called <em>packets</em>; each packet is mostly made up of whatever data the sender is trying to communicate, but also includes a <em>header</em>, consisting of metadata about the packet.</p>
 <p>Three types of IP addresses used in a network:</p>
 <ul class="simple">
@@ -261,18 +260,18 @@
 </ul>
 </section>
 <section id="difference-between-static-vs-dynamic-ip-addresses">
-<h2 id="difference-between-static-vs-dynamic-ip-addresses">Difference between Static vs. Dynamic IP addresses<a class="headerlink" href="#difference-between-static-vs-dynamic-ip-addresses" title="Permalink to this headline">¶</a></h2>
+<h2 id="difference-between-static-vs-dynamic-ip-addresses">Difference between Static vs. Dynamic IP addresses<a class="headerlink" href="#difference-between-static-vs-dynamic-ip-addresses" title="Permalink to this heading">¶</a></h2>
 <p><strong>Static IP address</strong> is one that’s been assigned by an ISP to a device and is guaranteed to remain constant. If your computer’s address is 45.48.241.198, it will stay that way as long as you want it to. Static IP addresses are important for devices that need to be easily found on the internet, like web servers or gaming servers.</p>
 <p><strong>Dynamic IP address</strong> is basically handing out a new address to a device every time it connects to the network, and putting that address back into a pool of available addresses when the device disconnects. This technique helps conserve IP addresses.</p>
 <a class="reference internal image-reference" href="https://whatismyipaddress.com/wp-content/uploads/diagram.png"><img alt="dynamic_static_ip" src="https://whatismyipaddress.com/wp-content/uploads/diagram.png" style="width: 500px;"/></a>
 </section>
 <section id="public-ip-address-vs-private-ip-address">
-<h2 id="public-ip-address-vs-private-ip-address">Public IP Address vs. Private IP Address<a class="headerlink" href="#public-ip-address-vs-private-ip-address" title="Permalink to this headline">¶</a></h2>
+<h2 id="public-ip-address-vs-private-ip-address">Public IP Address vs. Private IP Address<a class="headerlink" href="#public-ip-address-vs-private-ip-address" title="Permalink to this heading">¶</a></h2>
 <p>A <strong>public IP address</strong> is the outward-facing (public-facing) IP address assigned to your router by your Internet Service Provider (ISP). Your router uses its public IP to access the internet. Your public IP address identifies your device on the internet, and  you can’t go online without one. It is used to communicate outside the network.</p>
 <p>A <strong>private IP address</strong> is assigned by networks and routers to devices that are connected to them. It lets a router correctly direct traffic within its network, and private IPs also let devices wihtin a network communicate with one another.</p>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.mitel.com/features-benefits/ip-network">IP Network</a></p></li>
 <li><p><a class="reference external" href="https://whatismyipaddress.com/dynamic-static">Dynamic vs Static IP Address</a></p></li>
@@ -330,7 +329,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

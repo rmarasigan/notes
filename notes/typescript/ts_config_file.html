@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Installation" href="../docker/Installation.html" />
@@ -244,7 +243,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="ts-tsconfig-json">
-<h1 id="notes-typescript-ts-config-file--page-root">TS – tsconfig.json<a class="headerlink" href="#notes-typescript-ts-config-file--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-typescript-ts-config-file--page-root">TS – tsconfig.json<a class="headerlink" href="#notes-typescript-ts-config-file--page-root" title="Permalink to this heading">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">tsconfig.json</span></code> file is a file which is in JSON format. In the <code class="docutils literal notranslate"><span class="pre">tsconfig.json</span></code> file, we can specify various options which tell the computer how to compile the current project. We can compile a typescript project in one of the following ways:</p>
 <ul class="simple">
 <li><p><strong>By invoking <code class="docutils literal notranslate"><span class="pre">tsc</span></code> with no input files</strong></p>
@@ -260,128 +259,128 @@
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">tsconfig.json</span></code> is generally put in the root folder of the project and it provides the compiler options required to compile the project.</p>
 <section id="create-tsconfig-json">
-<h2 id="create-tsconfig-json">Create <code class="docutils literal notranslate"><span class="pre">tsconfig.json</span></code><a class="headerlink" href="#create-tsconfig-json" title="Permalink to this headline">¶</a></h2>
+<h2 id="create-tsconfig-json">Create <code class="docutils literal notranslate"><span class="pre">tsconfig.json</span></code><a class="headerlink" href="#create-tsconfig-json" title="Permalink to this heading">¶</a></h2>
 <p>Navigate to the root folder of your project in your terminal or command prompt or powershell and run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ tsc --init
-Created a new tsconfig.json with:                                                                                       
-                                                                                                                     TS 
-  target: es2016
-  module: commonjs
-  strict: <span class="nb">true</span>
-  esModuleInterop: <span class="nb">true</span>
-  skipLibCheck: <span class="nb">true</span>
-  forceConsistentCasingInFileNames: <span class="nb">true</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>tsc<span class="w"> </span>--init
+Created<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>tsconfig.json<span class="w"> </span>with:<span class="w">                                                                                       </span>
+<span class="w">                                                                                                                     </span>TS<span class="w"> </span>
+<span class="w">  </span>target:<span class="w"> </span>es2016
+<span class="w">  </span>module:<span class="w"> </span>commonjs
+<span class="w">  </span>strict:<span class="w"> </span><span class="nb">true</span>
+<span class="w">  </span>esModuleInterop:<span class="w"> </span><span class="nb">true</span>
+<span class="w">  </span>skipLibCheck:<span class="w"> </span><span class="nb">true</span>
+<span class="w">  </span>forceConsistentCasingInFileNames:<span class="w"> </span><span class="nb">true</span>
 
-You can learn more at https://aka.ms/tsconfig.json
+You<span class="w"> </span>can<span class="w"> </span>learn<span class="w"> </span>more<span class="w"> </span>at<span class="w"> </span>https://aka.ms/tsconfig.json
 </pre></div>
 </div>
 <p>If we execute the above command, a default <code class="docutils literal notranslate"><span class="pre">tsconfig.json</span></code> will be created.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
-  "compilerOptions": {
-    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Visit https://aka.ms/tsconfig.json to read more about this file */</span>
 
-    /* Projects */
-    // "incremental": true,                              /* Enable incremental compilation */
-    // "composite": true,                                /* Enable constraints that allow a TypeScript project to be used with project references. */
-    // "tsBuildInfoFile": "./",                          /* Specify the folder for .tsbuildinfo incremental compilation files. */
-    // "disableSourceOfProjectReferenceRedirect": true,  /* Disable preferring source files instead of declaration files when referencing composite projects */
-    // "disableSolutionSearching": true,                 /* Opt a project out of multi-project reference checking when editing. */
-    // "disableReferencedProjectLoad": true,             /* Reduce the number of projects loaded automatically by TypeScript. */
+<span class="w">    </span><span class="cm">/* Projects */</span>
+<span class="w">    </span><span class="c1">// "incremental": true,                              /* Enable incremental compilation */</span>
+<span class="w">    </span><span class="c1">// "composite": true,                                /* Enable constraints that allow a TypeScript project to be used with project references. */</span>
+<span class="w">    </span><span class="c1">// "tsBuildInfoFile": "./",                          /* Specify the folder for .tsbuildinfo incremental compilation files. */</span>
+<span class="w">    </span><span class="c1">// "disableSourceOfProjectReferenceRedirect": true,  /* Disable preferring source files instead of declaration files when referencing composite projects */</span>
+<span class="w">    </span><span class="c1">// "disableSolutionSearching": true,                 /* Opt a project out of multi-project reference checking when editing. */</span>
+<span class="w">    </span><span class="c1">// "disableReferencedProjectLoad": true,             /* Reduce the number of projects loaded automatically by TypeScript. */</span>
 
-    /* Language and Environment */
-    "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    // "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
-    // "jsx": "preserve",                                /* Specify what JSX code is generated. */
-    // "experimentalDecorators": true,                   /* Enable experimental support for TC39 stage 2 draft decorators. */
-    // "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
-    // "jsxFactory": "",                                 /* Specify the JSX factory function used when targeting React JSX emit, e.g. 'React.createElement' or 'h' */
-    // "jsxFragmentFactory": "",                         /* Specify the JSX Fragment reference used for fragments when targeting React JSX emit e.g. 'React.Fragment' or 'Fragment'. */
-    // "jsxImportSource": "",                            /* Specify module specifier used to import the JSX factory functions when using `jsx: react-jsx*`.` */
-    // "reactNamespace": "",                             /* Specify the object invoked for `createElement`. This only applies when targeting `react` JSX emit. */
-    // "noLib": true,                                    /* Disable including any library files, including the default lib.d.ts. */
-    // "useDefineForClassFields": true,                  /* Emit ECMAScript-standard-compliant class fields. */
+<span class="w">    </span><span class="cm">/* Language and Environment */</span>
+<span class="w">    </span><span class="nt">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es2016"</span><span class="p">,</span><span class="w">                                  </span><span class="cm">/* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */</span>
+<span class="w">    </span><span class="c1">// "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */</span>
+<span class="w">    </span><span class="c1">// "jsx": "preserve",                                /* Specify what JSX code is generated. */</span>
+<span class="w">    </span><span class="c1">// "experimentalDecorators": true,                   /* Enable experimental support for TC39 stage 2 draft decorators. */</span>
+<span class="w">    </span><span class="c1">// "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */</span>
+<span class="w">    </span><span class="c1">// "jsxFactory": "",                                 /* Specify the JSX factory function used when targeting React JSX emit, e.g. 'React.createElement' or 'h' */</span>
+<span class="w">    </span><span class="c1">// "jsxFragmentFactory": "",                         /* Specify the JSX Fragment reference used for fragments when targeting React JSX emit e.g. 'React.Fragment' or 'Fragment'. */</span>
+<span class="w">    </span><span class="c1">// "jsxImportSource": "",                            /* Specify module specifier used to import the JSX factory functions when using `jsx: react-jsx*`.` */</span>
+<span class="w">    </span><span class="c1">// "reactNamespace": "",                             /* Specify the object invoked for `createElement`. This only applies when targeting `react` JSX emit. */</span>
+<span class="w">    </span><span class="c1">// "noLib": true,                                    /* Disable including any library files, including the default lib.d.ts. */</span>
+<span class="w">    </span><span class="c1">// "useDefineForClassFields": true,                  /* Emit ECMAScript-standard-compliant class fields. */</span>
 
-    /* Modules */
-    "module": "commonjs",                                /* Specify what module code is generated. */
-    // "rootDir": "./",                                  /* Specify the root folder within your source files. */
-    // "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
-    // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
-    // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
-    // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
-    // "typeRoots": [],                                  /* Specify multiple folders that act like `./node_modules/@types`. */
-    // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */
-    // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
-    // "resolveJsonModule": true,                        /* Enable importing .json files */
-    // "noResolve": true,                                /* Disallow `import`s, `require`s or `&lt;reference&gt;`s from expanding the number of files TypeScript should add to a project. */
+<span class="w">    </span><span class="cm">/* Modules */</span>
+<span class="w">    </span><span class="nt">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"commonjs"</span><span class="p">,</span><span class="w">                                </span><span class="cm">/* Specify what module code is generated. */</span>
+<span class="w">    </span><span class="c1">// "rootDir": "./",                                  /* Specify the root folder within your source files. */</span>
+<span class="w">    </span><span class="c1">// "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */</span>
+<span class="w">    </span><span class="c1">// "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */</span>
+<span class="w">    </span><span class="c1">// "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */</span>
+<span class="w">    </span><span class="c1">// "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */</span>
+<span class="w">    </span><span class="c1">// "typeRoots": [],                                  /* Specify multiple folders that act like `./node_modules/@types`. */</span>
+<span class="w">    </span><span class="c1">// "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */</span>
+<span class="w">    </span><span class="c1">// "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */</span>
+<span class="w">    </span><span class="c1">// "resolveJsonModule": true,                        /* Enable importing .json files */</span>
+<span class="w">    </span><span class="c1">// "noResolve": true,                                /* Disallow `import`s, `require`s or `&lt;reference&gt;`s from expanding the number of files TypeScript should add to a project. */</span>
 
-    /* JavaScript Support */
-    // "allowJs": true,                                  /* Allow JavaScript files to be a part of your program. Use the `checkJS` option to get errors from these files. */
-    // "checkJs": true,                                  /* Enable error reporting in type-checked JavaScript files. */
-    // "maxNodeModuleJsDepth": 1,                        /* Specify the maximum folder depth used for checking JavaScript files from `node_modules`. Only applicable with `allowJs`. */
+<span class="w">    </span><span class="cm">/* JavaScript Support */</span>
+<span class="w">    </span><span class="c1">// "allowJs": true,                                  /* Allow JavaScript files to be a part of your program. Use the `checkJS` option to get errors from these files. */</span>
+<span class="w">    </span><span class="c1">// "checkJs": true,                                  /* Enable error reporting in type-checked JavaScript files. */</span>
+<span class="w">    </span><span class="c1">// "maxNodeModuleJsDepth": 1,                        /* Specify the maximum folder depth used for checking JavaScript files from `node_modules`. Only applicable with `allowJs`. */</span>
 
-    /* Emit */
-    // "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
-    // "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
-    // "emitDeclarationOnly": true,                      /* Only output d.ts files and not JavaScript files. */
-    // "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
-    // "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If `declaration` is true, also designates a file that bundles all .d.ts output. */
-    // "outDir": "./",                                   /* Specify an output folder for all emitted files. */
-    // "removeComments": true,                           /* Disable emitting comments. */
-    // "noEmit": true,                                   /* Disable emitting files from a compilation. */
-    // "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
-    // "importsNotUsedAsValues": "remove",               /* Specify emit/checking behavior for imports that are only used for types */
-    // "downlevelIteration": true,                       /* Emit more compliant, but verbose and less performant JavaScript for iteration. */
-    // "sourceRoot": "",                                 /* Specify the root path for debuggers to find the reference source code. */
-    // "mapRoot": "",                                    /* Specify the location where debugger should locate map files instead of generated locations. */
-    // "inlineSourceMap": true,                          /* Include sourcemap files inside the emitted JavaScript. */
-    // "inlineSources": true,                            /* Include source code in the sourcemaps inside the emitted JavaScript. */
-    // "emitBOM": true,                                  /* Emit a UTF-8 Byte Order Mark (BOM) in the beginning of output files. */
-    // "newLine": "crlf",                                /* Set the newline character for emitting files. */
-    // "stripInternal": true,                            /* Disable emitting declarations that have `@internal` in their JSDoc comments. */
-    // "noEmitHelpers": true,                            /* Disable generating custom helper functions like `__extends` in compiled output. */
-    // "noEmitOnError": true,                            /* Disable emitting files if any type checking errors are reported. */
-    // "preserveConstEnums": true,                       /* Disable erasing `const enum` declarations in generated code. */
-    // "declarationDir": "./",                           /* Specify the output directory for generated declaration files. */
-    // "preserveValueImports": true,                     /* Preserve unused imported values in the JavaScript output that would otherwise be removed. */
+<span class="w">    </span><span class="cm">/* Emit */</span>
+<span class="w">    </span><span class="c1">// "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */</span>
+<span class="w">    </span><span class="c1">// "declarationMap": true,                           /* Create sourcemaps for d.ts files. */</span>
+<span class="w">    </span><span class="c1">// "emitDeclarationOnly": true,                      /* Only output d.ts files and not JavaScript files. */</span>
+<span class="w">    </span><span class="c1">// "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */</span>
+<span class="w">    </span><span class="c1">// "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If `declaration` is true, also designates a file that bundles all .d.ts output. */</span>
+<span class="w">    </span><span class="c1">// "outDir": "./",                                   /* Specify an output folder for all emitted files. */</span>
+<span class="w">    </span><span class="c1">// "removeComments": true,                           /* Disable emitting comments. */</span>
+<span class="w">    </span><span class="c1">// "noEmit": true,                                   /* Disable emitting files from a compilation. */</span>
+<span class="w">    </span><span class="c1">// "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */</span>
+<span class="w">    </span><span class="c1">// "importsNotUsedAsValues": "remove",               /* Specify emit/checking behavior for imports that are only used for types */</span>
+<span class="w">    </span><span class="c1">// "downlevelIteration": true,                       /* Emit more compliant, but verbose and less performant JavaScript for iteration. */</span>
+<span class="w">    </span><span class="c1">// "sourceRoot": "",                                 /* Specify the root path for debuggers to find the reference source code. */</span>
+<span class="w">    </span><span class="c1">// "mapRoot": "",                                    /* Specify the location where debugger should locate map files instead of generated locations. */</span>
+<span class="w">    </span><span class="c1">// "inlineSourceMap": true,                          /* Include sourcemap files inside the emitted JavaScript. */</span>
+<span class="w">    </span><span class="c1">// "inlineSources": true,                            /* Include source code in the sourcemaps inside the emitted JavaScript. */</span>
+<span class="w">    </span><span class="c1">// "emitBOM": true,                                  /* Emit a UTF-8 Byte Order Mark (BOM) in the beginning of output files. */</span>
+<span class="w">    </span><span class="c1">// "newLine": "crlf",                                /* Set the newline character for emitting files. */</span>
+<span class="w">    </span><span class="c1">// "stripInternal": true,                            /* Disable emitting declarations that have `@internal` in their JSDoc comments. */</span>
+<span class="w">    </span><span class="c1">// "noEmitHelpers": true,                            /* Disable generating custom helper functions like `__extends` in compiled output. */</span>
+<span class="w">    </span><span class="c1">// "noEmitOnError": true,                            /* Disable emitting files if any type checking errors are reported. */</span>
+<span class="w">    </span><span class="c1">// "preserveConstEnums": true,                       /* Disable erasing `const enum` declarations in generated code. */</span>
+<span class="w">    </span><span class="c1">// "declarationDir": "./",                           /* Specify the output directory for generated declaration files. */</span>
+<span class="w">    </span><span class="c1">// "preserveValueImports": true,                     /* Preserve unused imported values in the JavaScript output that would otherwise be removed. */</span>
 
-    /* Interop Constraints */
-    // "isolatedModules": true,                          /* Ensure that each file can be safely transpiled without relying on other imports. */
-    // "allowSyntheticDefaultImports": true,             /* Allow 'import x from y' when a module doesn't have a default export. */
-    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */
-    // "preserveSymlinks": true,                         /* Disable resolving symlinks to their realpath. This correlates to the same flag in node. */
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+<span class="w">    </span><span class="cm">/* Interop Constraints */</span>
+<span class="w">    </span><span class="c1">// "isolatedModules": true,                          /* Ensure that each file can be safely transpiled without relying on other imports. */</span>
+<span class="w">    </span><span class="c1">// "allowSyntheticDefaultImports": true,             /* Allow 'import x from y' when a module doesn't have a default export. */</span>
+<span class="w">    </span><span class="nt">"esModuleInterop"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">                             </span><span class="cm">/* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */</span>
+<span class="w">    </span><span class="c1">// "preserveSymlinks": true,                         /* Disable resolving symlinks to their realpath. This correlates to the same flag in node. */</span>
+<span class="w">    </span><span class="nt">"forceConsistentCasingInFileNames"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">            </span><span class="cm">/* Ensure that casing is correct in imports. */</span>
 
-    /* Type Checking */
-    "strict": true,                                      /* Enable all strict type-checking options. */
-    // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied `any` type.. */
-    // "strictNullChecks": true,                         /* When type checking, take into account `null` and `undefined`. */
-    // "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
-    // "strictBindCallApply": true,                      /* Check that the arguments for `bind`, `call`, and `apply` methods match the original function. */
-    // "strictPropertyInitialization": true,             /* Check for class properties that are declared but not set in the constructor. */
-    // "noImplicitThis": true,                           /* Enable error reporting when `this` is given the type `any`. */
-    // "useUnknownInCatchVariables": true,               /* Type catch clause variables as 'unknown' instead of 'any'. */
-    // "alwaysStrict": true,                             /* Ensure 'use strict' is always emitted. */
-    // "noUnusedLocals": true,                           /* Enable error reporting when a local variables aren't read. */
-    // "noUnusedParameters": true,                       /* Raise an error when a function parameter isn't read */
-    // "exactOptionalPropertyTypes": true,               /* Interpret optional property types as written, rather than adding 'undefined'. */
-    // "noImplicitReturns": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */
-    // "noFallthroughCasesInSwitch": true,               /* Enable error reporting for fallthrough cases in switch statements. */
-    // "noUncheckedIndexedAccess": true,                 /* Include 'undefined' in index signature results */
-    // "noImplicitOverride": true,                       /* Ensure overriding members in derived classes are marked with an override modifier. */
-    // "noPropertyAccessFromIndexSignature": true,       /* Enforces using indexed accessors for keys declared using an indexed type */
-    // "allowUnusedLabels": true,                        /* Disable error reporting for unused labels. */
-    // "allowUnreachableCode": true,                     /* Disable error reporting for unreachable code. */
+<span class="w">    </span><span class="cm">/* Type Checking */</span>
+<span class="w">    </span><span class="nt">"strict"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">                                      </span><span class="cm">/* Enable all strict type-checking options. */</span>
+<span class="w">    </span><span class="c1">// "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied `any` type.. */</span>
+<span class="w">    </span><span class="c1">// "strictNullChecks": true,                         /* When type checking, take into account `null` and `undefined`. */</span>
+<span class="w">    </span><span class="c1">// "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */</span>
+<span class="w">    </span><span class="c1">// "strictBindCallApply": true,                      /* Check that the arguments for `bind`, `call`, and `apply` methods match the original function. */</span>
+<span class="w">    </span><span class="c1">// "strictPropertyInitialization": true,             /* Check for class properties that are declared but not set in the constructor. */</span>
+<span class="w">    </span><span class="c1">// "noImplicitThis": true,                           /* Enable error reporting when `this` is given the type `any`. */</span>
+<span class="w">    </span><span class="c1">// "useUnknownInCatchVariables": true,               /* Type catch clause variables as 'unknown' instead of 'any'. */</span>
+<span class="w">    </span><span class="c1">// "alwaysStrict": true,                             /* Ensure 'use strict' is always emitted. */</span>
+<span class="w">    </span><span class="c1">// "noUnusedLocals": true,                           /* Enable error reporting when a local variables aren't read. */</span>
+<span class="w">    </span><span class="c1">// "noUnusedParameters": true,                       /* Raise an error when a function parameter isn't read */</span>
+<span class="w">    </span><span class="c1">// "exactOptionalPropertyTypes": true,               /* Interpret optional property types as written, rather than adding 'undefined'. */</span>
+<span class="w">    </span><span class="c1">// "noImplicitReturns": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */</span>
+<span class="w">    </span><span class="c1">// "noFallthroughCasesInSwitch": true,               /* Enable error reporting for fallthrough cases in switch statements. */</span>
+<span class="w">    </span><span class="c1">// "noUncheckedIndexedAccess": true,                 /* Include 'undefined' in index signature results */</span>
+<span class="w">    </span><span class="c1">// "noImplicitOverride": true,                       /* Ensure overriding members in derived classes are marked with an override modifier. */</span>
+<span class="w">    </span><span class="c1">// "noPropertyAccessFromIndexSignature": true,       /* Enforces using indexed accessors for keys declared using an indexed type */</span>
+<span class="w">    </span><span class="c1">// "allowUnusedLabels": true,                        /* Disable error reporting for unused labels. */</span>
+<span class="w">    </span><span class="c1">// "allowUnreachableCode": true,                     /* Disable error reporting for unreachable code. */</span>
 
-    /* Completeness */
-    // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  }
-}
+<span class="w">    </span><span class="cm">/* Completeness */</span>
+<span class="w">    </span><span class="c1">// "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */</span>
+<span class="w">    </span><span class="nt">"skipLibCheck"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">                                 </span><span class="cm">/* Skip type checking all .d.ts files. */</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="include-and-exclude-properties">
-<h2 id="include-and-exclude-properties"><code class="docutils literal notranslate"><span class="pre">include</span></code> and <code class="docutils literal notranslate"><span class="pre">exclude</span></code> Properties<a class="headerlink" href="#include-and-exclude-properties" title="Permalink to this headline">¶</a></h2>
+<h2 id="include-and-exclude-properties"><code class="docutils literal notranslate"><span class="pre">include</span></code> and <code class="docutils literal notranslate"><span class="pre">exclude</span></code> Properties<a class="headerlink" href="#include-and-exclude-properties" title="Permalink to this heading">¶</a></h2>
 <p>An <strong>include</strong> and <strong>exclude</strong> properties allows us to take an array pattern to add or remove a list of TypeScript files from the compilation process. The <strong><code class="docutils literal notranslate"><span class="pre">include</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">exclude</span></code></strong> properties take a list of glob-like patterns. The supported glob wildcards are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> matches zero or more characters (excluding directory separators)</p></li>
@@ -389,28 +388,28 @@ You can learn more at https://aka.ms/tsconfig.json
 <li><p><code class="docutils literal notranslate"><span class="pre">**/</span></code> recursively matches any subdirectory</p></li>
 </ul>
 <p>If we have a large number of files, we use the <code class="docutils literal notranslate"><span class="pre">include</span></code> property, which allows us to take an array pattern to add a list of <code class="docutils literal notranslate"><span class="pre">.ts</span></code> files to the compilation process.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"src/**"</span><span class="p">,</span><span class="w"> </span><span class="s2">"tests/**"</span><span class="p">]</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"src/**"</span><span class="p">,</span><span class="w"> </span><span class="s2">"tests/**"</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>We can exclude files in the same way with the <code class="docutils literal notranslate"><span class="pre">exclude</span></code> property.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">"exclude"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"node_modules"</span><span class="p">,</span><span class="w"> </span><span class="s2">"**/*.spec.ts"</span><span class="p">]</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">"exclude"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"node_modules"</span><span class="p">,</span><span class="w"> </span><span class="s2">"**/*.spec.ts"</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
 <section id="compileroptions-property">
-<h2 id="compileroptions-property"><code class="docutils literal notranslate"><span class="pre">compilerOptions</span></code> Property<a class="headerlink" href="#compileroptions-property" title="Permalink to this headline">¶</a></h2>
+<h2 id="compileroptions-property"><code class="docutils literal notranslate"><span class="pre">compilerOptions</span></code> Property<a class="headerlink" href="#compileroptions-property" title="Permalink to this heading">¶</a></h2>
 <p>We can customize the compiler options properties by using the <code class="docutils literal notranslate"><span class="pre">compilerOptions</span></code>. It allows specifying additional options to the TypeScript compiler. It can be omitted, in which case the compiler’s default are used. Here’s a sample JSON file describing how you can define a <code class="docutils literal notranslate"><span class="pre">tsconfig.json</span></code> file containing different parameters of the <code class="docutils literal notranslate"><span class="pre">compilerOptions</span></code> property.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="nt">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nt">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"system"</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">"noImplicitAny"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">"removeComments"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">"allowUnreachableCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">"strictNullChecks"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">"outFile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../javascript/type_script/js_file_name.js"</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">"sourceMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="w">   </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"system"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"noImplicitAny"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"removeComments"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"allowUnreachableCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"strictNullChecks"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"outFile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../javascript/type_script/js_file_name.js"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"sourceMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>You can check on these list of pages for more details:</p>
@@ -421,19 +420,19 @@ You can learn more at https://aka.ms/tsconfig.json
 </ul>
 </section>
 <section id="compileonsave">
-<h2 id="compileonsave"><code class="docutils literal notranslate"><span class="pre">compileOnSave</span></code><a class="headerlink" href="#compileonsave" title="Permalink to this headline">¶</a></h2>
+<h2 id="compileonsave"><code class="docutils literal notranslate"><span class="pre">compileOnSave</span></code><a class="headerlink" href="#compileonsave" title="Permalink to this heading">¶</a></h2>
 <p>It is the property which is used to set the IDE to compile the included TypeScript files and generate the output automatically. It signals to the IDE to generate all files for a given <code class="docutils literal notranslate"><span class="pre">tsconfig,json</span></code> upon saving.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="nt">"compileOnSave"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">   </span><span class="nt">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">"compileOnSave"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">"noImplicitAny"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span>
-<span class="w">   </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.javatpoint.com/typescript-compilation-context">Typescript Compilation Context</a></p></li>
 <li><p><a class="reference external" href="https://howtodoinjava.com/typescript/tsconfig-json/">TypeScript Compiler Configuration</a></p></li>
@@ -490,7 +489,7 @@ You can learn more at https://aka.ms/tsconfig.json
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

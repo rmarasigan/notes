@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="ES 6 – Default Parameters in Functions and Object Literals" href="es6_default_parameters.html" />
@@ -248,7 +247,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="es-6-for-of-loop">
-<h1 id="notes-typescript-for-of-loop--page-root">ES 6 – “for-of” Loop<a class="headerlink" href="#notes-typescript-for-of-loop--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-typescript-for-of-loop--page-root">ES 6 – “for-of” Loop<a class="headerlink" href="#notes-typescript-for-of-loop--page-root" title="Permalink to this heading">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">for...of</span></code> iterates over an iterable object such as:</p>
 <ul class="simple">
 <li><p>Built-in <code class="docutils literal notranslate"><span class="pre">Array</span></code>, <code class="docutils literal notranslate"><span class="pre">String</span></code>, <code class="docutils literal notranslate"><span class="pre">Map</span></code>, <code class="docutils literal notranslate"><span class="pre">Set</span></code>, …</p></li>
@@ -256,9 +255,9 @@
 <li><p>User-defined objects that implement the iterator protocol</p></li>
 </ul>
 <section id="syntax">
-<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nx">variable</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">statement</span>
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">variable</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">iterable</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">statement</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -277,13 +276,13 @@
 </ul>
 </section>
 <section id="examples-of-for-of">
-<h2 id="examples-of-for-of">Examples of <code class="docutils literal notranslate"><span class="pre">for...of</span></code><a class="headerlink" href="#examples-of-for-of" title="Permalink to this headline">¶</a></h2>
+<h2 id="examples-of-for-of">Examples of <code class="docutils literal notranslate"><span class="pre">for...of</span></code><a class="headerlink" href="#examples-of-for-of" title="Permalink to this heading">¶</a></h2>
 <section id="iterate-over-a-string">
-<h3 id="iterate-over-a-string">Iterate over a String:<a class="headerlink" href="#iterate-over-a-string" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">programming</span> <span class="o">=</span> <span class="s1">'javascript'</span><span class="p">;</span>
+<h3 id="iterate-over-a-string">Iterate over a String:<a class="headerlink" href="#iterate-over-a-string" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">programming</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'javascript'</span><span class="p">;</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">x</span> <span class="k">of</span> <span class="nx">programming</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">programming</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -303,11 +302,11 @@
 <p>So it is iterating over a string and we can use the <code class="docutils literal notranslate"><span class="pre">for...of</span></code> loop for iterating an arays as well.</p>
 </section>
 <section id="iterate-over-array">
-<h3 id="iterate-over-array">Iterate over Array<a class="headerlink" href="#iterate-over-array" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">programming</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'javascript'</span><span class="p">,</span> <span class="s1">'go'</span><span class="p">,</span> <span class="s1">'python'</span><span class="p">,</span> <span class="s1">'c++'</span><span class="p">];</span>
+<h3 id="iterate-over-array">Iterate over Array<a class="headerlink" href="#iterate-over-array" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">programming</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'javascript'</span><span class="p">,</span><span class="w"> </span><span class="s1">'go'</span><span class="p">,</span><span class="w"> </span><span class="s1">'python'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c++'</span><span class="p">];</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">x</span> <span class="k">of</span> <span class="nx">programming</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">programming</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -320,10 +319,10 @@
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">x</span></code> is a variable which holds the current iterable value. It is a variable placeholder and store the first value into the x and do whatever we want inside the function and go grab the second one and store that into the next until it finishes the loop.</p>
 <p>To access the index of the array elements inside  the loop, you can use the <code class="docutils literal notranslate"><span class="pre">for...of</span></code> statement with the <code class="docutils literal notranslate"><span class="pre">entries()</span></code> method of the array. The <code class="docutils literal notranslate"><span class="pre">array.entries</span></code> method returns a pair of <code class="docutils literal notranslate"><span class="pre">[index,</span> <span class="pre">element]</span></code> in each iteration.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">programming</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'javascript'</span><span class="p">,</span> <span class="s1">'go'</span><span class="p">,</span> <span class="s1">'python'</span><span class="p">,</span> <span class="s1">'c++'</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">programming</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'javascript'</span><span class="p">,</span><span class="w"> </span><span class="s1">'go'</span><span class="p">,</span><span class="w"> </span><span class="s1">'python'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c++'</span><span class="p">];</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">language</span><span class="p">]</span> <span class="k">of</span> <span class="nx">programming</span><span class="p">.</span><span class="nx">entries</span><span class="p">())</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">language</span><span class="si">}</span><span class="sb"> is at index </span><span class="si">${</span><span class="nx">index</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">language</span><span class="p">]</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">programming</span><span class="p">.</span><span class="nx">entries</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">language</span><span class="si">}</span><span class="sb"> is at index </span><span class="si">${</span><span class="nx">index</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -336,15 +335,15 @@
 </div>
 </section>
 <section id="iterate-over-a-map-object">
-<h3 id="iterate-over-a-map-object">Iterate over a Map object<a class="headerlink" href="#iterate-over-a-map-object" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">programming</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Map</span><span class="p">();</span>
+<h3 id="iterate-over-a-map-object">Iterate over a Map object<a class="headerlink" href="#iterate-over-a-map-object" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">programming</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span>
 
-<span class="nx">programming</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'HTML'</span><span class="p">,</span> <span class="s1">'HypertText Markup Language'</span><span class="p">);</span>
-<span class="nx">programming</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'Scripting'</span><span class="p">,</span> <span class="s1">'JavaScript is so cool'</span><span class="p">);</span>
-<span class="nx">programming</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'CSS'</span><span class="p">,</span> <span class="s1">'StyleSheet'</span><span class="p">);</span>
+<span class="nx">programming</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'HTML'</span><span class="p">,</span><span class="w"> </span><span class="s1">'HypertText Markup Language'</span><span class="p">);</span>
+<span class="nx">programming</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'Scripting'</span><span class="p">,</span><span class="w"> </span><span class="s1">'JavaScript is so cool'</span><span class="p">);</span>
+<span class="nx">programming</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'CSS'</span><span class="p">,</span><span class="w"> </span><span class="s1">'StyleSheet'</span><span class="p">);</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">x</span> <span class="k">of</span> <span class="nx">programming</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">programming</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -355,8 +354,8 @@
 </pre></div>
 </div>
 <p>To iterate Map keys:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">x</span> <span class="k">of</span> <span class="nx">programming</span><span class="p">.</span><span class="nx">keys</span><span class="p">())</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">programming</span><span class="p">.</span><span class="nx">keys</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -369,7 +368,7 @@
 </section>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">for…of</a></p></li>
 <li><p><a class="reference external" href="https://www.javascripttutorial.net/es6/javascript-for-of/">JavaScript for…of Loop</a></p></li>
@@ -424,7 +423,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Spans" href="span.html" />
@@ -248,7 +247,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="traces">
-<h1 id="notes-open-telemetry-traces--page-root">Traces<a class="headerlink" href="#notes-open-telemetry-traces--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-open-telemetry-traces--page-root">Traces<a class="headerlink" href="#notes-open-telemetry-traces--page-root" title="Permalink to this heading">¶</a></h1>
 <p>A Trace is the ability to drill down. It gives us a picture of what happens when a request is made by the user or an application. A Trace represents the flow of a single transaction or request as it goes through the system. They provide a holistic view of the chain events triggered by requests and are defined by a tree of nested spans — one for each unit of work they represent and a parent span.</p>
 <p>Let’s say when you are doing checkout in the Shop, the front-end calls the checkout services, the checkout services will call the cart services to get the cart and the cart will interact with the database.</p>
 <p><img alt="trace" src="../../_images/trace.jpg"/></p>
@@ -257,26 +256,26 @@
 <p>Here, we have the checkout API call at that given timestamp and then it will be added to the trace context in the HTTP request that it will send to the cart services. The cart services receive the request, collect the trace context, and will also add their own span. You can track the interaction with the database so you have a database call and then after we receive the database information, and process the data in order to do stuff and send back the response to the checkout services.</p>
 <p><img alt="trace-request-timestamp" src="../../_images/trace-request-timestamp.jpg"/></p>
 <section id="code-instrumentation-components">
-<h2 id="code-instrumentation-components">Code Instrumentation Components<a class="headerlink" href="#code-instrumentation-components" title="Permalink to this headline">¶</a></h2>
+<h2 id="code-instrumentation-components">Code Instrumentation Components<a class="headerlink" href="#code-instrumentation-components" title="Permalink to this heading">¶</a></h2>
 <section id="tracer-provider">
-<h3 id="tracer-provider">Tracer Provider<a class="headerlink" href="#tracer-provider" title="Permalink to this headline">¶</a></h3>
+<h3 id="tracer-provider">Tracer Provider<a class="headerlink" href="#tracer-provider" title="Permalink to this heading">¶</a></h3>
 <p>A <strong>Tracer Provider</strong> is a factory for Tracer. In most applications, it is initialized once and its lifecycle matches the application’s lifecycle. Tracer Provider initialization includes Resource and Exporter initialization. It is typically the first step in tracing with OpenTelemetry.</p>
 </section>
 <section id="tracer">
-<h3 id="tracer">Tracer<a class="headerlink" href="#tracer" title="Permalink to this headline">¶</a></h3>
+<h3 id="tracer">Tracer<a class="headerlink" href="#tracer" title="Permalink to this heading">¶</a></h3>
 <p>A <strong>Tracer</strong> creates spans containing more information about what is happening for a given operation, such as a request in service. Tracers are created from Tracer Providers.</p>
 </section>
 <section id="trace-exporters">
-<h3 id="trace-exporters">Trace Exporters<a class="headerlink" href="#trace-exporters" title="Permalink to this headline">¶</a></h3>
+<h3 id="trace-exporters">Trace Exporters<a class="headerlink" href="#trace-exporters" title="Permalink to this heading">¶</a></h3>
 <p><strong>Trace Exporters</strong> send traces to a consumer. This consumer can be standard output for debugging and development-time, the OpenTelemetry Collector, or any open-source or vendor backend of your choice.</p>
 </section>
 <section id="trace-context">
-<h3 id="trace-context">Trace Context<a class="headerlink" href="#trace-context" title="Permalink to this headline">¶</a></h3>
+<h3 id="trace-context">Trace Context<a class="headerlink" href="#trace-context" title="Permalink to this heading">¶</a></h3>
 <p><strong>Trace Context</strong> is metadata about trace spans that provides correlation between spans across service and process boundaries.</p>
 </section>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=dfpGU9al_i4">Introduction to OpenTelemetry</a></p></li>
 </ul>
@@ -330,7 +329,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

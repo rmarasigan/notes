@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Ping" href="Ping.html" />
@@ -244,15 +243,15 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="firewall">
-<h1 id="notes-networks-firewall--page-root">Firewall<a class="headerlink" href="#notes-networks-firewall--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-networks-firewall--page-root">Firewall<a class="headerlink" href="#notes-networks-firewall--page-root" title="Permalink to this heading">¶</a></h1>
 <section id="what-is-a-firewall">
-<h2 id="what-is-a-firewall">What is a Firewall?<a class="headerlink" href="#what-is-a-firewall" title="Permalink to this headline">¶</a></h2>
+<h2 id="what-is-a-firewall">What is a Firewall?<a class="headerlink" href="#what-is-a-firewall" title="Permalink to this heading">¶</a></h2>
 <p>Firewalls are network security systems that prevent unauthorized access to a network. It can be a hardware or a software unit that filters the incoming and outgoing traffic wihtin a private network, according to a set of rules to spot and prevent cyberattacks. Firewalls are used in both personal and enterprise settings, and many devices come with one built-in, including Mac, Windows, and Linux Computers. It’s typically placed in a forwarding path so that all packets have to be checked by the firewall, where we can drop or permit them.</p>
 <a class="reference internal image-reference" href="../../_images/firewall-location-network.png"><img alt="firewall_location_network" src="../../_images/firewall-location-network.png" style="width: 500px;"/></a>
 <p>Above we have our LAN that has a host computer and a switch. On the right side, there’s a router that is connected to the ISP which offers Internet connectivity. The firewall sits in between to protect our LAN. The router is optional, it depends on your connectivity to the WAN. Most firewalls support some basic routing options: static routes, default routes and sometimes routing protocols like RIP, OSPF or EIGRP.</p>
 </section>
 <section id="how-does-a-firewall-work">
-<h2 id="how-does-a-firewall-work">How does a Firewall work?<a class="headerlink" href="#how-does-a-firewall-work" title="Permalink to this headline">¶</a></h2>
+<h2 id="how-does-a-firewall-work">How does a Firewall work?<a class="headerlink" href="#how-does-a-firewall-work" title="Permalink to this heading">¶</a></h2>
 <p>Think of the firewall like a gatekeeper at your computer’s entry point which only allows trusted sources, or IP addresses, to enter your network. A firewall welcome only those incoming traffic that has been configured to accept. It distinguishes between good and malicious traffic and either allows or blocks specific data packets on pre-established security rules.</p>
 <p>Image depicted below shows how a firewall allows a good traffic to pass to the user’s private network.</p>
 <a class="reference internal image-reference" href="../../_images/firewall_1.png"><img alt="firewall_good_traffic" src="../../_images/firewall_1.png" style="width: 500px;"/></a>
@@ -260,7 +259,7 @@
 <a class="reference internal image-reference" href="../../_images/firewall_2.png"><img alt="firewall_bad_traffic" src="../../_images/firewall_2.png" style="width: 500px;"/></a>
 </section>
 <section id="stateful-firewall">
-<h2 id="stateful-firewall">Stateful Firewall<a class="headerlink" href="#stateful-firewall" title="Permalink to this headline">¶</a></h2>
+<h2 id="stateful-firewall">Stateful Firewall<a class="headerlink" href="#stateful-firewall" title="Permalink to this heading">¶</a></h2>
 <a class="reference internal image-reference" href="../../_images/statefulfirewall.png"><img alt="stateful_firewall" src="../../_images/statefulfirewall.png" style="width: 500px;"/></a>
 <p>A <strong>stateful firewall</strong> inspects everything inside data packets, the characteristics of the data, and its channels of communication. Stateful firewalls examine the behaviour of data packets, and if anything seems off, they can filter out the suspicious data. Also, a stateful firewall can track how the data behaves, cataloging patterns of behaviour.</p>
 <p>Stateful firewalls are capable of monitoring all aspects of network traffic, including their communication channels and characteristics. They are also referred to as dynamic pocket filters as they filter traffic packets based on the context and state.</p>
@@ -270,12 +269,12 @@
 </ul>
 </section>
 <section id="stateless-firewall">
-<h2 id="stateless-firewall">Stateless Firewall<a class="headerlink" href="#stateless-firewall" title="Permalink to this headline">¶</a></h2>
+<h2 id="stateless-firewall">Stateless Firewall<a class="headerlink" href="#stateless-firewall" title="Permalink to this heading">¶</a></h2>
 <a class="reference internal image-reference" href="../../_images/statelessfirewall.png"><img alt="stateful_firewall" src="../../_images/statelessfirewall.png" style="width: 500px;"/></a>
 <p>A <strong>stateless firewall</strong> make use of a data packet’s source, destination, and other parameters to figure out whether the data presents a threat. On detecting a possible threat, the firewall blocks it. There are certain preset rules that firewalls enforce while deciding whether traffic must be permitted or not. These parameters have to be entered by either an administrator or the manufacturer via rules they set beforehand.</p>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.techtarget.com/searchsecurity/definition/firewall">Firewall</a></p></li>
 <li><p><a class="reference external" href="https://networklessons.com/cisco/asa-firewall/introduction-to-firewalls">Introduction to Firewalls</a></p></li>
@@ -333,7 +332,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

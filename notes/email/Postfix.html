@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="prev" title="SMTP (Simple Mail Transfer Protocol)" href="SMTP.html" />
@@ -245,55 +244,55 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="postfix">
-<h1 id="notes-email-postfix--page-root">Postfix<a class="headerlink" href="#notes-email-postfix--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-email-postfix--page-root">Postfix<a class="headerlink" href="#notes-email-postfix--page-root" title="Permalink to this heading">¶</a></h1>
 <p>Postfix free open-source mail transfer agent that routes and delivers electronic mail. Postfix is a <em>Mail Transfer Agent (MTA)</em>: software that mail servers use to route email. Postfix is highly respected by experts for its secure design and tremendous reliability. And new users like it because it’s so simple to configure. In fact, Postfix has been adopted as the default MTA on Mac OS X. It is also compatible with sendmail, so that existing scripts and programs continue to work seamlesslyafter it is installed.</p>
 <section id="list-all-emails">
-<h2 id="list-all-emails">List All Emails<a class="headerlink" href="#list-all-emails" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev: mailq
+<h2 id="list-all-emails">List All Emails<a class="headerlink" href="#list-all-emails" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:<span class="w"> </span>mailq
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev: postqueue -p
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:<span class="w"> </span>postqueue<span class="w"> </span>-p
 </pre></div>
 </div>
 </section>
 <section id="flush-all-emails">
-<h2 id="flush-all-emails">Flush All Emails<a class="headerlink" href="#flush-all-emails" title="Permalink to this headline">¶</a></h2>
+<h2 id="flush-all-emails">Flush All Emails<a class="headerlink" href="#flush-all-emails" title="Permalink to this heading">¶</a></h2>
 <p>Delete or flush all emails from Postfix mail queue</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev: postsuper -d ALL
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:<span class="w"> </span>postsuper<span class="w"> </span>-d<span class="w"> </span>ALL
 </pre></div>
 </div>
 </section>
 <section id="flush-deferred-mails-only">
-<h2 id="flush-deferred-mails-only">Flush Deferred Mails Only<a class="headerlink" href="#flush-deferred-mails-only" title="Permalink to this headline">¶</a></h2>
+<h2 id="flush-deferred-mails-only">Flush Deferred Mails Only<a class="headerlink" href="#flush-deferred-mails-only" title="Permalink to this heading">¶</a></h2>
 <p>You can only delete all deferred emails only from the mail queue. Use the following command to delete deferred emails from the queue.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev: postsuper -d ALL deferred
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:<span class="w"> </span>postsuper<span class="w"> </span>-d<span class="w"> </span>ALL<span class="w"> </span>deferred
 </pre></div>
 </div>
 </section>
 <section id="remove-specific-email">
-<h2 id="remove-specific-email">Remove Specific Email<a class="headerlink" href="#remove-specific-email" title="Permalink to this headline">¶</a></h2>
+<h2 id="remove-specific-email">Remove Specific Email<a class="headerlink" href="#remove-specific-email" title="Permalink to this heading">¶</a></h2>
 <p>If you want to remove any specific email. Use the following command to remove specific emails only. First search the ID of that email like below command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev: postqueue -p <span class="p">|</span> grep <span class="s2">"email@example.com"</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:<span class="w"> </span>postqueue<span class="w"> </span>-p<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">"email@example.com"</span>
 
-056CB129FF0*    <span class="m">5513</span> Sun Feb <span class="m">26</span> <span class="m">02</span>:26:27  email@example.com
+056CB129FF0*<span class="w">    </span><span class="m">5513</span><span class="w"> </span>Sun<span class="w"> </span>Feb<span class="w"> </span><span class="m">26</span><span class="w"> </span><span class="m">02</span>:26:27<span class="w">  </span>email@example.com
 </pre></div>
 </div>
 <p>Now delete the mail from mail queue with id 056CB129FF0.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev: postsuper -d 056CB129FF0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:<span class="w"> </span>postsuper<span class="w"> </span>-d<span class="w"> </span>056CB129FF0
 </pre></div>
 </div>
 </section>
 <section id="count-postfix-mail">
-<h2 id="count-postfix-mail">Count Postfix Mail<a class="headerlink" href="#count-postfix-mail" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev: find /var/spool/postfix/deferred -type f <span class="p">|</span> wc -l
-dev@dev: find /var/spool/postfix/active -type f <span class="p">|</span> wc -l
-dev@dev: find /var/spool/postfix/bounce -type f <span class="p">|</span> wc -l
-dev@dev: find /var/spool/postfix/incoming -type f <span class="p">|</span> wc -l
+<h2 id="count-postfix-mail">Count Postfix Mail<a class="headerlink" href="#count-postfix-mail" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:<span class="w"> </span>find<span class="w"> </span>/var/spool/postfix/deferred<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+dev@dev:<span class="w"> </span>find<span class="w"> </span>/var/spool/postfix/active<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+dev@dev:<span class="w"> </span>find<span class="w"> </span>/var/spool/postfix/bounce<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+dev@dev:<span class="w"> </span>find<span class="w"> </span>/var/spool/postfix/incoming<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
 </pre></div>
 </div>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://tecadmin.net/flush-postfix-mail-queue/">Flush Postfix Mail Queue</a></p></li>
 <li><p><a class="reference external" href="https://www.oreilly.com/library/view/postfix-the-definitive/0596002122/">Postfix: The Definitive Guide</a></p></li>
@@ -338,7 +337,7 @@ dev@dev: find /var/spool/postfix/incoming -type f <span class="p">|</span> wc -l
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

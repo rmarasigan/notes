@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Traces" href="traces.html" />
@@ -250,7 +249,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="introduction">
-<h1 id="notes-open-telemetry-introduction--page-root">Introduction<a class="headerlink" href="#notes-open-telemetry-introduction--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-open-telemetry-introduction--page-root">Introduction<a class="headerlink" href="#notes-open-telemetry-introduction--page-root" title="Permalink to this heading">¶</a></h1>
 <p><img alt="opentelemetry" src="../../_images/opentelemetry.jpeg"/></p>
 <p><strong>OpenTelemetry</strong> (OTel for short) is a collection of APIs and SDKs that allows us to collect, export, and generate traces, logs, and metrics (also known as the three pillars of observability). <strong>Open</strong> stands for <em>open-source</em>. <strong>Telemetry</strong> comes from the greek word <strong>Tele</strong> which means <em>remote</em> and <strong>metry</strong> means <em>measurement</em>. So OpenTelemetry is an open-source technology allowing you to collect remote measurements.</p>
 <p>In fact it comes from two existing open-source projects that merged and it is <strong><a class="reference external" href="https://github.com/opentracing">OpenTracing</a></strong> and <strong><a class="reference external" href="https://github.com/census-instrumentation">OpenCensus</a></strong>. It doesn’t provide any observability back-end solution like Prometheus or Jaeger. It is defining a standard.</p>
@@ -268,25 +267,25 @@
 </ol>
 <hr class="docutils"/>
 <section id="three-types-of-telemetry">
-<h2 id="three-types-of-telemetry">Three Types of Telemetry<a class="headerlink" href="#three-types-of-telemetry" title="Permalink to this headline">¶</a></h2>
+<h2 id="three-types-of-telemetry">Three Types of Telemetry<a class="headerlink" href="#three-types-of-telemetry" title="Permalink to this heading">¶</a></h2>
 <p><strong>Telemetry</strong> is the data we use to monitor our applications. It is a term meant to cover a wide range of data types, such as metrics, logs, and traces.</p>
 <section id="traces">
-<h3 id="traces">Traces<a class="headerlink" href="#traces" title="Permalink to this headline">¶</a></h3>
+<h3 id="traces">Traces<a class="headerlink" href="#traces" title="Permalink to this heading">¶</a></h3>
 <p><strong>Distributed Trace</strong>, more commonly known as a <strong>Trace</strong>, records the paths taken by requests (made by an application or end-user) as they propagate through multi-service architectures, like microservice and serverless applications. Tracing is essential for distributed systems, which commonly have nondterministic problems or are too complicated to reproduce locally.</p>
 <p>It is a context of what and why things are happening and the story of the communication between services. Traces allows us to visualize the progression of requests as they move throughout your system. Traces specify how requests are propagated through your services. It solves a lot of the gaps that you had when you relied solely on metrics and logs.</p>
 <p>A Trace is made of one or more <strong>Spans</strong>. The first Span represents the Root Span. Each Root Span represents a request from start to finish. The Spans underneath the parent provide a more in-depth context of what occurs during a request (or what steps make up a request). Traces tell us how long each request took, which components and services it interacted with, and the latency during each step, giving you a complete picture, end-to-end.</p>
 <section id="spans">
-<h4 id="spans">Spans<a class="headerlink" href="#spans" title="Permalink to this headline">¶</a></h4>
+<h4 id="spans">Spans<a class="headerlink" href="#spans" title="Permalink to this heading">¶</a></h4>
 <p>A <strong>span</strong> is a description of an event that occurs in your system. For example, and HTTP request or a database operation that spans over time (start at X and has a duration of Y milliseconds). Usually, it will be the parent and/or child of another span.</p>
 <p>It represents a unit of work or operation. It tracks specific operations that a request makes, painting a picture of what happened during the time in which that operation was executed. A Span contains name, parent span ID (empty for root spans), time-related (start and end) data, structured log messages, and other metadata (i.e. Attributes) to provide information about the operation it tracks.</p>
 </section>
 </section>
 <section id="logs">
-<h3 id="logs">Logs<a class="headerlink" href="#logs" title="Permalink to this headline">¶</a></h3>
+<h3 id="logs">Logs<a class="headerlink" href="#logs" title="Permalink to this heading">¶</a></h3>
 <p>A <strong>Log</strong> is a timestamped message emitted by a service or other components. Logs are the trail of breadcrumbs we leave within your application to read them later and understand how the application is behaving.</p>
 </section>
 <section id="metrics">
-<h3 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">¶</a></h3>
+<h3 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permalink to this heading">¶</a></h3>
 <p><strong>Metrics</strong> provide us with a high-level view of your system’s health and if it behaves within your desired boundaries. They are great at showing you when behaviour has changed. It is a simple measurement that you can capture during runtime and there are three types of metrics.</p>
 <p>Three types of metrics:</p>
 <ul class="simple">
@@ -310,7 +309,7 @@
 </section>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://opentelemetry.io/docs/concepts/signals/traces/">Traces</a></p></li>
 <li><p><a class="reference external" href="https://opentelemetry.io/docs/">Documentation</a></p></li>
@@ -369,7 +368,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

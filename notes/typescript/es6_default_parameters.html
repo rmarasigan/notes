@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="ES 6 – Arrow Functions" href="es6_arrow_functions.html" />
@@ -256,24 +255,24 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="es-6-default-parameters-in-functions-and-object-literals">
-<h1 id="notes-typescript-es6-default-parameters--page-root">ES 6 – Default Parameters in Functions and Object Literals<a class="headerlink" href="#notes-typescript-es6-default-parameters--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-typescript-es6-default-parameters--page-root">ES 6 – Default Parameters in Functions and Object Literals<a class="headerlink" href="#notes-typescript-es6-default-parameters--page-root" title="Permalink to this heading">¶</a></h1>
 <section id="default-function-parameters">
-<h2 id="default-function-parameters">Default Function Parameters<a class="headerlink" href="#default-function-parameters" title="Permalink to this headline">¶</a></h2>
+<h2 id="default-function-parameters">Default Function Parameters<a class="headerlink" href="#default-function-parameters" title="Permalink to this heading">¶</a></h2>
 <p>Allow named parameters to be initialized with default values if no value or <code class="docutils literal notranslate"><span class="pre">undefined</span></code> is passed.</p>
 <section id="syntax">
-<h3 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">functionName</span><span class="p">(</span><span class="nx">parameter1</span> <span class="o">=</span> <span class="nx">defaultValue1</span><span class="p">,</span> <span class="p">...,</span> <span class="nx">parameterN</span> <span class="o">=</span> <span class="nx">defaultValueN</span><span class="p">)</span> <span class="p">{</span>
-   <span class="c1">// code block here</span>
+<h3 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">functionName</span><span class="p">(</span><span class="nx">parameter1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">defaultValue1</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="nx">parameterN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">defaultValueN</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">// code block here</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="examples">
-<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h3>
 <p>For example, we have this function <code class="docutils literal notranslate"><span class="pre">add</span></code> without a default value.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span>
 <span class="p">{</span>
-   <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nx">add</span><span class="p">();</span>
@@ -285,13 +284,13 @@
 </pre></div>
 </div>
 <p>Adding a default value but we’re not passing any value to the <code class="docutils literal notranslate"><span class="pre">add()</span></code> function will give you a result of 10. But if you pass in a value, the default values will be ignored as long as there is value passed to the function.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="mf">5</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mf">5</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span>
 <span class="p">{</span>
-   <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nx">add</span><span class="p">();</span>
-<span class="nx">add</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">);</span>
+<span class="nx">add</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -309,32 +308,32 @@
 </div>
 </section>
 <section id="arguments-vs-parameters">
-<h3 id="arguments-vs-parameters">Arguments vs. Parameters<a class="headerlink" href="#arguments-vs-parameters" title="Permalink to this headline">¶</a></h3>
+<h3 id="arguments-vs-parameters">Arguments vs. Parameters<a class="headerlink" href="#arguments-vs-parameters" title="Permalink to this heading">¶</a></h3>
 <p>Parameters are what you specify in the function declaration whereas arguments are what you pass into the function.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span>
 <span class="p">{</span>
-   <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nx">add</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span> <span class="mf">200</span><span class="p">);</span>
+<span class="nx">add</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are the parameters of the <code class="docutils literal notranslate"><span class="pre">add()</span></code> function, and the values passed to the <code class="docutils literal notranslate"><span class="pre">add()</span></code> function <code class="docutils literal notranslate"><span class="pre">100</span></code> and <code class="docutils literal notranslate"><span class="pre">200</span></code> are the arguments.</p>
 </section>
 </section>
 <section id="object-literal-enhancement">
-<h2 id="object-literal-enhancement">Object Literal Enhancement<a class="headerlink" href="#object-literal-enhancement" title="Permalink to this headline">¶</a></h2>
+<h2 id="object-literal-enhancement">Object Literal Enhancement<a class="headerlink" href="#object-literal-enhancement" title="Permalink to this heading">¶</a></h2>
 <p>Object literal enhancement is used to group variables from the global scope and form them into javascript objects. It is the process of restructuring or putting back together.</p>
 <p>When defining object methods, it is no longer necessary to use the <strong><code class="docutils literal notranslate"><span class="pre">function</span></code></strong> keyword. Object literal enhancement allows us to pull global variables into objects and reduces typing by making the function keyword unnecessary.</p>
 <section id="old-syntax">
-<h3 id="old-syntax">Old Syntax<a class="headerlink" href="#old-syntax" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="nx">name</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="s1">'John'</span><span class="p">;</span>
-   <span class="p">},</span>
-   <span class="nx">age</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="mf">29</span>
-   <span class="p">}</span>
+<h3 id="old-syntax">Old Syntax<a class="headerlink" href="#old-syntax" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s1">'John'</span><span class="p">;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="mf">29</span>
+<span class="w">   </span><span class="p">}</span>
 <span class="p">}</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">());</span>
@@ -346,15 +345,15 @@
 </div>
 </section>
 <section id="new-syntax">
-<h3 id="new-syntax">New Syntax<a class="headerlink" href="#new-syntax" title="Permalink to this headline">¶</a></h3>
+<h3 id="new-syntax">New Syntax<a class="headerlink" href="#new-syntax" title="Permalink to this heading">¶</a></h3>
 <p>In ES6, we don’t really have to type in a <code class="docutils literal notranslate"><span class="pre">function</span></code> keyword.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="nx">name</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="s1">'John'</span><span class="p">;</span>
-   <span class="p">},</span>
-   <span class="nx">age</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="mf">29</span>
-   <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">name</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="s1">'John'</span><span class="p">;</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nx">age</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="mf">29</span>
+<span class="w">   </span><span class="p">}</span>
 <span class="p">}</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">());</span>
@@ -366,11 +365,11 @@
 </div>
 </section>
 <section id="computed-properties">
-<h3 id="computed-properties">Computed Properties<a class="headerlink" href="#computed-properties" title="Permalink to this headline">¶</a></h3>
+<h3 id="computed-properties">Computed Properties<a class="headerlink" href="#computed-properties" title="Permalink to this heading">¶</a></h3>
 <p>Computed property names allow us to write an expression wrapped in square brackets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>) instead of the regular property name. Whatever the expression evaluates to will become the property name. The square brackets allow you to use the string literals and variables as the property names.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"make"</span>
-<span class="kd">const</span> <span class="nx">laptop</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="p">[</span><span class="nx">name</span><span class="p">]</span><span class="o">:</span> <span class="s2">"Apple"</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"make"</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">laptop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="p">[</span><span class="nx">name</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="s2">"Apple"</span>
 <span class="p">}</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">laptop</span><span class="p">.</span><span class="nx">make</span><span class="p">);</span>
@@ -381,10 +380,10 @@
 </pre></div>
 </div>
 <p>The value of <code class="docutils literal notranslate"><span class="pre">name</span></code> was computed to <code class="docutils literal notranslate"><span class="pre">make</span></code> and this was used as the name of the property. In ES6, the computed property name is a part of the object literal syntax, and it uses the square bracket notation. When a property name is placed inside the square brackets, the JavaScript engine evaluates it as a string. It means that you can use an expression as a property name.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">prefix</span> <span class="o">=</span> <span class="s1">'machine'</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">machine</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="p">[</span><span class="nx">prefix</span> <span class="o">+</span> <span class="s1">' name'</span><span class="p">]</span><span class="o">:</span> <span class="s1">'server'</span><span class="p">,</span>
-    <span class="p">[</span><span class="nx">prefix</span> <span class="o">+</span> <span class="s1">' hours'</span><span class="p">]</span><span class="o">:</span> <span class="mf">10000</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">prefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'machine'</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">[</span><span class="nx">prefix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">' name'</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="s1">'server'</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="nx">prefix</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">' hours'</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="mf">10000</span>
 <span class="p">};</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">machine</span><span class="p">[</span><span class="s1">'machine name'</span><span class="p">]);</span>
@@ -399,7 +398,7 @@
 </section>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters">Default Parameters</a></p></li>
 <li><p><a class="reference external" href="https://www.javascripttutorial.net/es6/javascript-default-parameters/">JavaScript Default Parameters</a></p></li>
@@ -457,7 +456,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

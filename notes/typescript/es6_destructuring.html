@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="ES 6 – Generator Functions" href="es6_generator_functions.html" />
@@ -242,7 +241,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="es-6-destructuring">
-<h1 id="notes-typescript-es6-destructuring--page-root">ES 6 – Destructuring<a class="headerlink" href="#notes-typescript-es6-destructuring--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-typescript-es6-destructuring--page-root">ES 6 – Destructuring<a class="headerlink" href="#notes-typescript-es6-destructuring--page-root" title="Permalink to this heading">¶</a></h1>
 <p>The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables. It allows you to assign the properties of an array or object to variables using syntax that looks similar to array or object literals. This syntax can be extremely terse, while still exhibiting more clarity than the traditional property access.</p>
 <p>The two most used data structures in JavaScript are Object and Array.</p>
 <ul class="simple">
@@ -250,9 +249,9 @@
 <li><p>Arrays allow us to gather data items into an ordered list</p></li>
 </ul>
 <section id="destructuring-arrays">
-<h2 id="destructuring-arrays">Destructuring Arrays<a class="headerlink" href="#destructuring-arrays" title="Permalink to this headline">¶</a></h2>
+<h2 id="destructuring-arrays">Destructuring Arrays<a class="headerlink" href="#destructuring-arrays" title="Permalink to this heading">¶</a></h2>
 <p>The object and array literal expressions provide an easy way to create ad hoc packages of data.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">programming</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'javascript'</span><span class="p">,</span> <span class="s1">'go'</span><span class="p">,</span> <span class="s1">'c++'</span><span class="p">,</span> <span class="s1">'python'</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">programming</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'javascript'</span><span class="p">,</span><span class="w"> </span><span class="s1">'go'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c++'</span><span class="p">,</span><span class="w"> </span><span class="s1">'python'</span><span class="p">];</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">programming</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
 </pre></div>
 </div>
@@ -262,7 +261,7 @@
 </div>
 <p>The destructuring assignment uses similar syntax, but on the left-hand side of the assignment to define what values to unpack from the sourced variable. Destructuring does not mean <em>destructive</em>. It is called <em>destructuring assignment</em>  because it destructurizes by copying items into variables. But the array itself is not modified.</p>
 <p>This will just assign the <code class="docutils literal notranslate"><span class="pre">first</span></code> and <code class="docutils literal notranslate"><span class="pre">last</span></code> the value to the corresponding item in the array.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="p">[</span><span class="nx">first</span><span class="p">,</span> <span class="nx">last</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'javascript'</span><span class="p">,</span> <span class="s1">'go'</span><span class="p">,</span> <span class="s1">'c++'</span><span class="p">,</span> <span class="s1">'python'</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="p">[</span><span class="nx">first</span><span class="p">,</span><span class="w"> </span><span class="nx">last</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'javascript'</span><span class="p">,</span><span class="w"> </span><span class="s1">'go'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c++'</span><span class="p">,</span><span class="w"> </span><span class="s1">'python'</span><span class="p">];</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">first</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">last</span><span class="p">);</span>
 </pre></div>
@@ -273,7 +272,7 @@
 </pre></div>
 </div>
 <p>To get the last element, we can use commas to ignore some elements. Unwanted elements of the array can also be thrown away via an extra comma:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="p">[</span><span class="nx">first</span><span class="p">,</span> <span class="p">,</span> <span class="p">,</span> <span class="nx">last</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'javascript'</span><span class="p">,</span> <span class="s1">'go'</span><span class="p">,</span> <span class="s1">'c++'</span><span class="p">,</span> <span class="s1">'python'</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="p">[</span><span class="nx">first</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nx">last</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'javascript'</span><span class="p">,</span><span class="w"> </span><span class="s1">'go'</span><span class="p">,</span><span class="w"> </span><span class="s1">'c++'</span><span class="p">,</span><span class="w"> </span><span class="s1">'python'</span><span class="p">];</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">first</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">last</span><span class="p">);</span>
 </pre></div>
@@ -284,7 +283,7 @@
 </pre></div>
 </div>
 <p>In the code above, the second and third element of the array is skipped (as there are no variables for them), the fourth one is assigned to last. Actually, we can use it with any iterable not only arrays.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"abc"</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
@@ -298,11 +297,11 @@
 </div>
 <p>That works, because internally a destructuring assignment works by iterating over the right value. It’s a kind of syntax for calling <code class="docutils literal notranslate"><span class="pre">for...of</span></code> over the value to the right of <code class="docutils literal notranslate"><span class="pre">=</span></code> and assigning the values.</p>
 <p>There’s a well-known trick for swapping values of two variables using a destructuring assignment.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">guest</span> <span class="o">=</span> <span class="s2">"John"</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">admin</span> <span class="o">=</span> <span class="s2">"Manson"</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">guest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"John"</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">admin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Manson"</span><span class="p">;</span>
 
 <span class="c1">// Swapping the values. Make guest = Manson, admin = John</span>
-<span class="p">[</span><span class="nx">guest</span><span class="p">,</span> <span class="nx">admin</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">admin</span><span class="p">,</span> <span class="nx">guest</span><span class="p">];</span>
+<span class="p">[</span><span class="nx">guest</span><span class="p">,</span><span class="w"> </span><span class="nx">admin</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">admin</span><span class="p">,</span><span class="w"> </span><span class="nx">guest</span><span class="p">];</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">guest</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">admin</span><span class="p">);</span>
@@ -316,9 +315,9 @@
 <p>Here we create a temporary array of two variables and immediately destructure it in swapped order.</p>
 </section>
 <section id="default-values">
-<h2 id="default-values">Default Values<a class="headerlink" href="#default-values" title="Permalink to this headline">¶</a></h2>
+<h2 id="default-values">Default Values<a class="headerlink" href="#default-values" title="Permalink to this heading">¶</a></h2>
 <p>If the array is shorter than the list of variables at the left, there’ll be no errors. Absent values are considered undefined. But if we want a <em>default</em> value to replace the missing one, we can provide it using the <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="p">[</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"Guest"</span><span class="p">,</span> <span class="nx">surname</span> <span class="o">=</span> <span class="s2">"Anonymous"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"John"</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Guest"</span><span class="p">,</span><span class="w"> </span><span class="nx">surname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Anonymous"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"John"</span><span class="p">];</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">surname</span><span class="p">);</span>
 </pre></div>
@@ -330,19 +329,19 @@
 </div>
 </section>
 <section id="object-destructuring">
-<h2 id="object-destructuring">Object Destructuring<a class="headerlink" href="#object-destructuring" title="Permalink to this headline">¶</a></h2>
+<h2 id="object-destructuring">Object Destructuring<a class="headerlink" href="#object-destructuring" title="Permalink to this heading">¶</a></h2>
 <p>The basic syntax is:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="p">{</span><span class="nx">var1</span><span class="p">,</span> <span class="nx">var2</span><span class="p">}</span> <span class="o">=</span> <span class="p">{</span><span class="nx">var1</span><span class="o">:</span> <span class="p">...,</span> <span class="nx">var2</span><span class="o">:</span> <span class="p">....}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="p">{</span><span class="nx">var1</span><span class="p">,</span><span class="w"> </span><span class="nx">var2</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">var1</span><span class="o">:</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="nx">var2</span><span class="o">:</span><span class="w"> </span><span class="p">....}</span>
 </pre></div>
 </div>
 <p>We should have an existing object on the right side, that we want to split into variables. The left side contains an object-like “pattern” for corresponding properties.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="nx">title</span><span class="o">:</span> <span class="s2">"Menu"</span><span class="p">,</span>
-   <span class="nx">width</span><span class="o">:</span> <span class="mf">100</span><span class="p">,</span>
-   <span class="nx">height</span><span class="o">:</span> <span class="mf">200</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">"Menu"</span><span class="p">,</span>
+<span class="w">   </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span>
+<span class="w">   </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="mf">200</span>
 <span class="p">}</span>
 
-<span class="kd">let</span> <span class="p">{</span><span class="nx">title</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">}</span> <span class="o">=</span> <span class="nx">options</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="p">{</span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">width</span><span class="p">);</span>
@@ -356,7 +355,7 @@
 </pre></div>
 </div>
 <p>Properties <code class="docutils literal notranslate"><span class="pre">options.title</span></code>, <code class="docutils literal notranslate"><span class="pre">options.width</span></code> and <code class="docutils literal notranslate"><span class="pre">options.height</span></code> are assigned to the corresponding variables. Also, the order does not matter. This works too:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="p">{</span><span class="nx">height</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">title</span><span class="p">}</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">"Menu"</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span> <span class="mf">200</span><span class="p">,</span> <span class="nx">width</span><span class="o">:</span> <span class="mf">100</span> <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="p">{</span><span class="nx">height</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">"Menu"</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="w"> </span><span class="p">}</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">width</span><span class="p">);</span>
@@ -371,7 +370,7 @@
 </div>
 <p>The pattern on the left side may be more complex and specify the mapping between properties and variables. If we want to assign a property to a variable with another name, for instance, make options.width go into the variable named w, then we can set the variable name using a colon.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// { sourceProperty: targetVariable }</span>
-<span class="kd">let</span> <span class="p">{</span><span class="nx">width</span><span class="o">:</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span> <span class="nx">h</span><span class="p">,</span> <span class="nx">title</span><span class="p">}</span> <span class="o">=</span> <span class="nx">options</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="p">{</span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="nx">w</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="nx">h</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">width</span><span class="p">);</span>
@@ -387,7 +386,7 @@
 <p>The colon shows “what : goes where”. In the example above the property <code class="docutils literal notranslate"><span class="pre">width</span></code> goes to <code class="docutils literal notranslate"><span class="pre">w</span></code>, property <code class="docutils literal notranslate"><span class="pre">height</span></code> goes to <code class="docutils literal notranslate"><span class="pre">h</span></code>, and <code class="docutils literal notranslate"><span class="pre">title</span></code> is assigned to the same name. The identifier before the colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>) is the property of the object and the identifier after the colon is the variable.</p>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://javascript.info/destructuring-assignment">Destructuring assignment</a></p></li>
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">Destructuring assignment</a></p></li>
@@ -444,7 +443,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

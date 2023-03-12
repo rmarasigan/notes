@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="TS – Interfaces" href="ts_interfaces.html" />
@@ -246,25 +245,25 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="ts-functions">
-<h1 id="notes-typescript-ts-functions--page-root">TS – Functions<a class="headerlink" href="#notes-typescript-ts-functions--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-typescript-ts-functions--page-root">TS – Functions<a class="headerlink" href="#notes-typescript-ts-functions--page-root" title="Permalink to this heading">¶</a></h1>
 <p>Functions are the primary means of passing data around in JavaScript. They are the primary blocks of any program. With functions, you can implement/mimic the concepts of object-oriented programming like classes, objects, polymorphism, and abstraction. Functions ensure that the program is maintainable and reusable, and organized into readable blocks. It is a set of statements to perform a specific task. Once defined, functions may be called to access code. This makes the code reusable.</p>
 <p>A function declaration tells the compiler about a function’s name, return type, and parameters. A function definition provides the actual body of the function.</p>
 <section id="named-functions">
-<h2 id="named-functions">Named Functions<a class="headerlink" href="#named-functions" title="Permalink to this headline">¶</a></h2>
+<h2 id="named-functions">Named Functions<a class="headerlink" href="#named-functions" title="Permalink to this heading">¶</a></h2>
 <p>A named function is one where you declare and call a function by its given name.</p>
 <p>Syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">display</span><span class="p">()</span> <span class="p">{}</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">display</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 
 <span class="nx">display</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Functions can also include parameter types and return type.</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">x</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">y</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">:</span> <span class="kt">number</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
 <span class="p">{</span>
-   <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nx">sum</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">);</span>
+<span class="nx">sum</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -274,28 +273,28 @@
 <p>In this example, the <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function accepts two parameters with the <code class="docutils literal notranslate"><span class="pre">number</span></code> type. In it, you can only pass numbers into it, not the values of other types. The <code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">number</span></code> after the parentheses indicate the return type. The <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function return a value of the <code class="docutils literal notranslate"><span class="pre">number</span></code> type.</p>
 <p>When a function has a return type, the TypeScript compiler checks every <code class="docutils literal notranslate"><span class="pre">return</span></code> statement against the return type to ensure that the return vlalue is compatible with it. If a function does not return a value, you can use the <code class="docutils literal notranslate"><span class="pre">void</span></code> type as the return type. The <code class="docutils literal notranslate"><span class="pre">void</span></code> keyword indicates that the function doesn’t return any value.</p>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">print</span><span class="p">(</span><span class="nx">message</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">:</span> <span class="ow">void</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">print</span><span class="p">(</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="ow">void</span>
 <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
+<span class="w">   </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="anonymous-function">
-<h2 id="anonymous-function">Anonymous Function<a class="headerlink" href="#anonymous-function" title="Permalink to this headline">¶</a></h2>
+<h2 id="anonymous-function">Anonymous Function<a class="headerlink" href="#anonymous-function" title="Permalink to this heading">¶</a></h2>
 <p>An anonymous function is one which is defined as an expression. This expression is stored in a variable. So, the function itself does not have a name. These functions are invoked using the variable name that the function is stored in. An anonymous function is usually not accesible after its initial creation. Variables can be assigned an anonymous function. Such an expression is called a function expression.</p>
 <p>Syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">anonymous</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{}</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">anonymous</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 
 <span class="nx">anonymous</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>An anonymous function can also include parameter types and return type, just as standard functions do.</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">sum</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">y</span>: <span class="kt">number</span><span class="p">)</span> <span class="o">:</span> <span class="kt">number</span> <span class="p">{</span>
-   <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nx">sum</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">);</span>
+<span class="nx">sum</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -304,43 +303,43 @@
 </div>
 </section>
 <section id="optional-parameters">
-<h2 id="optional-parameters">Optional Parameters<a class="headerlink" href="#optional-parameters" title="Permalink to this headline">¶</a></h2>
+<h2 id="optional-parameters">Optional Parameters<a class="headerlink" href="#optional-parameters" title="Permalink to this heading">¶</a></h2>
 <p>Optional parameters can be used when arguments need not be compulsorily passed for a function’s execution. A parameter can be marked optimal by append a question mark to its name. The optional parameter <em>should be set as the last argument</em> in a function.</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">function_name</span> <span class="p">(</span><span class="nx">param_1</span>: <span class="kt">data_type</span><span class="p">,</span> <span class="nx">param_2</span>: <span class="kt">data_type</span><span class="p">,</span> <span class="nx">param_3?</span>: <span class="kt">data_type</span><span class="p">)</span> <span class="p">{}</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">function_name</span><span class="w"> </span><span class="p">(</span><span class="nx">param_1</span><span class="o">:</span><span class="w"> </span><span class="kt">data_type</span><span class="p">,</span><span class="w"> </span><span class="nx">param_2</span><span class="o">:</span><span class="w"> </span><span class="kt">data_type</span><span class="p">,</span><span class="w"> </span><span class="nx">param_3?</span><span class="o">:</span><span class="w"> </span><span class="kt">data_type</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">user_details</span><span class="p">(</span><span class="nx">name</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">email</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">mobile?</span>: <span class="kt">string</span><span class="p">)</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">user_details</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">mobile?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
 <span class="p">{</span>
-   <span class="k">if</span> <span class="p">(</span><span class="nx">mobile</span> <span class="o">!=</span> <span class="kc">undefined</span><span class="p">)</span>
-   <span class="p">{</span>
-      <span class="c1">// code block here</span>
-   <span class="p">}</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">mobile</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">undefined</span><span class="p">)</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// code block here</span>
+<span class="w">   </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">user_details</span><span class="p">(</span><span class="s2">"Manson"</span><span class="p">,</span> <span class="s2">"mark_manson@gmail.com"</span><span class="p">);</span>
-<span class="nx">user_details</span><span class="p">(</span><span class="s2">"Paulo"</span><span class="p">,</span> <span class="s2">"paulo_coelho@gmail.com"</span><span class="p">,</span> <span class="s2">"12345678923"</span><span class="p">);</span>
+<span class="nx">user_details</span><span class="p">(</span><span class="s2">"Manson"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mark_manson@gmail.com"</span><span class="p">);</span>
+<span class="nx">user_details</span><span class="p">(</span><span class="s2">"Paulo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"paulo_coelho@gmail.com"</span><span class="p">,</span><span class="w"> </span><span class="s2">"12345678923"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>In the above example, the last parameter <code class="docutils literal notranslate"><span class="pre">mobile</span></code> is marked as optional with a question mark appended at the end. If we do not specify the last parameter then its value will be <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
 </section>
 <section id="default-parameters">
-<h2 id="default-parameters">Default Parameters<a class="headerlink" href="#default-parameters" title="Permalink to this headline">¶</a></h2>
+<h2 id="default-parameters">Default Parameters<a class="headerlink" href="#default-parameters" title="Permalink to this heading">¶</a></h2>
 <p>Like optional parameters, default parameters are also optional. It means that you can omit the default parameters when calling the function. A parameter cannot be declared optional and default at the same time.</p>
 <p>Syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">function_name</span> <span class="p">(</span><span class="nx">param_1</span> <span class="o">=</span> <span class="nx">default_value1</span><span class="p">,</span> <span class="p">...)</span> <span class="p">{}</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">function_name</span><span class="w"> </span><span class="p">(</span><span class="nx">param_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">default_value1</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 <p>In this syntax, if you don’t pass arguments or pass the <code class="docutils literal notranslate"><span class="pre">undefined</span></code> into the function when calling it, the function will take the default initialized values for the omitted parameters.</p>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">calculate</span> <span class="p">(</span><span class="nx">price</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">rate</span>: <span class="kt">number</span> <span class="o">=</span> <span class="mf">0.50</span><span class="p">)</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">calculate</span><span class="w"> </span><span class="p">(</span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">rate</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.50</span><span class="p">)</span>
 <span class="p">{</span>
-   <span class="kd">let</span> <span class="nx">discount</span> <span class="o">=</span> <span class="nx">price</span> <span class="o">*</span> <span class="nx">rate</span><span class="p">;</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Discount Amount: </span><span class="si">${</span><span class="nx">discount</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="nx">discount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">rate</span><span class="p">;</span>
+<span class="w">   </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Discount Amount: </span><span class="si">${</span><span class="nx">discount</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nx">calculate</span><span class="p">(</span><span class="mf">2000</span><span class="p">);</span>
-<span class="nx">calculate</span><span class="p">(</span><span class="mf">2500</span><span class="p">,</span> <span class="mf">0.30</span><span class="p">)</span>
+<span class="nx">calculate</span><span class="p">(</span><span class="mf">2500</span><span class="p">,</span><span class="w"> </span><span class="mf">0.30</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -351,22 +350,22 @@
 <p>In the example above, the <code class="docutils literal notranslate"><span class="pre">calculate</span></code> function takes two parameters – price and rate. The default parameter value for rate is set to 0.50. When the program invokes the function, only passing the price parameter, the value of rate is 0.50 as there is no rate parameter being passed so the default value will be used. Again, the same function is invoked but with two arguments. The default value of rate is overwritten and is set to the value explicitly passed.</p>
 </section>
 <section id="rest-parameters">
-<h2 id="rest-parameters">Rest Parameters<a class="headerlink" href="#rest-parameters" title="Permalink to this headline">¶</a></h2>
+<h2 id="rest-parameters">Rest Parameters<a class="headerlink" href="#rest-parameters" title="Permalink to this heading">¶</a></h2>
 <p>When the number of parameters that a function will receive is not known or can vary, we can use rest parameters. With TypeScript we can use rest parameters denoted by ellipsis <code class="docutils literal notranslate"><span class="pre">...</span></code>. We can pass zero or more arguments to the rest parameters. The compiler will create an array of arguments with the rest parameter name provided by us.</p>
 <p>Rest parameters don’t restrict the number of values that you can pass to a function. However, the values passed must all be of the same type. In other words, rest parameters act as placeholders for multiple arguments of the same type. Any nonrest parameter should come before the rest parameter.</p>
 <p>Syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">function_name</span> <span class="p">(</span><span class="nx">param_1</span>: <span class="kt">data_type</span><span class="p">,</span> <span class="nx">...param_2</span>: <span class="kt">data_type</span><span class="p">)</span> <span class="p">{}</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">function_name</span><span class="w"> </span><span class="p">(</span><span class="nx">param_1</span><span class="o">:</span><span class="w"> </span><span class="kt">data_type</span><span class="p">,</span><span class="w"> </span><span class="nx">...param_2</span><span class="o">:</span><span class="w"> </span><span class="kt">data_type</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">...numbers</span>: <span class="kt">numbers</span><span class="p">[])</span><span class="o">:</span> <span class="kt">number</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">sum</span><span class="p">(</span><span class="nx">...numbers</span><span class="o">:</span><span class="w"> </span><span class="kt">numbers</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
 <span class="p">{</span>
-   <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
-   <span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">num</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">total</span> <span class="o">+=</span> <span class="nx">num</span><span class="p">);</span>
-   <span class="k">return</span> <span class="nx">total</span><span class="p">;</span>
+<span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">   </span><span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">num</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">num</span><span class="p">);</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="nx">total</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -376,7 +375,7 @@
 <p>In this example, the <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function calculates the total amount of numbers passed into it. Since the <code class="docutils literal notranslate"><span class="pre">numbers</span></code> parameter is a rest parameter, you can pass one or more numbers to calcule the total.</p>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.typescripttutorial.net/typescript-tutorial/typescript-functions/">TypeScript Functions</a></p></li>
 <li><p><a class="reference external" href="https://www.tutorialsteacher.com/typescript/typescript-function">TypeScript - Functions</a></p></li>
@@ -435,7 +434,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

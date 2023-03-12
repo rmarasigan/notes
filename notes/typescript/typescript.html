@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="TypeScript – Basic Types" href="ts_basic_types.html" />
@@ -254,74 +253,74 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="typescript">
-<h1 id="notes-typescript-typescript--page-root">TypeScript<a class="headerlink" href="#notes-typescript-typescript--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-typescript-typescript--page-root">TypeScript<a class="headerlink" href="#notes-typescript-typescript--page-root" title="Permalink to this heading">¶</a></h1>
 <section id="typescript-components">
-<h2 id="typescript-components">TypeScript Components<a class="headerlink" href="#typescript-components" title="Permalink to this headline">¶</a></h2>
+<h2 id="typescript-components">TypeScript Components<a class="headerlink" href="#typescript-components" title="Permalink to this heading">¶</a></h2>
 <a class="reference internal image-reference" href="../../_images/typescript_components.jpg"><img alt="typescript_components" src="../../_images/typescript_components.jpg" style="width: 500px;"/></a>
 <p>The compiler performs the type erasure and code transformations that convert your TypeScript code into JavaScript. It will emit warnings and errors if it detects problems and can perform additional tasks such as combining the output into a single file, generating source maps, and more.</p>
 <section id="language">
-<h3 id="language">Language<a class="headerlink" href="#language" title="Permalink to this headline">¶</a></h3>
+<h3 id="language">Language<a class="headerlink" href="#language" title="Permalink to this heading">¶</a></h3>
 <p>It features the TypeScript language elements. It comprises elements like syntax, keywords, and type annotations.</p>
 </section>
 <section id="compiler">
-<h3 id="compiler">Compiler<a class="headerlink" href="#compiler" title="Permalink to this headline">¶</a></h3>
+<h3 id="compiler">Compiler<a class="headerlink" href="#compiler" title="Permalink to this heading">¶</a></h3>
 <p>The TypeScript Compiler (TSC) transform the TypeScript program equivalent to its JavaScript code. It also performs the parsing, the type checking of our TypeScript code to JavaScript code. Browser doesn’t support the execution of TypeScript code directly. So the program written in TypeScript must be re-written in JavaScript equivalent code which supports the execution of code in the browser directly. We can compile the TypeScript file by running <code class="docutils literal notranslate"><span class="pre">tsc</span></code> command on the command line.</p>
 </section>
 <section id="language-services">
-<h3 id="language-services">Language Services<a class="headerlink" href="#language-services" title="Permalink to this headline">¶</a></h3>
+<h3 id="language-services">Language Services<a class="headerlink" href="#language-services" title="Permalink to this heading">¶</a></h3>
 <p>The language service provides information which helps editors and other tools to give better assistance features such as automated refactoring and IntelliSense. It exposes an additional layer around the core-compiler pipeline. It supports some standard typical editor operations like code formatting and outlining, colorization, statement, completion, signature help, etc.</p>
 </section>
 </section>
 <section id="type-annotations">
-<h2 id="type-annotations">Type Annotations<a class="headerlink" href="#type-annotations" title="Permalink to this headline">¶</a></h2>
+<h2 id="type-annotations">Type Annotations<a class="headerlink" href="#type-annotations" title="Permalink to this heading">¶</a></h2>
 <p>We can specify the type using <code class="docutils literal notranslate"><span class="pre">:Type</span></code> after the name of the variable, parameter of property. There can be a space after the colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>).</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">variable_name</span>: <span class="kt">type_annotation</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">variable_name</span>: <span class="kt">type_annotation</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">variable_name</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">variable_name</span><span class="o">:</span><span class="w"> </span><span class="kt">type_annotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">variable_name</span><span class="o">:</span><span class="w"> </span><span class="kt">type_annotation</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">variable_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
 
 <span class="c1">// Example Type Annotation with different data types</span>
-<span class="kd">let</span> <span class="nx">name</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s2">"John"</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">age</span>: <span class="kt">number</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">isUpdated</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"John"</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">isUpdated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>In the example above, you cannot change the value using a different data type other than the declared data type of a variable. If you try to do so, TypeScript will show an error. This helps in catching JavaScript errors. Type Annotations are used to enforce type checking. However, it helps the compiler in checking types and helps avoid errors dealing with data types.</p>
 <section id="type-annotation-of-parameters">
-<h3 id="type-annotation-of-parameters">Type Annotation of Parameters<a class="headerlink" href="#type-annotation-of-parameters" title="Permalink to this headline">¶</a></h3>
+<h3 id="type-annotation-of-parameters">Type Annotation of Parameters<a class="headerlink" href="#type-annotation-of-parameters" title="Permalink to this heading">¶</a></h3>
 <p>Basic syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">functionName</span><span class="p">(</span><span class="nx">param_1</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">param_2</span>: <span class="kt">number</span><span class="p">)</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">functionName</span><span class="p">(</span><span class="nx">param_1</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">param_2</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span>
 <span class="p">{</span>
-   <span class="c1">// code block here</span>
+<span class="w">   </span><span class="c1">// code block here</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">display</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">,</span> <span class="nx">name</span>: <span class="kt">string</span><span class="p">)</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">display</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span>
 <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Id = </span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">, Name = </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">   </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Id = </span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">, Name = </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="type-annotation-in-object">
-<h3 id="type-annotation-in-object">Type Annotation in Object<a class="headerlink" href="#type-annotation-in-object" title="Permalink to this headline">¶</a></h3>
+<h3 id="type-annotation-in-object">Type Annotation in Object<a class="headerlink" href="#type-annotation-in-object" title="Permalink to this heading">¶</a></h3>
 <p>Basic syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">variable_name</span> <span class="p">{</span>
-   <span class="nx">obj_1</span>: <span class="kt">string</span><span class="p">;</span>
-   <span class="nx">obj_2</span>: <span class="kt">number</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">variable_name</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">obj_1</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">   </span><span class="nx">obj_2</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 <span class="p">};</span>
 </pre></div>
 </div>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">employee</span> <span class="p">{</span>
-   <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
-   <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">employee</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">   </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="p">};</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.javatpoint.com/typescript-components">Components of TypeScript</a></p></li>
 <li><p><a class="reference external" href="https://www.tutorialsteacher.com/typescript/type-annotation">TypeScript - Type Annotations</a></p></li>
@@ -376,7 +375,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

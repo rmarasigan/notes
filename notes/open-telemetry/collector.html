@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="TrendMicro : Computer Networking Essentials" href="../networks/networking_essentials.html" />
@@ -258,7 +257,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="opentelemetry-collector">
-<h1 id="notes-open-telemetry-collector--page-root">OpenTelemetry Collector<a class="headerlink" href="#notes-open-telemetry-collector--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-open-telemetry-collector--page-root">OpenTelemetry Collector<a class="headerlink" href="#notes-open-telemetry-collector--page-root" title="Permalink to this heading">¶</a></h1>
 <p><strong>Collector</strong> makes your deployment much easier and faster to change your destination solution that will ingest your traces. It receives telemetry data, processes it, and then exports the data to tracing tools that can store it permanently. OTEL collectors can optionally be deployed between instrumented applications and the Telemetry backends as a Telemetry pipeline component. With an OTEL collector, Telemetry signals can be ingested in multiple formats, translated to OTEL native data format, and finally exported out to backend native formats.</p>
 <p><img alt="collector" src="../../_images/collector.jpg"/></p>
 <p>So there are several ways to deploy a Collector. You can either deploy it as an <strong>Agent</strong>. Basically, the Collector is an instance running with your application on the same host so it could be in other technology in the same machine or it could be in a container world or you can also deploy it as a daemon set. Then you got the <strong>Gateway</strong>. You can have one or more Collectors that are running as a service. So one per cluster, per data center, per region.</p>
@@ -269,45 +268,45 @@
 <p>For Metrics, you will have receivers for OpenTelemetry, in hosts, and Prometheus. The same thing for the Exporter, you can either send it to OpenTelemetry format or to Prometheus. Then you can have also a community-based component where you could basically build your own extensions that will enhance the collector pipeline.</p>
 <p><img alt="extensions-metrics" src="../../_images/extensions-metrics.jpg"/></p>
 <section id="otel-collector-architecture">
-<h2 id="otel-collector-architecture">OTel Collector Architecture<a class="headerlink" href="#otel-collector-architecture" title="Permalink to this headline">¶</a></h2>
+<h2 id="otel-collector-architecture">OTel Collector Architecture<a class="headerlink" href="#otel-collector-architecture" title="Permalink to this heading">¶</a></h2>
 <p><img alt="otel-collector-architecture" src="../../_images/otel-collector-architecture.png"/></p>
 </section>
 <section id="installation">
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
 <section id="linux">
-<h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
+<h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permalink to this heading">¶</a></h3>
 <p>To install <code class="docutils literal notranslate"><span class="pre">otelcol-contrib</span></code> binary with the associated systemd service, run the following command replacing <code class="docutils literal notranslate"><span class="pre">0.58.0</span></code> with the desired version and <code class="docutils literal notranslate"><span class="pre">amd64</span></code> with the desired architecture.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ wget https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.58.0/otelcol-contrib_0.58.0_linux_amd64.deb
-dev@dev:~$ sudo dpkg -i otelcol-contrib_0.58.0_linux_amd64.deb
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>wget<span class="w"> </span>https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.58.0/otelcol-contrib_0.58.0_linux_amd64.deb
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>otelcol-contrib_0.58.0_linux_amd64.deb
 </pre></div>
 </div>
 <p>You can check the status of the installed service with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo systemctl status otelcol-contrib
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>otelcol-contrib
 </pre></div>
 </div>
 <p>And check the logs with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo journalctl -u otelcol-contrib -f
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>otelcol-contrib<span class="w"> </span>-f
 </pre></div>
 </div>
 <p>Yu can edit the config at <code class="docutils literal notranslate"><span class="pre">/etc/otel-contrib/config.yaml</span></code> and restart OpenTelemetry Collector:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo systemctl restart otelcol-contrib
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>otelcol-contrib
 </pre></div>
 </div>
 </section>
 <section id="compiling-resources">
-<h3 id="compiling-resources">Compiling resources<a class="headerlink" href="#compiling-resources" title="Permalink to this headline">¶</a></h3>
+<h3 id="compiling-resources">Compiling resources<a class="headerlink" href="#compiling-resources" title="Permalink to this heading">¶</a></h3>
 <p>You can also compile OpenTelemetry Collector locally:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ git clone https://github.com/open-telemetry/opentelemetry-collector-contrib.git
-dev@dev:~$ <span class="nb">cd</span> opentelemetry-collector-contrib
-dev@dev:~opentelemetry-collector-contrib$ make install-tools
-dev@dev:~opentelemetry-collector-contrib$ make otelcontribcol
-dev@dev:~opentelemetry-collector-contrib$ ./bin/otelcontribcol_linux_amd64 --config ./examples/local/otel-config.yaml
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/open-telemetry/opentelemetry-collector-contrib.git
+dev@dev:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>opentelemetry-collector-contrib
+dev@dev:~opentelemetry-collector-contrib$<span class="w"> </span>make<span class="w"> </span>install-tools
+dev@dev:~opentelemetry-collector-contrib$<span class="w"> </span>make<span class="w"> </span>otelcontribcol
+dev@dev:~opentelemetry-collector-contrib$<span class="w"> </span>./bin/otelcontribcol_linux_amd64<span class="w"> </span>--config<span class="w"> </span>./examples/local/otel-config.yaml
 </pre></div>
 </div>
 </section>
 </section>
 <section id="configuration">
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h2>
 <p>The Collector consists of three components that access telemetry data:</p>
 <ul class="simple">
 <li><p>Receivers</p></li>
@@ -315,75 +314,75 @@ dev@dev:~opentelemetry-collector-contrib$ ./bin/otelcontribcol_linux_amd64 --con
 <li><p>Exporters</p></li>
 </ul>
 <p>An example configuration would look like:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># receivers configure how data gets into the Collector.</span><span class="w"></span>
-<span class="nt">receivers</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">otlp</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">protocols</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">grpc</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">http</span><span class="p">:</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># receivers configure how data gets into the Collector.</span>
+<span class="nt">receivers</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">otlp</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">protocols</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">grpc</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">http</span><span class="p">:</span>
 
-<span class="c1"># processors specify what happens with the received data.</span><span class="w"></span>
-<span class="nt">processors</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">resourcedetection</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">detectors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">system</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">  </span><span class="nt">batch</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">send_batch_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span><span class="w"></span>
-<span class="w">    </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10s</span><span class="w"></span>
+<span class="c1"># processors specify what happens with the received data.</span>
+<span class="nt">processors</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">resourcedetection</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">detectors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">system</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">batch</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">send_batch_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+<span class="w">    </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10s</span>
 
-<span class="c1"># exporters configure how to send processed data to one or more backends.</span><span class="w"></span>
-<span class="nt">exporters</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">otlp</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otlp.dev:4317</span><span class="w"></span>
-<span class="w">    </span><span class="nt">headers</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">dev-dsn</span><span class="p">:</span><span class="w"> </span><span class="s">'https://&lt;token&gt;@dev.dev/&lt;project_id&gt;'</span><span class="w"></span>
+<span class="c1"># exporters configure how to send processed data to one or more backends.</span>
+<span class="nt">exporters</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">otlp</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otlp.dev:4317</span>
+<span class="w">    </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">dev-dsn</span><span class="p">:</span><span class="w"> </span><span class="s">'https://&lt;token&gt;@dev.dev/&lt;project_id&gt;'</span>
 
-<span class="nt">extensions</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Health Check extension responds to health check requests</span><span class="w"></span>
-<span class="w">  </span><span class="nt">health_check</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># PProf extension allows fetching Collector's performance profile</span><span class="w"></span>
-<span class="w">  </span><span class="nt">pprof</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># zPages extension enables in-process diagnostics</span><span class="w"></span>
-<span class="w">  </span><span class="nt">zpages</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="c1"># Memory Ballast extension configures memory ballast for the process</span><span class="w"></span>
-<span class="w">  </span><span class="nt">memory_ballast</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">size_mib</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">512</span><span class="w"></span>
+<span class="nt">extensions</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Health Check extension responds to health check requests</span>
+<span class="w">  </span><span class="nt">health_check</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># PProf extension allows fetching Collector's performance profile</span>
+<span class="w">  </span><span class="nt">pprof</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># zPages extension enables in-process diagnostics</span>
+<span class="w">  </span><span class="nt">zpages</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Memory Ballast extension configures memory ballast for the process</span>
+<span class="w">  </span><span class="nt">memory_ballast</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">size_mib</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">512</span>
 
-<span class="c1"># service pulls the configured receivers, processors, and exporters together into</span><span class="w"></span>
-<span class="c1"># processing pipelines. Unused receivers/processors/exporters are ignored.</span><span class="w"></span>
-<span class="nt">service</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">pipelines</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">traces</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">receivers</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">otlp</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">      </span><span class="nt">processors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">batch</span><span class="p p-Indicator">]</span><span class="w"></span>
-<span class="w">      </span><span class="nt">exporters</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">otlp</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="c1"># service pulls the configured receivers, processors, and exporters together into</span>
+<span class="c1"># processing pipelines. Unused receivers/processors/exporters are ignored.</span>
+<span class="nt">service</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">pipelines</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">traces</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">receivers</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">otlp</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">processors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">batch</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">exporters</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">otlp</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 </section>
 <section id="receivers">
-<h2 id="receivers">Receivers<a class="headerlink" href="#receivers" title="Permalink to this headline">¶</a></h2>
+<h2 id="receivers">Receivers<a class="headerlink" href="#receivers" title="Permalink to this heading">¶</a></h2>
 <p>A <strong>receiver</strong>, which can be push or pull based, is how data gets into the Collector. Receivers may support one or more data sources. The <code class="docutils literal notranslate"><span class="pre">receivers</span></code> section is how receivers are configured. Many receivers come with default settings so simply specifying the name of the receiver is enough to configure it. Generally, a receiver accepts data in a specified format, translates it into the internal format, and passes it to processors and exporters defined in the applicable pipelines. The format of the traces and metrics supported is receiver-specific.</p>
 </section>
 <section id="processors">
-<h2 id="processors">Processors<a class="headerlink" href="#processors" title="Permalink to this headline">¶</a></h2>
+<h2 id="processors">Processors<a class="headerlink" href="#processors" title="Permalink to this heading">¶</a></h2>
 <p><strong>Processors</strong> are run on data between being received and being exported. The <code class="docutils literal notranslate"><span class="pre">processors:</span></code> section is how processors are configured. Processors may come with default settings, but many require configuration. Any configuration for a processor must be done in this section. Configuration parameters specified for which the processor provides a default configuration are overriden.</p>
 <p>Processors can be used to transform the metrics or modify the name of the span. You can also do things like batching the data before sending it out, retrying in case the exporting fails, adding metadata, and tail-based sampling.</p>
 </section>
 <section id="exporters">
-<h2 id="exporters">Exporters<a class="headerlink" href="#exporters" title="Permalink to this headline">¶</a></h2>
+<h2 id="exporters">Exporters<a class="headerlink" href="#exporters" title="Permalink to this heading">¶</a></h2>
 <p>An <strong>epxorter</strong>, which can be push or pull based, is how you send data to one or more backends/destinations. Exporters may support one or more data sources. The <code class="docutils literal notranslate"><span class="pre">exporters:</span></code> section is how exporters are configured. Exporters may come with default settings, but many require configuration to specify at least the destination and security settings.</p>
 </section>
 <section id="extensions">
-<h2 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h2>
+<h2 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permalink to this heading">¶</a></h2>
 <p><strong>Extensions</strong> provide capabilities on top of the primary functionality of the collector. They do not require direct access to Telemetry data and are mostly used for managing and monitoring an OTEL collector. Extensions are optional.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">extensions:</span></code> section is how extensions are configured. Many extensions come with default settings so simply specifying the name of the extension is enough to configure it (for example, <code class="docutils literal notranslate"><span class="pre">health_check:</span></code>). If configuration is required or a user wants to change the default configuration then such configuration must be defined in this section. Configuration parameters specified for which the extension provides a default configuration are overridden.</p>
 </section>
 <section id="service">
-<h2 id="service">Service<a class="headerlink" href="#service" title="Permalink to this headline">¶</a></h2>
+<h2 id="service">Service<a class="headerlink" href="#service" title="Permalink to this heading">¶</a></h2>
 <p>The <strong>service</strong> section is used to enable the components which are configured within receivers, processors, exporters, and extensions sections. The service section consists of three sub-sections: extensions, pipelines, and telemetry.</p>
 <p>The <strong>extensions</strong> consist of a list of all of the extensions to enable. <strong>Pipelines</strong> can be of traces, metrics, and logs type and consist of a set of receivers, processors, and exporters. Each receiver/processor/exporter must be defined in the configuration outside of the service section to be included in a pipeline. <strong>Telemetry</strong> is where the telemetry for the collector itself can be configured. It has two sub-sections: logs and metrics.</p>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://opentelemetry.io/docs/collector/configuration/">Configuration</a></p></li>
 <li><p><a class="reference external" href="https://uptrace.dev/opentelemetry/collector.html">OpenTelemetry Collector</a></p></li>
@@ -440,7 +439,7 @@ dev@dev:~opentelemetry-collector-contrib$ ./bin/otelcontribcol_linux_amd64 --con
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

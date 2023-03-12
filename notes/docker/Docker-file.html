@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Dockerfile Reference" href="DockerfileReference.html" />
@@ -244,21 +243,21 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="dockerfile">
-<h1 id="notes-docker-docker-file--page-root">Dockerfile<a class="headerlink" href="#notes-docker-docker-file--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-docker-docker-file--page-root">Dockerfile<a class="headerlink" href="#notes-docker-docker-file--page-root" title="Permalink to this heading">¶</a></h1>
 <p>A <strong>Dockerfile</strong> is essentially a plain text file that is going to have a couple of lines of configuration placed inside of it. This configuration is going to define how our container behaves or more specifically, what different programs it’s going to contain and what it does when it starts up as a container.</p>
 <p>Once we create that, <strong>Dockerfile</strong> will then pass it off to the <strong>Docker Client</strong> which is the <strong>Docker CLI</strong>. The <strong>Docker Client</strong> will provide the file to the <strong>Docker Server</strong>. The <strong>Docker Server</strong> is doing the heavy lifting for us. It’s going to take the <strong>Dockerfile</strong>, look at all the lines of configuration that we have inside of it and then build a usable image that can be used to start up a new container.</p>
 <p><img alt="docker-file-images" src="../../_images/docker-file-images.png"/></p>
 <p>Inside of every <strong>Dockerfile</strong>, we’re always going to specify a base image. After that, we’ll add in some additional configuration to run commands, to add in some dependencies or some more software, some more programs that we need to successfully create and execute our container. And then finally, we will specify a startup command for the image.</p>
 <p><img alt="docker-creating-dockerfile" src="../../_images/docker-creating-dockerfile.png"/></p>
 <section id="building-dockerfile">
-<h2 id="building-dockerfile">Building Dockerfile<a class="headerlink" href="#building-dockerfile" title="Permalink to this headline">¶</a></h2>
+<h2 id="building-dockerfile">Building Dockerfile<a class="headerlink" href="#building-dockerfile" title="Permalink to this heading">¶</a></h2>
 <p>Create a new file called <strong>Dockerfile</strong> and notice how it has a capital <code class="docutils literal notranslate"><span class="pre">D</span></code> and it has no extension.</p>
 <p><strong>Example</strong></p>
 <div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="c"># Use an existing docker image as base</span>
 <span class="k">FROM</span><span class="w"> </span><span class="s">alpine</span>
 
 <span class="c"># Download and install a dependency</span>
-<span class="k">RUN</span><span class="w"> </span>apk add --update redis
+<span class="k">RUN</span><span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>--update<span class="w"> </span>redis
 
 <span class="c"># Tell the image what to do when it starts as a container</span>
 <span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"redis-server"</span><span class="p">]</span>
@@ -275,21 +274,21 @@ Successfully built fc60771ecq08
 </div>
 </section>
 <section id="dockerfile-teardown">
-<h2 id="dockerfile-teardown">Dockerfile Teardown<a class="headerlink" href="#dockerfile-teardown" title="Permalink to this headline">¶</a></h2>
+<h2 id="dockerfile-teardown">Dockerfile Teardown<a class="headerlink" href="#dockerfile-teardown" title="Permalink to this heading">¶</a></h2>
 <p>Every line started off with a single word that we refer to as an instruction. This instruction is telling the Docker Server to do some very specific preparation step on the image that we are trying to create.</p>
 <p><img alt="docker-dockerfile-teardown" src="../../_images/docker-dockerfile-teardown.png"/></p>
 <p>The instruction <code class="docutils literal notranslate"><span class="pre">FROM</span></code> is used to specify the image that we want to use as a base. The <code class="docutils literal notranslate"><span class="pre">RUN</span></code> instruction is used to execute some command while we are preparing our custom image. And then the <code class="docutils literal notranslate"><span class="pre">CMD</span></code> or command instruction specifies what should be executed when our image is used to start up a brand new container. Every line of configuration that you are ever going to add to a <strong>Dockerfile</strong> is always going to start off with an instruction.</p>
 <p>After each instruction, we then provided an argument to the instruction that kind of customized how that instruction was executed. So as you might guess, by putting <code class="docutils literal notranslate"><span class="pre">FROM</span> <span class="pre">alpine</span></code>, we are saying we want to use a base image of  <code class="docutils literal notranslate"><span class="pre">alpine</span></code> when preparing our image.</p>
 </section>
 <section id="what-s-base-image">
-<h2 id="what-s-base-image">What’s Base Image?<a class="headerlink" href="#what-s-base-image" title="Permalink to this headline">¶</a></h2>
+<h2 id="what-s-base-image">What’s Base Image?<a class="headerlink" href="#what-s-base-image" title="Permalink to this heading">¶</a></h2>
 <p>Writing a <strong>Dockerfile</strong> is a little bit just like being given a computer. So a brand new computer with no operating system on it and being told to install Google Chrome on there.</p>
 <p><img alt="docker-dockerfile-base-image" src="../../_images/docker-dockerfile-base-image.png"/></p>
 <p>So the purpose of a specifying a <code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">image</span></code> is to kind of give us an initial starting point or an initial set of programs that we can use to further customize our image. So that is the purpose of that first line, the <code class="docutils literal notranslate"><span class="pre">FROM</span> <span class="pre">alpine</span></code>. We said that we wanted to use the alpine docker image as kind of an initial operating system or a starting point for the image that we are creating.</p>
 <p>We are trying to install and run <code class="docutils literal notranslate"><span class="pre">redis</span></code> and the <code class="docutils literal notranslate"><span class="pre">alpine</span></code> base image has a set of programs inside of it that are very useful for installing and running redis. The command that was or the program that was most useful for you and I for installing and running redis was found on the second line of the Dockerfile, <code class="docutils literal notranslate"><span class="pre">RUN</span> <span class="pre">apk</span> <span class="pre">add</span> <span class="pre">--update</span> <span class="pre">redis</span></code>. <code class="docutils literal notranslate"><span class="pre">APK</span></code> is a program called Alpine Package something I think. It is a package manager that comes preinstalled on the alpine image and we can use that package manager that is built into alpine to automatically download and install redis for us.</p>
 </section>
 <section id="build-process">
-<h2 id="build-process">Build Process<a class="headerlink" href="#build-process" title="Permalink to this headline">¶</a></h2>
+<h2 id="build-process">Build Process<a class="headerlink" href="#build-process" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker build .
 </pre></div>
 </div>
@@ -323,13 +322,13 @@ Successfully build fc60771ae08
 <p><img alt="docker-dockerfile-build-recap" src="../../_images/docker-build-recap.png"/></p>
 </section>
 <section id="rebuilds-with-cache">
-<h2 id="rebuilds-with-cache">Rebuilds with Cache<a class="headerlink" href="#rebuilds-with-cache" title="Permalink to this headline">¶</a></h2>
+<h2 id="rebuilds-with-cache">Rebuilds with Cache<a class="headerlink" href="#rebuilds-with-cache" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="c"># Use an existing docker image as base</span>
 <span class="k">FROM</span><span class="w"> </span><span class="s">alpine</span>
 
 <span class="c"># Download and install a dependency</span>
-<span class="k">RUN</span><span class="w"> </span>apk add --update redis
-<span class="k">RUN</span><span class="w"> </span>apk add --update gcc
+<span class="k">RUN</span><span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>--update<span class="w"> </span>redis
+<span class="k">RUN</span><span class="w"> </span>apk<span class="w"> </span>add<span class="w"> </span>--update<span class="w"> </span>gcc
 
 <span class="c"># Tell the image what to do when it starts as a container</span>
 <span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"redis-server"</span><span class="p">]</span>
@@ -388,7 +387,7 @@ Successfully build fc60771ae08
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

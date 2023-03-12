@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="docker-compose" href="Docker-Compose-Cheatsheet.html" />
@@ -260,9 +259,9 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="docker-cli-cheatsheet">
-<h1 id="notes-docker-docker-cheatsheet--page-root">Docker CLI CheatSheet<a class="headerlink" href="#notes-docker-docker-cheatsheet--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-docker-docker-cheatsheet--page-root">Docker CLI CheatSheet<a class="headerlink" href="#notes-docker-docker-cheatsheet--page-root" title="Permalink to this heading">¶</a></h1>
 <section id="container-management-commands">
-<h2 id="container-management-commands">Container Management Commands<a class="headerlink" href="#container-management-commands" title="Permalink to this headline">¶</a></h2>
+<h2 id="container-management-commands">Container Management Commands<a class="headerlink" href="#container-management-commands" title="Permalink to this heading">¶</a></h2>
 <table>
 <thead>
 <tr class="row-odd"><th class="head"><p>Command</p></th>
@@ -303,7 +302,7 @@
 <p><strong><code class="docutils literal notranslate"><span class="pre">-f</span></code></strong> allows removing running containers (<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">kill</span></code> + <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span></code>)</p>
 </section>
 <section id="inspecting-the-container">
-<h2 id="inspecting-the-container">Inspecting the Container<a class="headerlink" href="#inspecting-the-container" title="Permalink to this headline">¶</a></h2>
+<h2 id="inspecting-the-container">Inspecting the Container<a class="headerlink" href="#inspecting-the-container" title="Permalink to this heading">¶</a></h2>
 <table>
 <thead>
 <tr class="row-odd"><th class="head"><p>Command</p></th>
@@ -333,7 +332,7 @@
 </table>
 </section>
 <section id="interacting-with-the-container">
-<h2 id="interacting-with-the-container">Interacting with the Container<a class="headerlink" href="#interacting-with-the-container" title="Permalink to this headline">¶</a></h2>
+<h2 id="interacting-with-the-container">Interacting with the Container<a class="headerlink" href="#interacting-with-the-container" title="Permalink to this heading">¶</a></h2>
 <table>
 <thead>
 <tr class="row-odd"><th class="head"><p>Command</p></th>
@@ -366,7 +365,7 @@
 </table>
 </section>
 <section id="image-management-commands">
-<h2 id="image-management-commands">Image Management Commands<a class="headerlink" href="#image-management-commands" title="Permalink to this headline">¶</a></h2>
+<h2 id="image-management-commands">Image Management Commands<a class="headerlink" href="#image-management-commands" title="Permalink to this heading">¶</a></h2>
 <table>
 <thead>
 <tr class="row-odd"><th class="head"><p>Command</p></th>
@@ -396,250 +395,250 @@
 </table>
 </section>
 <section id="build-run">
-<h2 id="build-run">Build &amp; Run<a class="headerlink" href="#build-run" title="Permalink to this headline">¶</a></h2>
+<h2 id="build-run">Build &amp; Run<a class="headerlink" href="#build-run" title="Permalink to this heading">¶</a></h2>
 <p><strong>Create an image from a Dockerfile</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker build -t <span class="s2">"app/container_name"</span> .
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span><span class="s2">"app/container_name"</span><span class="w"> </span>.
 </pre></div>
 </div>
 <p><strong>Run a command in an image</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run <span class="s2">"app/container_name"</span> .
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span><span class="s2">"app/container_name"</span><span class="w"> </span>.
 </pre></div>
 </div>
 </section>
 <section id="lifecycle-commands">
-<h2 id="lifecycle-commands">Lifecycle Commands<a class="headerlink" href="#lifecycle-commands" title="Permalink to this headline">¶</a></h2>
+<h2 id="lifecycle-commands">Lifecycle Commands<a class="headerlink" href="#lifecycle-commands" title="Permalink to this heading">¶</a></h2>
 <p><strong>Create a container (without starting it)</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker create <span class="o">[</span>options<span class="o">]</span> IMAGE
-  -a, --attach               <span class="c1"># attach stdout/err</span>
-  -i, --interactive          <span class="c1"># attach stdin (interactive)</span>
-  -t, --tty                  <span class="c1"># pseudo-tty</span>
-      --name NAME            <span class="c1"># name your image</span>
-  -p, --publish <span class="m">5000</span>:5000    <span class="c1"># port map</span>
-      --expose <span class="m">5432</span>          <span class="c1"># expose a port to linked containers</span>
-  -P, --publish-all          <span class="c1"># publish all ports</span>
-      --link container:alias <span class="c1"># linking</span>
-  -v, --volume <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>:/app    <span class="c1"># mount (absolute paths needed)</span>
-  -e, --env <span class="nv">NAME</span><span class="o">=</span>hello       <span class="c1"># env vars</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>create<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span>IMAGE
+<span class="w">  </span>-a,<span class="w"> </span>--attach<span class="w">               </span><span class="c1"># attach stdout/err</span>
+<span class="w">  </span>-i,<span class="w"> </span>--interactive<span class="w">          </span><span class="c1"># attach stdin (interactive)</span>
+<span class="w">  </span>-t,<span class="w"> </span>--tty<span class="w">                  </span><span class="c1"># pseudo-tty</span>
+<span class="w">      </span>--name<span class="w"> </span>NAME<span class="w">            </span><span class="c1"># name your image</span>
+<span class="w">  </span>-p,<span class="w"> </span>--publish<span class="w"> </span><span class="m">5000</span>:5000<span class="w">    </span><span class="c1"># port map</span>
+<span class="w">      </span>--expose<span class="w"> </span><span class="m">5432</span><span class="w">          </span><span class="c1"># expose a port to linked containers</span>
+<span class="w">  </span>-P,<span class="w"> </span>--publish-all<span class="w">          </span><span class="c1"># publish all ports</span>
+<span class="w">      </span>--link<span class="w"> </span>container:alias<span class="w"> </span><span class="c1"># linking</span>
+<span class="w">  </span>-v,<span class="w"> </span>--volume<span class="w"> </span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>:/app<span class="w">    </span><span class="c1"># mount (absolute paths needed)</span>
+<span class="w">  </span>-e,<span class="w"> </span>--env<span class="w"> </span><span class="nv">NAME</span><span class="o">=</span>hello<span class="w">       </span><span class="c1"># env vars</span>
 
-dev@dev:~$ docker create --name app_redis_1 <span class="se">\</span>
-          --expose <span class="m">6379</span> <span class="se">\</span>
-          redis:3.0.2
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>app_redis_1<span class="w"> </span><span class="se">\</span>
+<span class="w">          </span>--expose<span class="w"> </span><span class="m">6379</span><span class="w"> </span><span class="se">\</span>
+<span class="w">          </span>redis:3.0.2
 </pre></div>
 </div>
 <p><strong>Rename an existing container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker rename <span class="o">[</span>CONTAINER_NAME<span class="o">]</span> <span class="o">[</span>NEW_CONTAINER_NAME<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>rename<span class="w"> </span><span class="o">[</span>CONTAINER_NAME<span class="o">]</span><span class="w"> </span><span class="o">[</span>NEW_CONTAINER_NAME<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Run a command in a new container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run <span class="o">[</span>IMAGE<span class="o">]</span> <span class="o">[</span>COMMAND<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span><span class="o">[</span>IMAGE<span class="o">]</span><span class="w"> </span><span class="o">[</span>COMMAND<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Remove container after it exits</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run --rm <span class="o">[</span>IMAGE<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span><span class="o">[</span>IMAGE<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Start a container and keep it running</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run -td <span class="o">[</span>IMAGE<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-td<span class="w"> </span><span class="o">[</span>IMAGE<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Start a container and creates an interactive bash shell in the container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run -it <span class="o">[</span>IMAGE<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span><span class="o">[</span>IMAGE<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Create, Start, and run a command inside the container and remove the container after executing command.</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run -it-rm <span class="o">[</span>IMAGE<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it-rm<span class="w"> </span><span class="o">[</span>IMAGE<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Execute command inside already running container.</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker <span class="nb">exec</span> <span class="o">[</span>options<span class="o">]</span> CONTAINER COMMAND
-  -d, --detach        <span class="c1"># run in background</span>
-  -i, --interactive   <span class="c1"># stdin</span>
-  -t, --tty           <span class="c1"># interactive</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span>CONTAINER<span class="w"> </span>COMMAND
+<span class="w">  </span>-d,<span class="w"> </span>--detach<span class="w">        </span><span class="c1"># run in background</span>
+<span class="w">  </span>-i,<span class="w"> </span>--interactive<span class="w">   </span><span class="c1"># stdin</span>
+<span class="w">  </span>-t,<span class="w"> </span>--tty<span class="w">           </span><span class="c1"># interactive</span>
 
-dev@dev:~$ docker <span class="nb">exec</span> -it <span class="o">[</span>CONTAINER<span class="o">]</span>
-dev@dev:~$ docker <span class="nb">exec</span> <span class="o">[</span>CONTAINER<span class="o">]</span> tail logs/development.log
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span><span class="w"> </span>tail<span class="w"> </span>logs/development.log
 </pre></div>
 </div>
 <p><strong>Delete a container (if it is not running)</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker rm <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>rm<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Update the configuration of the container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker update <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>update<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 </section>
 <section id="starting-and-stopping-containers">
-<h2 id="starting-and-stopping-containers">Starting and Stopping Containers<a class="headerlink" href="#starting-and-stopping-containers" title="Permalink to this headline">¶</a></h2>
+<h2 id="starting-and-stopping-containers">Starting and Stopping Containers<a class="headerlink" href="#starting-and-stopping-containers" title="Permalink to this heading">¶</a></h2>
 <p><strong>Start Container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker start <span class="o">[</span>options<span class="o">]</span> CONTAINER
-  -a, --attach        <span class="c1"># attach stdout/err</span>
-  -i, --interactive   <span class="c1"># attach stdin</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>start<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span>CONTAINER
+<span class="w">  </span>-a,<span class="w"> </span>--attach<span class="w">        </span><span class="c1"># attach stdout/err</span>
+<span class="w">  </span>-i,<span class="w"> </span>--interactive<span class="w">   </span><span class="c1"># attach stdin</span>
 
-dev@dev:~$ docker start <span class="o">[</span>CONTAINER<span class="o">]</span>
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>start<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Stop running Container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker stop <span class="o">[</span>options<span class="o">]</span> CONTAINER
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>stop<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span>CONTAINER
 </pre></div>
 </div>
 <p><strong>Stop running Container and start it again</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker restart <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>restart<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Pause processes in a running container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker pause <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>pause<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Unpause processes in a running container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker unpause <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>unpause<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Block a container until others stop</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker <span class="nb">wait</span> <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span><span class="nb">wait</span><span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Kill a container by sending a SIGKILL to a running container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker <span class="nb">kill</span> <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span><span class="nb">kill</span><span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Attach local standard input, output, and error streams to a running container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker attach <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>attach<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 </section>
 <section id="docker-image-commands">
-<h2 id="docker-image-commands">Docker Image Commands<a class="headerlink" href="#docker-image-commands" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-image-commands">Docker Image Commands<a class="headerlink" href="#docker-image-commands" title="Permalink to this heading">¶</a></h2>
 <p><strong>Create an image from a Dockerfile</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker build <span class="o">[</span>URL/FILE<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span><span class="o">[</span>URL/FILE<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Create an image from a Dockerfile with Tags</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker build -t &lt;tag&gt; <span class="o">[</span>URL/FILE<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>&lt;tag&gt;<span class="w"> </span><span class="o">[</span>URL/FILE<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Pull an image from a registry</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker pull <span class="o">[</span>IMAGE<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>pull<span class="w"> </span><span class="o">[</span>IMAGE<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Push an image to a registry</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker push <span class="o">[</span>IMAGE<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>push<span class="w"> </span><span class="o">[</span>IMAGE<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Create an image from a tarball</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker import <span class="o">[</span>URL/FILE<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>import<span class="w"> </span><span class="o">[</span>URL/FILE<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Create an image from a container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker commit <span class="o">[</span>CONTAINER<span class="o">]</span> <span class="o">[</span>NEW_IMAGE_NAME<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>commit<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span><span class="w"> </span><span class="o">[</span>NEW_IMAGE_NAME<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Remove an image</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker rmi <span class="o">[</span>IMAGE<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>rmi<span class="w"> </span><span class="o">[</span>IMAGE<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Save an image to a tar archive</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker load <span class="o">[</span>TAR_FILE/STDIN_FILE<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>load<span class="w"> </span><span class="o">[</span>TAR_FILE/STDIN_FILE<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Load an image from a tar archive or stdin</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker save <span class="o">[</span>IMAGE<span class="o">]</span> &gt; <span class="o">[</span>TAR_FILE<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>save<span class="w"> </span><span class="o">[</span>IMAGE<span class="o">]</span><span class="w"> </span>&gt;<span class="w"> </span><span class="o">[</span>TAR_FILE<span class="o">]</span>
 </pre></div>
 </div>
 </section>
 <section id="docker-container-and-image-information">
-<h2 id="docker-container-and-image-information">Docker Container And Image Information<a class="headerlink" href="#docker-container-and-image-information" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-container-and-image-information">Docker Container And Image Information<a class="headerlink" href="#docker-container-and-image-information" title="Permalink to this heading">¶</a></h2>
 <p><strong>List running containers</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>ps
 </pre></div>
 </div>
 <p><strong>Lists both running containers and ones that have stopped</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker ps -a
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>ps<span class="w"> </span>-a
 </pre></div>
 </div>
 <p><strong>List the logs from a running container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker logs <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>logs<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>List low-level information on Docker objects</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker inspect <span class="o">[</span>OBJECT_NAME/ID<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>inspect<span class="w"> </span><span class="o">[</span>OBJECT_NAME/ID<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>List real-time events from a container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker events <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>events<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Show port mapping for a container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker port <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>port<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Show running processes in a container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker top <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>top<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Show live resource usage statistics of container</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker stats <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>stats<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Show changes to files (or directories) on a filesystem</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker diff <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>diff<span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>List all images that are locally stored with the docker engine</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker <span class="o">[</span>image<span class="o">]</span> ls
-dev@dev:~$ docker images -a           <span class="c1"># also show intermediate</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span><span class="o">[</span>image<span class="o">]</span><span class="w"> </span>ls
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>images<span class="w"> </span>-a<span class="w">           </span><span class="c1"># also show intermediate</span>
 </pre></div>
 </div>
 <p><strong>Show the history of an image</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker <span class="nb">history</span> <span class="o">[</span>IMAGE<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span><span class="nb">history</span><span class="w"> </span><span class="o">[</span>IMAGE<span class="o">]</span>
 </pre></div>
 </div>
 </section>
 <section id="network-commands">
-<h2 id="network-commands">Network Commands<a class="headerlink" href="#network-commands" title="Permalink to this headline">¶</a></h2>
+<h2 id="network-commands">Network Commands<a class="headerlink" href="#network-commands" title="Permalink to this heading">¶</a></h2>
 <p><strong>List networks</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker network ls
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>network<span class="w"> </span>ls
 </pre></div>
 </div>
 <p><strong>Remove one or more networks</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker network rm <span class="o">[</span>NETWORK<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>network<span class="w"> </span>rm<span class="w"> </span><span class="o">[</span>NETWORK<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Show information on one or more networks</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker network inspect <span class="o">[</span>NETWORK<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>network<span class="w"> </span>inspect<span class="w"> </span><span class="o">[</span>NETWORK<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Connects a container to a network</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker network connect <span class="o">[</span>NETWORK<span class="o">]</span> <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>network<span class="w"> </span>connect<span class="w"> </span><span class="o">[</span>NETWORK<span class="o">]</span><span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Disconnect a container from a network</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker network disconnect <span class="o">[</span>NETWORK<span class="o">]</span> <span class="o">[</span>CONTAINER<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>network<span class="w"> </span>disconnect<span class="w"> </span><span class="o">[</span>NETWORK<span class="o">]</span><span class="w"> </span><span class="o">[</span>CONTAINER<span class="o">]</span>
 </pre></div>
 </div>
 </section>
 <section id="services">
-<h2 id="services">Services<a class="headerlink" href="#services" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker service ls                                      <span class="c1"># view list of all the services runnning in swarm</span>
-dev@dev:~$ docker stack services stack_name                       <span class="c1"># see all running services</span>
-dev@dev:~$ docker service logs stack_name service_name            <span class="c1"># see all services logs</span>
-dev@dev:~$ docker service scale <span class="nv">stack_name_service_name</span><span class="o">=</span>replicas  <span class="c1"># scale services quickly across qualified node</span>
+<h2 id="services">Services<a class="headerlink" href="#services" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>service<span class="w"> </span>ls<span class="w">                                      </span><span class="c1"># view list of all the services runnning in swarm</span>
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>stack<span class="w"> </span>services<span class="w"> </span>stack_name<span class="w">                       </span><span class="c1"># see all running services</span>
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>service<span class="w"> </span>logs<span class="w"> </span>stack_name<span class="w"> </span>service_name<span class="w">            </span><span class="c1"># see all services logs</span>
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>service<span class="w"> </span>scale<span class="w"> </span><span class="nv">stack_name_service_name</span><span class="o">=</span>replicas<span class="w">  </span><span class="c1"># scale services quickly across qualified node</span>
 </pre></div>
 </div>
 </section>
 <section id="clean-up">
-<h2 id="clean-up">Clean up<a class="headerlink" href="#clean-up" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker image prune              <span class="c1"># clean or prune unused (dangling) images</span>
-dev@dev:~$ docker image prune -a           <span class="c1"># remove all images which are not in use containers , add - a</span>
-dev@dev:~$ docker system prune             <span class="c1"># prune your entire system</span>
-dev@dev:~$ docker swarm leave              <span class="c1"># leave swarm</span>
-dev@dev:~$ docker stack rm stack_name      <span class="c1"># remove swarm ( deletes all volume data and database info)</span>
-dev@dev:~$ docker <span class="nb">kill</span> <span class="k">$(</span>docker ps -q<span class="k">)</span>     <span class="c1"># kill all running containers</span>
+<h2 id="clean-up">Clean up<a class="headerlink" href="#clean-up" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>image<span class="w"> </span>prune<span class="w">              </span><span class="c1"># clean or prune unused (dangling) images</span>
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>image<span class="w"> </span>prune<span class="w"> </span>-a<span class="w">           </span><span class="c1"># remove all images which are not in use containers , add - a</span>
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>system<span class="w"> </span>prune<span class="w">             </span><span class="c1"># prune your entire system</span>
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>swarm<span class="w"> </span>leave<span class="w">              </span><span class="c1"># leave swarm</span>
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>stack<span class="w"> </span>rm<span class="w"> </span>stack_name<span class="w">      </span><span class="c1"># remove swarm ( deletes all volume data and database info)</span>
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span><span class="nb">kill</span><span class="w"> </span><span class="k">$(</span>docker<span class="w"> </span>ps<span class="w"> </span>-q<span class="k">)</span><span class="w">     </span><span class="c1"># kill all running containers</span>
 </pre></div>
 </div>
 </section>
 <section id="reference">
-<h2 id="reference"><strong>Reference</strong><a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference"><strong>Reference</strong><a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://dockerlabs.collabnix.com/docker/cheatsheet/">Docker Cheatsheet</a></p></li>
 <li><p><a class="reference external" href="https://github.com/wsargent/docker-cheat-sheet">wsargent/docker-cheat-sheet</a></p></li>
@@ -695,7 +694,7 @@ dev@dev:~$ docker <span class="nb">kill</span> <span class="k">$(</span>docker p
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

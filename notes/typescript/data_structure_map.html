@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="ECMA 6 – Data Structure: Set" href="data_structure_set.html" />
@@ -240,10 +239,10 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="ecma-6-data-structure-maps">
-<h1 id="notes-typescript-data-structure-map--page-root">ECMA 6 – Data Structure: Maps<a class="headerlink" href="#notes-typescript-data-structure-map--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-typescript-data-structure-map--page-root">ECMA 6 – Data Structure: Maps<a class="headerlink" href="#notes-typescript-data-structure-map--page-root" title="Permalink to this heading">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">map</span></code> object is a simple key-value pair. Keys and values in a map may be primitive or objects. This data structure enables mapping a key to a value. You can create a <code class="docutils literal notranslate"><span class="pre">Map</span></code> by passing an iterable object whose elements are in the form of key-value, or you can create an empty <code class="docutils literal notranslate"><span class="pre">Map</span></code>, then insert entries.</p>
 <section id="object-vs-maps">
-<h2 id="object-vs-maps">Object vs Maps<a class="headerlink" href="#object-vs-maps" title="Permalink to this headline">¶</a></h2>
+<h2 id="object-vs-maps">Object vs Maps<a class="headerlink" href="#object-vs-maps" title="Permalink to this heading">¶</a></h2>
 <p>Object is similar to Map — both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. <em>Regular Object</em> in JavaScript is <em>dictionary type</em> of data collection — which means it also follows key-value stored conecpt like Map. Each key in Object — or we normally call it “property” — is also unique and associated with a single value. It also has built-in prototype.</p>
 <p>Map is a data collection in which data is stored in a form of pairs, which contains a unique key and value mapped to that key. Because of the uniqueness of each stored key, there is no duplicated pair stored. Map is mainly used for fast searching and looking up data.</p>
 <p>They are indeed quite different from each other, mainly in:</p>
@@ -268,14 +267,14 @@
 </ul>
 </section>
 <section id="methods">
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
 <p>To create a map object:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">person</span>  <span class="o">=</span> <span class="ow">new</span> <span class="nb">Map</span><span class="p">();</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">person</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span>
 
 <span class="c1">// set() method adds or updates an element with a</span>
 <span class="c1">// specified key and value</span>
 <span class="c1">// Syntax: set(key, value)</span>
-<span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'John'</span><span class="p">);</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span><span class="w"> </span><span class="s1">'John'</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
 </pre></div>
@@ -285,10 +284,10 @@
 </pre></div>
 </div>
 <p>We can have function as a key of any primitive data arrays or symbols as well.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="kd">function</span> <span class="nx">print</span><span class="p">()</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="nx">print</span><span class="p">()</span>
 <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"hey"</span><span class="p">);</span>
-<span class="p">},</span> <span class="s2">"John"</span><span class="p">);</span>
+<span class="w">   </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"hey"</span><span class="p">);</span>
+<span class="p">},</span><span class="w"> </span><span class="s2">"John"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -296,9 +295,9 @@
 </pre></div>
 </div>
 <p>If we added a few things like 3 times with the same key and values, it will get rid of the duplicates.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'John'</span><span class="p">);</span>
-<span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'John'</span><span class="p">);</span>
-<span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'John'</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span><span class="w"> </span><span class="s1">'John'</span><span class="p">);</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span><span class="w"> </span><span class="s1">'John'</span><span class="p">);</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span><span class="w"> </span><span class="s1">'John'</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
 </pre></div>
@@ -308,9 +307,9 @@
 </pre></div>
 </div>
 <p>But if we change at least one of them, we will get a Map of 2. Basically it will automatically remove the duplicate values and ignore them.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'John'</span><span class="p">);</span>
-<span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name1'</span><span class="p">,</span> <span class="s1">'John1'</span><span class="p">);</span>
-<span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'John'</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span><span class="w"> </span><span class="s1">'John'</span><span class="p">);</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name1'</span><span class="p">,</span><span class="w"> </span><span class="s1">'John1'</span><span class="p">);</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span><span class="w"> </span><span class="s1">'John'</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
 </pre></div>
@@ -370,8 +369,8 @@
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// forEach() method executes a provided function</span>
 <span class="c1">// once per each key/value pair in the Map object,</span>
 <span class="c1">// in insertion order</span>
-<span class="nx">person</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
-   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">person</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </div>
@@ -381,10 +380,10 @@
 </pre></div>
 </div>
 <p>Adding a key-value pairs:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">john</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'John'</span><span class="p">,</span> <span class="s1">'29'</span><span class="p">,</span> <span class="s1">'programmer'</span><span class="p">]</span>
-<span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Map</span><span class="p">([</span>
-   <span class="p">[</span><span class="nx">john</span><span class="p">],</span>
-   <span class="p">[</span><span class="ow">new</span> <span class="nb">Date</span><span class="p">(),</span> <span class="s1">'today'</span><span class="p">]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">john</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'John'</span><span class="p">,</span><span class="w"> </span><span class="s1">'29'</span><span class="p">,</span><span class="w"> </span><span class="s1">'programmer'</span><span class="p">]</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">([</span>
+<span class="w">   </span><span class="p">[</span><span class="nx">john</span><span class="p">],</span>
+<span class="w">   </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(),</span><span class="w"> </span><span class="s1">'today'</span><span class="p">]</span>
 <span class="p">]);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
@@ -396,7 +395,7 @@
 </div>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></p></li>
 <li><p><a class="reference external" href="https://www.tutorialspoint.com/es6/es6_collections.htm">ES6 - Collections</a></p></li>
@@ -453,7 +452,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

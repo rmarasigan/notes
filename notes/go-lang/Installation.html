@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Palindrome" href="Palindrome.html" />
@@ -256,7 +255,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="installation">
-<h1 id="notes-go-lang-installation--page-root">Installation<a class="headerlink" href="#notes-go-lang-installation--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-go-lang-installation--page-root">Installation<a class="headerlink" href="#notes-go-lang-installation--page-root" title="Permalink to this heading">¶</a></h1>
 <p>To <strong>download and install</strong>, please follow the instructions describe <a class="reference external" href="https://go.dev/doc/install">here</a>.</p>
 <p>Prerequisite:</p>
 <ul class="simple">
@@ -266,18 +265,18 @@
 <li><p>Visual Studio Code (Optional)</p></li>
 </ul>
 <section id="linux">
-<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
+<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permalink to this heading">¶</a></h2>
 <section id="go-installation">
-<h3 id="go-installation">Go Installation<a class="headerlink" href="#go-installation" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt install software-properties-common apt-transport-https wget
-dev@dev:~$ wget -c https://go.dev/dl/go1.xx.xx.linux-amd64.tar.gz
-dev@dev:~$ sudo tar -C /usr/local -xzf go1.xx.xx.linux-amd64.tar.gz
-dev@dev:~$ sudo vim .profile
+<h3 id="go-installation">Go Installation<a class="headerlink" href="#go-installation" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>software-properties-common<span class="w"> </span>apt-transport-https<span class="w"> </span>wget
+dev@dev:~$<span class="w"> </span>wget<span class="w"> </span>-c<span class="w"> </span>https://go.dev/dl/go1.xx.xx.linux-amd64.tar.gz
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>tar<span class="w"> </span>-C<span class="w"> </span>/usr/local<span class="w"> </span>-xzf<span class="w"> </span>go1.xx.xx.linux-amd64.tar.gz
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>vim<span class="w"> </span>.profile
 </pre></div>
 </div>
 <p>NOTE: Please remember to change the xx.xx to your desired version of go.</p>
 <section id="file-hierarchy">
-<h4 id="file-hierarchy">File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this headline">¶</a></h4>
+<h4 id="file-hierarchy">File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this heading">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>go
 │
 └───bin
@@ -293,68 +292,68 @@ dev@dev:~$ sudo vim .profile
 <p>Add this inside the .profile</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">## GO configuration ##</span>
 <span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/bin:</span><span class="nv">$HOME</span><span class="s2">/.local/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/go/bin
-<span class="nb">export</span> <span class="nv">GOPATH</span><span class="o">=</span><span class="nv">$HOME</span>/go
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$GOPATH</span>/bin
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/go/bin
+<span class="nb">export</span><span class="w"> </span><span class="nv">GOPATH</span><span class="o">=</span><span class="nv">$HOME</span>/go
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$GOPATH</span>/bin
 </pre></div>
 </div>
 <p><strong>NOTE</strong>: The changes made to the <code class="docutils literal notranslate"><span class="pre">.profile</span></code> will not be applied until the next time you log into your machine. Please restart your machine.</p>
 <p>To check if it’s already installed:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ go version
-go version go1.xx.xx linux/amd64
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>go<span class="w"> </span>version
+go<span class="w"> </span>version<span class="w"> </span>go1.xx.xx<span class="w"> </span>linux/amd64
 </pre></div>
 </div>
 </section>
 <section id="upgrade-go-version">
-<h4 id="upgrade-go-version">Upgrade Go Version<a class="headerlink" href="#upgrade-go-version" title="Permalink to this headline">¶</a></h4>
+<h4 id="upgrade-go-version">Upgrade Go Version<a class="headerlink" href="#upgrade-go-version" title="Permalink to this heading">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Delete the /usr/local/go</span>
-dev@dev:~$ sudo rm -rf /usr/local/go
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/usr/local/go
 
 <span class="c1"># Download the new version</span>
-dev@dev:~$ wget https://go.dev/dl/go1.xx.xx.linux-amd64.tar.gz
+dev@dev:~$<span class="w"> </span>wget<span class="w"> </span>https://go.dev/dl/go1.xx.xx.linux-amd64.tar.gz
 
 <span class="c1"># Extract the archive file</span>
-dev@dev:~$ sudo tar -C /usr/local -xzf /home/dev/go1.xx.xx.linux-amd64.tar.gz
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>tar<span class="w"> </span>-C<span class="w"> </span>/usr/local<span class="w"> </span>-xzf<span class="w"> </span>/home/dev/go1.xx.xx.linux-amd64.tar.gz
 </pre></div>
 </div>
 <p><strong>NOTE</strong>: Please remember to change the xx.xx to your desired version of go.</p>
 </section>
 </section>
 <section id="git-installation">
-<h3 id="git-installation">GIT Installation<a class="headerlink" href="#git-installation" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
-dev@dev:~$ sudo apt-get install git
+<h3 id="git-installation">GIT Installation<a class="headerlink" href="#git-installation" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git
 <span class="c1"># Git configuration</span>
-dev@dev:~$ git config --global user.name <span class="s2">"username"</span>
-dev@dev:~$ git config --global user.email <span class="s2">"email@email.com"</span>
+dev@dev:~$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"username"</span>
+dev@dev:~$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"email@email.com"</span>
 </pre></div>
 </div>
 </section>
 <section id="gcc-installation">
-<h3 id="gcc-installation">GCC Installation<a class="headerlink" href="#gcc-installation" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
-dev@dev:~$ sudo apt install build-essential
-dev@dev:~$ gcc --version
-gcc <span class="o">(</span>Ubuntu <span class="m">7</span>.4.0-1ubuntu1~18.04<span class="o">)</span> <span class="m">7</span>.4.0
-Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2017</span> Free Software Foundation, Inc.
-This is free software<span class="p">;</span> see the <span class="nb">source</span> <span class="k">for</span> copying conditions. There is NO warranty<span class="p">;</span> not even <span class="k">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+<h3 id="gcc-installation">GCC Installation<a class="headerlink" href="#gcc-installation" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential
+dev@dev:~$<span class="w"> </span>gcc<span class="w"> </span>--version
+gcc<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span><span class="m">7</span>.4.0-1ubuntu1~18.04<span class="o">)</span><span class="w"> </span><span class="m">7</span>.4.0
+Copyright<span class="w"> </span><span class="o">(</span>C<span class="o">)</span><span class="w"> </span><span class="m">2017</span><span class="w"> </span>Free<span class="w"> </span>Software<span class="w"> </span>Foundation,<span class="w"> </span>Inc.
+This<span class="w"> </span>is<span class="w"> </span>free<span class="w"> </span>software<span class="p">;</span><span class="w"> </span>see<span class="w"> </span>the<span class="w"> </span><span class="nb">source</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>copying<span class="w"> </span>conditions.<span class="w"> </span>There<span class="w"> </span>is<span class="w"> </span>NO<span class="w"> </span>warranty<span class="p">;</span><span class="w"> </span>not<span class="w"> </span>even<span class="w"> </span><span class="k">for</span><span class="w"> </span>MERCHANTABILITY<span class="w"> </span>or<span class="w"> </span>FITNESS<span class="w"> </span>FOR<span class="w"> </span>A<span class="w"> </span>PARTICULAR<span class="w"> </span>PURPOSE.
 </pre></div>
 </div>
 </section>
 <section id="vs-code-installation">
-<h3 id="vs-code-installation">VS Code Installation<a class="headerlink" href="#vs-code-installation" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ sudo apt update
-dev@dev:~$ sudo apt install software-properties-common apt-transport-https
-dev@dev:~$ wget -qO- https://packages.microsoft.com/keys/microsoft.asc <span class="p">|</span> gpg --dearmor &gt; packages.microsoft.gpg
-dev@dev:~$ sudo install -o root -g root -m <span class="m">644</span> packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-dev@dev:~$ sudo sh -c <span class="s1">'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" &gt; /etc/apt/sources.list.d/vscode.list'</span>
-dev@dev:~$ sudo apt update
-dev@dev:~$ sudo apt install code
+<h3 id="vs-code-installation">VS Code Installation<a class="headerlink" href="#vs-code-installation" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>software-properties-common<span class="w"> </span>apt-transport-https
+dev@dev:~$<span class="w"> </span>wget<span class="w"> </span>-qO-<span class="w"> </span>https://packages.microsoft.com/keys/microsoft.asc<span class="w"> </span><span class="p">|</span><span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>&gt;<span class="w"> </span>packages.microsoft.gpg
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>install<span class="w"> </span>-o<span class="w"> </span>root<span class="w"> </span>-g<span class="w"> </span>root<span class="w"> </span>-m<span class="w"> </span><span class="m">644</span><span class="w"> </span>packages.microsoft.gpg<span class="w"> </span>/etc/apt/trusted.gpg.d/
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" &gt; /etc/apt/sources.list.d/vscode.list'</span>
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+dev@dev:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>code
 </pre></div>
 </div>
 <p><strong>NOTE:</strong> Due to its size, the installation takes approximately 5 minutes.</p>
 <section id="vs-code-plugin-installation">
-<h4 id="vs-code-plugin-installation">VS Code Plugin Installation<a class="headerlink" href="#vs-code-plugin-installation" title="Permalink to this headline">¶</a></h4>
+<h4 id="vs-code-plugin-installation">VS Code Plugin Installation<a class="headerlink" href="#vs-code-plugin-installation" title="Permalink to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>Go to <strong>Extension</strong> on the left side panel and install <strong>Go by lukehoban</strong></p></li>
 </ul>
@@ -410,7 +409,7 @@ dev@dev:~$ sudo apt install code
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

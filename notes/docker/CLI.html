@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Docker CLI CheatSheet" href="Docker-Cheatsheet.html" />
@@ -266,35 +265,35 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="command-line-reference">
-<h1 id="notes-docker-cli--page-root"><a class="reference external" href="#notes-docker-cli--page-root">Command Line Reference</a><a class="headerlink" href="#notes-docker-cli--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-docker-cli--page-root"><a class="reference external" href="#notes-docker-cli--page-root">Command Line Reference</a><a class="headerlink" href="#notes-docker-cli--page-root" title="Permalink to this heading">¶</a></h1>
 <section id="docker-run">
-<h2 id="docker-run"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code><a class="headerlink" href="#docker-run" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-run"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code><a class="headerlink" href="#docker-run" title="Permalink to this heading">¶</a></h2>
 <p>Run a command in a new container. The <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> command first creates a writeable container layer over the specified image, and then starts it using the specified command.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run <span class="o">[</span>OPTIONS<span class="o">]</span> IMAGE<span class="o">[</span>:TAG<span class="p">|</span>@DIGEST<span class="o">]</span> <span class="o">[</span>COMMAND<span class="o">]</span> <span class="o">[</span>ARG...<span class="o">]</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>IMAGE<span class="o">[</span>:TAG<span class="p">|</span>@DIGEST<span class="o">]</span><span class="w"> </span><span class="o">[</span>COMMAND<span class="o">]</span><span class="w"> </span><span class="o">[</span>ARG...<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Example</strong></p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker run hello-world
-Unable to find image ‘hello-world:latest’ locally
-latest: Pulling from library/hello-world
-b8dfe127a29: Pull <span class="nb">complete</span>
-Digest: sha256:9f6ad537c5132bcce57f7a0a20e317228d382c3cd61edae14650eec68b2b345c
-Status: Downloaded newer image <span class="k">for</span> hello-world:latest
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>hello-world
+Unable<span class="w"> </span>to<span class="w"> </span>find<span class="w"> </span>image<span class="w"> </span>‘hello-world:latest’<span class="w"> </span>locally
+latest:<span class="w"> </span>Pulling<span class="w"> </span>from<span class="w"> </span>library/hello-world
+b8dfe127a29:<span class="w"> </span>Pull<span class="w"> </span><span class="nb">complete</span>
+Digest:<span class="w"> </span>sha256:9f6ad537c5132bcce57f7a0a20e317228d382c3cd61edae14650eec68b2b345c
+Status:<span class="w"> </span>Downloaded<span class="w"> </span>newer<span class="w"> </span>image<span class="w"> </span><span class="k">for</span><span class="w"> </span>hello-world:latest
 
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
+Hello<span class="w"> </span>from<span class="w"> </span>Docker!
+This<span class="w"> </span>message<span class="w"> </span>shows<span class="w"> </span>that<span class="w"> </span>your<span class="w"> </span>installation<span class="w"> </span>appears<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>working<span class="w"> </span>correctly.
 </pre></div>
 </div>
 <section id="docker-run-docker-create-docker-start">
-<h3 id="docker-run-docker-create-docker-start"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> = <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">create</span></code> + <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">start</span></code><a class="headerlink" href="#docker-run-docker-create-docker-start" title="Permalink to this headline">¶</a></h3>
+<h3 id="docker-run-docker-create-docker-start"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> = <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">create</span></code> + <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">start</span></code><a class="headerlink" href="#docker-run-docker-create-docker-start" title="Permalink to this heading">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">create</span></code> command is used to create a container out of an image. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">start</span></code> is used to actually start an image.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker create hello-world
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>create<span class="w"> </span>hello-world
 71830b72c406c28acc2908549d42fe10b8c558ce08b28a2ba642129249383481
-dev@dev:~$ docker start -a 71830b72c406c28acc2908549d42fe10b8c558ce08b28a2ba642129249383481
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>start<span class="w"> </span>-a<span class="w"> </span>71830b72c406c28acc2908549d42fe10b8c558ce08b28a2ba642129249383481
+Hello<span class="w"> </span>from<span class="w"> </span>Docker!
+This<span class="w"> </span>message<span class="w"> </span>shows<span class="w"> </span>that<span class="w"> </span>your<span class="w"> </span>installation<span class="w"> </span>appears<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>working<span class="w"> </span>correctly.
 
-To generate this message, Docker took the following steps:
+To<span class="w"> </span>generate<span class="w"> </span>this<span class="w"> </span>message,<span class="w"> </span>Docker<span class="w"> </span>took<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>steps:
 ...........
 </pre></div>
 </div>
@@ -306,9 +305,9 @@ To generate this message, Docker took the following steps:
 </section>
 </section>
 <section id="docker-ps">
-<h2 id="docker-ps"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code><a class="headerlink" href="#docker-ps" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-ps"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code><a class="headerlink" href="#docker-ps" title="Permalink to this heading">¶</a></h2>
 <p>List containers.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker ps <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>ps<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </pre></div>
 </div>
 <p><strong>Options</strong></p>
@@ -355,11 +354,11 @@ To generate this message, Docker took the following steps:
 </table>
 </section>
 <section id="docker-start">
-<h2 id="docker-start"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">start</span></code><a class="headerlink" href="#docker-start" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-start"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">start</span></code><a class="headerlink" href="#docker-start" title="Permalink to this heading">¶</a></h2>
 <p>Start one or more stopped containers</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker start <span class="o">[</span>OPTIONS<span class="o">]</span> CONTAINER <span class="o">[</span>CONTAINER...<span class="o">]</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>start<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>CONTAINER<span class="w"> </span><span class="o">[</span>CONTAINER...<span class="o">]</span>
 
-dev@dev:~$ docker start my_container
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>start<span class="w"> </span>my_container
 </pre></div>
 </div>
 <p><strong>Options</strong></p>
@@ -387,18 +386,18 @@ dev@dev:~$ docker start my_container
 </table>
 </section>
 <section id="docker-system-prune">
-<h2 id="docker-system-prune"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">system</span> <span class="pre">prune</span></code><a class="headerlink" href="#docker-system-prune" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-system-prune"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">system</span> <span class="pre">prune</span></code><a class="headerlink" href="#docker-system-prune" title="Permalink to this heading">¶</a></h2>
 <p>Remove unused data. Removed all unused containers, networks, images (both dangling and unreferenced) and optionally volumes. This is not only going to delete stopped containers, it’s going to delete a couple of either items as well. Most notable, your <code class="docutils literal notranslate"><span class="pre">build</span> <span class="pre">cache</span></code>. The <code class="docutils literal notranslate"><span class="pre">build</span> <span class="pre">cache</span></code> is any image that you have fetch from <strong>Docker Hub</strong>. So after running the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">system</span> <span class="pre">prune</span></code>, you’ll have to re-download images from Docker.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker system prune <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>system<span class="w"> </span>prune<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 
-dev@dev:~$ docker system prune
-WARNING! This will remove:
-	- all stopped containers
-	- all networks not used by at least one container
-	- all dangling images
-	- all build cache
-Are you sure you want to <span class="k">continue</span>? <span class="o">[</span>y/N<span class="o">]</span> y
-Deleted Containers:
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>system<span class="w"> </span>prune
+WARNING!<span class="w"> </span>This<span class="w"> </span>will<span class="w"> </span>remove:
+<span class="w">	</span>-<span class="w"> </span>all<span class="w"> </span>stopped<span class="w"> </span>containers
+<span class="w">	</span>-<span class="w"> </span>all<span class="w"> </span>networks<span class="w"> </span>not<span class="w"> </span>used<span class="w"> </span>by<span class="w"> </span>at<span class="w"> </span>least<span class="w"> </span>one<span class="w"> </span>container
+<span class="w">	</span>-<span class="w"> </span>all<span class="w"> </span>dangling<span class="w"> </span>images
+<span class="w">	</span>-<span class="w"> </span>all<span class="w"> </span>build<span class="w"> </span>cache
+Are<span class="w"> </span>you<span class="w"> </span>sure<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span><span class="k">continue</span>?<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span><span class="w"> </span>y
+Deleted<span class="w"> </span>Containers:
 37a8c45a23e150b0818847ddea988c2de7769f2f8ef262082a69b3cd5c0e799c
 88a49c62dd857d8d7b1854c03e0bb60c196921d4111d038389257ad3972a6c72
 </pre></div>
@@ -432,11 +431,11 @@ Deleted Containers:
 </table>
 </section>
 <section id="docker-logs">
-<h2 id="docker-logs"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">logs</span></code><a class="headerlink" href="#docker-logs" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-logs"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">logs</span></code><a class="headerlink" href="#docker-logs" title="Permalink to this heading">¶</a></h2>
 <p>Fetch the logs of a container. The <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">logs</span></code> command batch-retrieves logs present at the time of execution.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker logs <span class="o">[</span>OPTIONS<span class="o">]</span> CONTAINER
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>logs<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>CONTAINER
 
-dev@dev:~$ docker logs my_container
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>logs<span class="w"> </span>my_container
 </pre></div>
 </div>
 <p><strong>Options</strong></p>
@@ -478,13 +477,13 @@ dev@dev:~$ docker logs my_container
 </table>
 </section>
 <section id="docker-stop">
-<h2 id="docker-stop"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span></code><a class="headerlink" href="#docker-stop" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-stop"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span></code><a class="headerlink" href="#docker-stop" title="Permalink to this heading">¶</a></h2>
 <p>Stop one or more running containers. The main process inside the container will receive <code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code>, and after a grace period, <code class="docutils literal notranslate"><span class="pre">SIGKILL</span></code>. The first signal can be changed with the <code class="docutils literal notranslate"><span class="pre">STOPSIGNAL</span></code> instruction in the container’s Dockerfile, or the <code class="docutils literal notranslate"><span class="pre">--stop-signal</span></code> option to <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code>.</p>
 <p>When you issue <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span></code> commands, a hardware signal is sent to the process, the primary process inside that container. In the case of <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span></code>, we send a <code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code> message which is short for <code class="docutils literal notranslate"><span class="pre">terminate</span> <span class="pre">signal</span></code>. It’s the message that’s going to be received by the process, telling it essentially to shutdown on its own time.</p>
 <p><code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code> is used any time that you want to stop a process inside of your container and shut the container down and you want to give that process inside there a little bit of time to shut itself down and do a little cleanup. And as soon as you get that signal, you could attempt to do a little bit of cleanup or maybe save some file or emit some message or something like that. When you issued <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span></code> to a container, if the container does not automatically stop in 10 seconds, then docker is going to automatically fall back to issuing the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">kill</span></code> command.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker stop <span class="o">[</span>OPTIONS<span class="o">]</span> CONTAINER <span class="o">[</span>CONTAINER...<span class="o">]</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>stop<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>CONTAINER<span class="w"> </span><span class="o">[</span>CONTAINER...<span class="o">]</span>
 
-dev@dev:~$ docker stop my_container
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>stop<span class="w"> </span>my_container
 </pre></div>
 </div>
 <p><strong>Options</strong></p>
@@ -504,12 +503,12 @@ dev@dev:~$ docker stop my_container
 </table>
 </section>
 <section id="docker-kill">
-<h2 id="docker-kill"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">kill</span></code><a class="headerlink" href="#docker-kill" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-kill"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">kill</span></code><a class="headerlink" href="#docker-kill" title="Permalink to this heading">¶</a></h2>
 <p>Kill one or more running containers. The <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">kill</span></code> subcommand kills one or more containers. The main process inside the container is sent <code class="docutils literal notranslate"><span class="pre">SIGKILL</span></code> signal (default), or the signal that is specified with the <code class="docutils literal notranslate"><span class="pre">--signal</span></code> option. You can kill a container using the container’s ID, ID-prefix, or name.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">kill</span></code> command issues a <code class="docutils literal notranslate"><span class="pre">SIGKILL</span></code> or a <code class="docutils literal notranslate"><span class="pre">kill</span> <span class="pre">signal</span></code> to the primary running process inside the container. <code class="docutils literal notranslate"><span class="pre">SIGKILL</span></code> essentially means you have to shut down right now and you do not get to do any additional work. So ideally, we always stop a container with the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span></code> command in order to give the running process inside of it a little bit more time to shut itself down. Otherwise, if it feels like the container has locked up and it’s not responding to the <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span></code>, then we could issue <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">kill</span></code> instead.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker <span class="nb">kill</span> <span class="o">[</span>OPTIONS<span class="o">]</span> CONTAINER <span class="o">[</span>CONTAINER...<span class="o">]</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span><span class="nb">kill</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>CONTAINER<span class="w"> </span><span class="o">[</span>CONTAINER...<span class="o">]</span>
 
-dev@dev:~$ docker <span class="nb">kill</span> my_container
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>my_container
 </pre></div>
 </div>
 <p><strong>Options</strong></p>
@@ -529,11 +528,11 @@ dev@dev:~$ docker <span class="nb">kill</span> my_container
 </table>
 </section>
 <section id="docker-exec">
-<h2 id="docker-exec"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span></code><a class="headerlink" href="#docker-exec" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-exec"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span></code><a class="headerlink" href="#docker-exec" title="Permalink to this heading">¶</a></h2>
 <p>Run a command in a running container. The <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span></code> command runs a new command in a running container. The command started using <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span></code> only runs while the container’s primary process (<code class="docutils literal notranslate"><span class="pre">PID</span> <span class="pre">1</span></code>) is running and it is not restarted if the container is restarted.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker <span class="nb">exec</span> <span class="o">[</span>OPTIONS<span class="o">]</span> CONTAINER COMMAND <span class="o">[</span>ARG...<span class="o">]</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>CONTAINER<span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARG...<span class="o">]</span>
 
-dev@dev:~$ docker <span class="nb">exec</span> -it my_container &lt;command&gt;
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>my_container<span class="w"> </span>&lt;command&gt;
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">-it</span></code> allows us to type input directly into the container. We provide the <code class="docutils literal notranslate"><span class="pre">my_container</span></code> and <code class="docutils literal notranslate"><span class="pre">command</span></code> that we want to execute inside of the container.</p>
@@ -588,11 +587,11 @@ dev@dev:~$ docker <span class="nb">exec</span> -it my_container &lt;command&gt;
 <p>When you are running docker on your machine, every single container that you are running is running inside of a virtual machine running Linux. So these processes are really being executed inside of a Linux world even if you’re on Mac or Windows. The <code class="docutils literal notranslate"><span class="pre">-it</span></code> is actually two separate flags but by convention we usually just kind of shorten it down to be simply <code class="docutils literal notranslate"><span class="pre">-it</span></code> which is 100% equivalent to the two separate flags. The <code class="docutils literal notranslate"><span class="pre">-i</span></code> on here means when we execute this new command inside the container, we want to attach our terminal to the standard input channel of that new running process. The <code class="docutils literal notranslate"><span class="pre">-t</span></code> flag is to make sure that all the text that you are entering in and that is coming out shows up in a nicely formatted manner on your screen.</p>
 </section>
 <section id="docker-images">
-<h2 id="docker-images"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code><a class="headerlink" href="#docker-images" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-images"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code><a class="headerlink" href="#docker-images" title="Permalink to this heading">¶</a></h2>
 <p>List images. The default <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code> will show all top level images, their repository and tags, and their size. Docker images have intermediate layers that increase reusability, decrease disk usage, and speed up <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code> by allowing each step to be cached. These intermediate layers are not shown by default. The <code class="docutils literal notranslate"><span class="pre">SIZE</span></code> is the cumulative space taken up by the image and all its parent images. This is also the disk space used by the contents of the Tar file created when you docker save an image.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker images <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="o">[</span>REPOSITORY<span class="o">[</span>:TAG<span class="o">]]</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>images<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>REPOSITORY<span class="o">[</span>:TAG<span class="o">]]</span>
 
-dev@dev:~$ docker images
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>images
 </pre></div>
 </div>
 <p><strong>Options</strong></p>
@@ -632,11 +631,11 @@ dev@dev:~$ docker images
 </table>
 </section>
 <section id="docker-rmi">
-<h2 id="docker-rmi"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rmi</span></code><a class="headerlink" href="#docker-rmi" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-rmi"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rmi</span></code><a class="headerlink" href="#docker-rmi" title="Permalink to this heading">¶</a></h2>
 <p>Remove one or more images. Removes (and un-tags) one or more images from the host node. If an image has multiple tags, using this command with the tag as a parameter only removes the tag. If the tag is the only one for the image, both the image and the tag are removed.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker rmi <span class="o">[</span>OPTIONS<span class="o">]</span> IMAGE <span class="o">[</span>IMAGE...<span class="o">]</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>rmi<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>IMAGE<span class="w"> </span><span class="o">[</span>IMAGE...<span class="o">]</span>
 
-dev@dev:~$ docker rmi --force <span class="k">$(</span>docker images -a -q<span class="k">)</span>
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>rmi<span class="w"> </span>--force<span class="w"> </span><span class="k">$(</span>docker<span class="w"> </span>images<span class="w"> </span>-a<span class="w"> </span>-q<span class="k">)</span>
 </pre></div>
 </div>
 <p><strong>Options</strong></p>
@@ -660,15 +659,15 @@ dev@dev:~$ docker rmi --force <span class="k">$(</span>docker images -a -q<span 
 </table>
 </section>
 <section id="docker-volume-create">
-<h2 id="docker-volume-create"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">create</span></code><a class="headerlink" href="#docker-volume-create" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-volume-create"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">create</span></code><a class="headerlink" href="#docker-volume-create" title="Permalink to this heading">¶</a></h2>
 <p>Creates a new volume that containers can consume and store data in. If a name is not specified, Docker generates a random name.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker volume create <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="o">[</span>VOLUME<span class="o">]</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>VOLUME<span class="o">]</span>
 
-dev@dev:~$ docker volume create --driver <span class="nb">local</span> <span class="se">\</span>
-    --opt <span class="nv">type</span><span class="o">=</span>tmpfs <span class="se">\</span>
-    --opt <span class="nv">device</span><span class="o">=</span>tmpfs <span class="se">\</span>
-    --opt <span class="nv">o</span><span class="o">=</span><span class="nv">size</span><span class="o">=</span>100m,uid<span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
-    foo
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>--driver<span class="w"> </span><span class="nb">local</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--opt<span class="w"> </span><span class="nv">type</span><span class="o">=</span>tmpfs<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--opt<span class="w"> </span><span class="nv">device</span><span class="o">=</span>tmpfs<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--opt<span class="w"> </span><span class="nv">o</span><span class="o">=</span><span class="nv">size</span><span class="o">=</span>100m,uid<span class="o">=</span><span class="m">1000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>foo
 </pre></div>
 </div>
 <p><strong>Options</strong></p>
@@ -700,11 +699,11 @@ dev@dev:~$ docker volume create --driver <span class="nb">local</span> <span cla
 </table>
 </section>
 <section id="docker-volume-ls">
-<h2 id="docker-volume-ls"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">ls</span></code><a class="headerlink" href="#docker-volume-ls" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-volume-ls"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">ls</span></code><a class="headerlink" href="#docker-volume-ls" title="Permalink to this heading">¶</a></h2>
 <p>List volumes. List all the volumes known to Docker. You can filter using the <code class="docutils literal notranslate"><span class="pre">-f</span></code> or <code class="docutils literal notranslate"><span class="pre">--filter</span></code> flag.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker volume ls <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>volume<span class="w"> </span>ls<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 
-dev@dev:~$ docker volume ls
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>volume<span class="w"> </span>ls
 </pre></div>
 </div>
 <p><strong>Options</strong></p>
@@ -732,11 +731,11 @@ dev@dev:~$ docker volume ls
 </table>
 </section>
 <section id="docker-volume-prune">
-<h2 id="docker-volume-prune"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">prune</span></code><a class="headerlink" href="#docker-volume-prune" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-volume-prune"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">volume</span> <span class="pre">prune</span></code><a class="headerlink" href="#docker-volume-prune" title="Permalink to this heading">¶</a></h2>
 <p>Remove all unused local volumes. Unused local volumes are those which are not referenced by any containers.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker volume prune <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>volume<span class="w"> </span>prune<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 
-dev@dev:~$ docker volume prune
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>volume<span class="w"> </span>prune
 </pre></div>
 </div>
 <p><strong>Options</strong></p>
@@ -760,11 +759,11 @@ dev@dev:~$ docker volume prune
 </table>
 </section>
 <section id="docker-build">
-<h2 id="docker-build"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code><a class="headerlink" href="#docker-build" title="Permalink to this headline">¶</a></h2>
+<h2 id="docker-build"><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code><a class="headerlink" href="#docker-build" title="Permalink to this heading">¶</a></h2>
 <p>Build an image from a Dockerfile. The docker build command builds Docker images from a Dockerfile and a “context”. A build’s context is the set of files located in the specified <code class="docutils literal notranslate"><span class="pre">PATH</span></code> or <code class="docutils literal notranslate"><span class="pre">URL</span></code>. The build process can refer to any of the files in the context. For example, your build can use a <code class="docutils literal notranslate"><span class="pre">COPY</span></code> instruction to reference a file in the context. The <code class="docutils literal notranslate"><span class="pre">URL</span></code> parameter can refer to three kinds of resources: Git repositories, pre-packaged tarball contexts and plain text files.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ docker build <span class="o">[</span>OPTIONS<span class="o">]</span> PATH <span class="p">|</span> URL <span class="p">|</span> -
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>PATH<span class="w"> </span><span class="p">|</span><span class="w"> </span>URL<span class="w"> </span><span class="p">|</span><span class="w"> </span>-
 
-dev@dev:~$ docker build .
+dev@dev:~$<span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>.
 </pre></div>
 </div>
 <p><strong>Options</strong></p>
@@ -896,7 +895,7 @@ dev@dev:~$ docker build .
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

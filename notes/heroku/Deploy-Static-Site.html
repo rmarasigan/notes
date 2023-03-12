@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="What is Infrastructure as Code?" href="../terraform/iac.html" />
@@ -217,17 +216,7 @@
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#notes-heroku-deploy-static-site--page-root" class="md-nav__link">Deploying HTML on Heruko using Heroku CLI</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#steps" class="md-nav__link">Steps</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#for-an-existing-app" class="md-nav__link">For an Existing App</a>
-        </li>
-        <li class="md-nav__item"><a href="#confirming-that-a-remote-named-heroku-has-been-set-for-your-app" class="md-nav__link">Confirming that a remote named <code class="docutils literal notranslate"><span class="pre">heroku</span></code> has been set for your app</a>
-        </li>
-        <li class="md-nav__item"><a href="#rename-a-remote" class="md-nav__link">Rename a remote</a>
-        </li>
-        <li class="md-nav__item"><a href="#deploying-your-code" class="md-nav__link">Deploying your code</a>
-        </li></ul>
-            </nav>
+        <li class="md-nav__item"><a href="#steps" class="md-nav__link">Steps</a>
         </li></ul>
             </nav>
         </li>
@@ -246,9 +235,9 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="deploying-html-on-heruko-using-heroku-cli">
-<h1 id="notes-heroku-deploy-static-site--page-root">Deploying HTML on Heruko using Heroku CLI<a class="headerlink" href="#notes-heroku-deploy-static-site--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-heroku-deploy-static-site--page-root">Deploying HTML on Heruko using Heroku CLI<a class="headerlink" href="#notes-heroku-deploy-static-site--page-root" title="Permalink to this heading">¶</a></h1>
 <section id="steps">
-<h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
+<h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>Register a free account on <a class="reference external" href="https://github.com/signup">Github</a></p></li>
 <li><p>Create a new (<strong>private</strong>) repository on Github</p></li>
@@ -262,55 +251,48 @@
 </li>
 <li><p>Install <a class="reference external" href="https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli">Heroku CLI</a></p>
 <p>or you can follow this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ curl https://cli-assets.heroku.com/install-ubuntu.sh <span class="p">|</span> sh
-dev@dev:~$ heroku --version
-heroku/7.60.2 linux-x64 node-v14.19.0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>curl<span class="w"> </span>https://cli-assets.heroku.com/install-ubuntu.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+dev@dev:~$<span class="w"> </span>heroku<span class="w"> </span>--version
+heroku/7.60.2<span class="w"> </span>linux-x64<span class="w"> </span>node-v14.19.0
 </pre></div>
 </div>
 </li>
 <li><p>Create files in Github repo</p>
 <p>a. <code class="docutils literal notranslate"><span class="pre">composer.json</span></code>
 You just need the simple entry of <strong>{}</strong>.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="p">{}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="p">{}</span>
 </pre></div>
 </div>
 <p>b. <code class="docutils literal notranslate"><span class="pre">index.php</span></code></p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">   </span><span class="cp">&lt;?php</span> <span class="k">include_once</span><span class="p">(</span><span class="s2">"index.html"</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">   </span><span class="cp">&lt;?php</span> <span class="k">include_once</span><span class="p">(</span><span class="s2">"index.html"</span><span class="p">);</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
 <p>c. <code class="docutils literal notranslate"><span class="pre">index.html</span></code>
 This is the core of your web page and it will contain the HTML content that you want to show/display on your Heroku application.</p>
 </li>
-<li><p>Deploy your code</p></li>
-</ol>
-<section id="for-an-existing-app">
-<h3 id="for-an-existing-app">For an Existing App<a class="headerlink" href="#for-an-existing-app" title="Permalink to this headline">¶</a></h3>
+<li><p>Deploy your code</p>
+<h4 class="rubric" id="for-an-existing-app">For an Existing App</h4>
 <p>Add a remote to your local repository with the <code class="docutils literal notranslate"><span class="pre">heroku</span> <span class="pre">git:remote</span></code> command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># set git remote heroku to https://git.heroku.com/example-app.git</span>
-dev@dev:~$ heroku git:remote -a example-app
+dev@dev:~$<span class="w"> </span>heroku<span class="w"> </span>git:remote<span class="w"> </span>-a<span class="w"> </span>example-app
 </pre></div>
 </div>
-</section>
-<section id="confirming-that-a-remote-named-heroku-has-been-set-for-your-app">
-<h3 id="confirming-that-a-remote-named-heroku-has-been-set-for-your-app">Confirming that a remote named <code class="docutils literal notranslate"><span class="pre">heroku</span></code> has been set for your app<a class="headerlink" href="#confirming-that-a-remote-named-heroku-has-been-set-for-your-app" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ git remote -v
-heroku  https://git.heroku.com/example-app.git <span class="o">(</span>fetch<span class="o">)</span>
-heroku  https://git.heroku.com/example-app.git <span class="o">(</span>push<span class="o">)</span>
+<h4 class="rubric" id="confirming-that-a-remote-named-heroku-has-been-set-for-your-app">Confirming that a remote named <code class="docutils literal notranslate"><span class="pre">heroku</span></code> has been set for your app</h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>-v
+heroku<span class="w">  </span>https://git.heroku.com/example-app.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+heroku<span class="w">  </span>https://git.heroku.com/example-app.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
 </pre></div>
 </div>
-</section>
-<section id="rename-a-remote">
-<h3 id="rename-a-remote">Rename a remote<a class="headerlink" href="#rename-a-remote" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ git remote rename heroku heroku-staging
+<h4 class="rubric" id="rename-a-remote">Rename a remote</h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>rename<span class="w"> </span>heroku<span class="w"> </span>heroku-staging
 </pre></div>
 </div>
-</section>
-<section id="deploying-your-code">
-<h3 id="deploying-your-code">Deploying your code<a class="headerlink" href="#deploying-your-code" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$ git push heroku master
+<h4 class="rubric" id="deploying-your-code">Deploying your code</h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dev@dev:~$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>heroku<span class="w"> </span>master
 </pre></div>
 </div>
-</section>
+</li>
+</ol>
 </section>
 </section>
 
@@ -361,7 +343,7 @@ heroku  https://git.heroku.com/example-app.git <span class="o">(</span>push<span
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

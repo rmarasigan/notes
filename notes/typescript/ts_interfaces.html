@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="TS – Classes" href="ts_classes.html" />
@@ -242,51 +241,51 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="ts-interfaces">
-<h1 id="notes-typescript-ts-interfaces--page-root">TS – Interfaces<a class="headerlink" href="#notes-typescript-ts-interfaces--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-typescript-ts-interfaces--page-root">TS – Interfaces<a class="headerlink" href="#notes-typescript-ts-interfaces--page-root" title="Permalink to this heading">¶</a></h1>
 <p>Interface is a structure that defines the contract in your application. It defines the syntax for classes to follow. Classes that are derived from an interface must follow the structure provided by their inheritance. The TypeScript compiler does not convert interface to JavaScript. It uses interface for type checking. This is also known as “<em>duck typing</em>” or “<em>structural subtyping</em>”.</p>
 <p>An interface is defined with the keyword <code class="docutils literal notranslate"><span class="pre">interface</span></code> and it can include properties and method declaration using a function or an arrow function. Interfaces contain only the declaration of members. It is the responsibility of the deriving class to define the members. It often helps in providing a standard structure that the deriving classes would follow.</p>
 <p>Syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span> <span class="nx">interface_name</span> <span class="p">{}</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">interface_name</span><span class="w"> </span><span class="p">{}</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span> <span class="nx">IComplexType</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">IComplexType</span>
 <span class="p">{</span>
-   <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
-   <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="w">   </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">   </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">complexType</span> : <span class="kt">IComplexType</span> <span class="o">=</span> <span class="p">{</span><span class="nx">id</span>: <span class="kt">1</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">'John'</span><span class="p">};</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">complexType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">IComplexType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">'John'</span><span class="p">};</span>
 </pre></div>
 </div>
 <section id="optional-properties">
-<h2 id="optional-properties">Optional properties<a class="headerlink" href="#optional-properties" title="Permalink to this headline">¶</a></h2>
+<h2 id="optional-properties">Optional properties<a class="headerlink" href="#optional-properties" title="Permalink to this heading">¶</a></h2>
 <p>An interface may have optional properties. To declare an optional property, you use the question mark (<code class="docutils literal notranslate"><span class="pre">?</span></code>) at the end of the property name un the declaration.</p>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span> <span class="nx">User</span> <span class="p">{</span>
-   <span class="nx">first_name</span>: <span class="kt">string</span><span class="p">;</span>
-   <span class="nx">middle_name?</span>: <span class="kt">string</span><span class="p">;</span>
-   <span class="nx">last_name</span>: <span class="kt">string</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">first_name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">   </span><span class="nx">middle_name?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">   </span><span class="nx">last_name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="readonly-properties">
-<h2 id="readonly-properties">Readonly properties<a class="headerlink" href="#readonly-properties" title="Permalink to this headline">¶</a></h2>
+<h2 id="readonly-properties">Readonly properties<a class="headerlink" href="#readonly-properties" title="Permalink to this heading">¶</a></h2>
 <p>If properties should be modifiable only when the object first created, you can use the <code class="docutils literal notranslate"><span class="pre">readonly</span></code> keyword before the name of the property.</p>
 <p>Example:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span> <span class="nx">User</span> <span class="p">{</span>
-   <span class="k">readonly</span> <span class="nx">id_number</span>: <span class="kt">string</span><span class="p">;</span>
-   <span class="nx">first_name</span>: <span class="kt">string</span><span class="p">;</span>
-   <span class="nx">middle_name?</span>: <span class="kt">string</span><span class="p">;</span>
-   <span class="nx">last_name</span>: <span class="kt">string</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="k">readonly</span><span class="w"> </span><span class="nx">id_number</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">   </span><span class="nx">first_name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">   </span><span class="nx">middle_name?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">   </span><span class="nx">last_name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">user</span>: <span class="kt">User</span><span class="p">;</span>
-<span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="nx">id_number</span><span class="o">:</span> <span class="s1">'0098172018'</span><span class="p">,</span>
-   <span class="nx">first_name</span><span class="o">:</span> <span class="s1">'John'</span><span class="p">,</span>
-   <span class="nx">last_name</span><span class="o">:</span> <span class="s1">'Doe'</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="o">:</span><span class="w"> </span><span class="kt">User</span><span class="p">;</span>
+<span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">id_number</span><span class="o">:</span><span class="w"> </span><span class="s1">'0098172018'</span><span class="p">,</span>
+<span class="w">   </span><span class="nx">first_name</span><span class="o">:</span><span class="w"> </span><span class="s1">'John'</span><span class="p">,</span>
+<span class="w">   </span><span class="nx">last_name</span><span class="o">:</span><span class="w"> </span><span class="s1">'Doe'</span>
 <span class="p">}</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
 </pre></div>
@@ -300,7 +299,7 @@
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">user.id_number</span></code> syntax will throw an error because the property cannot be changed.</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="nx">user</span><span class="p">.</span><span class="nx">id_number</span> <span class="o">=</span> <span class="s1">'0089200107'</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="nx">user</span><span class="p">.</span><span class="nx">id_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'0089200107'</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Error:</p>
@@ -309,13 +308,13 @@
 </div>
 </section>
 <section id="type-aliases-vs-interfaces">
-<h2 id="type-aliases-vs-interfaces">Type Aliases vs. Interfaces<a class="headerlink" href="#type-aliases-vs-interfaces" title="Permalink to this headline">¶</a></h2>
+<h2 id="type-aliases-vs-interfaces">Type Aliases vs. Interfaces<a class="headerlink" href="#type-aliases-vs-interfaces" title="Permalink to this heading">¶</a></h2>
 <p><strong>Type Aliases</strong> is basically a name for any type. It can be used to represent not only primitives but aslo object types, union types, tuples and intersections. Type aliases are declared with the <code class="docutils literal notranslate"><span class="pre">type</span></code> keyword preceding them.</p>
 <p><strong>Interfaces</strong> are another way to name data structure like objects. An interface may only be used to declare the shapes of objects, not rename primitives. Interfaces are declared with the <code class="docutils literal notranslate"><span class="pre">interface</span></code> keyword preceding them.</p>
 <a class="reference internal image-reference" href="../../_images/type_alias_vs_interfaces.png"><img alt="type_alias_vs_interfaces" src="../../_images/type_alias_vs_interfaces.png" style="width: 800px;"/></a>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.typescripttutorial.net/typescript-tutorial/typescript-interface/">TypeScript Interface</a></p></li>
 <li><p><a class="reference external" href="https://www.tutorialsteacher.com/typescript/typescript-interface">TypeScript - Interfaces</a></p></li>
@@ -373,7 +372,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

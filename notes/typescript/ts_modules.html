@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -51,9 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="TS – Namespaces" href="ts_namespaces.html" />
@@ -250,7 +249,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="ts-modules">
-<h1 id="notes-typescript-ts-modules--page-root">TS – Modules<a class="headerlink" href="#notes-typescript-ts-modules--page-root" title="Permalink to this headline">¶</a></h1>
+<h1 id="notes-typescript-ts-modules--page-root">TS – Modules<a class="headerlink" href="#notes-typescript-ts-modules--page-root" title="Permalink to this heading">¶</a></h1>
 <p>A module is a way to create a group of related variables, functions, classes, and interfaces, etc. It executes in the <strong>local scope</strong>, not in the global scope. In other words, the variables, functions, classes, and interfaces declared in a module cannot be accessible outside the module directly. We can create a module by using the <strong><code class="docutils literal notranslate"><span class="pre">export</span></code></strong> keyword and can use in other modules by using the <strong><code class="docutils literal notranslate"><span class="pre">import</span></code></strong> keyword.</p>
 <p>Modules import another module by using a <strong>module loader</strong>. At runtime, the module loader is responsible for locating and executing all dependencies of a module before executing it. The most common modules loaders which are used in JavaScript are the CommonJS module loader for Node.js and require.js for Web applications. In TypeScript, files containing a top-level export or import are considered modules.</p>
 <a class="reference internal image-reference" href="../../_images/namespaces-vs-modules.png"><img alt="namespaces-vs-modules" src="../../_images/namespaces-vs-modules.png" style="width: 600px;"/></a>
@@ -261,73 +260,73 @@
 <li><p>Module Output Target</p></li>
 </ul>
 <section id="export">
-<h2 id="export"><code class="docutils literal notranslate"><span class="pre">export</span></code><a class="headerlink" href="#export" title="Permalink to this headline">¶</a></h2>
+<h2 id="export"><code class="docutils literal notranslate"><span class="pre">export</span></code><a class="headerlink" href="#export" title="Permalink to this heading">¶</a></h2>
 <p>A module can be defined in a separate <code class="docutils literal notranslate"><span class="pre">.ts</span></code> file which can contain functions, variables, interfaces and classes. Use the prefix <code class="docutils literal notranslate"><span class="pre">export</span></code> with all the definitions you want to include in a module and want to access from other modules.</p>
 <p>Syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span> <span class="kd">class</span> <span class="nx">class_name</span> <span class="p">{}</span>
-<span class="k">export</span> <span class="kd">let</span> <span class="nx">variable_name</span> : <span class="kt">data_type</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">class_name</span><span class="w"> </span><span class="p">{}</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nx">variable_name</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">data_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
 
 <span class="c1">// You can export it like this</span>
-<span class="k">export</span> <span class="p">{</span> <span class="nx">class_name</span> <span class="p">}</span>
-<span class="k">export</span> <span class="p">{</span> <span class="nx">class_name</span> <span class="kr">as</span> <span class="nx">alias_name</span> <span class="p">}</span>
+<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">class_name</span><span class="w"> </span><span class="p">}</span>
+<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">class_name</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">alias_name</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="import">
-<h2 id="import"><code class="docutils literal notranslate"><span class="pre">import</span></code><a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h2>
+<h2 id="import"><code class="docutils literal notranslate"><span class="pre">import</span></code><a class="headerlink" href="#import" title="Permalink to this heading">¶</a></h2>
 <p>A module can be used in another module using an <code class="docutils literal notranslate"><span class="pre">import</span></code> statement.</p>
 <p>Syntax:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">export_name</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">"file_path_without_extension"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">export_name</span> <span class="kr">as</span> <span class="nx">alias_name</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">"file_path_without_extension"</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">export_name</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"file_path_without_extension"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">export_name</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">alias_name</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"file_path_without_extension"</span><span class="p">;</span>
 </pre></div>
 </div>
 <section id="creating-a-module">
-<h3 id="creating-a-module">Creating a module<a class="headerlink" href="#creating-a-module" title="Permalink to this headline">¶</a></h3>
+<h3 id="creating-a-module">Creating a module<a class="headerlink" href="#creating-a-module" title="Permalink to this heading">¶</a></h3>
 <section id="kvp-ts">
-<h4 id="kvp-ts"><code class="docutils literal notranslate"><span class="pre">kvp.ts</span></code><a class="headerlink" href="#kvp-ts" title="Permalink to this headline">¶</a></h4>
+<h4 id="kvp-ts"><code class="docutils literal notranslate"><span class="pre">kvp.ts</span></code><a class="headerlink" href="#kvp-ts" title="Permalink to this heading">¶</a></h4>
 <p>Create a new module called <code class="docutils literal notranslate"><span class="pre">kvp.ts</span></code> and declares an interface called <code class="docutils literal notranslate"><span class="pre">KeyValuePair</span></code> and a class called <code class="docutils literal notranslate"><span class="pre">KVP</span></code>.</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span> <span class="nx">KeyValuePair</span> <span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">U</span><span class="o">&gt;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">KeyValuePair</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="w"> </span><span class="nx">U</span><span class="o">&gt;</span>
 <span class="p">{</span>
-   <span class="nx">Process</span><span class="p">(</span><span class="nx">key</span>: <span class="kt">T</span><span class="p">,</span> <span class="nx">value</span>: <span class="kt">U</span><span class="p">)</span><span class="o">:</span> <span class="ow">void</span><span class="p">;</span>
+<span class="w">   </span><span class="nx">Process</span><span class="p">(</span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">U</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">KVP</span> <span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">U</span><span class="o">&gt;</span> <span class="k">implements</span> <span class="nx">KeyValuePair</span> <span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">U</span><span class="o">&gt;</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">KVP</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="w"> </span><span class="nx">U</span><span class="o">&gt;</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">KeyValuePair</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="w"> </span><span class="nx">U</span><span class="o">&gt;</span>
 <span class="p">{</span>
-   <span class="nx">Process</span><span class="p">(</span><span class="nx">key</span>: <span class="kt">T</span><span class="p">,</span> <span class="nx">value</span>: <span class="kt">U</span><span class="p">)</span><span class="o">:</span> <span class="ow">void</span>
-   <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Key: </span><span class="si">${</span><span class="nx">key</span><span class="si">}</span><span class="sb"> Value: </span><span class="si">${</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-   <span class="p">}</span>
+<span class="w">   </span><span class="nx">Process</span><span class="p">(</span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">U</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Key: </span><span class="si">${</span><span class="nx">key</span><span class="si">}</span><span class="sb"> Value: </span><span class="si">${</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">   </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>In this module, we place the <code class="docutils literal notranslate"><span class="pre">export</span></code> keyword before the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword to expose it to other modules. In other words, if you do not use the <code class="docutils literal notranslate"><span class="pre">export</span></code> keyword, the <code class="docutils literal notranslate"><span class="pre">KVP</span></code> class is private in the <code class="docutils literal notranslate"><span class="pre">kvp.ts</span></code> module, therefore, it cannot be used by other modules. Other way to export a declaration from a module is to use the <code class="docutils literal notranslate"><span class="pre">export</span></code> statement. TypeScript also allows you to rename declarations for module consumers.</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">KVP</span> <span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">U</span><span class="o">&gt;</span> <span class="k">implements</span> <span class="nx">KeyValuePair</span> <span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">U</span><span class="o">&gt;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">KVP</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="w"> </span><span class="nx">U</span><span class="o">&gt;</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">KeyValuePair</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="w"> </span><span class="nx">U</span><span class="o">&gt;</span>
 <span class="p">{</span>
-   <span class="nx">Process</span><span class="p">(</span><span class="nx">key</span>: <span class="kt">T</span><span class="p">,</span> <span class="nx">value</span>: <span class="kt">U</span><span class="p">)</span><span class="o">:</span> <span class="ow">void</span>
-   <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Key: </span><span class="si">${</span><span class="nx">key</span><span class="si">}</span><span class="sb"> Value: </span><span class="si">${</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-   <span class="p">}</span>
+<span class="w">   </span><span class="nx">Process</span><span class="p">(</span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">U</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Key: </span><span class="si">${</span><span class="nx">key</span><span class="si">}</span><span class="sb"> Value: </span><span class="si">${</span><span class="nx">value</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">   </span><span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// You can export it like this:</span>
-<span class="k">export</span> <span class="p">{</span> <span class="nx">KVP</span> <span class="p">};</span>
+<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">KVP</span><span class="w"> </span><span class="p">};</span>
 
 <span class="c1">// Or you can rename the declaration:</span>
-<span class="k">export</span> <span class="p">{</span> <span class="nx">KVP</span> <span class="kr">as</span> <span class="nx">KeyValuePair</span> <span class="p">};</span>
+<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">KVP</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">KeyValuePair</span><span class="w"> </span><span class="p">};</span>
 </pre></div>
 </div>
 </section>
 <section id="script-ts">
-<h4 id="script-ts"><code class="docutils literal notranslate"><span class="pre">script.ts</span></code><a class="headerlink" href="#script-ts" title="Permalink to this headline">¶</a></h4>
+<h4 id="script-ts"><code class="docutils literal notranslate"><span class="pre">script.ts</span></code><a class="headerlink" href="#script-ts" title="Permalink to this heading">¶</a></h4>
 <p>To consume a module, you use the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement. Crete a new module called <code class="docutils literal notranslate"><span class="pre">script.ts</span></code> that uses the <code class="docutils literal notranslate"><span class="pre">kvp.ts</span></code> module.</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">KeyValuePair</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">'./kvp'</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">KeyValuePair</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./kvp'</span><span class="p">;</span>
 
-<span class="kd">let</span> <span class="nx">user</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">KeyValuePair</span><span class="p">;</span>
-<span class="nx">user</span><span class="p">.</span><span class="nx">Process</span><span class="p">(</span><span class="s2">"98182018"</span><span class="p">,</span> <span class="s1">'Mark Manson'</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">KeyValuePair</span><span class="p">;</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">Process</span><span class="p">(</span><span class="s2">"98182018"</span><span class="p">,</span><span class="w"> </span><span class="s1">'Mark Manson'</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>When importing a module, you can rename it.</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">KeyValuePair</span> <span class="kr">as</span> <span class="nx">kvp</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">'./kvp'</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">KeyValuePair</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">kvp</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./kvp'</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -338,7 +337,7 @@
 </section>
 </section>
 <section id="reference">
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.typescripttutorial.net/typescript-tutorial/typescript-modules/">TypeScript Modules</a></p></li>
 <li><p><a class="reference external" href="https://www.tutorialsteacher.com/typescript/typescript-module">TypeScript - Modules</a></p></li>
@@ -394,7 +393,7 @@
               
           </div>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
