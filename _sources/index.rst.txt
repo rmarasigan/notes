@@ -199,19 +199,19 @@ Cloud Practitioner
 ----------------------
 .. toctree::
 
-   Create AWS Free Tier Account <https://aws-cloud-practitioner.herokuapp.com/create-account/index.html>
-   Configure Account and Ceate a Billing Alarm <https://aws-cloud-practitioner.herokuapp.com/configure-accnt-alarm/index.html>
-   AWS CLI and CloudShell <https://aws-cloud-practitioner.herokuapp.com/cli-cloudshell/index.html>
-   Cloud Computing and AWS <https://aws-cloud-practitioner.herokuapp.com/cloud-computing/index.html>
-   Identity and Access Management (AWS IAM) <https://aws-cloud-practitioner.herokuapp.com/iam/index.html>
-   AWS Compute Services <https://aws-cloud-practitioner.herokuapp.com/compute-services/index.html>
-   AWS Storage Services <https://aws-cloud-practitioner.herokuapp.com/storage-services/index.html>
-   DNS, Elastic Load Balancing and Auto Scaling <https://aws-cloud-practitioner.herokuapp.com/dns-elb-auto-scaling/index.html>
-   Application Services <https://aws-cloud-practitioner.herokuapp.com/app-services/index.html>
-   Amazon VPC, Networking and Hybrid <https://aws-cloud-practitioner.herokuapp.com/vpc-networking/index.html>
-   Deployment and Automation <https://aws-cloud-practitioner.herokuapp.com/deployment-automation/index.html>
-   Databases and Analytics <https://aws-cloud-practitioner.herokuapp.com/databases-analytics/index.html>
-   Management and Governance <https://aws-cloud-practitioner.herokuapp.com/mngmt-governance/index.html>
+   Create AWS Free Tier Account <https://aws-cloud-practitioner.netlify.app/create-account/index.html>
+   Configure Account and Ceate a Billing Alarm <https://aws-cloud-practitioner.netlify.app/configure-accnt-alarm/index.html>
+   AWS CLI and CloudShell <https://aws-cloud-practitioner.netlify.app/cli-cloudshell/index.html>
+   Cloud Computing and AWS <https://aws-cloud-practitioner.netlify.app/cloud-computing/index.html>
+   Identity and Access Management (AWS IAM) <https://aws-cloud-practitioner.netlify.app/iam/index.html>
+   AWS Compute Services <https://aws-cloud-practitioner.netlify.app/compute-services/index.html>
+   AWS Storage Services <https://aws-cloud-practitioner.netlify.app/storage-services/index.html>
+   DNS, Elastic Load Balancing and Auto Scaling <https://aws-cloud-practitioner.netlify.app/dns-elb-auto-scaling/index.html>
+   Application Services <https://aws-cloud-practitioner.netlify.app/app-services/index.html>
+   Amazon VPC, Networking and Hybrid <https://aws-cloud-practitioner.netlify.app/vpc-networking/index.html>
+   Deployment and Automation <https://aws-cloud-practitioner.netlify.app/deployment-automation/index.html>
+   Databases and Analytics <https://aws-cloud-practitioner.netlify.app/databases-analytics/index.html>
+   Management and Governance <https://aws-cloud-practitioner.netlify.app/mngmt-governance/index.html>
 
 Network
 ===========
